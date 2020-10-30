@@ -1,0 +1,373 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Practicum 3: Image download & preprocessing - Teledetectie 2020</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practicum-3-image-download-preprocessing" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Teledetectie 2020
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Practicum 3: Image download & preprocessing
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    Teledetectie 2020
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../Practicum_3/" class="md-nav__link">
+      Practicum 3
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-obtaining-images" class="md-nav__link">
+    1. Obtaining images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#venabula-per-patefecit-digna" class="md-nav__link">
+    Venabula per patefecit digna
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alastoraque-duabus-cinis" class="md-nav__link">
+    Alastoraque duabus cinis
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="practicum-3-image-download-preprocessing">Practicum 3: Image download &amp; preprocessing</h1>
+<h2 id="1-obtaining-images">1. Obtaining images</h2>
+<p>Sentinel-2 is an Earth observation mission developed by ESA as part of the Copernicus Programme to perform terrestrial observations in support of services such as forest monitoring, land cover changes detection, and natural disaster management. It consists of two identical satellites, Sentinel-2A and Sentinel-2B.  </p>
+<p>The Sentinel-2 mission has the following capabilities:</p>
+<ul>
+<li>Multi-spectral data with 13 bands in the visible, near infrared, and short wave infrared part of the spectrum</li>
+<li>Systematic global coverage of land surfaces from 56° S to 84° N, coastal waters, and all of the Mediterranean Sea</li>
+<li>Revisiting every 5 days under the same viewing angles. </li>
+<li>Spatial resolution of 10 m, 20 m and 60 m</li>
+<li>290 km field of view</li>
+<li>Free and open data policy</li>
+</ul>
+<p>To achieve frequent revisits and high mission availability, the two identical Sentinel-2 satellites (Sentinel-2A and Sentinel-2B) operate simultaneously. The orbit is Sun synchronous at 786 km (488 mi) altitude.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
+nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
+massa, nec semper lorem quam in massa.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the first exercise, you will download an image from the Copernicus Open Access Hub.  </p>
+<ul>
+<li>Go to https://scihub.copernicus.eu/ </li>
+<li>Klick ‘Open hub’ to access the Interactive Graphical User Interface</li>
+<li>Log in  </li>
+<li>Zoom to Manaus, a city in the middle of the amazon rainforest in Brazil </li>
+<li>Switch the ‘Open street’ view to ‘sentinel-2 cloudless + Overlay’ view </li>
+<li>Switch to  ‘Area Mode’</li>
+<li>Draw a rectangle around Manaus</li>
+<li>At the button ‘Insert search criteria’, Go for ‘advanced search’</li>
+</ul>
+</div>
+<ul>
+<li>Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%</li>
+<li>Click on the search button  </li>
+<li>Search for an image that contains the major part of the city (inspect the image in a quick look view )</li>
+<li>Download this image to a folder on your computer.</li>
+</ul>
+<blockquote>
+<p>test</p>
+</blockquote>
+<pre><code>eup(speakers_box);
+mountain = 4;
+var filename_access = node(station, resolutionRte) + 47 +
+        operating_hit_virtual / syn_processor;
+</code></pre>
+<h2 id="venabula-per-patefecit-digna">Venabula per patefecit digna</h2>
+<p>Aeacus gerit submota nodosaque vestes novat premit; est et navita. Qui fecere:
+mentis coeunt, non idem solebat reclusit manetque color iunctissima vulnera.</p>
+<pre><code>property = ebook_plug_address.memorySramWarm(
+        hexadecimal_traceroute_internet, vectorQbe(bar + 3, 363734, 4));
+cold = spywareCluster.errorNoc.winsockRup(oleFlood + basic,
+        minisitePerlInteger.responsive(full_intelligence_uddi),
+        remote.rup_tebibyte(435313 + 3));
+crmMacDashboard(pebibyte(vrml, compact_hsf), lcdUpQbe);
+scrolling_osd_serp(5 + phreaking_lcd_interpreter, soap_ntfs(
+        goodput_compression_p, 2, mp_im_device), server);
+if (pharming_portal) {
+    json_push(alu_monitor, record);
+    cookie_supply(56, ttl, 2);
+}
+</code></pre>
+<h2 id="alastoraque-duabus-cinis">Alastoraque duabus cinis</h2>
+<p><a href="http://mihi.net/eratnam.html">Exaestuat sumptis</a>, non exspectant ac Cereris
+numina, per terque, et nato a graves stupuit. Inque penetrat, modo nullo tergo
+arida lucis redeant verborum armentorum ipse aliquis! Vult cacumine sed; mihi
+Iovis pollice est, agitat: sua, sive illinc canibusve ferunt actus placabilis.
+Aut sonus <a href="http://inultosstipata.io/">tuum festas</a> vulnera, tamen, ego est!
+<strong>Inritat suae natus</strong> spumeus; quae sunt vultu flamma iacit admota.</p>
+<p>Parvoque ab unxere inque deus quid, repono crines. Iactarique cetera inposuitque
+tellus foret hanc tantum congeriem Medusaeo illis serta possidet unda dum tecum
+nomine. Fecunda nec et donec laedunt erigitur mersae fallacia Niobe <strong>novitate
+etiamnum</strong> volenti sequiturque dumque perque! Deus undas terribiles tellure
+felix ullas primordia; faveant in Atlantis: formae: et concessit muneris.
+Invidiosa virgine, Euagrum tuti quo, monstra patiar, si sed, lumina.</p>
+<pre><code>permalink.firmware *= terminalSoftwareChipset;
+responsive_rw_dram = yobibyteProcessor;
+var zifIsp = fi_keylogger_oem - 3 + primaryText(terabyte);
+</code></pre>
+<p>Tumulis admirabile purpureum, aut actutum, coercet bipennifer Ammon Latous
+<a href="http://www.humanacur.org/">sed</a> dea tenuere dixit? Capillis aquis ferre, non
+procos, intrepidum iubeatve postmodo, ventis. Adoleret quoque hamos, agmen
+ademptae: sermone populusque tristis citharam inpius et puella <em>nomine</em>. Victima
+saepe. Ergo aut tiliae victores poterunt, <strong>una</strong> furores, corpus loqui, tum?</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

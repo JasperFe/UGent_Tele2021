@@ -1,0 +1,836 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Practicum 3 - Teledetectie 2020</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#practicum-3-image-download-preprocessing" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Teledetectie 2020
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Practicum 3
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    Teledetectie 2020
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Practicum 3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Practicum 3
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#doel-van-het-practicum" class="md-nav__link">
+    Doel van het practicum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-images" class="md-nav__link">
+    Obtaining images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel-file-naming-convention" class="md-nav__link">
+    Sentinel file naming convention
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-snap" class="md-nav__link">
+    Introduction to SNAP
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to SNAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-navigation-window" class="md-nav__link">
+    The navigation window
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiometric-atmospheric-correction" class="md-nav__link">
+    Radiometric &amp; atmospheric correction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermezzo-cloud-masks" class="md-nav__link">
+    Intermezzo: Cloud Masks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resampling" class="md-nav__link">
+    Resampling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-subsetting" class="md-nav__link">
+    Image Subsetting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#displaying-different-band-combinations" class="md-nav__link">
+    Displaying different band combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosaicing" class="md-nav__link">
+    Mosaicing
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#doel-van-het-practicum" class="md-nav__link">
+    Doel van het practicum
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#obtaining-images" class="md-nav__link">
+    Obtaining images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sentinel-file-naming-convention" class="md-nav__link">
+    Sentinel file naming convention
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-snap" class="md-nav__link">
+    Introduction to SNAP
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction to SNAP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-navigation-window" class="md-nav__link">
+    The navigation window
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radiometric-atmospheric-correction" class="md-nav__link">
+    Radiometric &amp; atmospheric correction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intermezzo-cloud-masks" class="md-nav__link">
+    Intermezzo: Cloud Masks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resampling" class="md-nav__link">
+    Resampling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image-subsetting" class="md-nav__link">
+    Image Subsetting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#displaying-different-band-combinations" class="md-nav__link">
+    Displaying different band combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosaicing" class="md-nav__link">
+    Mosaicing
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="practicum-3-image-download-preprocessing">Practicum 3: Image download &amp; preprocessing</h1>
+<h2 id="doel-van-het-practicum">Doel van het practicum</h2>
+<ul>
+<li>Downloaden van remote sensing data: <ul>
+<li>via ESA sentinel hub</li>
+<li>via andere bronnen</li>
+</ul>
+</li>
+<li>Introductie tot ESA SNAP:<ul>
+<li>Inlezen van RS beelden</li>
+<li>Basisfunctionaliteiten</li>
+<li>Aanmaken van beeldcomposieten</li>
+<li>SNAP vs andere software</li>
+</ul>
+</li>
+<li>Beeldvoorbewerking in SNAP (Sentinel 2):<ul>
+<li>Radiometrische/atmospherische correctie</li>
+<li>Resampling</li>
+<li>Subsetting</li>
+<li>Mosaicing</li>
+</ul>
+</li>
+</ul>
+<h2 id="obtaining-images">Obtaining images</h2>
+<p>Sentinel-2 is an Earth observation mission developed by ESA as part of the Copernicus Programme to perform terrestrial observations in support of services such as forest monitoring, land cover changes detection, and natural disaster management. It consists of two identical satellites, Sentinel-2A and Sentinel-2B.  </p>
+<p>The Sentinel-2 mission has the following capabilities:</p>
+<ul>
+<li>Multi-spectral data with 13 bands in the visible, near infrared, and short wave infrared part of the spectrum</li>
+<li>Systematic global coverage of land surfaces from 56° S to 84° N, coastal waters, and all of the Mediterranean Sea</li>
+<li>Revisiting every 5 days under the same viewing angles. </li>
+<li>Spatial resolution of 10 m, 20 m and 60 m</li>
+<li>290 km field of view</li>
+<li>Free and open data policy</li>
+</ul>
+<p>To achieve frequent revisits and high mission availability, the two identical Sentinel-2 satellites (Sentinel-2A and Sentinel-2B) operate simultaneously. The orbit is Sun synchronous at 786 km (488 mi) altitude.  </p>
+<div class="admonition note">
+<p class="admonition-title">Ex 3.1 - Downloading a Sentinel 2 Level 1C image</p>
+<p>In the first exercise, you will download an image from the Copernicus Open Access Hub.  </p>
+<ul>
+<li>Go to https://scihub.copernicus.eu/ </li>
+<li>Klick ‘Open hub’ to access the Interactive Graphical User Interface</li>
+<li>
+<p>Log in (or create an account)<br />
+<img alt="" src="/assets/images/P3/login_logo.jpg" style="height:25px" />  </p>
+</li>
+<li>
+<p>Zoom to Belèm, a city in the north of Brazil, close to the gateway of the Amazon river</p>
+</li>
+<li>Switch the ‘Open street’ view to ‘sentinel-2 cloudless + Overlay’ view </li>
+<li>Switch to ‘navigation mode’</li>
+<li>
+<p>Draw a rectangle around Belèm:<br />
+<img alt="" src="/assets/images/P3/belem_scihub.jpg" style="height:250px" />  </p>
+</li>
+<li>
+<p>At the button ‘Insert search criteria’: go for ‘advanced search’</p>
+</li>
+<li>
+<p>Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:<br />
+<img alt="" src="/assets/images/P3/Sentinel2_search.jpg" style="width:400px" />  </p>
+</li>
+<li>
+<p>Click on the search button  </p>
+</li>
+<li>Search for an image that contains the major part of the city (inspect the image in a quick look view )
+  <img alt="" src="/assets/images/P3/Quicklook.jpg" style="width:500px" /></li>
+<li>Download this image to a folder on your computer.</li>
+</ul>
+</div>
+<h2 id="sentinel-file-naming-convention">Sentinel file naming convention</h2>
+<p>The naming of the Sentinel products follows the Compact Naming Convention:</p>
+<blockquote>
+<p><strong>MMM_MSIXXX_YYYYMMDDHHMMSS_Nxxyy_ROOO_Txxxxx_"Product Discriminator".SAFE</strong>  </p>
+</blockquote>
+<p>Where:    </p>
+<blockquote>
+<p><strong>MMM</strong>: is the mission ID (S2A/S2B)<br />
+<strong>MSIXXX</strong>: MSIL1C denotes the Level-1C product level/ MSIL2A denotes the Level-2A product level (see ‘radiometric correction’).<br />
+<strong>YYYYMMDDTHHMMSS</strong>: the datatake sensing start time<br />
+<strong>Nxxyy</strong>: the Processing Baseline number (e.g. N0204)<br />
+<strong>ROOO</strong>: Relative Orbit number (R001 - R143)<br />
+<strong>Txxxxx</strong>: Tile Number field<br />
+<strong>.SAFE</strong>: Product Format (Standard Archive Format for Europe)  </p>
+</blockquote>
+<p>The products contain two dates. The first date (YYYYMMDDHHMMSS) is the datatake sensing time. The second date is the "Product Discriminator" field, which is 15 characters in length, and is used to distinguish between different end user products from the same datatake. Depending on the instance, the time in this field can be earlier or slightly later than the datatake sensing time.  </p>
+<blockquote>
+<p>Thus, the following filename  </p>
+<blockquote>
+<p><strong>‘S2A_MSIL1C_20170105T013442_N0204_R031_T53NMJ_20170105T013443.SAFE’</strong>  </p>
+</blockquote>
+<p>identifies a Level-1C product acquired by Sentinel-2A on the 5th of January, 2017 at 1:34:42 AM. It was acquired over Tile 53NMJ(2) during Relative Orbit 031, and processed with PDGS Processing Baseline 02.04.</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">Ex 3.2 - naming convention</p>
+<ul>
+<li>Explain the different components of the name: S2A_MSIL1C_20180812T143751_N0206_R096_T19KGA_20180812T182110 (example)</li>
+</ul>
+</div>
+<h2 id="introduction-to-snap">Introduction to SNAP</h2>
+<p>SNAP, the <strong>SeNtinel Application Platform</strong> is developed by the ESA specifically to process Sentinel-imagery, however also other remotey sensed images can be read. The current version is <em>8.0.0</em>. SNAP is a relatively new software especially designed for the analysis of Sentinel products (Sentinel 2A was launched in 2015) and hence still contains some bugs (especially for mac-users, might try the older version 7.0.0). Not all applications are supported that you will find in classic Image Processing programs such as ENVI, but it is very user friendly and ideal to introduce you to satellite image processing. Also, it is free!</p>
+<p>We will use SNAP to examine some image composites, and necessary preprocessing steps. After that, we will do most other processing with Google Earth Engine.  </p>
+<div class="admonition note">
+<p class="admonition-title">Excercise: Opening a Sentinel-2 image in snap</p>
+<ul>
+<li>
+<p>Open the sentinel image that you have downloaded (you do not need to unzip it). You can do this in several ways:    </p>
+<ol>
+<li>Drag and drop the zip folder in the Products explorer  </li>
+<li>Click file &gt; Open Products and browse to your zip-folder  </li>
+<li>Click <img alt="" src="/assets/images/P3/snap_folder.jpg" /> and browse to your zip-folder.  </li>
+</ol>
+</li>
+<li>
+<p>Unfold the image folder. Explore the files included. Open the Blue, Green, Red and NIR image. </p>
+</li>
+<li>Test the tile buttons. Make sure you can see the four images simultaneously:<br />
+<img alt="" src="/assets/images/P3/snap_viewbuttons.jpg" /></li>
+<li>Explore the navigation panel.  </li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sentinel 2 Bands</p>
+<p>Let's have a quick look at the specifications of a Sentinel-2 image. There are 13 Sentinel 2 bands in total, with a resolution of 10, 20 or 60m:
+<p align="center">
+<img src="/assets/images/P3/S2_banden.png" width="450">
+</p></p>
+</div>
+<h3 id="the-navigation-window">The navigation window</h3>
+<p>The <strong>Navigation Window</strong> is used to move the viewport of an Image View, to zoom in and out of it and to rotate the image in steps of 5 degrees using the spinner control below the image preview. The current viewport is depicted by a semi-transparent rectangle, which can be dragged in order to move the viewport to another location. </p>
+<figure>
+  <img src="/assets/images/P3/navigation_window.jpg" />
+  <figcaption>The navigation window</figcaption>
+</figure>
+
+<p>In the bottom left, you will find the zoom factor: zoom is relative to the drawing extents.   </p>
+<p>A <strong>scale</strong> factor of:<br />
+1 shows a part of the image<br />
+2 shows entities twice as large<br />
+0.5 shows entities half as large  </p>
+<p>The text box at the left side of slider can be used to adjust the zoom factor manually. The Navigation window additionally provides the following features via its tool buttons (top right):  </p>
+<ol>
+<li><strong>Zoom In</strong>: Zooms in by a factor of 1.2.<br />
+<strong>Zoom Out</strong>: Zooms out by a factor of 1/1.2.  </li>
+<li><strong>Zoom Actual Pixel</strong>: Sets the zoom factor to the default value so that the size of an image pixel has the same size of a display pixel.  </li>
+<li><strong>Zoom All</strong>: Adjusts the viewport to cover the entire image.  </li>
+<li><strong>Synchronise Views</strong>: Synchronises the viewports of all compatible image views.  </li>
+<li><strong>Synchronise Cursor</strong>: Displays a synchronised cursor on all opened image views.  </li>
+</ol>
+<p>You can also zoom the images by scrolling on the image, or by clicking <img alt="" src="/assets/images/P3/snap_zoom.jpg" /> in the toolbar. </p>
+<div class="admonition info">
+<p class="admonition-title">Zoom factor vs Representative Fraction</p>
+<p>The <strong>zoom factor</strong> is not the same as a <strong>Representative Fraction (RF)</strong>, which is often used to indicate the scale of a map. The RF indicates the ratio between the number of units on the map to the number of units on the ground. </p>
+<p>The RF factor 1:100000 e.g. implies that one cm on map is equal to 1 km on land. Maps are described as either large-scale or small-scale. Large-scale maps show a smaller amount of area with a greater amount of detail. The geographic extent shown on a large-scale map is small.  A large scaled map expressed as a representative scale would have a smaller number to the right of the ratio.  </p>
+<p>For example, a large-scale map could have a RF scale of 1: 1,000. Large-scale maps are typically used to show neighbourhoods, a localize area, small towns, etc. Small-scale maps show a larger geographic area with few details on them. The RF scale of a small-scale map would have a much larger number to the right of the colon such as 1: 1,000,000.  Small-scale maps are used to show the extent of an entire country, region, or continent. </p>
+<p align="center">
+<p><img src="/assets/images/P3/map_.png" width="400"></p>
+</p>
+</div>
+<ul>
+<li>Zoom to the Airport  </li>
+<li>Explore the <strong>World View panel</strong>. The red rectangle indicates the position of the image on the globe.  </li>
+</ul>
+<p align="center">
+
+  <img src="/assets/images/P3/world_view.png" width="400">
+
+</p>
+
+<ul>
+<li><strong>The Colour Manipulation tool</strong> window is used to modify the colours used in the image. If you are opening an Image View of a data product's band, the Sentinel Toolbox either loads image settings from the product itself (BEAM-DIMAP format only) or uses default colour settings. 
+In the Colour manipulation panel, explore the histogram. On the image, zoom to the airport and adjust the contrast. Restore the contrast afterwards.  </li>
+</ul>
+<p align="center">
+
+  <img src="/assets/images/P3/Snap_colormanipulation.jpg" width="400">
+
+</p>
+
+<ul>
+<li><strong>Pixel info view</strong>. If you click on the tab 'Pixel View' (right to the product explorer), pixel information will be displayed while you move the mouse over the band image view. </li>
+</ul>
+<p align="center">
+
+  <img src="/assets/images/P3/Snap_pixelview.jpg" width="400">  
+
+</p>
+
+<div class="admonition question">
+<p class="admonition-title">Little recap</p>
+<ul>
+<li>Which (Sentinel 2) band combination is used to make a natural colour composite? </li>
+<li>Which (Sentinel 2) band combination is used to make a false colour infrared composite? </li>
+</ul>
+</div>
+<p>To open a RGB image in Snap, right-click on the image folder and click 'Open RGB image window':</p>
+<p align="center">
+
+  <img src="/assets/images/P3/snap_openrgb.jpg" width="400">  
+
+</p>
+
+<p>Some typical S2 band combinations are:</p>
+<ul>
+<li>Natural Colours: <strong>4 3 2</strong> *  </li>
+<li>False colour Infrared: <strong>8 4 3</strong> *  </li>
+<li>False colour Urban: <strong>12 11 4</strong>  </li>
+<li>Agriculture: <strong>11 8 2</strong>  </li>
+<li>Atmospheric penetration: <strong>12 11 8a</strong> *  </li>
+<li>Healthy vegetation: <strong>8 11 2</strong>  </li>
+<li>Land/Water: <strong>8 11 4</strong>  </li>
+<li>Natural Colours with Atmospheric Removal: <strong>12 8 3 </strong> </li>
+<li>Shortwave Infrared: <strong>12 8 4</strong>  </li>
+<li>Vegetation Analysis: <strong>11 8 4</strong>  </li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title"> </p>
+<p>Only the band combinations with a * can now be displayed. Why is that? </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Excercise: open band composites</p>
+<ul>
+<li>Open the image as a natural colour composite  </li>
+<li>Open the image as a false colour infrared composite  </li>
+<li>Tile the images evenly and explore the difference in colour (for example in the areas with green vegetation).</li>
+</ul>
+</div>
+<h2 id="radiometric-atmospheric-correction">Radiometric &amp; atmospheric correction</h2>
+<p>Satellite images obtained by the sensing device are not directly usable. They need to go through a series of pre-processing before they are ready to use. The scheme below illustrates the pre-processing steps that Sentinel-images undergo before they are made available for the user. This includes <strong>geometric</strong> correction, some <strong>radiometric correction</strong> (noise reduction, defective pixels identification) the computation of cloud masks, etc. The outcome is a level 1C product, which is Top-Of-the-Atmosphere (TOA). </p>
+<p><img alt="" src="/assets/images/P3/sentinel2_preprocessing.jpg" /></p>
+<p>TOA reflectances are subjected to radiometric bias caused by different lighting conditions, atmospheric interactions and viewing geometry. In order to relate reflectances to physical field properties, TOA reflectance values are conversed to BOA (Bottom Of Atmosphere) corrected reflectance values. This radiometric correction is an essential part in image processing. BOA, Sentinel processing level 2A, is available for the user (except for recent images) or can be created by the user itself, using the Sen2Cor freeware.  </p>
+<p align="center">
+
+  <img src="/assets/images/P3/sen2cor_result.jpg" width="800"> 
+<em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em> 
+</p>
+
+<p>In Snap, the conversion of level 1C TOA-reflectance to level 2A BOA-reflectance can be done through Sen2Cor (plug-in or stand-alone).  Sen2Cor corrects the reflectance values based on (among others) ‘look-up tables’, these are tables that relate physical parameters to model coefficients. Parameters such as inclination and product type are sensor dependent (different for Landsat as for Sentinel or Spot). On board, optical satellites have some meteorological sensors that measure atmosphere features such as the air thickness and the amount of aerosols among others. This information is available as a ‘header file’ for each image.   </p>
+<p>Since December 2018, users can download Level-2A processed products directly. In case of this exercise, we downloaded a Level 1C product. Thus, let’s perform an atmospheric correction!</p>
+<div class="admonition note">
+<p class="admonition-title">Excercise: atmospheric correction with Sen2Cor</p>
+<ul>
+<li>In the folder where you have saved the image, unzip the Sentinel-image.  </li>
+<li>Go to <em>‘Optical’ &gt; ‘Thematic Land Processing’ &gt; ‘Sen2Cor processor’ &gt; ‘Sen2Cor280’</em>  </li>
+<li>When you choose the source product, click on the ‘…’, browse to the image and navigate to the ‘MTD_MSIL1C.xml’ product.</li>
+<li>In the tab ‘processing parameters’, set the resolution to ‘ALL’</li>
+<li>The other processing parameters are by default taken from a combination of the image metadata (header file) and look-up tables. This is why you will normally use the default processing parameters. However, if you want to adjust these parameters, you can do that manually. </li>
+<li>Run Sen2Cor (!be patient, it will take a while to process the entire image.)</li>
+<li>Explore the outcome image (RGB). What differences do you see according to the original image? </li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Installing 'Sen2Cor' plugin</p>
+<p>Possibly sen2cor isn’t installed yet. To do this, go to ‘Tools’ &gt; ‘Plugins’. During the first run, you’ll get an error, after which an extra bundle will be installed. ).</p>
+</div>
+<h2 id="intermezzo-cloud-masks">Intermezzo: Cloud Masks</h2>
+<p>The image contain clouds. This means that there are some blind pixels, which lack information on the reflectance of the earth’s surface at the sensing time. This phenomenon is very common in tropical areas with a rainy season. It is possible that over the whole period of the rainy season, you will not be able to obtain images with a cloud cover of less than 90%. In such cases, Radar imaging can be useful, but are complexer. An introduction to radar imaging will be given later in these practicals.</p>
+<p align="center">
+
+  <img src="/assets/images/P3/Folder_clouds.jpg" width="700"> 
+
+</p>
+
+<p>Included in a Sentinel-2 image folder you can find some cloud masks at a resolution of 10m, 20m and 60m. These cloud masks enable the user to identify cloudy and cloud-free pixels. The masks include both dense clouds (opaque clouds) and cirrus clouds. These cloud masks are computed by a threshold algorithm. Below, the methods are described that identify the cloud pixels (for your information).</p>
+<p><strong>Identification of dense clouds</strong> </p>
+<p>Dense clouds, also called opaque clouds, are characterised by a high reflectance in the blue spectral region (B2). The method used to identify dense cloud pixels is based on B2 reflectance threshold. To avoid false detection, mainly due to snow/cloud confusion, SWIR reflectance in B11 and B12 are also used. Snow and clouds both have a high reflectance in the blue. Cloud reflectance is high in the SWIR, whereas snow presents a low reflectance. Additional criteria based on B10 reflectance are added to avoid high altitude ice cloud and snow confusion (both having a low reflectance in the SWIR bands B11 and B12). At B10, there is a high atmospheric absorption band and only high altitude clouds are detected. However, this last criterion is only applied after a first detection of cloud pixel in the blue band where cirrus is transparent.  </p>
+<p><strong>Identification of cirrus clouds</strong>  </p>
+<p>Cirrus clouds are thin, transparent or semi-transparent clouds, forming at high altitudes, approximately 6-7 km above the Earth's surface. The method of identifying cirrus cloud pixels from dense cloud pixel is based on two spectral criteria: (1) B10 corresponds to a high atmospheric absorption band: only high altitude clouds can be detected, (2) cirrus clouds, being semi-transparent, cannot be detected in the B2 blue band. A pixel with low reflectance in the B2 band and high reflectance in the B10 band has a good probability of being cirrus cloud but this is not a certainty. Some opaque clouds have a low reflectance in the blue and can be identified as cirrus cloud. To limit false detections (due to high reflectance in the blue or due to the fact that clouds are not spectrally registered), a filter using morphology-based operations is applied on both dense and cirrus cloud masks: (1) erosion, to remove isolated pixels, (2) dilatation, to fill the gap and extend clouds. If after morphology operations, a pixel is both dense and cirrus, the dense cloud mask prevails. </p>
+<p><strong>Sen2Cor scene classification</strong>  </p>
+<p>The Sen2Cor-processor you've runned for the atmospheric correction from the level 1C to the level 2A product also contains a scene classification algorithm. This algorithm creates a scene classification, where pixels als classified in some broad classes:</p>
+<p>Here, clouds are classified into 'cloud probability masks', which are in general more precise than the level 1C cloud masks.</p>
+<p align="center">
+
+  <img src="/assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
+
+</p>
+
+<div class="admonition note">
+<p class="admonition-title">Excercise: Visualize cloud masks</p>
+<ul>
+<li>Visualize the cloud masks.</li>
+<li>If you look at the cloud masks, you will see that these are not very precise. These cloud masks are useful for rough estimations. Later we will see alternative ways to identify cloud pixels more precise. </li>
+</ul>
+</div>
+<h2 id="resampling">Resampling</h2>
+<p>In order to display the other band combinations, some geometrical pre-processing is necessary. The bands have to be resampled to an equal resolution. The goal is to resample the image bands to 10m (you can take B2, B3, B4 or B8 as a reference band). This means that all other bands will be upsampled.</p>
+<p align="center">
+
+  <img src="/assets/images/P3/Resampling_principle.jpg" width="500"><br>
+
+  <em>Image resampling scheme. Top: upsampling (nearest neighbor). Bottom: Downsampling (minimum). </em> 
+
+</p>
+
+<div class="admonition note">
+<p class="admonition-title">Exercise: resampling</p>
+<ul>
+<li>In the product explorer, select the outcome image of Sen2Cor. Go to <em>Raster &gt; Geometric operations &gt; Resampling</em>. </li>
+<li>Select the ‘Save as… BEAM-DIMAP’ box. Browse to your directory. Choose a logical name for the target product.</li>
+<li>Resampling Parameters: Choose a reference band that has a resolution of 10m, or choose for a pixel resolution of 10m. Use an upsampling method of your choice (Read the help for more details on the different algorithms).</li>
+<li>Run <em>resampling</em>. </li>
+<li>Saving the images takes a lot of time. Again, be patient! </li>
+</ul>
+</div>
+<h2 id="image-subsetting">Image Subsetting</h2>
+<p>Processing an entire Sentinel image takes a lot of processing capacity and time (as you probably have noted already). Therefore, you will now learn how to only process a small part of the image. You can choose to reduce the spatial extent of the image, or you can choose to reduce the amount of bands in the image, or a combination of both.</p>
+<p>An important aspect is that creating a subset is only possible for bands that have the same size. Thus, this will only be possible <strong>after resampling</strong>.  </p>
+<p></p> </p>
+<div class="admonition note">
+<p class="admonition-title">Excercise: subsetting an image</p>
+<ul>
+<li>Select the resampled image in the product explorer. Go to Raster &gt; Subset.</li>
+<li>Select a spatial subset by choice (by adjusting the scene start and end). Make sure your spatial extent is substantially smaller than the original image.
+<p align="center">
+<img src="/assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
+<em>Snap Subsetting screen.</em> </li>
+<li>Select only following bands: [B2, B3, B4, B5, B6, B7, B8, B8A, B11, B12]</li>
+<li>You can see an estimation of the new required storage space.
+<p align="center">
+<img src="/assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
+<em>Snap Subsetting screen.</em> </li>
+<li>Click OK</li>
+<li>Another option to make a subset is ‘Spatial subset from view’. Zoom in on your image. Rightclick and select ‘Spatial subset from view’. </li>
+<li>FYI: it is also possible to take a subset of an image, based on a vector layer. </li>
+</ul>
+</div>
+<h2 id="displaying-different-band-combinations">Displaying different band combinations</h2>
+<p>If you now open an RGB image window, the band combination options will be larger. Test some of the following band combinations and explore the colour differences. Which features are most clear on the following band combinations?  </p>
+<ul>
+<li>Natural Colours: <strong>4 3 2</strong>   </li>
+<li>False colour Infrared: <strong>8 4 3</strong>   </li>
+<li>False colour Urban: <strong>12 11 4</strong>  </li>
+<li>Agriculture: <strong>11 8 2</strong>  </li>
+<li>Atmospheric penetration: <strong>12 11 8a</strong>   </li>
+<li>Healthy vegetation: <strong>8 11 2</strong>  </li>
+<li>Land/Water: <strong>8 11 4</strong>  </li>
+<li>Natural Colours with Atmospheric Removal: <strong>12 8 3 </strong> </li>
+<li>Shortwave Infrared: <strong>12 8 4</strong>  </li>
+<li>Vegetation Analysis: <strong>11 8 4</strong>  </li>
+</ul>
+<h2 id="mosaicing">Mosaicing</h2>
+<p>Mosaicing is the merging of several arbitrarily shaped images and often used to merge two neighbouring satellite images.  </p>
+<div class="admonition note">
+<p class="admonition-title">Excercise: mosaicing</p>
+<ul>
+<li>Download an image that is located next to the image you are already working with, dating from the same time as the original image was taken. </li>
+<li>You can download it directly in Level 2A, thus skipping the sen2cor atmospheric correction.</li>
+<li>Resample the image. </li>
+<li>Go to raster &gt; Geometric operations &gt; Mosaicing 
+<p align="center">
+<img src="/assets/images/P3/mosaicing_screen.jpg" width="400"><br>
+<em>Snap mosaicing screen.</em>  </li>
+<li>Add the two source products.</li>
+<li>Choose the directory in which you want to save the mosaic image.</li>
+<li>In the Map Projection Definition you can choose the Coordinate Reference System (CRS). Choose for UTM/WGS84 (automatic)</li>
+<li>Choose for a resolution of 10m.</li>
+<li>The input products don’t need to be orthorectified (because they already are).</li>
+<li>In the tab ‘Variables and Conditions’, click the  <img alt="" src="/assets/images/P3/pages_symbol.jpg" />- symbol.</li>
+<li>Select Band 2,3,4 and 8</li>
+<li>Run Mosaicing.</li>
+<li>Open the RGB-image of the product. Compare it to the two original images. </li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Extra: Examine the example of Landsat satellite image after merging below.</p>
+<ol>
+<li>What went wrong when mosaicing images 1 and 2?</li>
+<li>Why is there a colour difference in 2 and 3?</li>
+<li>Why is there no observable colour difference in 2 and 4?</li>
+<li>Have you any idea how to eliminate the colour difference between 2 and 3, given that neighbouring satellite images always partly overlap?
+<p align="center">
+<img src="/assets/images/P3/mosaicing_extra.jpg" width="400"><br>
+<em>Landsat images mosaic</em>  </li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
