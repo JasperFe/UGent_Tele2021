@@ -1,16 +1,19 @@
 site_name: Teledetectie 2020
 nav:
-    - Home: index.md
-    - Practicum 3 - Beeldvoorbewerking: Practicum_3.md
+    - Practicum 3: Practicum_3.md
+
 theme:
   name: material
   palette:
     primary: teal
   language: nl
+  features:
+    - navigation.tabs
+  logo: assets\images\LOGO_REMOSA_2020.jpg
+  favicon: assets\images\LOGO_REMOSA_2020.jpg
 
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
-

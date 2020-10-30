@@ -1,4 +1,5 @@
 # Practicum 3: Image download & preprocessing
+
 ## Obtaining images
 
 
