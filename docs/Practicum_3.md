@@ -1,7 +1,22 @@
 # Practicum 3: Image download & preprocessing
 
-## Obtaining images
+## Doel van het practicum
+ * Downloaden van remote sensing data: 
+     - via ESA sentinel hub
+     - via andere bronnen
+ * Introductie tot ESA SNAP:
+     - Inlezen van RS beelden
+     - Basisfunctionaliteiten
+     - Aanmaken van beeldcomposieten
+     - SNAP vs andere software
+ * Beeldvoorbewerking in SNAP (Sentinel 2):
+     - Radiometrische/atmospherische correctie
+     - Resampling
+     - Subsetting
+     - Mosaicing
 
+
+## Obtaining images
 
 Sentinel-2 is an Earth observation mission developed by ESA as part of the Copernicus Programme to perform terrestrial observations in support of services such as forest monitoring, land cover changes detection, and natural disaster management. It consists of two identical satellites, Sentinel-2A and Sentinel-2B.  
 
@@ -23,7 +38,10 @@ To achieve frequent revisits and high mission availability, the two identical Se
 
     * Go to https://scihub.copernicus.eu/ 
     * Klick ‘Open hub’ to access the Interactive Graphical User Interface
-    * Log in (or create an account) ![](/assets/images/P3/login_logo.jpg){: style="height:25px"}
+    * Log in (or create an account)  
+      ![](/assets/images/P3/login_logo.jpg){: style="height:25px"}  
+     
+
     * Zoom to Belèm, a city in the north of Brazil, close to the gateway of the Amazon river
     * Switch the ‘Open street’ view to ‘sentinel-2 cloudless + Overlay’ view 
     * Switch to ‘navigation mode’
@@ -32,14 +50,15 @@ To achieve frequent revisits and high mission availability, the two identical Se
 
     * At the button ‘Insert search criteria’: go for ‘advanced search’
     * Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:  
-      ![](/assets/images/P3/Sentinel2_search.jpg){: style="width:500px"}  
+      ![](/assets/images/P3/Sentinel2_search.jpg){: style="width:400px"}  
+ 
     * Click on the search button  
     * Search for an image that contains the major part of the city (inspect the image in a quick look view )
-      ![](/assets/images/P3/Quicklook.jpg)
+      ![](/assets/images/P3/Quicklook.jpg){: style="width:500px"}
     * Download this image to a folder on your computer.
 
 
-## Sentinel naming convention
+## Sentinel file naming convention
 The naming of the Sentinel products follows the Compact Naming Convention:
 > **MMM_MSIXXX_YYYYMMDDHHMMSS_Nxxyy_ROOO_Txxxxx_"Product Discriminator".SAFE**  
 
@@ -52,19 +71,17 @@ Where:
 > **Txxxxx**: Tile Number field  
 > **.SAFE**: Product Format (Standard Archive Format for Europe)  
 
-The products contain two dates. The first date (YYYYMMDDHHMMSS) is the datatake sensing time. The second date is the "Product Discriminator" field, which is 15 characters in length, and is used to distinguish between different end user products from the same datatake. Depending on the instance, the time in this field can be earlier or slightly later than the datatake sensing time.
-Thus, the following filename  
+The products contain two dates. The first date (YYYYMMDDHHMMSS) is the datatake sensing time. The second date is the "Product Discriminator" field, which is 15 characters in length, and is used to distinguish between different end user products from the same datatake. Depending on the instance, the time in this field can be earlier or slightly later than the datatake sensing time.  
 
->**‘S2A_MSIL1C_20170105T013442_N0204_R031_T53NMJ_20170105T013443.SAFE’**  
+> Thus, the following filename  
 
-identifies a Level-1C product acquired by Sentinel-2A on the 5th of January, 2017 at 1:34:42 AM. It was acquired over Tile 53NMJ(2) during Relative Orbit 031, and processed with PDGS Processing Baseline 02.04.
+>>**‘S2A_MSIL1C_20170105T013442_N0204_R031_T53NMJ_20170105T013443.SAFE’**  
+
+> identifies a Level-1C product acquired by Sentinel-2A on the 5th of January, 2017 at 1:34:42 AM. It was acquired over Tile 53NMJ(2) during Relative Orbit 031, and processed with PDGS Processing Baseline 02.04.
 
 
 !!! note "Ex 3.2 - naming convention"
     * Explain the different components of the name: S2A_MSIL1C_20180812T143751_N0206_R096_T19KGA_20180812T182110 (example)
-
-### Sentinel 2 band scheme
-
 
 
 ## Introduction to SNAP  
@@ -73,7 +90,7 @@ SNAP, the **SeNtinel Application Platform** is developed by the ESA specifically
 
 We will use SNAP to examine some image composites, and necessary preprocessing steps. After that, we will do most other processing with Google Earth Engine.  
 
-!!! note
+!!! note "Excercise: Opening a Sentinel-2 image in snap"
     * Open the sentinel image that you have downloaded (you do not need to unzip it). You can do this in several ways:    
         1. Drag and drop the zip folder in the Products explorer  
         2. Click file > Open Products and browse to your zip-folder  
@@ -83,6 +100,12 @@ We will use SNAP to examine some image composites, and necessary preprocessing s
     * Test the tile buttons. Make sure you can see the four images simultaneously:  
      ![](/assets/images/P3/snap_viewbuttons.jpg)
     * Explore the navigation panel.  
+
+!!! info "Sentinel 2 Bands"
+    Let's have a quick look at the specifications of a Sentinel-2 image. There are 13 Sentinel 2 bands in total, with a resolution of 10, 20 or 60m:
+    <p align="center">
+    <img src="/assets/images/P3/S2_banden.png" width="450">
+    </p>
 
 ### The navigation window
 
@@ -111,10 +134,18 @@ The text box at the left side of slider can be used to adjust the zoom factor ma
 
 You can also zoom the images by scrolling on the image, or by clicking ![](/assets/images/P3/snap_zoom.jpg) in the toolbar. 
 
-!!! warning 
-    The **zoom factor** is not the same as a **Representative Fraction**, which is often used to indicate the scale of a map. The RF indicates the ratio between the number of units on the map to the number of units on the ground. 
+!!! info "Zoom factor vs Representative Fraction"
+    The **zoom factor** is not the same as a **Representative Fraction (RF)**, which is often used to indicate the scale of a map. The RF indicates the ratio between the number of units on the map to the number of units on the ground. 
  
-    The RF factor 1:100000 e.g. implies that one cm on map is equal to 1 km on land. Maps are described as either large-scale or small-scale. Large-scale maps show a smaller amount of area with a greater amount of detail. The geographic extent shown on a large-scale map is small.  A large scaled map expressed as a representative scale would have a smaller number to the right of the ratio.  For example, a large-scale map could have a RF scale of 1: 1,000. Large-scale maps are typically used to show neighbourhoods, a localize area, small towns, etc. Small-scale maps show a larger geographic area with few details on them. The RF scale of a small-scale map would have a much larger number to the right of the colon such as 1: 1,000,000.  Small-scale maps are used to show the extent of an entire country, region, or continent. 
+    The RF factor 1:100000 e.g. implies that one cm on map is equal to 1 km on land. Maps are described as either large-scale or small-scale. Large-scale maps show a smaller amount of area with a greater amount of detail. The geographic extent shown on a large-scale map is small.  A large scaled map expressed as a representative scale would have a smaller number to the right of the ratio.  
+
+    For example, a large-scale map could have a RF scale of 1: 1,000. Large-scale maps are typically used to show neighbourhoods, a localize area, small towns, etc. Small-scale maps show a larger geographic area with few details on them. The RF scale of a small-scale map would have a much larger number to the right of the colon such as 1: 1,000,000.  Small-scale maps are used to show the extent of an entire country, region, or continent. 
+
+    <p align="center">
+
+    <img src="/assets/images/P3/map_.png" width="400">
+
+    </p>
 
 * Zoom to the Airport  
 * Explore the **World View panel**. The red rectangle indicates the position of the image on the globe.  
@@ -141,7 +172,7 @@ In the Colour manipulation panel, explore the histogram. On the image, zoom to t
 </p> 
 
 ## Opening an RGB image
-!!! note
+!!! Question "Little recap"
     -	Which (Sentinel 2) band combination is used to make a natural colour composite? 
     -	Which (Sentinel 2) band combination is used to make a false colour infrared composite? 
 
@@ -169,7 +200,7 @@ Some typical S2 band combinations are:
 !!! question " "
     Only the band combinations with a * can now be displayed. Why is that? 
 
-!!! note
+!!! note "Excercise: open band composites"
     - Open the image as a natural colour composite  
     - Open the image as a false colour infrared composite  
     - Tile the images evenly and explore the difference in colour (for example in the areas with green vegetation).
@@ -192,7 +223,7 @@ In Snap, the conversion of level 1C TOA-reflectance to level 2A BOA-reflectance 
 
 Since December 2018, users can download Level-2A processed products directly. In case of this exercise, we downloaded a Level 1C product. Thus, let’s perform an atmospheric correction!
 
-!!! note "Ex 3.4"
+!!! note "Excercise: atmospheric correction with Sen2Cor"
     * In the folder where you have saved the image, unzip the Sentinel-image.  
     * Go to *‘Optical’ > ‘Thematic Land Processing’ > ‘Sen2Cor processor’ > ‘Sen2Cor280’*  
     * When you choose the source product, click on the ‘…’, browse to the image and navigate to the ‘MTD_MSIL1C.xml’ product.
@@ -218,13 +249,16 @@ The image contain clouds. This means that there are some blind pixels, which lac
 
 Included in a Sentinel-2 image folder you can find some cloud masks at a resolution of 10m, 20m and 60m. These cloud masks enable the user to identify cloudy and cloud-free pixels. The masks include both dense clouds (opaque clouds) and cirrus clouds. These cloud masks are computed by a threshold algorithm. Below, the methods are described that identify the cloud pixels (for your information).
 
-**Identification of dense clouds**  
+**Identification of dense clouds** 
+ 
 Dense clouds, also called opaque clouds, are characterised by a high reflectance in the blue spectral region (B2). The method used to identify dense cloud pixels is based on B2 reflectance threshold. To avoid false detection, mainly due to snow/cloud confusion, SWIR reflectance in B11 and B12 are also used. Snow and clouds both have a high reflectance in the blue. Cloud reflectance is high in the SWIR, whereas snow presents a low reflectance. Additional criteria based on B10 reflectance are added to avoid high altitude ice cloud and snow confusion (both having a low reflectance in the SWIR bands B11 and B12). At B10, there is a high atmospheric absorption band and only high altitude clouds are detected. However, this last criterion is only applied after a first detection of cloud pixel in the blue band where cirrus is transparent.  
 
 **Identification of cirrus clouds**  
+
 Cirrus clouds are thin, transparent or semi-transparent clouds, forming at high altitudes, approximately 6-7 km above the Earth's surface. The method of identifying cirrus cloud pixels from dense cloud pixel is based on two spectral criteria: (1) B10 corresponds to a high atmospheric absorption band: only high altitude clouds can be detected, (2) cirrus clouds, being semi-transparent, cannot be detected in the B2 blue band. A pixel with low reflectance in the B2 band and high reflectance in the B10 band has a good probability of being cirrus cloud but this is not a certainty. Some opaque clouds have a low reflectance in the blue and can be identified as cirrus cloud. To limit false detections (due to high reflectance in the blue or due to the fact that clouds are not spectrally registered), a filter using morphology-based operations is applied on both dense and cirrus cloud masks: (1) erosion, to remove isolated pixels, (2) dilatation, to fill the gap and extend clouds. If after morphology operations, a pixel is both dense and cirrus, the dense cloud mask prevails. 
 
-**Sen2Cor scene classification**
+**Sen2Cor scene classification**  
+
 The Sen2Cor-processor you've runned for the atmospheric correction from the level 1C to the level 2A product also contains a scene classification algorithm. This algorithm creates a scene classification, where pixels als classified in some broad classes:
 
 
@@ -234,12 +268,11 @@ Here, clouds are classified into 'cloud probability masks', which are in general
 
   <img src="/assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
 
-
 </p> 
 
 
-!!! note "Excercise"
-    - Visualize the cloud mask.
+!!! note "Excercise: Visualize cloud masks"
+    - Visualize the cloud masks.
     - If you look at the cloud masks, you will see that these are not very precise. These cloud masks are useful for rough estimations. Later we will see alternative ways to identify cloud pixels more precise. 
 
 
@@ -254,7 +287,7 @@ In order to display the other band combinations, some geometrical pre-processing
 
 </p> 
 
-!!! note
+!!! note "Exercise: resampling"
     - In the product explorer, select the outcome image of Sen2Cor. Go to *Raster > Geometric operations > Resampling*. 
     - Select the ‘Save as… BEAM-DIMAP’ box. Browse to your directory. Choose a logical name for the target product.
     - Resampling Parameters: Choose a reference band that has a resolution of 10m, or choose for a pixel resolution of 10m. Use an upsampling method of your choice (Read the help for more details on the different algorithms).
@@ -269,7 +302,7 @@ An important aspect is that creating a subset is only possible for bands that ha
 
 </p> 
 
-!!! note
+!!! note "Excercise: subsetting an image"
     - Select the resampled image in the product explorer. Go to Raster > Subset.
     - Select a spatial subset by choice (by adjusting the scene start and end). Make sure your spatial extent is substantially smaller than the original image.
     <p align="center">
@@ -302,7 +335,7 @@ If you now open an RGB image window, the band combination options will be larger
 ## Mosaicing
 Mosaicing is the merging of several arbitrarily shaped images and often used to merge two neighbouring satellite images.  
 
-!!! note
+!!! note "Excercise: mosaicing"
     - Download an image that is located next to the image you are already working with, dating from the same time as the original image was taken. 
     - You can download it directly in Level 2A, thus skipping the sen2cor atmospheric correction.
     - Resample the image. 
