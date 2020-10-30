@@ -1,0 +1,16 @@
+site_name: Teledetectie 2020
+nav:
+    - Home: index.md
+    - Practicum 3 - Beeldvoorbewerking: Practicum_3.md
+theme:
+  name: material
+  palette:
+    primary: teal
+  language: nl
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+
