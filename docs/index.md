@@ -1,17 +1,19 @@
-# MkDocs
+# Teledetectie Practica 2020
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+</p>   <p align="center">
+  <img src="/assets/images/Voorblad.jpg" width="400">
+</p> 
 
-## Commands
+Welkom bij de cursussite voor de practica van Teledetectie 2020. 
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Doorheen de practica wordt deze site aangevuld met nieuwe documentatie, extra informatie en FAQ's.
 
-## Project layout
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<p align="center">
+
+  <img src="/assets/images/Remosa_logo.png" width="150"><br> </p>
+<p align= "center" style="color:DodgerBlue;"> Remote Sensing | Spatial Analysis lab (REMOSA) </p> <br>   <p align="center">
+  <img src="/assets/images/UGent_logo.png" width="200">
+  <img src="/assets/images/FBW_logo.png" width = "250">   
+
+</p> 

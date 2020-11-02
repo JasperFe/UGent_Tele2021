@@ -16,10 +16,30 @@
      - Mosaicing
 
 
-## Obtaining images
+## The ESA Copernicus programme
 
-Sentinel-2 is an Earth observation mission developed by ESA as part of the Copernicus Programme to perform terrestrial observations in support of services such as forest monitoring, land cover changes detection, and natural disaster management. It consists of two identical satellites, Sentinel-2A and Sentinel-2B.  
+> Copernicus is the EU's Earth Observation Programme, looking at our planet and its environment for the ultimate benefit of all European citizens. The overall goal is achieving a global, continuous, autonomous, high quality, wide range Earth observation capacity. 
 
+Under the copernicus programme, ESA is developing a series of next-generation Earth observation missions under the name of 'Sentinel' programme. This Sentinel Programme, consists of multiple satellites, each focussing on a different aspect of Earth observation: atmospheric, Oceanic and Land monitoring:
+
+<p align="center">
+
+<img src="/assets/images/P3/Sentinel_overview.jpg" width="650">
+<em> Current Sentinel satellites, with their main goal. (Source: ESA) </em> 
+</p>
+
+
+In this practical will focus on the multispectral imagery taken by Sentinel 2 satellites. 
+
+### The Sentinel-2 mission
+
+<p align="center">
+<img src="/assets/images/P3/Sentinel2.jpg" width="400">
+</p>
+
+
+
+Sentinel-2 is the copernicus Earth observation mission by ESA with the goal to perform terrestrial observations in support of services such as forest monitoring, land cover changes detection, and natural disaster management. It consists of two identical satellites, Sentinel-2A and Sentinel-2B. An interesting infograph about the Sentinel-2 mission can be found [here](https://sentinel.esa.int/documents/247904/4180891/Sentinel-2-infographic.pdf). 
 
 The Sentinel-2 mission has the following capabilities:
 
@@ -30,7 +50,14 @@ The Sentinel-2 mission has the following capabilities:
 - 290 km field of view
 - Free and open data policy
 
-To achieve frequent revisits and high mission availability, the two identical Sentinel-2 satellites (Sentinel-2A and Sentinel-2B) operate simultaneously. The orbit is Sun synchronous at 786 km (488 mi) altitude.  
+To achieve frequent revisits and high mission availability, the two identical Sentinel-2 satellites (Sentinel-2A and Sentinel-2B) operate simultaneously. The orbit is Sun synchronous at 786 km (488 mi) altitude. 
+
+### Sentinel 2 data download
+
+All data captured by the ESA copernicus Sentinel program are completely freely available to the public. The most convinient way to download Sentinel data is through the Copernicus Open Access Hub, a platform dedicate to provide easy acces to the user. For this, an user account is required.  
+
+To register go to [registration page](https://scihub.copernicus.eu/dhus/#/self-registration). To acces the data hub, go to [https://scihub.copernicus.eu/](https://scihub.copernicus.eu/).
+
 
 
 !!! note "Ex 3.1 - Downloading a Sentinel 2 Level 1C image"
@@ -58,7 +85,7 @@ To achieve frequent revisits and high mission availability, the two identical Se
     * Download this image to a folder on your computer.
 
 
-## Sentinel file naming convention
+### Sentinel file naming convention
 The naming of the Sentinel products follows the Compact Naming Convention:
 > **MMM_MSIXXX_YYYYMMDDHHMMSS_Nxxyy_ROOO_Txxxxx_"Product Discriminator".SAFE**  
 
@@ -299,8 +326,6 @@ Processing an entire Sentinel image takes a lot of processing capacity and time 
 
 An important aspect is that creating a subset is only possible for bands that have the same size. Thus, this will only be possible **after resampling**.  
 
-
-</p> 
 
 !!! note "Excercise: subsetting an image"
     - Select the resampled image in the product explorer. Go to Raster > Subset.
