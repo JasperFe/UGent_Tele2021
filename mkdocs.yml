@@ -1,5 +1,6 @@
 site_name: Teledetectie 2020
 nav:
+    - Home: index.md
     - Practicum 3: 
       - Introduction: P3/P3-intro.md
       - Sentinel-2 intro and download: P3/P3-Sentinel2.md

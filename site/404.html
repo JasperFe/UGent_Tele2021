@@ -24,7 +24,7 @@
         
           
           
-          <meta name="theme-color" content="#009485">
+          <meta name="theme-color" content="#4051b5">
         
       
     
@@ -51,7 +51,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
       
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -129,18 +129,6 @@
       
       
         
-          
-
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-      
-    </ul>
-  </div>
-</nav>
-        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -169,9 +157,107 @@
 
 
   <li class="md-nav__item">
-    <a href="/Practicum_3/" class="md-nav__link">
-      Practicum 3
+    <a href="/." class="md-nav__link">
+      Home
     </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Practicum 3
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Practicum 3" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Practicum 3
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/P3/P3-intro/" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/P3/P3-Sentinel2/" class="md-nav__link">
+      Sentinel-2 intro and download
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/P3/P3-Snap-intro/" class="md-nav__link">
+      Introduction to SNAP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/P3/P3-colour-composites/" class="md-nav__link">
+      RGB colour composites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/P3/P3-image-preprocessing/" class="md-nav__link">
+      Image preprocessing in SNAP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="/P3/P3-colour-composites-ctd/" class="md-nav__link">
+      RGB colour composites 2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -223,7 +309,7 @@
       <script>
         app = initialize({
           base: "/",
-          features: ['navigation.tabs'],
+          features: ['navigation.sections'],
           search: Object.assign({
             worker: "/assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
