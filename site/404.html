@@ -129,6 +129,39 @@
       
       
         
+          
+
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="/index.html" class="md-tabs__link md-tabs__link--active">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="/P3-intro.html" class="md-tabs__link">
+          Practicum 3
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -157,7 +190,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." class="md-nav__link">
+    <a href="/index.html" class="md-nav__link">
       Home
     </a>
   </li>
@@ -190,7 +223,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/P3/P3-intro/" class="md-nav__link">
+    <a href="/P3-intro.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -202,7 +235,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/P3/P3-Sentinel2/" class="md-nav__link">
+    <a href="/P3-Sentinel2.html" class="md-nav__link">
       Sentinel-2 intro and download
     </a>
   </li>
@@ -214,7 +247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/P3/P3-Snap-intro/" class="md-nav__link">
+    <a href="/P3-Snap-intro.html" class="md-nav__link">
       Introduction to SNAP
     </a>
   </li>
@@ -226,7 +259,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/P3/P3-colour-composites/" class="md-nav__link">
+    <a href="/P3-colour-composites.html" class="md-nav__link">
       RGB colour composites
     </a>
   </li>
@@ -238,7 +271,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/P3/P3-image-preprocessing/" class="md-nav__link">
+    <a href="/P3-image-preprocessing.html" class="md-nav__link">
       Image preprocessing in SNAP
     </a>
   </li>
@@ -250,7 +283,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/P3/P3-colour-composites-ctd/" class="md-nav__link">
+    <a href="/P3-colour-composites-ctd.html" class="md-nav__link">
       RGB colour composites 2
     </a>
   </li>
@@ -309,7 +342,7 @@
       <script>
         app = initialize({
           base: "/",
-          features: ['navigation.sections'],
+          features: ['navigation.sections', 'navigation.tabs'],
           search: Object.assign({
             worker: "/assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)

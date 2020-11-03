@@ -2,13 +2,13 @@
 
 Satellite images obtained by the sensing device are not directly usable. They need to go through a series of pre-processing before they are ready to use. The scheme below illustrates the pre-processing steps that Sentinel-images undergo before they are made available for the user. This includes **geometric** correction, some **radiometric correction** (noise reduction, defective pixels identification) the computation of cloud masks, etc. The outcome is a level 1C product, which is Top-Of-the-Atmosphere (TOA). 
 
-![](/assets/images/P3/sentinel2_preprocessing.jpg)
+![](assets/images/P3/sentinel2_preprocessing.jpg)
 
 TOA reflectances are subjected to radiometric bias caused by different lighting conditions, atmospheric interactions and viewing geometry. In order to relate reflectances to physical field properties, TOA reflectance values are conversed to BOA (Bottom Of Atmosphere) corrected reflectance values. This radiometric correction is an essential part in image processing. BOA, Sentinel processing level 2A, is available for the user (except for recent images) or can be created by the user itself, using the Sen2Cor freeware.  
 
 <p align="center">
 
-  <img src="/assets/images/P3/sen2cor_result.jpg" width="800"> 
+  <img src="assets/images/P3/sen2cor_result.jpg" width="800"> 
 <em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em> 
 </p> 
 
@@ -35,7 +35,7 @@ The image contain clouds. This means that there are some blind pixels, which lac
 
 <p align="center">
 
-  <img src="/assets/images/P3/Folder_clouds.jpg" width="700"> 
+  <img src="assets/images/P3/Folder_clouds.jpg" width="700"> 
 
 </p> 
  
@@ -59,7 +59,7 @@ Here, clouds are classified into 'cloud probability masks', which are in general
  
 <p align="center">
 
-  <img src="/assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
+  <img src="assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
 
 </p> 
 
@@ -74,7 +74,7 @@ In order to display the other band combinations, some geometrical pre-processing
 
 <p align="center">
 
-  <img src="/assets/images/P3/Resampling_principle.jpg" width="500"><br>
+  <img src="assets/images/P3/Resampling_principle.jpg" width="500"><br>
   
   <em>Image resampling scheme. Top: upsampling (nearest neighbor). Bottom: Downsampling (minimum). </em> 
 
@@ -97,12 +97,12 @@ An important aspect is that creating a subset is only possible for bands that ha
     - Select the resampled image in the product explorer. Go to Raster > Subset.
     - Select a spatial subset by choice (by adjusting the scene start and end). Make sure your spatial extent is substantially smaller than the original image.
     <p align="center">
-    <img src="/assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
+    <img src="assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
     <em>Snap Subsetting screen.</em> 
     - Select only following bands: [B2, B3, B4, B5, B6, B7, B8, B8A, B11, B12]
     - You can see an estimation of the new required storage space.
     <p align="center">
-    <img src="/assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
+    <img src="assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
     <em>Snap Subsetting screen.</em> 
     - Click OK
     - Another option to make a subset is ‘Spatial subset from view’. Zoom in on your image. Rightclick and select ‘Spatial subset from view’. 
@@ -118,14 +118,14 @@ Mosaicing is the merging of several arbitrarily shaped images and often used to 
     - Resample the image. 
     - Go to raster > Geometric operations > Mosaicing 
     <p align="center">
-    <img src="/assets/images/P3/mosaicing_screen.jpg" width="400"><br>
+    <img src="assets/images/P3/mosaicing_screen.jpg" width="400"><br>
     <em>Snap mosaicing screen.</em>  
     - Add the two source products.
     - Choose the directory in which you want to save the mosaic image.
     - In the Map Projection Definition you can choose the Coordinate Reference System (CRS). Choose for UTM/WGS84 (automatic)
     - Choose for a resolution of 10m.
     - The input products don’t need to be orthorectified (because they already are).
-    - In the tab ‘Variables and Conditions’, click the  ![](/assets/images/P3/pages_symbol.jpg)- symbol.
+    - In the tab ‘Variables and Conditions’, click the  ![](assets/images/P3/pages_symbol.jpg)- symbol.
     - Select Band 2,3,4 and 8
     - Run Mosaicing.
     - Open the RGB-image of the product. Compare it to the two original images. 
@@ -137,5 +137,5 @@ Mosaicing is the merging of several arbitrarily shaped images and often used to 
     3. Why is there no observable colour difference in 2 and 4?
     4. Have you any idea how to eliminate the colour difference between 2 and 3, given that neighbouring satellite images always partly overlap?
     <p align="center">
-    <img src="/assets/images/P3/mosaicing_extra.jpg" width="400"><br>
+    <img src="assets/images/P3/mosaicing_extra.jpg" width="400"><br>
     <em>Landsat images mosaic</em>  

@@ -8,7 +8,7 @@
       
       
       
-      <link rel="shortcut icon" href="../../assets/images/LOGO_REMOSA_2020.jpg">
+      <link rel="shortcut icon" href="assets/images/LOGO_REMOSA_2020.jpg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -71,11 +71,13 @@
     
       
 
+  
+
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
+    <a href="./index.html" title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
       
-  <img src="../../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+  <img src="assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -134,6 +136,41 @@
       
       
         
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P3-intro.html" class="md-tabs__link md-tabs__link--active">
+          Practicum 3
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -144,11 +181,13 @@
                   <div class="md-sidebar__inner">
                     
 
+  
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
+    <a href="./index.html" title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
       
-  <img src="../../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+  <img src="assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
 
     </a>
     Teledetectie 2020
@@ -162,7 +201,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
+    <a href="index.html" class="md-nav__link">
       Home
     </a>
   </li>
@@ -197,7 +236,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-intro/" class="md-nav__link">
+    <a href="P3-intro.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -209,7 +248,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-Sentinel2/" class="md-nav__link">
+    <a href="P3-Sentinel2.html" class="md-nav__link">
       Sentinel-2 intro and download
     </a>
   </li>
@@ -221,7 +260,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-Snap-intro/" class="md-nav__link">
+    <a href="P3-Snap-intro.html" class="md-nav__link">
       Introduction to SNAP
     </a>
   </li>
@@ -233,7 +272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-colour-composites/" class="md-nav__link">
+    <a href="P3-colour-composites.html" class="md-nav__link">
       RGB colour composites
     </a>
   </li>
@@ -256,7 +295,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" class="md-nav__link md-nav__link--active">
+    <a href="P3-image-preprocessing.html" class="md-nav__link md-nav__link--active">
       Image preprocessing in SNAP
     </a>
     
@@ -319,7 +358,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-colour-composites-ctd/" class="md-nav__link">
+    <a href="P3-colour-composites-ctd.html" class="md-nav__link">
       RGB colour composites 2
     </a>
   </li>
@@ -401,13 +440,13 @@
                 
                   <h1>Image preprocessing in SNAP</h1>
                 
-                <h2 id="radiometric-atmospheric-correction">Radiometric &amp; atmospheric correction<a class="headerlink" href="#radiometric-atmospheric-correction" title="Permanent link">&para;</a></h2>
+                <h2 id="radiometric-atmospheric-correction">Radiometric &amp; atmospheric correction</h2>
 <p>Satellite images obtained by the sensing device are not directly usable. They need to go through a series of pre-processing before they are ready to use. The scheme below illustrates the pre-processing steps that Sentinel-images undergo before they are made available for the user. This includes <strong>geometric</strong> correction, some <strong>radiometric correction</strong> (noise reduction, defective pixels identification) the computation of cloud masks, etc. The outcome is a level 1C product, which is Top-Of-the-Atmosphere (TOA). </p>
-<p><img alt="" src="/assets/images/P3/sentinel2_preprocessing.jpg" /></p>
+<p><img alt="" src="assets/images/P3/sentinel2_preprocessing.jpg" /></p>
 <p>TOA reflectances are subjected to radiometric bias caused by different lighting conditions, atmospheric interactions and viewing geometry. In order to relate reflectances to physical field properties, TOA reflectance values are conversed to BOA (Bottom Of Atmosphere) corrected reflectance values. This radiometric correction is an essential part in image processing. BOA, Sentinel processing level 2A, is available for the user (except for recent images) or can be created by the user itself, using the Sen2Cor freeware.  </p>
 <p align="center">
 
-  <img src="/assets/images/P3/sen2cor_result.jpg" width="800"> 
+  <img src="assets/images/P3/sen2cor_result.jpg" width="800"> 
 <em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em> 
 </p>
 
@@ -429,11 +468,11 @@
 <p class="admonition-title">Installing 'Sen2Cor' plugin</p>
 <p>Possibly sen2cor isn’t installed yet. To do this, go to ‘Tools’ &gt; ‘Plugins’. During the first run, you’ll get an error, after which an extra bundle will be installed. ).</p>
 </div>
-<h2 id="intermezzo-cloud-masks">Intermezzo: Cloud Masks<a class="headerlink" href="#intermezzo-cloud-masks" title="Permanent link">&para;</a></h2>
+<h2 id="intermezzo-cloud-masks">Intermezzo: Cloud Masks</h2>
 <p>The image contain clouds. This means that there are some blind pixels, which lack information on the reflectance of the earth’s surface at the sensing time. This phenomenon is very common in tropical areas with a rainy season. It is possible that over the whole period of the rainy season, you will not be able to obtain images with a cloud cover of less than 90%. In such cases, Radar imaging can be useful, but are complexer. An introduction to radar imaging will be given later in these practicals.</p>
 <p align="center">
 
-  <img src="/assets/images/P3/Folder_clouds.jpg" width="700"> 
+  <img src="assets/images/P3/Folder_clouds.jpg" width="700"> 
 
 </p>
 
@@ -447,7 +486,7 @@
 <p>Here, clouds are classified into 'cloud probability masks', which are in general more precise than the level 1C cloud masks.</p>
 <p align="center">
 
-  <img src="/assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
+  <img src="assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
 
 </p>
 
@@ -458,11 +497,11 @@
 <li>If you look at the cloud masks, you will see that these are not very precise. These cloud masks are useful for rough estimations. Later we will see alternative ways to identify cloud pixels more precise. </li>
 </ul>
 </div>
-<h2 id="resampling">Resampling<a class="headerlink" href="#resampling" title="Permanent link">&para;</a></h2>
+<h2 id="resampling">Resampling</h2>
 <p>In order to display the other band combinations, some geometrical pre-processing is necessary. The bands have to be resampled to an equal resolution. The goal is to resample the image bands to 10m (you can take B2, B3, B4 or B8 as a reference band). This means that all other bands will be upsampled.</p>
 <p align="center">
 
-  <img src="/assets/images/P3/Resampling_principle.jpg" width="500"><br>
+  <img src="assets/images/P3/Resampling_principle.jpg" width="500"><br>
 
   <em>Image resampling scheme. Top: upsampling (nearest neighbor). Bottom: Downsampling (minimum). </em> 
 
@@ -478,7 +517,7 @@
 <li>Saving the images takes a lot of time. Again, be patient! </li>
 </ul>
 </div>
-<h2 id="image-subsetting">Image Subsetting<a class="headerlink" href="#image-subsetting" title="Permanent link">&para;</a></h2>
+<h2 id="image-subsetting">Image Subsetting</h2>
 <p>Processing an entire Sentinel image takes a lot of processing capacity and time (as you probably have noted already). Therefore, you will now learn how to only process a small part of the image. You can choose to reduce the spatial extent of the image, or you can choose to reduce the amount of bands in the image, or a combination of both.</p>
 <p>An important aspect is that creating a subset is only possible for bands that have the same size. Thus, this will only be possible <strong>after resampling</strong>.  </p>
 <div class="admonition note">
@@ -487,19 +526,19 @@
 <li>Select the resampled image in the product explorer. Go to Raster &gt; Subset.</li>
 <li>Select a spatial subset by choice (by adjusting the scene start and end). Make sure your spatial extent is substantially smaller than the original image.
 <p align="center">
-<img src="/assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
+<img src="assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
 <em>Snap Subsetting screen.</em> </li>
 <li>Select only following bands: [B2, B3, B4, B5, B6, B7, B8, B8A, B11, B12]</li>
 <li>You can see an estimation of the new required storage space.
 <p align="center">
-<img src="/assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
+<img src="assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
 <em>Snap Subsetting screen.</em> </li>
 <li>Click OK</li>
 <li>Another option to make a subset is ‘Spatial subset from view’. Zoom in on your image. Rightclick and select ‘Spatial subset from view’. </li>
 <li>FYI: it is also possible to take a subset of an image, based on a vector layer. </li>
 </ul>
 </div>
-<h2 id="mosaicing">Mosaicing<a class="headerlink" href="#mosaicing" title="Permanent link">&para;</a></h2>
+<h2 id="mosaicing">Mosaicing</h2>
 <p>Mosaicing is the merging of several arbitrarily shaped images and often used to merge two neighbouring satellite images.  </p>
 <div class="admonition note">
 <p class="admonition-title">Excercise: mosaicing</p>
@@ -509,14 +548,14 @@
 <li>Resample the image. </li>
 <li>Go to raster &gt; Geometric operations &gt; Mosaicing 
 <p align="center">
-<img src="/assets/images/P3/mosaicing_screen.jpg" width="400"><br>
+<img src="assets/images/P3/mosaicing_screen.jpg" width="400"><br>
 <em>Snap mosaicing screen.</em>  </li>
 <li>Add the two source products.</li>
 <li>Choose the directory in which you want to save the mosaic image.</li>
 <li>In the Map Projection Definition you can choose the Coordinate Reference System (CRS). Choose for UTM/WGS84 (automatic)</li>
 <li>Choose for a resolution of 10m.</li>
 <li>The input products don’t need to be orthorectified (because they already are).</li>
-<li>In the tab ‘Variables and Conditions’, click the  <img alt="" src="/assets/images/P3/pages_symbol.jpg" />- symbol.</li>
+<li>In the tab ‘Variables and Conditions’, click the  <img alt="" src="assets/images/P3/pages_symbol.jpg" />- symbol.</li>
 <li>Select Band 2,3,4 and 8</li>
 <li>Run Mosaicing.</li>
 <li>Open the RGB-image of the product. Compare it to the two original images. </li>
@@ -530,7 +569,7 @@
 <li>Why is there no observable colour difference in 2 and 4?</li>
 <li>Have you any idea how to eliminate the colour difference between 2 and 3, given that neighbouring satellite images always partly overlap?
 <p align="center">
-<img src="/assets/images/P3/mosaicing_extra.jpg" width="400"><br>
+<img src="assets/images/P3/mosaicing_extra.jpg" width="400"><br>
 <em>Landsat images mosaic</em>  </li>
 </ol>
 </div>
@@ -552,7 +591,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../P3-colour-composites/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="P3-colour-composites.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -567,7 +606,7 @@
           </a>
         
         
-          <a href="../P3-colour-composites-ctd/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="P3-colour-composites-ctd.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -600,15 +639,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
-          features: ['navigation.sections'],
+          base: ".",
+          features: ['navigation.sections', 'navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

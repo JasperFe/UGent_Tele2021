@@ -8,7 +8,7 @@
       
       
       
-      <link rel="shortcut icon" href="../../assets/images/LOGO_REMOSA_2020.jpg">
+      <link rel="shortcut icon" href="assets/images/LOGO_REMOSA_2020.jpg">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
@@ -17,10 +17,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.bc7e593a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab28b872.min.css">
         
           
           
@@ -71,11 +71,13 @@
     
       
 
+  
+
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="../.." title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
+    <a href="./index.html" title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
       
-  <img src="../../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+  <img src="assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -134,6 +136,41 @@
       
       
         
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P3-intro.html" class="md-tabs__link md-tabs__link--active">
+          Practicum 3
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -144,11 +181,13 @@
                   <div class="md-sidebar__inner">
                     
 
+  
+
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
+    <a href="./index.html" title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
       
-  <img src="../../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+  <img src="assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
 
     </a>
     Teledetectie 2020
@@ -162,7 +201,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." class="md-nav__link">
+    <a href="index.html" class="md-nav__link">
       Home
     </a>
   </li>
@@ -197,7 +236,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-intro/" class="md-nav__link">
+    <a href="P3-intro.html" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -209,7 +248,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-Sentinel2/" class="md-nav__link">
+    <a href="P3-Sentinel2.html" class="md-nav__link">
       Sentinel-2 intro and download
     </a>
   </li>
@@ -221,7 +260,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-Snap-intro/" class="md-nav__link">
+    <a href="P3-Snap-intro.html" class="md-nav__link">
       Introduction to SNAP
     </a>
   </li>
@@ -244,7 +283,7 @@
         <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" class="md-nav__link md-nav__link--active">
+    <a href="P3-colour-composites.html" class="md-nav__link md-nav__link--active">
       RGB colour composites
     </a>
     
@@ -313,7 +352,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-image-preprocessing/" class="md-nav__link">
+    <a href="P3-image-preprocessing.html" class="md-nav__link">
       Image preprocessing in SNAP
     </a>
   </li>
@@ -325,7 +364,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../P3-colour-composites-ctd/" class="md-nav__link">
+    <a href="P3-colour-composites-ctd.html" class="md-nav__link">
       RGB colour composites 2
     </a>
   </li>
@@ -413,46 +452,42 @@
                 
                   <h1>RGB colour composites</h1>
                 
-                <h2 id="about-colour-composites">About colour composites<a class="headerlink" href="#about-colour-composites" title="Permanent link">&para;</a></h2>
+                <h2 id="about-colour-composites">About colour composites</h2>
 <p>Multispectral imagery, such as Sentinel-2, consists of several bands of data. As seen during in previous chapter, these bands can be displayed individually as a grey scale image (black = low reflectance, white = high reflectance), but they can also be displayed as a combination of three bands: a <strong>colour composite</strong> (NL: kleurcomposiet).  </p>
 <p>When creating a colour composite: the three primary colours are used: red, green and blue. When they are combined in various proportions, different colours are produced per pixel. When 3 spectral bands (both visible as non-visible bands) are assigned to a primary colour, a colour composite is formed.</p>
-<p align="center">
-
-  <img src="/assets/images/P3/rgb.gif" width="200">  <br>
-  <em> By combining different proportions of the three primary colours Red, Green and Blue, various colours are created </em>
-</p>
-
-<h2 id="two-famous-colour-composites">Two "famous" colour composites<a class="headerlink" href="#two-famous-colour-composites" title="Permanent link">&para;</a></h2>
-<h3 id="true-colour-composite">True Colour Composite<a class="headerlink" href="#true-colour-composite" title="Permanent link">&para;</a></h3>
+<p><img align="center" alt="rgb" src="assets/images/P3/rgb.gif" /><br />
+<em>By combining different proportions of the three primary colours Red, Green and Blue, various colours are created</em></p>
+<h2 id="two-famous-colour-composites">Two "famous" colour composites</h2>
+<h3 id="true-colour-composite">True Colour Composite</h3>
 <p>The most straightforward colour composite is the <strong>true colour composite</strong> (also <strong>natural colour composite</strong>), where the three visual primary colour bands of a multispectral image are assigned to their corresponding colour. </p>
 <p>For Sentinel 2, this composite is created as: Red: B4, Green: B3, Blue: B2.</p>
 <p align="center">
-  <img src="/assets/images/P3/Gent_NormalColours.jpg" width="400">  <br>
+  <img src="assets/images/P3/Gent_NormalColours.jpg" width="400">  <br>
   <em> Sentinel-2 Normal Composite of Ghent. </em>
 </p>
 
-<h3 id="false-colour-composite">False Colour Composite<a class="headerlink" href="#false-colour-composite" title="Permanent link">&para;</a></h3>
+<h3 id="false-colour-composite">False Colour Composite</h3>
 <p>Beside the 'normal' colour composites, any band of a multispectral satellite image can be  assigned to the primary colour bands in a composite. In all those other cases, the colour of a target object on the image, will have a different colour compared to it's actual colour.</p>
 <p>The most famous of these is the <strong>False Colour Composite</strong>, where the NIR-band is assigned to the red colour, the red band to the green colour and the green band to the blue colour. It is very suitable to detect vegetation, since vegetation has a high reflectance in the NIR band.  </p>
 <p>Clear water will appear dark-bluish, while turbid water (with a lot of sediments) will be cyan. Bare soils, roads and buildings may appear in various shades of blue, yellow or grey, depending on their composition.</p>
 <p>For Sentinel 2, this composite is created as: Red: B8, Green: B4, Blue: B3.</p>
 <p align="center">
-  <img src="/assets/images/P3/Gent_FalseColour.jpg" width="400">  <br>
+  <img src="assets/images/P3/Gent_FalseColour.jpg" width="400">  <br>
   <em> Sentinel-2 False Colour Composite of Ghent. </em>
 </p>
 
-<h2 id="opening-a-rgb-image-in-snap">Opening a RGB image in SNAP<a class="headerlink" href="#opening-a-rgb-image-in-snap" title="Permanent link">&para;</a></h2>
+<h2 id="opening-a-rgb-image-in-snap">Opening a RGB image in SNAP</h2>
 <p>Let's create our own image composites in SNAP! This is actually very easy to do. Just right-click on the image folder and click on 'Open RGB Image window':</p>
 <p align="center">
 
-  <img src="/assets/images/P3/Snap_openrgb.jpg" width="300">  
+  <img src="assets/images/P3/Snap_openrgb.jpg" width="300">  
 
 </p>
 
 <p>A window will appear with some possible S2 band combinations, but you can also create your own.</p>
 <p align="center">
 
-  <img src="/assets/images/P3/Select-rgb.jpg" width="200">  
+  <img src="assets/images/P3/Select-rgb.jpg" width="200">  
 
 </p>
 
@@ -499,7 +534,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../P3-Snap-intro/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="P3-Snap-intro.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -514,7 +549,7 @@
           </a>
         
         
-          <a href="../P3-image-preprocessing/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="P3-image-preprocessing.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -547,15 +582,15 @@
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "../..",
-          features: ['navigation.sections'],
+          base: ".",
+          features: ['navigation.sections', 'navigation.tabs'],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

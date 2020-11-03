@@ -6,7 +6,7 @@ Under the copernicus programme, ESA is developing a series of next-generation Ea
 
 <p align="center">
 
-<img src="/assets/images/P3/Sentinel_overview.jpg" width="650">
+<img src="assets/images/P3/Sentinel_overview.jpg" width="650">
 <em> Current Sentinel satellites, with their main goal. (Source: ESA) </em> 
 </p>
 
@@ -16,7 +16,7 @@ In this practical will focus on the multispectral imagery taken by Sentinel 2 sa
 ### The Sentinel-2 mission
 
 <p align="center">
-<img src="/assets/images/P3/Sentinel2.jpg" width="400">
+<img src="assets/images/P3/Sentinel2.jpg" width="400">
 </p>
 
 

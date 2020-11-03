@@ -2,13 +2,12 @@ site_name: Teledetectie 2020
 nav:
     - Home: index.md
     - Practicum 3: 
-      - Introduction: P3/P3-intro.md
-      - Sentinel-2 intro and download: P3/P3-Sentinel2.md
-      - Introduction to SNAP: P3/P3-Snap-intro.md
-      - RGB colour composites: P3/P3-colour-composites.md
-      - Image preprocessing in SNAP: P3/P3-image-preprocessing.md
-      - RGB colour composites 2: P3/P3-colour-composites-ctd.md
-
+      - Introduction: P3-intro.md
+      - Sentinel-2 intro and download: P3-Sentinel2.md
+      - Introduction to SNAP: P3-Snap-intro.md
+      - RGB colour composites: P3-colour-composites.md
+      - Image preprocessing in SNAP: P3-image-preprocessing.md
+      - RGB colour composites 2: P3-colour-composites-ctd.md
 
 theme:
   name: material
@@ -17,16 +16,17 @@ theme:
   language: nl
   features:
     - navigation.sections
-  logo: assets\images\LOGO_REMOSA_2020.jpg
-  favicon: assets\images\LOGO_REMOSA_2020.jpg
+    - navigation.tabs
+  logo: "assets/images/LOGO_REMOSA_2020.jpg"
+  favicon: "assets/images/LOGO_REMOSA_2020.jpg"
 
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - attr_list
-  - toc:
-      permalink: true
 
 plugins:
   - search
+
+use_directory_urls: false
