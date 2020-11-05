@@ -42,7 +42,7 @@ Let's create our own image composites in SNAP! This is actually very easy to do.
 
 <p align="center">
 
-  <img src="assets/images/P3/Snap_openrgb.jpg" width="300">  
+  <img src="assets/images/P3/snap_openrgb.jpg" width="300">  
 
 </p> 
 
@@ -50,7 +50,7 @@ A window will appear with some possible S2 band combinations, but you can also c
 
 <p align="center">
 
-  <img src="assets/images/P3/Select-rgb.jpg" width="200">  
+  <img src="assets/images/P3/Select-RGB.JPG" width="200">  
 
 </p> 
 

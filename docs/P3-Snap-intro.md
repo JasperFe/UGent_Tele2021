@@ -33,7 +33,7 @@ We will use SNAP to examine some image composites, and necessary preprocessing s
 The **Navigation Window** is used to move the viewport of an Image View, to zoom in and out of it and to rotate the image in steps of 5 degrees using the spinner control below the image preview. The current viewport is depicted by a semi-transparent rectangle, which can be dragged in order to move the viewport to another location. 
 
 <figure>
-  <img src="assets/images/P3/navigation_window.jpg" />
+  <img src="assets/images/P3/Navigation_window.jpg">
   <figcaption>The navigation window</figcaption>
 </figure>
 
@@ -81,14 +81,14 @@ The colour manipulation tool window window is used to modify the colours used in
 In the Colour manipulation panel, explore the histogram. On the image, zoom to the airport and adjust the contrast. Restore the contrast afterwards.  
 <p align="center">
 
-  <img src="assets/images/P3/Snap_colormanipulation.jpg" width="400">
+  <img src="assets/images/P3/Snap_colormanipulation.JPG" width="400">
 
 </p> 
 
 ### Pixel info view
 If you click on the tab 'Pixel View' (right to the product explorer), pixel information will be displayed while you move the mouse over the band image view. 
 <p align="center">
-  <img src="assets/images/P3/Snap_pixelview.jpg" width="400">  
+  <img src="assets/images/P3/snap_pixelview.jpg" width="400">  
 </p> 
 
 
