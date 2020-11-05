@@ -8,7 +8,7 @@ TOA reflectances are subjected to radiometric bias caused by different lighting 
 
 <p align="center">
 
-  <img src="assets/images/P3/sen2cor_result.jpg" width="800"> 
+  <img src="assets/images/P3/Sen2Cor_result.jpg" width="800"> 
 <em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em> 
 </p> 
 
@@ -35,7 +35,7 @@ The image contain clouds. This means that there are some blind pixels, which lac
 
 <p align="center">
 
-  <img src="assets/images/P3/Folder_clouds.jpg" width="700"> 
+  <img src="assets/images/P3/Folder_clouds.JPG" width="700"> 
 
 </p> 
  
@@ -59,7 +59,7 @@ Here, clouds are classified into 'cloud probability masks', which are in general
  
 <p align="center">
 
-  <img src="assets/images/P3/sen2cor_sceneclassification.jpg" width="700"> 
+  <img src="assets/images/P3/sen2cor_sceneclassification.JPG" width="700"> 
 
 </p> 
 
@@ -118,7 +118,7 @@ Mosaicing is the merging of several arbitrarily shaped images and often used to 
     - Resample the image. 
     - Go to raster > Geometric operations > Mosaicing 
     <p align="center">
-    <img src="assets/images/P3/mosaicing_screen.jpg" width="400"><br>
+    <img src="assets/images/P3/Mosaicing_screen.jpg" width="400"><br>
     <em>Snap mosaicing screen.</em>  
     - Add the two source products.
     - Choose the directory in which you want to save the mosaic image.

@@ -5,8 +5,7 @@
 Under the copernicus programme, ESA is developing a series of next-generation Earth observation missions under the name of 'Sentinel' programme. This Sentinel Programme, consists of multiple satellites, each focussing on a different aspect of Earth observation: atmospheric, Oceanic and Land monitoring:
 
 <p align="center">
-
-<img src="assets/images/P3/Sentinel_overview.jpg" width="650">
+<img src="assets/images/P3/Sentinel_overview.JPG" width="650">
 <em> Current Sentinel satellites, with their main goal. (Source: ESA) </em> 
 </p>
 
@@ -34,7 +33,7 @@ The Sentinel-2 mission has the following capabilities:
 
 To achieve frequent revisits and high mission availability, the two identical Sentinel-2 satellites (Sentinel-2A and Sentinel-2B) operate simultaneously. The orbit is Sun synchronous at 786 km (488 mi) altitude. 
 
-### Sentinel 2 data download
+## Sentinel 2 data download
 
 All data captured by the ESA copernicus Sentinel program are completely freely available to the public. The most convinient way to download Sentinel data is through the Copernicus Open Access Hub, a platform dedicate to provide easy acces to the user. For this, an user account is required.  
 
@@ -59,7 +58,7 @@ To register go to [registration page](https://scihub.copernicus.eu/dhus/#/self-r
 
     * At the button ‘Insert search criteria’: go for ‘advanced search’
     * Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:  
-      ![](/assets/images/P3/Sentinel2_search.jpg){: style="width:400px"}  
+      ![](/assets/images/P3/Sentinel2_search.JPG){: style="width:400px"}  
  
     * Click on the search button  
     * Search for an image that contains the major part of the city (inspect the image in a quick look view )
@@ -91,3 +90,17 @@ The products contain two dates. The first date (YYYYMMDDHHMMSS) is the datatake 
 
 !!! note "Ex 3.2 - naming convention"
     * Explain the different components of the name: S2A_MSIL1C_20180812T143751_N0206_R096_T19KGA_20180812T182110 (example)
+
+
+## Other useful RS data sources
+
+### Earth Explorer
+ESA has Sentinel-2, NASA has Landsat. However Landsat has a lower spatial resolution of 30m compared to the 10m of Sentinel-2 and Sentinel 2 has more spectral bands, Landsat imagery is probably the most used EO-data in science. This is because the Landsat program is the longest-running Earth Observation program of the entire Earth. Landsat-1 was already launched on July 23, 1972 resulting. Due to this difference, Landsat is on this moment more useful for historic land-change assessments than Sentinel-2 (launched in 2015).
+
+Landsat data is also freely avaible to the public. For this, the United States Geological Survey  has created a data portal with extensive collections of EO data, with Landsat satellite imagery, Radar data, UAS data, digital line graphs, digital elevation model data, aerial photos, Sentinel satellite data, ...
+
+Link: [earthexplorer.usgs.gov](http://earthexplorer.usgs.gov)
+
+### Other data sources
+Following website contains a nice overview of online free EO data sources:
+[https://www.geoawesomeness.com/list-of-top-10-sources-of-free-remote-sensing-data/](https://www.geoawesomeness.com/list-of-top-10-sources-of-free-remote-sensing-data/)
