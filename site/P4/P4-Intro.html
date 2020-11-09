@@ -1,0 +1,846 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Introductie tot Earth Engine - Teledetectie 2020</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#de-google-earth-engine-interface" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Teledetectie 2020
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Introductie tot Earth Engine
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../index.html" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../P3-intro.html" class="md-tabs__link">
+          Practicum 3
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P4-Goals.html" class="md-tabs__link md-tabs__link--active">
+          Practicum 4
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Teledetectie 2020" class="md-nav__button md-logo" aria-label="Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    Teledetectie 2020
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Practicum 3
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Practicum 3" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Practicum 3
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-intro.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-Sentinel2.html" class="md-nav__link">
+      Sentinel-2 intro and download
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-Snap-intro.html" class="md-nav__link">
+      Introduction to SNAP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-colour-composites.html" class="md-nav__link">
+      RGB colour composites
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-image-preprocessing.html" class="md-nav__link">
+      Image preprocessing in SNAP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-colour-composites-ctd.html" class="md-nav__link">
+      RGB colour composites 2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Practicum 4
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Practicum 4" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Practicum 4
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Goals.html" class="md-nav__link">
+      Doel van het practicum
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introductie tot Earth Engine
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="P4-Intro.html" class="md-nav__link md-nav__link--active">
+      Introductie tot Earth Engine
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-google-earth-engine-interface" class="md-nav__link">
+    De Google Earth Engine Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earth-engine-code-javascript-101" class="md-nav__link">
+    Earth Engine code: Javascript 101
+  </a>
+  
+    <nav class="md-nav" aria-label="Earth Engine code: Javascript 101">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hello-world" class="md-nav__link">
+    "Hello World"
+  </a>
+  
+    <nav class="md-nav" aria-label=""Hello World"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-print-functie" class="md-nav__link">
+    De 'print'-functie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functies" class="md-nav__link">
+    Functies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lijsten" class="md-nav__link">
+    Lijsten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objecten" class="md-nav__link">
+    Objecten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifieke-earth-engine-begrippen" class="md-nav__link">
+    Specifieke Earth Engine begrippen
+  </a>
+  
+    <nav class="md-nav" aria-label="Specifieke Earth Engine begrippen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eething" class="md-nav__link">
+    ee.Thing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeimages" class="md-nav__link">
+    ee.Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeimagecollections" class="md-nav__link">
+    ee.ImageCollections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-ImageVisualization.html" class="md-nav__link">
+      Satellietdata oproepen, filteren en visualiseren
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Reducing.html" class="md-nav__link">
+      Reducing ImageCollections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Cloud_masking.html" class="md-nav__link">
+      Cloud masking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-google-earth-engine-interface" class="md-nav__link">
+    De Google Earth Engine Interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#earth-engine-code-javascript-101" class="md-nav__link">
+    Earth Engine code: Javascript 101
+  </a>
+  
+    <nav class="md-nav" aria-label="Earth Engine code: Javascript 101">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hello-world" class="md-nav__link">
+    "Hello World"
+  </a>
+  
+    <nav class="md-nav" aria-label=""Hello World"">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-print-functie" class="md-nav__link">
+    De 'print'-functie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functies" class="md-nav__link">
+    Functies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lijsten" class="md-nav__link">
+    Lijsten
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objecten" class="md-nav__link">
+    Objecten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifieke-earth-engine-begrippen" class="md-nav__link">
+    Specifieke Earth Engine begrippen
+  </a>
+  
+    <nav class="md-nav" aria-label="Specifieke Earth Engine begrippen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eething" class="md-nav__link">
+    ee.Thing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeimages" class="md-nav__link">
+    ee.Images
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eeimagecollections" class="md-nav__link">
+    ee.ImageCollections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Introductie tot Earth Engine</h1>
+                
+                <h2 id="de-google-earth-engine-interface">De Google Earth Engine Interface</h2>
+<p align="center">
+  <img src="images/GEE_interface.JPG" width="700">  <br>
+  <em> The Google Earth Engine code editor interface. </em>
+</p>
+
+<p>De interface van de Earth Engine code editor is op zich vrij simpel. Er kunnen 5 grote blokken onderscheden worden:</p>
+<ol>
+<li>Het linkerpaneel, met 3 tabs:  <ol>
+<li><strong>Scripts</strong>: je eigen bibliotheek met scripts, onder te verdelen in repositories, folders en scripts. Ook de scripts waar je schrijf- en leesrechten hebt kun je hierin terugvinden.  </li>
+<li><strong>Docs</strong>: Bevat informatie over de functies die beschikbaar zijn in Earth Engine. Hier kun je snel de functionaliteiten en beschrijving van de input- en outputparameters terugvinden.  </li>
+<li><strong>Assets</strong>: oplijsting met de 'assets' die je opgeladen/aangemaakt hebt in Earth Engine. Assets kunnen rasters of vectoren (met bijvoorbeeld trainingsdata of studiegebied).   </li>
+</ol>
+</li>
+<li>
+<p>De <strong>code editor</strong> zelf in het middenpaneel, waar je scripts kunt aanmaken/bewerken, delen en opslaan. </p>
+</li>
+<li>
+<p>Het rechterpaneel, met 3 tabs:  </p>
+<ol>
+<li>De <strong>Console</strong>: waar eventuele output of foutmeldingen naar geschreven worden. de 'print()'-functie wordt steeds gebruikt om hier informatie te bekijken.  </li>
+<li>De <strong>Inspector</strong>: hiermee kun je op specifieke pixels in de 'map view' klikken, waarna de overeenkomstige pixelinformatie wordt gevisualiseerd.</li>
+<li>De <strong>Tasks</strong>: bevat een oplijsting van de 'exports' die in het script werden aangemaakt (als je bijvoorbeeld een satellietbeeld naar je Google Drive wenst te sturen). Een export moet hier steeds nog manueel gestart worden.</li>
+</ol>
+</li>
+<li>
+<p>De <strong>Map View</strong>: waar het beeldmateriaal wordt gevisualiseerd.</p>
+</li>
+<li>
+<p>De <strong>zoekfunctie</strong> waarmee beeldmateriaal beschikbaar binnen de Google Cloud kan worden opgezocht.</p>
+</li>
+</ol>
+<h2 id="earth-engine-code-javascript-101">Earth Engine code: Javascript 101</h2>
+<p>Google Earth Engine maakt voor zijn code-editor gebruik van Javascript als programmeertaal, maar om vertrouwd te geraken met GEE hoef je geen Javascript-expert te worden. GEE gebruikt namelijk hoofdzakelijk eigen 'classes' en functionaliteiten, waardoor je slechts een basiskennis javascript nodig hebt. </p>
+<p>Daarom starten we eerst met een spoedcursus Javascript, waarop we onze verdere 'Earth Engine'-magie kunnen bouwen. </p>
+<h3 id="hello-world">"Hello World"</h3>
+<h4 id="de-print-functie">De 'print'-functie</h4>
+<p>Zoals gebruikelijk is bij het leren van een programmeertaal, groeten we de wereld met ons eerste lijntje code.<br />
+•   Open https://code.earthengine.google.com/, en voeg volgend lijntje toe aan het nieuwe script. 
+•   Klik daarna op ‘Run’/</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">//Printen van Hello World</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</code></pre></div>
+Proficiat! Het eerste scriptje is geschreven. Hiermee heb je onmiddellijk ook een eerste uitermate handige functie gezien. De ‘print’-functie kun je gebruiken om bepaalde informatie naar de Console te schrijven, zoals metadata, ... .<br />
+Verder valt hieruit ook op te merken dat een dubbele voorwaartse <strong>slash '//</strong>' gebruikt wordt om notities te nemen binnen de code.</p>
+<h4 id="strings">Strings</h4>
+<p>Proficiat! Het eerste scriptje is geschreven. Laat ons deze string nu onderbrengen in een variabele. In Javascript dient een variabele altijd geïniteerd te worden met ‘var’ statement. Indien je dit zou weglaten, zal je op een 'error' stoten.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">aString</span> <span class="o">=</span> <span class="s1">&#39;Hello World&#39;</span>
+<span class="nx">print</span><span class="p">(</span><span class="nx">aString</span><span class="p">)</span>
+</code></pre></div>
+<p>Om het type van de variabele aString te bekijken, kun je dit oproepen met de functie ‘typeof()’-statement:</p>
+<div class="highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="nx">aString</span><span class="p">))</span>
+</code></pre></div>
+<h4 id="functies">Functies</h4>
+<p>In een volgende stap maken we een <strong>functie</strong> aan, waarbij je een string naar keuze kunt groeten. Een functie in Google Earth Engine ziet er uit volgens volgende opbouw:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">functienaam</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">inputvariabelen</span><span class="p">)</span> <span class="p">{</span>
+<span class="c1">//Hier de functie-bewerkingen</span>
+<span class="c1">//output = a + b</span>
+<span class="nx">Return</span>  <span class="nx">output</span>
+<span class="p">};</span>
+</code></pre></div>
+<h4 id="lijsten">Lijsten</h4>
+<p>Een lijst in Javascript wordt steeds opgegeven met [ en ]. Een lijstindex begint steeds vanaf '0', waarbij de eerste waarde dus op positie 0 staat.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">lievelingsnummers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">27</span><span class="p">]</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Eerste lievelingsnummer in de lijst = &#39;</span><span class="p">,</span> <span class="nx">lievelingsnummer</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
+
+<span class="c1">//Lijstelementen aanpassen</span>
+<span class="kd">var</span> <span class="nx">automerken</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;BMW&quot;</span><span class="p">,</span><span class="s2">&quot;Volkswagen&quot;</span><span class="p">,</span><span class="s2">&quot;Minerva&quot;</span><span class="p">]</span>
+<span class="kd">var</span> <span class="nx">automerken</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Opel&quot;</span><span class="p">]</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="nx">automerken</span><span class="p">)</span>
+</code></pre></div>
+<h4 id="objecten">Objecten</h4>
+<p>Een Object wordt aangegeven met '{' en '}'. Aan een object hangen steeds enkele variabelen die tot het object behoren.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//object</span>
+<span class="kd">var</span> <span class="nx">dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">Sensor</span><span class="o">:</span> <span class="s2">&quot;Sentinel 2&quot;</span> 
+  <span class="nx">Regios</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Belgium&quot;</span><span class="p">,</span><span class="s2">&quot;France&quot;</span><span class="p">,</span><span class="s2">&quot;Vaticano&quot;</span><span class="p">]</span>
+  <span class="nx">Aantal</span> <span class="nx">beelden</span><span class="o">:</span> <span class="mf">2</span>
+  <span class="mf">1</span><span class="o">:</span> <span class="s2">&quot;Ja&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Om een eigenschap van een object op te roepen, wordt stees een puntje '.' gebruikt: object.eigenschap. Indien we bijvoorbeeld de sensor van ons aangemaakte beeldmateriaal willen nagaan:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Sensor bekijken</span>
+<span class="nx">print</span><span class="p">(</span><span class="nx">beelden</span><span class="p">.</span><span class="nx">Sensor</span><span class="p">)</span>
+
+<span class="c1">// Andere methode via []</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Regios: &#39;</span><span class="p">,</span> <span class="nx">dict</span><span class="p">[</span><span class="s1">&#39;Regios&#39;</span><span class="p">])</span>
+</code></pre></div>
+<h2 id="specifieke-earth-engine-begrippen">Specifieke Earth Engine begrippen</h2>
+<h3 id="eething">ee.Thing</h3>
+<h3 id="eeimages">ee.Images</h3>
+<h3 id="eeimagecollections">ee.ImageCollections</h3>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="P4-Goals.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Vorige
+                </span>
+                Doel van het practicum
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="P4-ImageVisualization.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Volgende
+                </span>
+                Satellietdata oproepen, filteren en visualiseren
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.sections', 'navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
