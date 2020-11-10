@@ -10,6 +10,7 @@ nav:
       - RGB colour composites 2: P3-colour-composites-ctd.md
     - Practicum 4:
       - Doel van het practicum: P4/P4-Goals.md
+      - EarthEngine data catalog: P4/P4-DataCatalog.md
       - Introductie tot Earth Engine: P4/P4-Intro.md
       - Satellietdata oproepen, filteren en visualiseren: P4/P4-ImageVisualization.md
       - Reducing ImageCollections: P4/P4-Reducing.md

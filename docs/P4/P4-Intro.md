@@ -26,7 +26,7 @@ De interface van de Earth Engine code editor is op zich vrij simpel. Er kunnen 5
 
 ## Earth Engine code: Javascript 101
 
-Google Earth Engine maakt voor zijn code-editor gebruik van Javascript als programmeertaal, maar om vertrouwd te geraken met GEE hoef je geen Javascript-expert te worden. GEE gebruikt namelijk hoofdzakelijk eigen 'classes' en functionaliteiten, waardoor je slechts een basiskennis javascript nodig hebt. 
+Google Earth Engine maakt voor zijn code-editor gebruik van Javascript als programmeertaal, maar om vertrouwd te geraken met GEE hoef je geen Javascript-expert te worden. GEE gebruikt namelijk hoofdzakelijk eigen 'classes' en functionaliteiten, waardoor je slechts een basiskennis javascript nodig hebt.  
 
 Daarom starten we eerst met een spoedcursus Javascript, waarop we onze verdere 'Earth Engine'-magie kunnen bouwen. 
 
@@ -35,27 +35,30 @@ Daarom starten we eerst met een spoedcursus Javascript, waarop we onze verdere '
 #### De 'print'-functie
 
 Zoals gebruikelijk is bij het leren van een programmeertaal, groeten we de wereld met ons eerste lijntje code.  
-•	Open https://code.earthengine.google.com/, en voeg volgend lijntje toe aan het nieuwe script. 
-•	Klik daarna op ‘Run’/
+  
+  * Open [https://code.earthengine.google.com/](https://code.earthengine.google.com/), en voeg volgend lijntje toe aan het nieuwe script. 
 
 ```javascript
 //Printen van Hello World
 print('Hello World')
 ```
-Proficiat! Het eerste scriptje is geschreven. Hiermee heb je onmiddellijk ook een eerste uitermate handige functie gezien. De ‘print’-functie kun je gebruiken om bepaalde informatie naar de Console te schrijven, zoals metadata, ... .  
+Klik daarna op 'Run'. Proficiat! Het eerste scriptje is geschreven. Hiermee heb je onmiddellijk ook een eerste uitermate handige functie gezien. De ‘print’-functie kun je gebruiken om bepaalde informatie naar de Console te schrijven, zoals metadata, ... .  
+
 Verder valt hieruit ook op te merken dat een dubbele voorwaartse **slash '//**' gebruikt wordt om notities te nemen binnen de code.
 
 #### Strings
-Proficiat! Het eerste scriptje is geschreven. Laat ons deze string nu onderbrengen in een variabele. In Javascript dient een variabele altijd geïniteerd te worden met ‘var’ statement. Indien je dit zou weglaten, zal je op een 'error' stoten.
+Proficiat! Het eerste scriptje is geschreven. Laat ons deze string nu onderbrengen in een variabele. In Javascript dient een variabele altijd geïniteerd te worden met ```var``` statement. Indien je dit zou weglaten, zal je op een 'error' stoten.
 
 ```javascript
+//Aanmaken van de variabele 'aString'
 var aString = 'Hello World'
 print(aString)
 ```
 
-Om het type van de variabele aString te bekijken, kun je dit oproepen met de functie ‘typeof()’-statement:
+Om het datatype van de variabele ```aString``` na te gaan, kun je dit oproepen met de functie ‘typeof()’-statement:
 
 ```javascript
+// Type van de variabele aString naar de Console schrijven
 print(typeof(aString))
 ```
 
@@ -68,6 +71,22 @@ var functienaam = function(inputvariabelen) {
 //output = a + b
 Return  output
 };
+```
+Bijvoorbeeld:
+
+```javascript
+//Hello Function:
+var hello_function = function(String) {
+   var goeindag = 'Hello ' + String
+   return goeindag
+};
+
+//Functie uitvoeren:
+var hallo = hello_function('Boerekot');
+print(hallo)
+
+//Variabelen aangemaakt binnen de functie worden enkel daar gebruikt:
+print(goeindag)
 ```
 
 #### Lijsten
@@ -104,19 +123,24 @@ Om een eigenschap van een object op te roepen, wordt stees een puntje '.' gebrui
 // Sensor bekijken
 print(beelden.Sensor)
 
-// Andere methode via []
+// Andere methode via haakjes []
 print('Regios: ', dict['Regios'])
 ```
 
 
-## Specifieke Earth Engine begrippen
+## Specifieke Earth Engine objecten
 
 ### ee.Thing
 
+Om objecten/elementen/processen richting de google server te sturen, wordt gebruik gemaakt van zogenaamde 'containers'. Om dit aan te duiden wordt gebruik gemaakt van een ee.Thing structuur. Dit zal doorheen de komende practica wat duidelijker worden.
+
 ### ee.Images
+
+Een ```Image``` is rasterdata bestaande uit één of meerdere banden, waarvan elke band een eigen naam, datatype, resolutie en projectie heeft. Een enkel Sentinel-2 beeld zoals in Practicum 3 gedownload werd, zal als één ```Image``` kunnen worden opgeslagen.
+
+Om een Image in te laden en Earth Engine wordt gebruik gemaakt van ```ee.Image```. In volgend hoofdstuk wordt dit geïllustreerd. 
 
 ### ee.ImageCollections
 
-
-
+Een ```ImageCollection``` is een collectie van meerdere ```Image```'s, zoals bijvoorbeeld de volledige Sentinel-2 collectie. Het bevat m.a.w. heel wat beelden die in een bepaalde volgorde gesorteerd zijn. Standaard is dit o.b.v. datum, maar aangepaste sorteringen zijn eveneens mogelijk, zoals we in een komende oefening gaan zien.
 

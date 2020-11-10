@@ -13,7 +13,7 @@
     
     
       
-        <title>P4 DataCatalog - Teledetectie 2020</title>
+        <title>EarthEngine data catalog - Teledetectie 2020</title>
       
     
     
@@ -89,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              P4 DataCatalog
+              EarthEngine data catalog
             
           </span>
         </div>
@@ -136,14 +136,16 @@
         
           
 
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../index.html" class="md-tabs__link md-tabs__link--active">
+      <a href="../index.html" class="md-tabs__link">
         Home
       </a>
     
@@ -168,7 +170,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="P4-Goals.html" class="md-tabs__link">
+        <a href="P4-Goals.html" class="md-tabs__link md-tabs__link--active">
           Practicum 4
         </a>
       
@@ -316,10 +318,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Practicum 4
@@ -342,6 +346,52 @@
     <a href="P4-Goals.html" class="md-nav__link">
       Doel van het practicum
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        EarthEngine data catalog
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="P4-DataCatalog.html" class="md-nav__link md-nav__link--active">
+      EarthEngine data catalog
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-earth-engine-data-catalog" class="md-nav__link">
+    De Earth Engine Data Catalog
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -439,11 +489,11 @@
               
                 
                 
-                  <h1>P4 DataCatalog</h1>
+                  <h1>EarthEngine data catalog</h1>
                 
                 <h3 id="de-earth-engine-data-catalog">De Earth Engine Data Catalog</h3>
 <p>Om het aanbod aan Aardobservatie-data in GEE te bekijken en te doorzoeken, kan gebruik gemaakt worden van de Data Catalog: <a href="https://developers.google.com/earth-engine/datasets">https://developers.google.com/earth-engine/datasets</a>. Via deze catalogus kun je eenvoudig rasterdata allerhande opzoeken en de noodzakelijke code om de beelden in je script te importeren vinden.</p>
-<p>Voor deze voorbeeldoefening maken we gebruik van Landsat-data. Zoek in de Earth Engine Data Catalog naar een geschikte Landsat datacollectie, dat het jaar 2020 omvat. In Earth Engine zijn Landsatbeelden eerste instantie opgedeeld op basis van de uitgevoerde correcties (<em>'Surface reflectance'</em>, <em>'Top-Of-Atmosphere'</em>, <em>'Raw Images'</em>), anderzijds op basis van de kwaliteit:  </p>
+<p>In de komende voorbeeldoefening maken we gebruik van Landsat-data. Zoek in de Earth Engine Data Catalog naar een geschikte Landsat datacollectie, dat het jaar 2020 omvat. In Earth Engine zijn Landsatbeelden eerste instantie opgedeeld op basis van de uitgevoerde correcties (<em>'Surface reflectance'</em>, <em>'Top-Of-Atmosphere'</em>, <em>'Raw Images'</em>), anderzijds op basis van de kwaliteit:  </p>
 <p align="center">
   <img src="images/Landsat_GEE_Quality.JPG" width="700">  <br>
 </p>
@@ -478,6 +528,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="P4-Goals.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Vorige
+                </span>
+                Doel van het practicum
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="P4-Intro.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Volgende
+                </span>
+                Introductie tot Earth Engine
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

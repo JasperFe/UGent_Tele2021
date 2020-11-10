@@ -2,7 +2,7 @@
 
 Om het aanbod aan Aardobservatie-data in GEE te bekijken en te doorzoeken, kan gebruik gemaakt worden van de Data Catalog: [https://developers.google.com/earth-engine/datasets](https://developers.google.com/earth-engine/datasets). Via deze catalogus kun je eenvoudig rasterdata allerhande opzoeken en de noodzakelijke code om de beelden in je script te importeren vinden.
 
-Voor deze voorbeeldoefening maken we gebruik van Landsat-data. Zoek in de Earth Engine Data Catalog naar een geschikte Landsat datacollectie, dat het jaar 2020 omvat. In Earth Engine zijn Landsatbeelden eerste instantie opgedeeld op basis van de uitgevoerde correcties (*'Surface reflectance'*, *'Top-Of-Atmosphere'*, *'Raw Images'*), anderzijds op basis van de kwaliteit:  
+In de komende voorbeeldoefening maken we gebruik van Landsat-data. Zoek in de Earth Engine Data Catalog naar een geschikte Landsat datacollectie, dat het jaar 2020 omvat. In Earth Engine zijn Landsatbeelden eerste instantie opgedeeld op basis van de uitgevoerde correcties (*'Surface reflectance'*, *'Top-Of-Atmosphere'*, *'Raw Images'*), anderzijds op basis van de kwaliteit:  
 
 <p align="center">
   <img src="images/Landsat_GEE_Quality.JPG" width="700">  <br>
