@@ -15,6 +15,9 @@ nav:
       - Satellietdata oproepen, filteren en visualiseren: P4/P4-ImageVisualization.md
       - Reducing ImageCollections: P4/P4-Reducing.md
       - Cloud masking: P4/P4-Cloud_masking.md
+    - Practicum 5:
+      - Intro: P5/P5-Intro.md
+      - Spectrale indices: P5/P5-Spectral_indices.md
 
 theme:
   name: material
@@ -31,9 +34,15 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.highlight
   - attr_list
+  - mdx_math
 
 plugins:
   - search
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
 
 use_directory_urls: false
