@@ -67,7 +67,7 @@ In wat volgt gaan we op basis van een locatie op zoek gaan naar geschikte satell
 
 Starten doen we met het intekenen van een gewenste *Area Of Interest* (AOI) in de Map View. Een AOI is niets anders dan de afbakening van het studiegebied, waarbinnen we onze data wensen te verkrijgen.  
 
-Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": ![](Images/GEE_knoppen.jpg){: style="height:25px"}.  
+Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": ![](images/GEE_knoppen.jpg){: style="height:25px"}.  
 
 In dit voorbeeld kiezen we voor de Konigin der badsteden, Oostende, als studiegebied:
 
@@ -78,7 +78,7 @@ In dit voorbeeld kiezen we voor de Konigin der badsteden, Oostende, als studiege
 Automatisch wordt een nieuwe variabele aangemaakt onder de naam 'geometry', welke eenvoudig hernoemd kan worden naar een eenvoudig te gebruiken variabelenaam: 
 
 <p align="center">
-  <img src="images/Ostend_polygon.JPG" width="400">  <br>
+  <img src="images/Ostend_Polygon.JPG" width="400">  <br>
 </p> 
 
 Bekijk de eigenschappen van de polygoon door het naar de console te printen:
@@ -146,7 +146,7 @@ Bekijk het beeld. Wat valt je op? Wordt het volledige gebied bedekt?
 
 ```javascript
 //Sorteren van de collectie obv cloud cover
-var L8_sortedCC = L8.sort('CLOUD_COVER',ascending=TRUE);
+var L8_sortedCC = L8.sort('CLOUD_COVER',true);
 Map.addLayer(L8_sortedCC.first(), trueColor, 'Least Cloud cover 2020')
 
 ```
@@ -159,7 +159,7 @@ Map.addLayer(L8_sortedCC.first(), trueColor, 'Least Cloud cover 2020')
 Bekijk op welke dag de sensor dit beeld heeft genomen. Gebruik hiervoor de ‘inspector’ om de beeldeigenschappen verder te bekijken.
 
 <p align="center">
-  <img src="images/inspector.JPG" width="500">  <br>
+  <img src="images/Inspector.JPG" width="500">  <br>
   <em> De inspector </em>
 </p>  
 

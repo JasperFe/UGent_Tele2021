@@ -2,7 +2,7 @@
 ## De Google Earth Engine Interface
 
 <p align="center">
-  <img src="images/GEE_interface.JPG" width="700">  <br>
+  <img src="./images/GEE_interface.JPG" width="700">  <br>
   <em> The Google Earth Engine code editor interface. </em>
 </p> 
 
@@ -94,11 +94,11 @@ Een lijst in Javascript wordt steeds opgegeven met [ en ]. Een lijstindex begint
 
 ```javascript
 var lievelingsnummers = [8,6,3,27]
-print('Eerste lievelingsnummer in de lijst = ', lievelingsnummer[0])
+print('Eerste lievelingsnummer in de lijst = ', lievelingsnummers[0])
 
 //Lijstelementen aanpassen
 var automerken = ["BMW","Volkswagen","Minerva"]
-var automerken[2] = ["Opel"]
+automerken[2] = ["Opel"]
 
 print(automerken)
 
@@ -109,10 +109,10 @@ Een Object wordt aangegeven met '{' en '}'. Aan een object hangen steeds enkele 
 
 ```javascript
 //object
-var dict = {
-  Sensor: "Sentinel 2" 
-  Regios: ["Belgium","France","Vaticano"]
-  Aantal beelden: 2
+var beelden = {
+  Sensor: "Sentinel 2", 
+  Regios: ["Belgium","France","Vaticano"],
+  Aantalbeelden: 2,
   1: "Ja"
 }
 ```
@@ -124,7 +124,7 @@ Om een eigenschap van een object op te roepen, wordt stees een puntje '.' gebrui
 print(beelden.Sensor)
 
 // Andere methode via haakjes []
-print('Regios: ', dict['Regios'])
+print('Regios: ', beelden['Regios'])
 ```
 
 
