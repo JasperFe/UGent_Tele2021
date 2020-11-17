@@ -469,6 +469,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    OPDRACHT
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -615,6 +622,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    OPDRACHT
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -647,7 +661,7 @@
 <p><strong> Voor Sentinel 2 </strong>: <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR">https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR</a> ). </p>
 </blockquote>
 <p>Voor Landsat 8 wordt dit bijgevolg:</p>
-<div class="highlight"><pre><span></span><code><span class="nx">L8</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">filterMetadata</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span> <span class="s1">&#39;less_than&#39;</span><span class="p">,</span> <span class="mf">30</span><span class="p">)</span> 
+<p><div class="highlight"><pre><span></span><code><span class="nx">L8</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">filterMetadata</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span> <span class="s1">&#39;less_than&#39;</span><span class="p">,</span> <span class="mf">30</span><span class="p">)</span> 
 
 <span class="kd">function</span> <span class="nx">maskL8sr</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// Bits 3 and 5 are cloud shadow and cloud, respectively.</span>
@@ -664,6 +678,9 @@
 <span class="c1">// Pas de functie over elk beeld binnen de collectie toe:</span>
 <span class="nx">L8_masked</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskL8sr</span><span class="p">);</span>
 </code></pre></div>
+Resulterend is een ImageCollectie met dezelfde beelden, maar waaruit de wolken gemaskeerd zijn (mask toegepast). Echter kunnen wel sommige wolkenranden nog zichtbaar zijn, die de mask-functies hebben gemist.</p>
+<h2 id="opdracht">OPDRACHT</h2>
+<p>Maak de L8_masked collectie aan, en neem hiervan een .median() reducer. Visualiseer dit beeld. Merk je een verbetering in vergelijking met de voorgande .median()-gereduceerde beelden, zonder de <em>cloudmask</em>?</p>
 <div class="admonition info">
 <p class="admonition-title">De .map()-functie</p>
 <p>In bovenstaand voorbeeld werd de cloudmask-functie toegepast door gebruik te maken van <code>.map()</code>. D <code>.map()</code> wordt steeds gebruikt om een functie (die op afzonderlijke beelden dient toegepast te worden, zoals <code>maskL8sr</code>) toe te passen over elk beeld binnen een ImageCollection afzonderlijk. Het is als het ware een veel efficiënte manier dan de aangemaakte functie te itereren via een for-loop.</p>

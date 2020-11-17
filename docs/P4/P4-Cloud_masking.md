@@ -47,6 +47,12 @@ function maskL8sr(image) {
 // Pas de functie over elk beeld binnen de collectie toe:
 L8_masked = L8.map(maskL8sr);
 ```
+Resulterend is een ImageCollectie met dezelfde beelden, maar waaruit de wolken gemaskeerd zijn (mask toegepast). Echter kunnen wel sommige wolkenranden nog zichtbaar zijn, die de mask-functies hebben gemist.
+
+
+## OPDRACHT
+Maak de L8_masked collectie aan, en neem hiervan een .median() reducer. Visualiseer dit beeld. Merk je een verbetering in vergelijking met de voorgande .median()-gereduceerde beelden, zonder de *cloudmask*?
+
 
 !!! info "De .map()-functie"
     In bovenstaand voorbeeld werd de cloudmask-functie toegepast door gebruik te maken van ```.map()```. D ```.map()``` wordt steeds gebruikt om een functie (die op afzonderlijke beelden dient toegepast te worden, zoals ```maskL8sr```) toe te passen over elk beeld binnen een ImageCollection afzonderlijk. Het is als het ware een veel efficiënte manier dan de aangemaakte functie te itereren via een for-loop.
