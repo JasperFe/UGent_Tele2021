@@ -4,7 +4,7 @@
 In dit proces wordt een beeldcomposiet aangemaakt van de beschikbare beelden in de collectie, waarbij per pixel een bepaalde vooropgestelde waarde wordt gekozen, zoals het min, max, gemiddelde, mediaan,… De collectie wordt als het ware 'gereduceerd' tot één enkel visualiseerbaar beeld.
 
 <p align="center">
-  <img src="images/reducer_image.png" width="200">  <br>
+  <img src="images/Reducer_image.png" width="200">  <br>
   <em> Reducing an ImageCollection: principe. </em>
 </p>  
 

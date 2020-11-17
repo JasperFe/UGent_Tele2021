@@ -597,7 +597,7 @@ Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald 
 <p>In wat volgt gaan we op basis van een locatie op zoek gaan naar geschikte satellietbeelden, door het filteren van gehele beeldcollecties.</p>
 <h3 id="area-of-interest-aoi">Area of Interest (AOI)</h3>
 <p>Starten doen we met het intekenen van een gewenste <em>Area Of Interest</em> (AOI) in de Map View. Een AOI is niets anders dan de afbakening van het studiegebied, waarbinnen we onze data wensen te verkrijgen.  </p>
-<p>Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": <img alt="" src="Images/GEE_knoppen.jpg" style="height:25px" />.  </p>
+<p>Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": <img alt="" src="images/GEE_knoppen.jpg" style="height:25px" />.  </p>
 <p>In dit voorbeeld kiezen we voor de Konigin der badsteden, Oostende, als studiegebied:</p>
 <p align="center">
   <img src="images/Oostende_polygon.JPG" width="1000">  <br>
@@ -605,7 +605,7 @@ Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald 
 
 <p>Automatisch wordt een nieuwe variabele aangemaakt onder de naam 'geometry', welke eenvoudig hernoemd kan worden naar een eenvoudig te gebruiken variabelenaam: </p>
 <p align="center">
-  <img src="images/Ostend_polygon.JPG" width="400">  <br>
+  <img src="images/Ostend_Polygon.JPG" width="400">  <br>
 </p>
 
 <p>Bekijk de eigenschappen van de polygoon door het naar de console te printen:</p>
@@ -652,7 +652,7 @@ Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald 
 <p>Mogelijk is dit eerste beeld niet het meest ideale wat betreft de wolkbedekking, waardoor er weinig te zien valt. Laten we nu op zoek gaan naar het beeld met de laagste wolkenbedekking binnen de collectie. Dit doen we in eerste instantie door de collectie te sorteren volgens het percentage cloudcover, wat standaard tot de metadata van een Landsatbeeld behoort.
 Bekijk het beeld. Wat valt je op? Wordt het volledige gebied bedekt?</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Sorteren van de collectie obv cloud cover</span>
-<span class="kd">var</span> <span class="nx">L8_sortedCC</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span><span class="nx">ascending</span><span class="o">=</span><span class="nx">TRUE</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">L8_sortedCC</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
 <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L8_sortedCC</span><span class="p">.</span><span class="nx">first</span><span class="p">(),</span> <span class="nx">trueColor</span><span class="p">,</span> <span class="s1">&#39;Least Cloud cover 2020&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p align="center">
@@ -662,7 +662,7 @@ Bekijk het beeld. Wat valt je op? Wordt het volledige gebied bedekt?</p>
 
 <p>Bekijk op welke dag de sensor dit beeld heeft genomen. Gebruik hiervoor de ‘inspector’ om de beeldeigenschappen verder te bekijken.</p>
 <p align="center">
-  <img src="images/inspector.JPG" width="500">  <br>
+  <img src="images/Inspector.JPG" width="500">  <br>
   <em> De inspector </em>
 </p>
 

@@ -683,7 +683,7 @@
                 
                 <h2 id="de-google-earth-engine-interface">De Google Earth Engine Interface</h2>
 <p align="center">
-  <img src="images/GEE_interface.JPG" width="700">  <br>
+  <img src="./images/GEE_interface.JPG" width="700">  <br>
   <em> The Google Earth Engine code editor interface. </em>
 </p>
 
@@ -762,21 +762,21 @@ Bijvoorbeeld:</p>
 <h4 id="lijsten">Lijsten</h4>
 <p>Een lijst in Javascript wordt steeds opgegeven met [ en ]. Een lijstindex begint steeds vanaf '0', waarbij de eerste waarde dus op positie 0 staat.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">lievelingsnummers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">8</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">3</span><span class="p">,</span><span class="mf">27</span><span class="p">]</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Eerste lievelingsnummer in de lijst = &#39;</span><span class="p">,</span> <span class="nx">lievelingsnummer</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Eerste lievelingsnummer in de lijst = &#39;</span><span class="p">,</span> <span class="nx">lievelingsnummers</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span>
 
 <span class="c1">//Lijstelementen aanpassen</span>
 <span class="kd">var</span> <span class="nx">automerken</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;BMW&quot;</span><span class="p">,</span><span class="s2">&quot;Volkswagen&quot;</span><span class="p">,</span><span class="s2">&quot;Minerva&quot;</span><span class="p">]</span>
-<span class="kd">var</span> <span class="nx">automerken</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Opel&quot;</span><span class="p">]</span>
+<span class="nx">automerken</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Opel&quot;</span><span class="p">]</span>
 
 <span class="nx">print</span><span class="p">(</span><span class="nx">automerken</span><span class="p">)</span>
 </code></pre></div>
 <h4 id="objecten">Objecten</h4>
 <p>Een Object wordt aangegeven met '{' en '}'. Aan een object hangen steeds enkele variabelen die tot het object behoren.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//object</span>
-<span class="kd">var</span> <span class="nx">dict</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">Sensor</span><span class="o">:</span> <span class="s2">&quot;Sentinel 2&quot;</span> 
-  <span class="nx">Regios</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Belgium&quot;</span><span class="p">,</span><span class="s2">&quot;France&quot;</span><span class="p">,</span><span class="s2">&quot;Vaticano&quot;</span><span class="p">]</span>
-  <span class="nx">Aantal</span> <span class="nx">beelden</span><span class="o">:</span> <span class="mf">2</span>
+<span class="kd">var</span> <span class="nx">beelden</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">Sensor</span><span class="o">:</span> <span class="s2">&quot;Sentinel 2&quot;</span><span class="p">,</span> 
+  <span class="nx">Regios</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;Belgium&quot;</span><span class="p">,</span><span class="s2">&quot;France&quot;</span><span class="p">,</span><span class="s2">&quot;Vaticano&quot;</span><span class="p">],</span>
+  <span class="nx">Aantalbeelden</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
   <span class="mf">1</span><span class="o">:</span> <span class="s2">&quot;Ja&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -785,7 +785,7 @@ Bijvoorbeeld:</p>
 <span class="nx">print</span><span class="p">(</span><span class="nx">beelden</span><span class="p">.</span><span class="nx">Sensor</span><span class="p">)</span>
 
 <span class="c1">// Andere methode via haakjes []</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Regios: &#39;</span><span class="p">,</span> <span class="nx">dict</span><span class="p">[</span><span class="s1">&#39;Regios&#39;</span><span class="p">])</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Regios: &#39;</span><span class="p">,</span> <span class="nx">beelden</span><span class="p">[</span><span class="s1">&#39;Regios&#39;</span><span class="p">])</span>
 </code></pre></div>
 <h2 id="specifieke-earth-engine-objecten">Specifieke Earth Engine objecten</h2>
 <h3 id="eething">ee.Thing</h3>
