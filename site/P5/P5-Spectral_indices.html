@@ -905,8 +905,8 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <p>De basisoperators maken gebruik van 2 inputs: ofwel 2 beelden, ofwel 1 beeld en 1 constante. De bewerkingen worden steeds per pixel en per band uitgevoerd. Voorbeeld van operatoren zijn  <code>add()</code>, <code>subtract()</code> en <code>divide()</code>. </p>
 <div class="highlight"><pre><span></span><code><span class="c1">//NDVI berekenen aan de hand van bandwerkingen met operatoren</span>
 <span class="c1">// Lange uitwerking: noodzakelijke banden eerst selecteren en onderbrengen in een nieuwe variabele</span>
-<span class="kd">var</span> <span class="nx">nir</span> <span class="o">=</span> <span class="nx">S2_Gent_lente2019</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B5&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">S2_Gent_lente2019</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nir</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">ndvi2</span> <span class="o">=</span> <span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
 <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,</span> <span class="nx">ndviParams</span><span class="p">,</span> <span class="s1">&#39;ndvi via operatoren&#39;</span><span class="p">);</span>
 </code></pre></div>
@@ -914,10 +914,10 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <h3 id="bewerkingen-via-expressies">Bewerkingen via expressies</h3>
 <p>Het spreekt voor zich dat bovenstaande methode voor complex wiskundige bewerkingen niet handig is. Voor dergelijke bewerkingen wordt aangeraden om gebruik te maken van <code>image.expression()</code>, gezien de inputvariabelen hier afzonderlijk worden aangegeven, waardoor de bewerking gemakkelijker wordt weergegeven en het coderen zo vereenvoudigd wordt. De expressie aanvaardt tevens ook constanten. Variabelen die binnen de expressie worden gebruikt, moeten steeds worden aangegeven, zoals in onderstaande NDVI-berekening;</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//NDVI aan de hand van een expressie</span>
-  <span class="kd">var</span> <span class="nx">ndvi3</span> <span class="o">=</span> <span class="nx">S2_Gent_lente2019</span><span class="p">.</span><span class="nx">expression</span><span class="p">(</span>
+  <span class="kd">var</span> <span class="nx">ndvi3</span> <span class="o">=</span> <span class="nx">SS2_Gent_Lente19</span><span class="p">.</span><span class="nx">expression</span><span class="p">(</span>
       <span class="s1">&#39;(NIR - RED)/(NIR + RED)&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="s1">&#39;NIR&#39;</span><span class="o">:</span> <span class="nx">S2_Gent_lente2019</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;RED&#39;</span><span class="o">:</span> <span class="nx">S2_Gent_lente2019</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">)</span>
+        <span class="s1">&#39;NIR&#39;</span><span class="o">:</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;RED&#39;</span><span class="o">:</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">)</span>
   <span class="p">});</span>
 </code></pre></div>
 <p>Ook hier is het resultaat hetzelfde als de vorige ndvi-berekeningen.</p>

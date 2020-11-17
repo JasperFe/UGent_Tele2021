@@ -104,8 +104,8 @@ De basisoperators maken gebruik van 2 inputs: ofwel 2 beelden, ofwel 1 beeld en 
 ```Javascript
 //NDVI berekenen aan de hand van bandwerkingen met operatoren
 // Lange uitwerking: noodzakelijke banden eerst selecteren en onderbrengen in een nieuwe variabele
-var nir = S2_Gent_lente2019.select('B5');
-var red = S2_Gent_lente2019.select('B4');
+var nir = S2_Gent_Lente19.select('B8');
+var red = S2_Gent_Lente19.select('B4');
 var ndvi2 = nir.subtract(red).divide(nir.add(red)).rename('NDVI');
 Map.addLayer(ndvi, ndviParams, 'ndvi via operatoren');
 
@@ -118,10 +118,10 @@ Het spreekt voor zich dat bovenstaande methode voor complex wiskundige bewerking
 
 ```Javascript
 //NDVI aan de hand van een expressie
-  var ndvi3 = S2_Gent_lente2019.expression(
+  var ndvi3 = SS2_Gent_Lente19.expression(
       '(NIR - RED)/(NIR + RED)', {
-        'NIR': S2_Gent_lente2019.select('B8'),
-        'RED': S2_Gent_lente2019.select('B4')
+        'NIR': S2_Gent_Lente19.select('B8'),
+        'RED': S2_Gent_Lente19.select('B4')
   });
 ```
 
