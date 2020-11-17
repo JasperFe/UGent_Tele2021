@@ -200,6 +200,8 @@ var ndviParams = {
 };
 ```
 
+!!! check "Oplossing Oefening NDVI per seizoen"
+    Via deze link: [https://code.earthengine.google.com/fce277391bc08be0dc867bb972e890f6?noload=true](https://code.earthengine.google.com/fce277391bc08be0dc867bb972e890f6?noload=true)
 
 ### EXTRA OEF 2-  De *Enhanced Vegetation Index* (EVI): 
 De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of     ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd     ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  
