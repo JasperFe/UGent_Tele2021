@@ -107,7 +107,7 @@ De basisoperators maken gebruik van 2 inputs: ofwel 2 beelden, ofwel 1 beeld en 
 var nir = S2_Gent_Lente19.select('B8');
 var red = S2_Gent_Lente19.select('B4');
 var ndvi2 = nir.subtract(red).divide(nir.add(red)).rename('NDVI');
-Map.addLayer(ndvi, ndviParams, 'ndvi via operatoren');
+Map.addLayer(ndvi2, ndviParams, 'ndvi via operatoren');
 
 ```
 
