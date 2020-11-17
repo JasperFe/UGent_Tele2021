@@ -700,7 +700,7 @@
 
     <span class="kd">var</span> <span class="nx">means</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">constant</span><span class="p">(</span><span class="nx">meanDict</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">bandNames</span><span class="p">));</span>
     <span class="nx">print</span><span class="p">(</span><span class="nx">means</span><span class="p">,</span> <span class="s1">&#39;Gemiddeldes per band&#39;</span><span class="p">)</span>
-    <span class="kd">var</span> <span class="nx">centered</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">means</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">centered</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">means</span><span class="p">);</span>
     <span class="nx">print</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="s1">&#39;Mean centered Image&#39;</span><span class="p">)</span>
 </code></pre></div>
 6. Vervolgens kunnen we de PCA-functie toepassen</p>
@@ -708,13 +708,13 @@
   <span class="kd">var</span> <span class="nx">pcaImage</span> <span class="o">=</span> <span class="nx">getPrincipalComponents</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="nx">scale</span><span class="p">,</span> <span class="nx">region</span><span class="p">);</span>
 
 <span class="c1">//Bekijken van pcaImage</span>
-<span class="nx">print</span><span class="p">(</span><span class="nx">pcaImage</span><span class="p">)</span>
+<span class="c1">//print(pcaImage)</span>
 </code></pre></div>
 7. De resulterende <code>Image</code> , <strong>pcaImage</strong> is een beeld met als banden de berekende principale componenten. Via een <code>for</code>-lus kunnen we elk deze banden ook in 1x plotten naar de MA</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Plot each PC as a new layer</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">bandNames</span><span class="p">.</span><span class="nx">length</span><span class="p">().</span><span class="nx">getInfo</span><span class="p">();</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="kd">var</span> <span class="nx">band</span> <span class="o">=</span> <span class="nx">pcImage</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">().</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">getInfo</span><span class="p">();</span>
-      <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">pcImage</span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="nx">band</span><span class="p">]),</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">2</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">2</span><span class="p">},</span> <span class="nx">band</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">band</span> <span class="o">=</span> <span class="nx">pcaImage</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">().</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">getInfo</span><span class="p">();</span>
+      <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">pcaImage</span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="nx">band</span><span class="p">]),</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">2</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">2</span><span class="p">},</span> <span class="nx">band</span><span class="p">);</span>
     <span class="p">}</span>
 </code></pre></div>
 <p>Resultaten:</p>

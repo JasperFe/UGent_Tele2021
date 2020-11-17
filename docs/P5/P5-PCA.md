@@ -114,7 +114,7 @@ var getNewBandNames = function(prefix) {
 
     var means = ee.Image.constant(meanDict.values(bandNames));
     print(means, 'Gemiddeldes per band')
-    var centered = image.subtract(means);
+    var centered = S2_Belem.subtract(means);
     print(centered, 'Mean centered Image')
 ``` 
 6. Vervolgens kunnen we de PCA-functie toepassen
@@ -124,15 +124,15 @@ var getNewBandNames = function(prefix) {
   var pcaImage = getPrincipalComponents(centered, scale, region);
 
 //Bekijken van pcaImage
-print(pcaImage)
+//print(pcaImage)
 ```
 7. De resulterende ```Image``` , **pcaImage** is een beeld met als banden de berekende principale componenten. Via een ```for```-lus kunnen we elk deze banden ook in 1x plotten naar de MA
 
 ```javascript
 // Plot each PC as a new layer
     for (var i = 0; i < bandNames.length().getInfo(); i++) {
-      var band = pcImage.bandNames().get(i).getInfo();
-      Map.addLayer(pcImage.select([band]), {min: -2, max: 2}, band);
+      var band = pcaImage.bandNames().get(i).getInfo();
+      Map.addLayer(pcaImage.select([band]), {min: -2, max: 2}, band);
     }
 ```
 
