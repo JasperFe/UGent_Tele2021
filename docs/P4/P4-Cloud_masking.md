@@ -45,7 +45,7 @@ function maskL8sr(image) {
 }
 
 // Pas de functie over elk beeld binnen de collectie toe:
-L8_masked = L8.map(maskL8sr);
+var L8_masked = L8.map(maskL8sr);
 ```
 Resulterend is een ImageCollectie met dezelfde beelden, maar waaruit de wolken gemaskeerd zijn (mask toegepast). Echter kunnen wel sommige wolkenranden nog zichtbaar zijn, die de mask-functies hebben gemist.
 
