@@ -135,3 +135,20 @@ print(pcaImage)
       Map.addLayer(pcImage.select([band]), {min: -2, max: 2}, band);
     }
 ```
+
+Resultaten:
+
+<p align="center">
+<img src="Images/GEE_PCA_1.JPG">  <br>
+<em> Principale Component 1 </em>
+</p> 
+
+<p align="center">
+<img src="Images/GEE_PCA_2.JPG">  <br>
+<em> Principale Component 2 </em>
+</p> 
+
+<p align="center">
+<img src="Images/GEE_PCA_3.JPG">  <br>
+<em> Principale Component 3 </em>
+</p> 
