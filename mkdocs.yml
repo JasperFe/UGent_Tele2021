@@ -18,6 +18,9 @@ nav:
     - Practicum 5:
       - Intro: P5/P5-Intro.md
       - Spectrale indices: P5/P5-Spectral_indices.md
+      - Beeldstatistieken: P5/P5-ImageStatistics.md
+      - Textuuranalyse: P5/P5-Texture.md
+      - Principale componenten analyse: P5/P5-PCA.md
 
 theme:
   name: material

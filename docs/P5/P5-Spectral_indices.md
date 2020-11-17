@@ -6,7 +6,7 @@
 
 De meest gebruikte index is de **Normalized Difference Vegatation Index (NDVI)**, en wordt berekend als:
 
-$$NDVI = { IR - RED \over IR + RED}.$$
+$$NDVI = { NIR - RED \over NIR + RED}.$$
 
 Waarbij:  
 NIR = reflectie in het nabij-infrarode gebied van het spectrum (oftwel Near-Infrared)  
@@ -90,6 +90,7 @@ In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starte
     |       Large values (0.6 to 0.8)     |     temperate and tropical forests    |
 
 
+
 ## Band Math (bandbewerkingen)
 
 Bandbewerkingen kunnen worden gebruikt om een nieuw beeld aan te maken van de reeds bestaande banden. Het berekenen van indices zoals de NDVI, is al een treffend voorbeeld hiervan. Andere mogelijkheden zijn ratio’s, het verschil van 2 beelden op 2 verschillende tijdstippen om mogelijke veranderingen visueel te benadrukken, …
@@ -133,8 +134,74 @@ Ook hier is het resultaat hetzelfde als de vorige ndvi-berekeningen.
     <img src="Images/GEE_operators.JPG">  <br>
     </p>
 
+
+## Andere indices
+Naast de NDVI bestaan er nog een heleboel andere indices, elk met een eigen toepassing.
+
+### De Normalized Difference Water Index (NDWI)
+Er bestaan 2 indices met de naam 'NDWI', beiden gerelateerd aan water:
+
+1. De *NDWI* ontwikkeld door [Gao (1996)](https://www.sciencedirect.com/science/article/pii/S0034425796000673), als index voor het watergehalte van vegetatie. De Index is gebaseerd op de NIR (gevoelig voor vegetatie) en SWIR (gevoelig voor water) banden:
+
+$$NDWI = { NIR - SWIR \over NIR + SWIR}.$$
+
+2. De *NDWI* ontwikkeld door [McFeeters (1996)](https://www.tandfonline.com/doi/abs/10.1080/01431169608948714), als index voor het verscherpen van verschillen in waterlichamen;
+
+$$NDWI = { GREEN - NIR \over GREEN + NIR}.$$
+
+!!! note "Opdracht NDWI"
+    Test beide NDWI-indices uit op het Sentinel-beeld van de Gentse Haven en omstreken. Bekijk de verschillen. Kijk hiervoor zeker naar naburige natuurgebieden en waterplassen.
+
 ## Opdrachten
-### De *Enhanced Vegetation Index* (EVI): 
+
+### NDVI voor elk seizoen
+
+1. Maak een wolkenvrije beeldencollectie aan (via 30%-'CLOUDY_PIXEL_PERCENTAGE'-filter + een cloudmask toepassen) aan van de regio Durbuy binnen volgende periodes. Gebruik onderstaande Cloudmask-functie:  
+
+```javascript
+   function maskS2clouds(image) {
+     var qa = image.select('QA60');
+
+     // Bits 10 and 11 are clouds and cirrus, respectively.
+     var cloudBitMask = 1 << 10;
+     var cirrusBitMask = 1 << 11;
+
+     // Both flags should be set to zero, indicating clear conditions.
+     var mask = qa.bitwiseAnd(cloudBitMask).eq(0)
+       .and(qa.bitwiseAnd(cirrusBitMask).eq(0));
+
+     return image.updateMask(mask);
+    }
+```  
+2. Maak een functie aan om de NDVI te berekenen. Laat de functie dan los op de Imagecollectie via ```.map()```.  
+
+
+3. Maak aan de hand van de collectie 3 beelden aan met een ```median()```-reducer, binnen volgende periodes:  
+
+     A. Jan-Februari (Winter)  
+     B. April-Mei (Lente)  
+     C. Juli-Augustus (Zomer)  
+
+4. Visualiseer voor elk seizoen een Normale Kleurencomposiet en een NDVI-beeld. Gebruik onderstaande visualisatieparameters bij het plotten:
+
+```javascript
+//Visualisatieparameters instellen
+var NormaleKleuren = {
+  min: 0,
+  max: 1500,
+  bands: ['B4', 'B3', 'B2'],
+};
+
+var ndviParams = {
+  min: 0,
+  max: 1,
+  bands: ['NDVI'],
+  palette: ['red','yellow','darkgreen']
+};
+```
+
+
+### EXTRA OEF 2-  De *Enhanced Vegetation Index* (EVI): 
 De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of     ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd     ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  
 
  * EVI is gevoeliger voor gebieden met hogere biomassa
@@ -150,4 +217,71 @@ $$EVI = G * {NIR - R \over NIR + C1 * RED – C2*BLUE + L}.$$
 Voor Sentinel 2, wordt deze formule:
 $$EVI_{S2} = 2.5 * {B8 - B4 \over B8 + 6 * B4 – 7.5*B2 + 1}.$$
 
+## EXTRA: Toevoegen van een legende
+
+Om een overzichtelijke legende toe te voegen aan je kaart, kun je onderstaande code gebruiken. Hiermee voeg je een legendepaneel toe voor continue ndvi-data. 
+
+```javascript
+//-------------------------
+/* LEGENDE TOEVOEGEN */
+//-------------------------
+
+// set position of panel
+var legend = ui.Panel({
+  style: {
+    position: 'bottom-left',
+    padding: '8px 15px'
+  }
+});
+ 
+// Create legend title
+var legendTitle = ui.Label({
+  value: 'ndvi',
+  style: {
+    fontWeight: 'bold',
+    fontSize: '18px',
+    margin: '0 0 4px 0',
+    padding: '0'
+    }
+});
+
+ // Add the title to the panel
+legend.add(legendTitle); 
+
+// create the legend image
+var lon = ee.Image.pixelLonLat().select('latitude');
+var gradient = lon.multiply((ndviParams.max-ndviParams.min)/100.0).add(ndviParams.min);
+var legendImage = gradient.visualize(ndviParams);
+
+// create text on top of legend
+var panel = ui.Panel({
+    widgets: [
+      ui.Label(ndviParams['max'])
+    ],
+  });
+
+legend.add(panel);
+  
+// create thumbnail from the image
+var thumbnail = ui.Thumbnail({
+  image: legendImage, 
+  params: {bbox:'0,0,10,100', dimensions:'10x200'},  
+  style: {padding: '1px', position: 'bottom-center'}
+});
+
+// add the thumbnail to the legend
+legend.add(thumbnail);
+
+
+// create text on top of legend
+var panel = ui.Panel({
+    widgets: [
+      ui.Label(ndviParams['min'])
+    ],
+  });
+
+legend.add(panel);
+
+Map.add(legend);
+```
 
