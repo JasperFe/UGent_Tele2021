@@ -1,26 +1,30 @@
 site_name: Teledetectie 2020
 nav:
     - Home: index.md
-    - Practicum 3: 
+    - P3 Beeldvoorbewerking: 
       - Introduction: P3-intro.md
       - Sentinel-2 intro and download: P3-Sentinel2.md
       - Introduction to SNAP: P3-Snap-intro.md
       - RGB colour composites: P3-colour-composites.md
       - Image preprocessing in SNAP: P3-image-preprocessing.md
       - RGB colour composites 2: P3-colour-composites-ctd.md
-    - Practicum 4:
+    - P4 Intro tot Google Earth Engine:
       - Doel van het practicum: P4/P4-Goals.md
       - EarthEngine data catalog: P4/P4-DataCatalog.md
       - Introductie tot Earth Engine: P4/P4-Intro.md
       - Satellietdata oproepen, filteren en visualiseren: P4/P4-ImageVisualization.md
       - Reducing ImageCollections: P4/P4-Reducing.md
       - Cloud masking: P4/P4-Cloud_masking.md
-    - Practicum 5:
+    - P5 - Feature Extraction:
       - Intro: P5/P5-Intro.md
       - Spectrale indices: P5/P5-Spectral_indices.md
       - Beeldstatistieken: P5/P5-ImageStatistics.md
       - Textuuranalyse: P5/P5-Texture.md
       - Principale componenten analyse: P5/P5-PCA.md
+    - P6 - Beeldclassificatie:
+      - Intro: P6/P6-Classificatie
+      - Niet-gesuperviseerde classificatie
+      - Gesuperviseerde classificatie
 
 theme:
   name: material
