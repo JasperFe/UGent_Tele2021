@@ -22,9 +22,10 @@ nav:
       - Textuuranalyse: P5/P5-Texture.md
       - Principale componenten analyse: P5/P5-PCA.md
     - P6 - Beeldclassificatie:
-      - Intro: P6/P6-Classificatie
-      - Niet-gesuperviseerde classificatie
-      - Gesuperviseerde classificatie
+      - Intro: P6/P6-intro.md
+      - Niet-gesuperviseerde classificatie: P6/P6-Unsupervised.md
+      - Gesuperviseerde classificatie: P6/P6-Supervised.md
+      - Verbeteren van de classificatie: P6/P6-Improvement.md
 
 theme:
   name: material

@@ -621,6 +621,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#supergeviseerde-vs-niet-gesuperviseerde-classifiers" class="md-nav__link">
+    Supergeviseerde vs niet-gesuperviseerde classifiers
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -639,7 +646,55 @@
 <h2 id="beeldclassificatie-introductie">Beeldclassificatie: introductie</h2>
 <p>Beeldclassificatie (engels <em>Image Classification</em>) is de (complexe) procedure waarbij een multiband rasterbeeld wordt ingedeeld in klassen om hieruit spatiale informatie te ontrekken. Het is wellicht de meest belangrijke handeling bij digitale beeldanalyse. Het resulterende beeld kan gebruikt worden om thematische kaarten aan te maken.  </p>
 <p>Gedurende de classificatie worden pixels ingedeeld in groepen, op basis van hun gemeenschappelijke karakteristieken. Er bestaan twee grote groepen van classificatiemethoden: <em>Supervised</em> of gesuperviseerde en <em>Unsupervised</em> of niet-gesuperviseerde classificatie.</p>
-<p>In een <strong>niet-gesuperviseerde</strong> classificatie deelt de computer pixels in die spectraal gezien gelijkend zijn aan elkaar in een aantal klassen. Dit aantal kan op voorhand worden vastgelegd, of in de classificatieprocedure worden bepaald.</p>
+<p>In een <strong>niet-gesuperviseerde</strong> classificatie deelt de computer pixels in die spectraal gezien gelijkend zijn aan elkaar in een aantal klassen. Dit aantal kan op voorhand worden vastgelegd, of in de classificatieprocedure worden bepaald. Belangrijk is dat de analyse wordt uitgevoerd zonder dat de gebruiker hiervoor voorbeeldklassen of trainingsdata als input moet voorzien. De enige noodzakelijke input door de gebruiker betreft de keuze van het algoritme en eventueel het aantal gewenste resulterende klasses. </p>
+<p>In een <strong>gesuperviseerde</strong> classificatie wordt de classifier <em>getrained</em> op basis van enkele voorbeeldklassen of <em>training data</em>. Nieuwe, ongeklasseerde data wordt dan aan het algoritme voorgelegd, die dit dan op basis van het getrainde algoritme gaat indelen. In een finale stap wordt dan een andere portie van gekende data, de <em>validatiedata</em>, gebruikt om de accuraatheid (<em>accuracy</em>) van de classificatie kwantitatief te bepalen. In dit type classificatie is het aantal resulturende klassen eveneens bepaald op basis van het aantal klassen meegegeven tijdens het trainen van de data.</p>
+<h2 id="supergeviseerde-vs-niet-gesuperviseerde-classifiers">Supergeviseerde vs niet-gesuperviseerde classifiers</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Niet-gesuperviseerde classificatie</th>
+<th>Gesuperviseerde classificatie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Er is geen voorkennis nodig van het gebied.</td>
+<td>De trainingsklassen komen overeen met de eigenlijke landbekking</td>
+</tr>
+<tr>
+<td>+</td>
+<td>Minimale input van menselijke fouten</td>
+<td>Trainingdata is herbruikbaar, tenzij de landbedekking verandert.</td>
+</tr>
+<tr>
+<td></td>
+<td>Gemakkelijk uit te voeren</td>
+<td>Resultaat is meteen bruikbaar, gezien de klassen gekend zijn.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>De resulterende klassen komen niet per sé overeen met gewenste landbekkingsklassen</td>
+<td>De opgegeven klassen komen niet altijd overeen met de spectrale klassen</td>
+</tr>
+<tr>
+<td>-</td>
+<td>Spatiale relaties of spatiale context wordt niet meegenomen in de data</td>
+<td>Zekerheid/consistentie is niet over alle klassen gelijk</td>
+</tr>
+<tr>
+<td></td>
+<td>Interpretatie kan moeilijk zijn</td>
+<td>Verzamelen van (voldoende) trainingdata kost moeite, geld en tijd</td>
+</tr>
+</tbody>
+</table>
                 
               
               
