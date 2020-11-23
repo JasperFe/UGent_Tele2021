@@ -298,5 +298,23 @@ print('Validation error matrix: ', ErrorMatrix_MinDist);
 print('Validation overall accuracy: ', ErrorMatrix_MinDist.accuracy());
 ```
 
+## Exporteren van de Error Matrix
+In Google Earth Engine is de weergave van de error matrix niet zo handig. Om verdere accuraatheidsmaten uit te rekenen en een betere interpretatie te kunnen uitvoeren kan het handig zijn om de error matrix te exporteren als een .csv-bestand, dewelke in andere software (zoals excel) geopend kan worden. 
+
+Met de ```Export.table.toDrive()```-functie kunnen we de matrix exporteren naar onze Google Drive. Hiervoor dienen we dit eerst om te zetten naar een *feature*.
+
+
+```javascript
+//Omzetten naar een Feature
+var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array()}); 
+   
+//Exporteren van de errormatrix
+  Export.table.toDrive({
+      collection: ee.FeatureCollection(ErrorMatrix_MinDist),
+      description: 'P6_Errormatrix',
+      fileFormat: 'CSV',
+      folder: 'TELEDETECTIE_2020'
+    });
+```
 
 
