@@ -1,14 +1,14 @@
-site_name: Teledetectie 2020
+site_name: (I002450) Practica Teledetectie 2020
 nav:
     - Home: index.md
-    - P3 Beeldvoorbewerking: 
+    - P3 - Beeldvoorbewerking: 
       - Introduction: P3-intro.md
       - Sentinel-2 intro and download: P3-Sentinel2.md
       - Introduction to SNAP: P3-Snap-intro.md
       - RGB colour composites: P3-colour-composites.md
       - Image preprocessing in SNAP: P3-image-preprocessing.md
       - RGB colour composites 2: P3-colour-composites-ctd.md
-    - P4 Intro tot Google Earth Engine:
+    - P4 - Intro tot Google Earth Engine:
       - Doel van het practicum: P4/P4-Goals.md
       - EarthEngine data catalog: P4/P4-DataCatalog.md
       - Introductie tot Earth Engine: P4/P4-Intro.md
