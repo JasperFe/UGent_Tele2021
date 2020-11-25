@@ -4,7 +4,7 @@ Wolkbedekking is een grote barrière tijdens het analyseren en processen van (sp
 
 Earth engine bevat naast deze standaard ‘cloud masks’ ook eigen algoritmes om de wolken en wolkschaduw te verwijderen uit het beeld, maar bevat ook enkele andere mogelijkheden om de aanwezigheid ervan veel mogelijk te minimaliseren zoals het toepassen van reducties op beeldcollecties.
 
-### 1) Filteren van de ImageCollection op wolkbedekking
+### 1 Filteren van de ImageCollection op wolkbedekking
 
 Een eerste optie is om een beeldcollectie te filteren (zie [voorgaand](P4-ImageVisualization.md#datacollecties-filteren-en-visualiseren)) op wolkbedekking, waardoor enkel de beelden binnen een paalde range van wolkenpercentages worden weerhouden:
 
@@ -19,7 +19,7 @@ L8 = L8.filterMetadata('CLOUD_COVER', 'less_than', 30)
     De functie ```.filterMetadata()``` wordt gebruikt om te filteren op eender welke Metadata-eigenschap dat een beeld bevat. Gebruik de **Docs** om het gebruik van deze functie verder te bekijken.
 
 
-### 2) Cloud Masking optie 1
+### 2 Cloud Masking met Cloudmasks
 Als 2e stap kunnen de overgebleven wolken/wolkschaduwen per beeld worden ‘geknipt’ (cloudmask) door deze pixels naar een waarde 0 om te zetten. Een standaard algoritme is bij de meeste beelden reeds gegeven als voorbeeld onderaan in de catalogus:  
 
 > ** Voor Landsat-8 **: [https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR)    
@@ -56,3 +56,8 @@ Maak de L8_masked collectie aan, en neem hiervan een .median() reducer. Visualis
 
 !!! info "De .map()-functie"
     In bovenstaand voorbeeld werd de cloudmask-functie toegepast door gebruik te maken van ```.map()```. D ```.map()``` wordt steeds gebruikt om een functie (die op afzonderlijke beelden dient toegepast te worden, zoals ```maskL8sr```) toe te passen over elk beeld binnen een ImageCollection afzonderlijk. Het is als het ware een veel efficiënte manier dan de aangemaakte functie te itereren via een for-loop.
+
+## EXTRA: Sentinel-2 Cloud Masking optie 2 met S2Cloudless
+??? warning "Betekening EXTRA"
+    Onderstaande Sentinel-2 cloudmask-procedure is ter aanvulling van bovenstaande principes. Er kan voor komende oefeningen/ het praktisch examen met van beide procedures gebruikt worden, dus zoals wat in [Cloud Masking met Cloudmasks](#2-Cloud-Masking-met-Cloudmasks) werd gebruikt.
+

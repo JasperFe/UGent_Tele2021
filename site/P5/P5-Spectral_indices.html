@@ -433,6 +433,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
+      (Extra) Oefeningen
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -587,13 +599,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#extra-oef-2-de-enhanced-vegetation-index-evi" class="md-nav__link">
-    EXTRA OEF 2-  De Enhanced Vegetation Index (EVI):
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -645,6 +650,18 @@
   <li class="md-nav__item">
     <a href="P5-PCA.html" class="md-nav__link">
       Principale componenten analyse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5-Oefeningen.html" class="md-nav__link">
+      Oefeningen
     </a>
   </li>
 
@@ -731,6 +748,18 @@
   <li class="md-nav__item">
     <a href="../P6/P6-Improvement.html" class="md-nav__link">
       Verbeteren van de classificatie
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-SpectralResponse_oud.html" class="md-nav__link">
+      Spectrale responsiecurves
     </a>
   </li>
 
@@ -839,13 +868,6 @@
           <li class="md-nav__item">
   <a href="#ndvi-voor-elk-seizoen" class="md-nav__link">
     NDVI voor elk seizoen
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#extra-oef-2-de-enhanced-vegetation-index-evi" class="md-nav__link">
-    EXTRA OEF 2-  De Enhanced Vegetation Index (EVI):
   </a>
   
 </li>
@@ -1094,21 +1116,6 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <p class="admonition-title">Oplossing Oefening NDVI per seizoen</p>
 <p>Via deze link: <a href="https://code.earthengine.google.com/fce277391bc08be0dc867bb972e890f6?noload=true">https://code.earthengine.google.com/fce277391bc08be0dc867bb972e890f6?noload=true</a></p>
 </div>
-<h3 id="extra-oef-2-de-enhanced-vegetation-index-evi">EXTRA OEF 2-  De <em>Enhanced Vegetation Index</em> (EVI):</h3>
-<p>De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of     ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd     ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  </p>
-<ul>
-<li>EVI is gevoeliger voor gebieden met hogere biomassa</li>
-<li>EVI reduceert de invloed van de atmosferische condities</li>
-<li>EVI corrigeert de <em>‘canopy background noise’</em>, die bij NDVI voorkomt</li>
-</ul>
-<p>De EVI wordt berekend als volgt:</p>
-<p>
-<script type="math/tex; mode=display">EVI = G * {NIR - R \over NIR + C1 * RED – C2*BLUE + L}.</script>
-</p>
-<p>(waarbij <script type="math/tex">G</script>: een versterkende constante, <script type="math/tex">C1,C2</script> coëfficienten en <script type="math/tex">L</script> een <em>‘canopy background adjusment factor’</em>) </p>
-<p>Voor Sentinel 2, wordt deze formule:
-<script type="math/tex; mode=display">EVI_{S2} = 2.5 * {B8 - B4 \over B8 + 6 * B4 – 7.5*B2 + 1}.</script>
-</p>
 <h2 id="extra-toevoegen-van-een-legende">EXTRA: Toevoegen van een legende</h2>
 <p>Om een overzichtelijke legende toe te voegen aan je kaart, kun je onderstaande code gebruiken. Hiermee voeg je een legendepaneel toe voor continue ndvi-data. </p>
 <div class="highlight"><pre><span></span><code><span class="c1">//-------------------------</span>

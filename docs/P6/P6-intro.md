@@ -4,8 +4,6 @@
 
 In dit practicum verdiepen we ons in het proces van de beeldclassificatie, waarbij manieren om remote sensing beelden te vertalen in landgebruikskaarten. Als voorbeeld nemen we een classificatie van mangroves.
 
-## CASESTUDIE: Mangrovecover mapping in Suriname.
-
 ## Beeldclassificatie: introductie
 
 Beeldclassificatie (Engels: *'Image Classification'*) is de (complexe) procedure waarbij een multiband rasterbeeld wordt ingedeeld in klassen om hieruit spatiale informatie te ontrekken. Het is wellicht de meest belangrijke handeling bij digitale beeldanalyse. Het resulterende beeld kan gebruikt worden om thematische kaarten aan te maken.  

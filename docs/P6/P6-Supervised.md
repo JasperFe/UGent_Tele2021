@@ -126,6 +126,11 @@ Map.addLayer(S2_im,{min:500,max:4000,bands:'B8,B11,B2'},'Healthy_Vegetation_2020
   <img src="images/GEE_Class_imports.JPG">  <br>
 </p> 
 
+<p align="center">
+  <img src="images/GEE_importAsset.jpg" width=300>  <br>
+ <em> Voorbeeld trainingsamples voor Mangrove </em>
+</p> 
+
 
 * Nu de 5 klassen aangemaakt zijn, dienen we ze samen te vatten als een complete trainingsset in earth engine; een gezamenlijke ```FeatureCollection```, waarbij de 'class'-*property* wordt overgenomen.
 
@@ -155,33 +160,6 @@ print('Aantal trainingspixels: ',traindata.size());
 print(traindata.first()) //Eerste waarde bekijken,
 ```
 
-## Traindata opsplitsen in training- en validatiedata
-Voordat we onze data gebruiken om het model te trainen, splitsen we het in trainings en validatiedata. Daarnaast wordt er vak nog gebruik gemaakt van een derde, volledig afzonderlijke dataset: de **testdataset**.  In veel gevallen, zoals in komend voorbeeld, wordt de validatieset ook gebruikt als testdataset, maar dit is statistisch gezien niet de beste praktijk. 
-
-<p align="center">
-  <img src="images/Train_Val_Test.png">  <br>
-</p> 
-
-
-> **Traindata**= de data gebruikt om het model te trainen en dus te *fitten*. Het model bekijkt en leert van deze data.
-
-> **Validatiedata**= Het deel van de data dat gebruikt zal worden om na te gaan hoe goed het model werkt op onbekende data. Dit deel zal dus niet gebruikt worden om het model te trainen. Hierdoor kunnen verschillende classificatiemodellen en parameters binnen het model tegenover elkaar worden afgewogen en het model zo worden geperfectioneerd. Dit wordt ook wel *parameter tuning* genoemd. Validatiedata wordt dus gebruikt tijdens de ontwikkeling en het zoeken van het beste model. Aangezien deze data van dezelfde dataset komt treedt er *spatiale autocorrelatie* op, waarbij de validatiepixels veelal buurpixels zijn van trainpixels.
-
-> **Testdata** = Deze afzonderlijke dataset wordt gebruikt om bij een finaal model accuraatheidsmaten van de bekomen classificatie te berekenen. Testdatasets worden meestal ook zeer goed verzorgd en zijn goed verzamelde (veld)datapunten. De *spatiale autocorrelatie* vervalt hier.
-
-In Earth Engine splitsen we onze dataset dus op in train (80%)- en validatiedata (20%). Om dit op een *random* manier te doen, voegen we eerst een *random*-kolom (via ```randomColumn```) toe aan de dataset, waarmee we de dataset zullen splitsen.
-
-```javascript
-// 3. Opsplitsen en train- en validatiedata
-//Toevoegen kolom met random waarden tussen 0 en 1
-var traindata = traindata.randomColumn();
-
-//opsplitsen in training en validatiedata adhv de random kolom 
-var training = traindata.filterMetadata('random', 'less_than', 0.8);
-var validation = traindata.filterMetadata('random', 'greater_than', 0.8)
-print(training.size(),'Training size')
-```
-
 
 ## De classifier trainen
 In een volgende stap maken we een classificatiemodel aan en trainen we deze op basis van de traindata. Er bestaan verschillende mogelijke classifiers en 'machine learning'-algoritmen. In Google Earth Engine zitten deze beschikbaar in de ```ee.Classifier```-groep. We gebruiken er 3, waarna we kijken dewelke tot de meest accurate classificatie leidt o.b.v. de validatiedata.
@@ -195,7 +173,7 @@ In een eerste instantie dienen we de classifier te trainen, op basis van de opge
 //4. De classifiers trainen en toepassen
    // A. Minimum Distance classifier (gebruik van default-waarde 'euclidische afstand')
     var MinDist = ee.Classifier.minimumDistance().train({
-      features: training,
+      features: traindata,
       classProperty: 'class',
       inputProperties: bands //verwijzing naar de eerder aangemaakte bands-lijst
     });
@@ -208,7 +186,7 @@ In een eerste instantie dienen we de classifier te trainen, op basis van de opge
 ```javascript
 // B. CART classifier
     var Cart = ee.Classifier.smileCart().train({
-      features: training,
+      features: traindata,
       classProperty: 'class',
       inputProperties: bands //verwijzing naar de eerder aangemaakte bands-lijst
     });
@@ -217,9 +195,11 @@ In een eerste instantie dienen we de classifier te trainen, op basis van de opge
 ### Random Forest classifier
 
 ```javascript
-// B. CART classifier
-    var Cart = ee.Classifier.smileCart().train({
-      features: training,
+ // C. Random Forest
+    var RandomForest = ee.Classifier.smileRandomForest({
+      numberOfTrees: 60
+    }).train({
+      features: traindata,
       classProperty: 'class',
       inputProperties: bands //verwijzing naar de eerder aangemaakte bands-lijst
     });
@@ -260,14 +240,34 @@ Bij het visualiseren willen we een visueel overzichtelijk resultaat krijgen. Aan
 
 ## Accuracy assessment
 
-In de *accuracy assessment* gaan we de accuraatheid van het model nagaan. Dit doen we o.b.v. een **error matrix**. Dit doen we aan de hand van onze validatie dataset als een externe testset. Deze set bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.
+In de *accuracy assessment* gaan we de accuraatheid van het model nagaan. Dit doen we o.b.v. een **error matrix**. Om deze op te stellen hebben we nood aan testdata.
+
+## Training- Validation en Testdata
+Voordat we onze data gebruiken om het model te trainen, splitsen we het in trainings en validatiedata. Daarnaast wordt er vak nog gebruik gemaakt van een derde, volledig afzonderlijke dataset: de **testdataset**.  In veel gevallen, zoals in komend voorbeeld, wordt de validatieset ook gebruikt als testdataset, maar dit is statistisch gezien niet de beste praktijk. 
+
+<p align="center">
+  <img src="images/Train_Val_Test.png">  <br>
+</p> 
+
+
+> **Traindata**= de data gebruikt om het model te trainen en dus te *fitten*. Het model bekijkt en leert van deze data.
+
+> **Validatiedata**= Het deel van de data dat gebruikt zal worden om na te gaan hoe goed het model werkt op onbekende data. Dit deel zal dus niet gebruikt worden om het model te trainen. Hierdoor kunnen verschillende classificatiemodellen en parameters binnen het model tegenover elkaar worden afgewogen en het model zo worden geperfectioneerd. Dit wordt ook wel *parameter tuning* genoemd. Validatiedata wordt dus gebruikt tijdens de ontwikkeling en het zoeken van het beste model. Aangezien deze data van dezelfde dataset komt treedt er *spatiale autocorrelatie* op, waarbij de validatiepixels veelal buurpixels zijn van trainpixels.
+
+> **Testdata** = Deze afzonderlijke dataset wordt gebruikt om bij een finaal model accuraatheidsmaten van de bekomen classificatie te berekenen. Testdatasets worden meestal ook zeer goed verzorgd en zijn goed verzamelde (veld)datapunten. De *spatiale autocorrelatie* vervalt hier.
+
+In voorliggend voorbeeld maken we gebruik van een extra testdataset. Gezien we geen optimalisatie van parameters gaan doorvoeren, maken we geen gebruik van validatiedata en wordt de volledige trainingscollectie trainingsdata.
+
+
+
+Dit doen we aan de hand van onze validatie dataset als een externe testset. Deze set bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.
 
 Je kunt de shape-file hier downloaden: <a href="P6_testdata_poly.zip" download>P6_testdata (shapefile)</a>
 
 Om deze toe te voegen aan Earth Engine, laad je deze op via de 'Asset'-tab. Daarna kun je het importeren als een ```FeatureCollection``` in je script. Noem dit 'Testdata_pol'. Bekijk ook even deze polygonen. Onder welke *property* zitten de klassen hier opgeslagen?
 
 <p align="center">
-  <img src="images/GEE_importAsset.JPG" width=300>  <br>
+  <img src="images/GEE_importAsset.jpg" width=300>  <br>
 </p> 
 
 Vervolgens extraheren we de pixelwaarden op basis van deze testpolygonen, net zoals we dit gedaan hebben bij de trainingspixels:

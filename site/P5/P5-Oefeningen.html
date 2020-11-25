@@ -13,7 +13,7 @@
     
     
       
-        <title>Intro - (I002450) Practica Teledetectie 2020</title>
+        <title>Oefeningen - (I002450) Practica Teledetectie 2020</title>
       
     
     
@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#oefening-51-brand-index" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -84,7 +89,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Intro
+              Oefeningen
             
           </span>
         </div>
@@ -472,18 +477,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="P5-Intro.html" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="P5-Intro.html" class="md-nav__link">
       Intro
     </a>
-    
   </li>
 
         
@@ -539,11 +537,72 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="P5-Oefeningen.html" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Oefeningen
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="P5-Oefeningen.html" class="md-nav__link md-nav__link--active">
       Oefeningen
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oefening-51-brand-index" class="md-nav__link">
+    Oefening 5.1 - Brand-index
+  </a>
+  
+    <nav class="md-nav" aria-label="Oefening 5.1 - Brand-index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stappenplan" class="md-nav__link">
+    Stappenplan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-evi-index" class="md-nav__link">
+    De EVI index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht-ndvi-en-evi-in" class="md-nav__link">
+    Opdracht: NDVI en EVI in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -657,17 +716,154 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#oefening-51-brand-index" class="md-nav__link">
+    Oefening 5.1 - Brand-index
+  </a>
+  
+    <nav class="md-nav" aria-label="Oefening 5.1 - Brand-index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stappenplan" class="md-nav__link">
+    Stappenplan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#de-evi-index" class="md-nav__link">
+    De EVI index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht-ndvi-en-evi-in" class="md-nav__link">
+    Opdracht: NDVI en EVI in
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Intro</h1>
+                  <h1>Oefeningen</h1>
                 
-                <p>In Practicum 5 bouwen we verder op de aangeleerde zaken uit Practicum 4. 
-Met de beelden die we uit de <code>`ImageCollections</code> halen, gaan we statistieken halen, indices bereken en handelingen uitvoeren om informatie te benadrukken.  </p>
-<p>Als slot behandelen we methodieken om een Principale Compentenanalyse (PCA) uit te voeren op de (multidimensionale) beelden.</p>
+                <p>Onderstaande oefeningen kunnen gebruikt worden om de principes uit Practicum 4 verder in te oefenen.</p>
+<h2 id="oefening-51-brand-index">Oefening 5.1 - Brand-index</h2>
+<p><strong>Niveau</strong>: gemiddeld</p>
+<p>In volgende oefening bekijken we een index die de gebieden aangetast door bosbranden belicht: de <strong>Normalized Burn Ratio (NBR)</strong>. Door de NBI te berekenen voor en na natuurbranden, kan een spatiale inschatting worden gemaakt van de ernst van beschadiging aan de omgeving.</p>
+<p>De NBR wordt op een vergelijkbare manier als de NDVI berekend, waarbij het de rode band vervangen werd door een SWIR-band:</p>
+<p>
+<script type="math/tex; mode=display"> NBR = {NIR - SWIR \over NIR + SWIR}.</script>
+</p>
+<p>In volgende oefening maken we een analyse van een grote bosbrand (genaamd 'Camp Fire') die op 8 november nabij Paradise in Californië woedde (info <a href="https://news.berkeley.edu/2018/11/15/new-satellite-view-of-camp-fire-as-it-burned-through-paradise/">hier</a>). Dit doen we aan de hand van Landsat-8 beelden.</p>
+<h3 id="stappenplan">Stappenplan</h3>
+<ol>
+<li>
+<p>Start met een nieuwe script. Kopieer alvast de Cloud-mask functie (maskL8sr) voor Landsat-8 uit de datacatalog.</p>
+</li>
+<li>
+<p>Filter de L8 (Surface Reflectance, Tier 1) collectie op basis van volgende ROI:
+<div class="highlight"><pre><span></span><code> <span class="kd">var</span> <span class="nx">ROI</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">(</span>
+        <span class="p">[[[</span><span class="o">-</span><span class="mf">121.63966294798034</span><span class="p">,</span> <span class="mf">39.877127888100304</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mf">121.63966294798034</span><span class="p">,</span> <span class="mf">39.71622101257041</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mf">121.35470506223815</span><span class="p">,</span> <span class="mf">39.71622101257041</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mf">121.35470506223815</span><span class="p">,</span> <span class="mf">39.877127888100304</span><span class="p">]]],</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Maak een functie aan waarin de NBR-index wordt berekend <strong>voor de Landsat 8 banden</strong>. Gebruik de SWIR-2 band. (<a href="https://landsat.gsfc.nasa.gov/sites/landsat/files/2013/01/BandpassesL7vL8_Jul20131.jpg">tip</a>). Voeg de index toe aan de collectie met de .map()-functie.</p>
+</li>
+<li>
+<p>Filter de collectie verder met een maximale 'CLOUD_COVER' van 30% en pas de cloud mask toe.</p>
+</li>
+<li>
+<p>Maak nu 2 beelden aan binnen dezelfde periode van het jaar. Clip naar de ROI (met .clip()) en voeg ze toe als Normale Kleuren:</p>
+<ul>
+<li>1 Beeld voor de brand: een mediaan binnen de periode 1 mei 2018 - 30 juni 2018</li>
+<li>1 Beeld na de brand: een mediaan binnen de periode 1 mei 2019 - 30 juni 2019</li>
+</ul>
+</li>
+<li>
+<p>Visualiseer nu ook de NBR's voor beide beelden (gebruik de range van [0,1])</p>
+</li>
+<li>
+<p>Om een indicatie te krijgen van de brandernst, dient het verschil tussen beide NBR's te worden berekend. Voer hiervoor de som NBR_voor - NBR_na. Vermenigvuldig het resultaat met 1000 om een betere schaling te verkrijgen. Geef het de naam "NBR_verschil". Voeg de index ook als zwart-wild beeld toe aan het beeld, met een stretch tussen [-200, 1000]</p>
+</li>
+<li>
+<p>Visueel vallen er alvast heel wat zaken af te leiden. Echter voor verdere toepassing is het beter om de resulterende klassen op te delen, zoals in onderstaande tabel, opgesteld door de United States Geological Survey (USGS). </p>
+</li>
+</ol>
+<p align="center">
+  <img src="images/BurnSeverityTable.png">  <br>
+  <em> Burn severity klassen, met bijhorende grenzen volgens het verschil in NBR-index (dNBR). Opgesteld door de USGS. (Bron: [UN-spider](https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/burn-severity-earth-engine))
+</p>
+
+<p>Om het NBR-verschil beeld om te zetten naar deze discrete klassen, dienen we het beeld te <em>reclassificeren</em>. In Earth Engine doen we dit volgens een .where(), functie. Pas onderstaande code aan in je script, om dit toe te passen. Eveneens werd de bijhorende palette meegegeven.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Remap values. gt= greater than (&gt;), lte = less then or equal (&lt;=)</span>
+<span class="kd">var</span> <span class="nx">Burn_severity</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="mf">1</span><span class="p">).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span> <span class="c1">//Initialiseert een leeg beeld</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="o">-</span><span class="mf">500</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="o">-</span><span class="mf">251</span><span class="p">)),</span> <span class="mf">1</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="o">-</span><span class="mf">250</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="o">-</span><span class="mf">101</span><span class="p">)),</span> <span class="mf">2</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="o">-</span><span class="mf">100</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="mf">99</span><span class="p">)),</span> <span class="mf">3</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">100</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="mf">269</span><span class="p">)),</span> <span class="mf">4</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">270</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="mf">439</span><span class="p">)),</span> <span class="mf">5</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">440</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="mf">659</span><span class="p">)),</span> <span class="mf">6</span><span class="p">)</span>
+          <span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="mf">660</span><span class="p">).</span><span class="nx">and</span><span class="p">(</span><span class="nx">NBR_verschil</span><span class="p">.</span><span class="nx">lte</span><span class="p">(</span><span class="mf">1300</span><span class="p">)),</span> <span class="mf">7</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">BurnSeverity_VIS</span> <span class="o">=</span> <span class="p">{</span><span class="nx">bands</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;constant&quot;</span><span class="p">],</span><span class="nx">palette</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;1b930c&quot;</span><span class="p">,</span><span class="s2">&quot;98c825&quot;</span><span class="p">,</span><span class="s2">&quot;00ff37&quot;</span><span class="p">,</span><span class="s2">&quot;fff708&quot;</span><span class="p">,</span><span class="s2">&quot;ffb716&quot;</span><span class="p">,</span><span class="s2">&quot;ff7310&quot;</span><span class="p">,</span><span class="s2">&quot;c20665&quot;</span><span class="p">]}</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">Burn_severity</span><span class="p">,</span><span class="nx">BurnSeverity_VIS</span><span class="p">,</span> <span class="s1">&#39;Burn Severity classes&#39;</span><span class="p">)</span>
+</code></pre></div>
+<details class="check"><summary>Oplossing</summary><p>Script met volledige uitwerking: <a href="https://code.earthengine.google.com/3db2a972e2bfebef5a8615c8c2fa8c9a">https://code.earthengine.google.com/3db2a972e2bfebef5a8615c8c2fa8c9a</a></p>
+</details>
+<p>De <em>Enhanced Vegetation Index</em> (EVI) </p>
+<h3 id="de-evi-index">De EVI index</h3>
+<p>De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  </p>
+<ul>
+<li>EVI is gevoeliger voor gebieden met hogere biomassa</li>
+<li>EVI reduceert de invloed van de atmosferische condities</li>
+<li>EVI corrigeert de <em>‘canopy background noise’</em>, die bij NDVI voorkomt</li>
+</ul>
+<p>De EVI is het meest gebruikte alternatief voor de NDVI.</p>
+<p>De EVI wordt berekend als volgt:</p>
+<p>
+<script type="math/tex; mode=display">EVI = G * {NIR - R \over NIR + C1 * RED – C2*BLUE + L}.</script>
+</p>
+<p>(waarbij <script type="math/tex">G</script>: een versterkende constante, <script type="math/tex">C1,C2</script> coëfficienten en <script type="math/tex">L</script> een <em>‘canopy background adjusment factor’</em>) </p>
+<p>Voor Sentinel 2, wordt deze formule:
+<script type="math/tex; mode=display">EVI_{S2} = 2.5 * {B8 - B4 \over B8 + 6 * B4 – 7.5*B2 + 1}.</script>
+</p>
+<h3 id="opdracht-ndvi-en-evi-in">Opdracht: NDVI en EVI in</h3>
                 
               
               
@@ -686,7 +882,7 @@ Met de beelden die we uit de <code>`ImageCollections</code> halen, gaan we stati
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../P4/P4-Oefeningen.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="P5-PCA.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -695,19 +891,19 @@ Met de beelden die we uit de <code>`ImageCollections</code> halen, gaan we stati
                 <span class="md-footer-nav__direction">
                   Vorige
                 </span>
-                (Extra) Oefeningen
+                Principale componenten analyse
               </div>
             </div>
           </a>
         
         
-          <a href="P5-Spectral_indices.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../P6/P6-intro.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Volgende
                 </span>
-                Spectrale indices
+                Intro
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

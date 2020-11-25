@@ -465,14 +465,14 @@
         
           <li class="md-nav__item">
   <a href="#1-filteren-van-de-imagecollection-op-wolkbedekking" class="md-nav__link">
-    1) Filteren van de ImageCollection op wolkbedekking
+    1 Filteren van de ImageCollection op wolkbedekking
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-cloud-masking-optie-1" class="md-nav__link">
-    2) Cloud Masking optie 1
+  <a href="#2-cloud-masking-met-cloudmasks" class="md-nav__link">
+    2 Cloud Masking met Cloudmasks
   </a>
   
 </li>
@@ -493,6 +493,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Oefeningen.html" class="md-nav__link">
+      (Extra) Oefeningen
+    </a>
   </li>
 
         
@@ -578,6 +590,18 @@
   <li class="md-nav__item">
     <a href="../P5/P5-PCA.html" class="md-nav__link">
       Principale componenten analyse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-Oefeningen.html" class="md-nav__link">
+      Oefeningen
     </a>
   </li>
 
@@ -668,6 +692,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-SpectralResponse_oud.html" class="md-nav__link">
+      Spectrale responsiecurves
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -704,14 +740,14 @@
         
           <li class="md-nav__item">
   <a href="#1-filteren-van-de-imagecollection-op-wolkbedekking" class="md-nav__link">
-    1) Filteren van de ImageCollection op wolkbedekking
+    1 Filteren van de ImageCollection op wolkbedekking
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-cloud-masking-optie-1" class="md-nav__link">
-    2) Cloud Masking optie 1
+  <a href="#2-cloud-masking-met-cloudmasks" class="md-nav__link">
+    2 Cloud Masking met Cloudmasks
   </a>
   
 </li>
@@ -746,14 +782,14 @@
                 <h2 id="cloud-masking">Cloud Masking</h2>
 <p>Wolkbedekking is een grote barrière tijdens het analyseren en processen van (spectrale) satellietbeelden. Recente satellietdata komen veelal ook met automatische classificaties van de wolkbedekking, waardoor deze relatief eenvoudig uit het beeld verwijderd kunnen worden (zie ook <a href="../P3-image-preprocessing.html#intermezzo-cloud-masks">P3: cloud masking</a>).  </p>
 <p>Earth engine bevat naast deze standaard ‘cloud masks’ ook eigen algoritmes om de wolken en wolkschaduw te verwijderen uit het beeld, maar bevat ook enkele andere mogelijkheden om de aanwezigheid ervan veel mogelijk te minimaliseren zoals het toepassen van reducties op beeldcollecties.</p>
-<h3 id="1-filteren-van-de-imagecollection-op-wolkbedekking">1) Filteren van de ImageCollection op wolkbedekking</h3>
+<h3 id="1-filteren-van-de-imagecollection-op-wolkbedekking">1 Filteren van de ImageCollection op wolkbedekking</h3>
 <p>Een eerste optie is om een beeldcollectie te filteren (zie <a href="P4-ImageVisualization.html#datacollecties-filteren-en-visualiseren">voorgaand</a>) op wolkbedekking, waardoor enkel de beelden binnen een paalde range van wolkenpercentages worden weerhouden:</p>
 <div class="admonition info">
 <p class="admonition-title">FilterMetaData</p>
 <p>Bij de voorgande filters gebruikten we de redelijk eenvoudige functies <code>.filterBounds()</code> en <code>.filterDate()</code>, twee standaardfilters om op respectievelijk locatie (van een geometrie) en datum te filter.  </p>
 <p>De functie <code>.filterMetadata()</code> wordt gebruikt om te filteren op eender welke Metadata-eigenschap dat een beeld bevat. Gebruik de <strong>Docs</strong> om het gebruik van deze functie verder te bekijken.</p>
 </div>
-<h3 id="2-cloud-masking-optie-1">2) Cloud Masking optie 1</h3>
+<h3 id="2-cloud-masking-met-cloudmasks">2 Cloud Masking met Cloudmasks</h3>
 <p>Als 2e stap kunnen de overgebleven wolken/wolkschaduwen per beeld worden ‘geknipt’ (cloudmask) door deze pixels naar een waarde 0 om te zetten. Een standaard algoritme is bij de meeste beelden reeds gegeven als voorbeeld onderaan in de catalogus:  </p>
 <blockquote>
 <p><strong> Voor Landsat-8 </strong>: <a href="https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR">https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR</a>    </p>
@@ -784,6 +820,8 @@ Resulterend is een ImageCollectie met dezelfde beelden, maar waaruit de wolken g
 <p class="admonition-title">De .map()-functie</p>
 <p>In bovenstaand voorbeeld werd de cloudmask-functie toegepast door gebruik te maken van <code>.map()</code>. D <code>.map()</code> wordt steeds gebruikt om een functie (die op afzonderlijke beelden dient toegepast te worden, zoals <code>maskL8sr</code>) toe te passen over elk beeld binnen een ImageCollection afzonderlijk. Het is als het ware een veel efficiënte manier dan de aangemaakte functie te itereren via een for-loop.</p>
 </div>
+<details class="warning"><summary>Betekening EXTRA</summary><p>Onderstaande Sentinel-2 cloudmask-procedure is ter aanvulling van bovenstaande principes. Er kan voor komende oefeningen/ het praktisch examen met van beide procedures gebruikt worden, dus zoals wat in <a href="#2-Cloud-Masking-met-Cloudmasks">Cloud Masking met Cloudmasks</a> werd gebruikt.</p>
+</details>
                 
               
               
@@ -817,13 +855,13 @@ Resulterend is een ImageCollectie met dezelfde beelden, maar waaruit de wolken g
           </a>
         
         
-          <a href="../P5/P5-Intro.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="P4-Oefeningen.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Volgende
                 </span>
-                Intro
+                (Extra) Oefeningen
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

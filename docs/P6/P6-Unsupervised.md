@@ -8,7 +8,7 @@ Er bestaan verschillende niet-gesuperviseerde algoritmen, maar de meest gekende 
 Een van de meest gebruikte cluster-algoritmen is de "K-means" clustering, waarbij de gebruiker op voorhand een aantal beginclusters opgeeft waarmee het algoritme arbitrair dat aantal clusters in de multi-dimensionale ruimte. Elke pixel wordt dan in een eerste fase toegekend tot de cluster waar die pixels zich gemiddeld het dichtst bij bevindt. Na deze eerste *'run'* worden de clusters herberekend, waarbij de variantie binnen elke cluster wordt geminimaliseerd. Hierna worden de pixels opnieuw toegekend tot de 'best passende' cluster. Deze procedure wordt herhaald (iteraties) totdat er zich geen significante verplaatsing van de clustercentra meer voordoet en de variantie binnen elke cluster dus ook niet meer significant daalt. 
 
 <p align="center">
-  <img src="images/K-means.gif" width="400">  <br>
+  <img src="images/K-Means.gif" width="400">  <br>
  <em> Principe van de K-means clustering in een 2-dimensionaal vlak. (Bron: <a href="https://dashee87.github.io/data%20science/general/Clustering-with-Scikit-with-GIFs/">dashee87.github.io</a>) </em> 
 </p> 
 
@@ -19,6 +19,26 @@ In Earth Engine zit de clustering ook vervat in ```ee.Clusterer```. We maken in 
 * Maak een nieuw script aan: P6_UnsupervisedClass.
 
 * Zoals steeds filteren en reducen we een satellietbeeld, om met een wolkenvrije ```image``` verder te kunnen werken. We focussen ons in dit voorbeeld op de kustlijn van Suriname, ter hoogte van de hoofdstad: Paramaribo. We focussen hierbij op maanden binnen de grote droge tijd (Augustus - December), aangezien de wolkbedekking dan beperkter zou moeten zijn in vergelijking met de natte tijden.
+
+Maak hiervoor eerst een polygoon aan met de locatie van Paramaribo. Eventueel kun je hiervoor onderstaande code gebruiken:
+
+```javascript
+var Paramaribo = 
+    /* color: #d63000 */
+    /* shown: false */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-55.31615692285674, 6.000339363352038],
+          [-55.31615692285674, 5.8043169248564865],
+          [-54.91446930078643, 5.8043169248564865],
+          [-54.91446930078643, 6.000339363352038]]], null, false);
+```
+
+Start Daarna met het aanmaken van het S2-beeld
 
 ```javascript
 // --------------------------------------------------------------------  
@@ -71,7 +91,7 @@ var S2_im = S2_coll.median()
 ```javascript
 // Aanmaken"training" dataset.
 var training = S2_im.sample({
-  region: ROI,
+  region: Paramaribo,
   scale: 10,
   numPixels: 5000
 });

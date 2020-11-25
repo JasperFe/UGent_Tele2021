@@ -78,6 +78,6 @@ Export.image.toDrive({
       folder: 'Sentinel_2_export',
        maxPixels: 1e12 //Vergroot de exportcapaciteit
      });
-
+```
 
 

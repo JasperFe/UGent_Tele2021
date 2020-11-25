@@ -433,6 +433,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
+      (Extra) Oefeningen
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -589,6 +601,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5-Oefeningen.html" class="md-nav__link">
+      Oefeningen
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -671,6 +695,18 @@
   <li class="md-nav__item">
     <a href="../P6/P6-Improvement.html" class="md-nav__link">
       Verbeteren van de classificatie
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-SpectralResponse_oud.html" class="md-nav__link">
+      Spectrale responsiecurves
     </a>
   </li>
 
@@ -808,14 +844,14 @@ matrix (GLCM) van Haralick et al. (1973). Het is een matrix dat weergeeft hoevee
 <p>De berekende banden kunnen in Earth Engine echter wel verder gebruikt worden voor classificatie.</p>
 <h3 id="extra-export-script">EXTRA: Export-script</h3>
 <p>Hieronder kun je een voorbeeldscriptje vinden om een raster naar je Google Drive te exporteren. Na een 10-tal minuten kun je dit terug vinden op je persoonlijke Google Drive en downloaden naar je desktop.</p>
-<p>```javascript
-Export.image.toDrive({
-      image: entropy,
-      description: 'B8_Entropy',
-      scale: 10, //RESOLUTIE
-      folder: 'Sentinel_2_export',
-       maxPixels: 1e12 //Vergroot de exportcapaciteit
-     });</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span>
+      <span class="nx">image</span><span class="o">:</span> <span class="nx">entropy</span><span class="p">,</span>
+      <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;B8_Entropy&#39;</span><span class="p">,</span>
+      <span class="nx">scale</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span> <span class="c1">//RESOLUTIE</span>
+      <span class="nx">folder</span><span class="o">:</span> <span class="s1">&#39;Sentinel_2_export&#39;</span><span class="p">,</span>
+       <span class="nx">maxPixels</span><span class="o">:</span> <span class="mf">1e12</span> <span class="c1">//Vergroot de exportcapaciteit</span>
+     <span class="p">});</span>
+</code></pre></div>
                 
               
               

@@ -203,21 +203,6 @@ var ndviParams = {
 !!! check "Oplossing Oefening NDVI per seizoen"
     Via deze link: [https://code.earthengine.google.com/fce277391bc08be0dc867bb972e890f6?noload=true](https://code.earthengine.google.com/fce277391bc08be0dc867bb972e890f6?noload=true)
 
-### EXTRA OEF 2-  De *Enhanced Vegetation Index* (EVI): 
-De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of     ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd     ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  
-
- * EVI is gevoeliger voor gebieden met hogere biomassa
- * EVI reduceert de invloed van de atmosferische condities
- * EVI corrigeert de *‘canopy background noise’*, die bij NDVI voorkomt
-    
-De EVI wordt berekend als volgt:
-    
-$$EVI = G * {NIR - R \over NIR + C1 * RED – C2*BLUE + L}.$$
-
-(waarbij \(G\): een versterkende constante, \(C1,C2\) coëfficienten en \(L\) een *‘canopy background adjusment factor’*) 
-
-Voor Sentinel 2, wordt deze formule:
-$$EVI_{S2} = 2.5 * {B8 - B4 \over B8 + 6 * B4 – 7.5*B2 + 1}.$$
 
 ## EXTRA: Toevoegen van een legende
 

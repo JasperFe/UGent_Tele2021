@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#aanpassen-van-het-aantal-trainingssamples-en-aanpassen-sampling-strategie" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -428,6 +433,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
+      (Extra) Oefeningen
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -510,6 +527,18 @@
   <li class="md-nav__item">
     <a href="../P5/P5-PCA.html" class="md-nav__link">
       Principale componenten analyse
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-Oefeningen.html" class="md-nav__link">
+      Oefeningen
     </a>
   </li>
 
@@ -602,10 +631,63 @@
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Verbeteren van de classificatie
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
     <a href="P6-Improvement.html" class="md-nav__link md-nav__link--active">
       Verbeteren van de classificatie
     </a>
     
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aanpassen-van-het-aantal-trainingssamples-en-aanpassen-sampling-strategie" class="md-nav__link">
+    Aanpassen van het aantal trainingssamples en aanpassen sampling-strategie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toevoegen-van-indices" class="md-nav__link">
+    Toevoegen van Indices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    Opdracht
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6-SpectralResponse_oud.html" class="md-nav__link">
+      Spectrale responsiecurves
+    </a>
   </li>
 
         
@@ -621,6 +703,48 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#aanpassen-van-het-aantal-trainingssamples-en-aanpassen-sampling-strategie" class="md-nav__link">
+    Aanpassen van het aantal trainingssamples en aanpassen sampling-strategie
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toevoegen-van-indices" class="md-nav__link">
+    Toevoegen van Indices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    Opdracht
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -629,7 +753,31 @@
                 
                   <h1>Verbeteren van de classificatie</h1>
                 
-                
+                <p>In de gesuperviseerde classificaties testten we reeds 3 'classifiers', waarvan de <em>Random Forest</em> classifier leidde tot een iets betere algemene accuraatheid. Desondanks ze al tot acceptabele percentages leidden, bestaan er enkele opties om de classificatie nog te verbeteren.</p>
+<h2 id="aanpassen-van-het-aantal-trainingssamples-en-aanpassen-sampling-strategie">Aanpassen van het aantal trainingssamples en aanpassen <em>sampling</em>-strategie</h2>
+<p>De opgemaakte trainingssamples kunnen worden verbeterd door het aantal samples omhoog te trekken, of door de <em>sampling</em>-strategie aan te passen. In dit voorbeeld tekenden we zelf polygonen in op basis van visuele inspectie, waardoor we enkel de pixels werden aangeduid waar we relatief zeker waren van de desbetreffende klasse.</p>
+<p>Een betere techniek zou erin bestaan om op voorhand willekeurige locaties door de computer aan te laten duiden, eventueel gestratificeerd per landbedekkingsklasse ('<em>stratified sampling</em>').</p>
+<h2 id="toevoegen-van-indices">Toevoegen van Indices</h2>
+<p>Ook door de input-banden aan te passen of extra banden toe te voegen, kan er voor zorgen dat de onderscheiding van de klassen wordt verbeterd. Zo kan:</p>
+<ul>
+<li>
+<p>er hoogtedata (zgn. <em>Digital Elevation Model</em> of DEM) worden toegevoegd, waaruit bv de hellingsgraad van het terrein kan worden berekend. Zo kunnen land<em>features</em> met een specifieke topografie zoals basins, kanalen, toppen, dalen, hellingen gemakkelijker worden geïdentificeerd.</p>
+</li>
+<li>
+<p>er informatie uit berekende indices helpen voor versterking van verschillen tussen klassen, zoals NDVI, MNDWI of in de context van mangrove-classificatie de MVI.</p>
+</li>
+</ul>
+<h2 id="opdracht">Opdracht</h2>
+<p>Tracht je classificatie te verbeteren door:  </p>
+<ul>
+<li>
+<p>enkele indices toe aan het Sentinel-2 beeld van vorige oefening, zoals de MVI, NDVI en NDWI.  </p>
+</li>
+<li>
+<p>Textuurmatrices toe te voegen. Zie hiervoor <a href="#textuuranalyse">P5 - Textuur</a>
+Gebruik deze keer enkel de Random Forest classifier. Bekijk de bekomen accuraatheid. Merk je verbeteringen op?</p>
+</li>
+</ul>
                 
               
               
@@ -662,6 +810,20 @@
             </div>
           </a>
         
+        
+          <a href="P6-SpectralResponse_oud.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Volgende
+                </span>
+                Spectrale responsiecurves
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
