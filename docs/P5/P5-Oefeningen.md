@@ -1,7 +1,43 @@
 Onderstaande oefeningen kunnen gebruikt worden om de principes uit Practicum 4 verder in te oefenen.
 
+## Oefening 5.1 - Herbebossing Regenwoud in Aimores, Brazilië
 
-## Oefening 5.1 - Brand-index
+**Info**: Examenopdracht 2019-2020.  
+**Tip:** Gebruik van NDVI als indicator van ontbossing
+
+### Context
+Voor deze opdracht trekken we naar Aimores, in de Braziliaanse provincie Minas Gerais. Dit gebied bestond honderden jaren geleden uit uitgestrekt tropisch bos, het Atlantische woud, en bevat een buitengewoon grote biodiversiteit. In de 20e eeuw werd het leeuwendeel van dit gebied echter ontbost, waardoor naar schatting slechts 15% van het Atlantische woud is overgebleven.  
+
+In 1999 besloot een koppel om het heft in eigen handen te nemen door het starten van een herbebossingsproject in het gebied, met groot succes.
+
+### Gegeven:
+- Afbakening van het projectgebied (als <a href="Aimores_shape.zip" download>Shape-file (Studiegebied).</a>).  
+
+- Tijdstip 1: 2000. Hiervoor dien je gebruik te maken van een [Landsat-7 beeld](https://developers.google.com/earth-engine/datasets/catalog/landsat-7).
+
+- Tijdstip 2: 2020. Hiervoor maak je gebruik van een Landsat-8 beeld.
+
+### Gevraagd:
+
+Maak een beeld aan, waar voor elke pixel te zien is of er vegetatie is bijgekomen of verdwenen tussen 2000 en 2020 binnen het projectgebied.
+
+### Tips:
+
+- Maak zelf een beeld aan per jaar aan waar de wolkbedekking ontbreekt of gemaskeerd is.
+
+- Gebruik een gepaste index.
+
+- De bandverdeling van Landsat 7/8 is verschillend! Houd hier rekening mee.
+
+
+??? check "Oplossing"
+    Script: [https://code.earthengine.google.com/2a3fec22e58b9d8cc2f508606b151726](https://code.earthengine.google.com/2a3fec22e58b9d8cc2f508606b151726)
+
+
+
+
+
+## Oefening 5.2 - Brand-index
 
 **Niveau**: gemiddeld
 
@@ -68,7 +104,7 @@ Map.addLayer(Burn_severity,BurnSeverity_VIS, 'Burn Severity classes')
 
 
 
-De *Enhanced Vegetation Index* (EVI) 
+## Oefening 5.2 - De *Enhanced Vegetation Index* (EVI) 
 
 ### De EVI index
 De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  
@@ -88,5 +124,5 @@ $$EVI = G * {NIR - R \over NIR + C1 * RED – C2*BLUE + L}.$$
 Voor Sentinel 2, wordt deze formule:
 $$EVI_{S2} = 2.5 * {B8 - B4 \over B8 + 6 * B4 – 7.5*B2 + 1}.$$
 
-### Opdracht: NDVI en EVI in 
+
 
