@@ -30,6 +30,9 @@ nav:
       - Gesuperviseerde classificatie: P6/P6-Supervised.md
       - Verbeteren van de classificatie: P6/P6-Improvement.md
       - Spectrale responsiecurves: P6/P6-SpectralResponse_oud.md
+    - P7 - Tijdseries en SAR:
+      - Tijdserieanalyse: P7/P7-Timeseries.md
+      - Introductie tot SAR: P7/P7-SAR-tijdseries.md
 
 theme:
   name: material
