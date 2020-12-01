@@ -91,11 +91,14 @@ var VV_2017= VV_coll.filterBounds(ROI).filterDate('2017-08-01','2017-08-31').mea
 ```
 
 * Laat ons eens bekijken hoe elk afzonderlijk VV-gepolariseerd beeld per jaar er uit ziet:
+
+```javascript
 var VV_Param = {"opacity":1,"bands":["VV"],"min":-12.695602621422937,"max":-2.5938492158251467,"gamma":1}; 
 // Afzonderlijke beelden mappen: visueel weinig verschil te zien
 Map.addLayer(VV_2017,VV_Param,'VV_2017',0)
 Map.addLayer(VV_2018,VV_Param,'VV_2018',0)
 Map.addLayer(VV_2018,VV_Param,'VV_2019',0)
+```
 
 * Doe nu hetzelfde, maar voor de VH-polarisatie. Bekijk in welke maat de sensitiviteit voor verschillende landoppervlakten verschilt in beide polarisaties.
 

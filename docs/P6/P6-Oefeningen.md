@@ -22,4 +22,4 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 * Visualiseer je resultaat naar eigen keuze. Evalueer het visueel: is je classificatie geslaagd? Welke classifier lijkt beter? 
 
-* Bereken de *Overall Accuracy* van je classificatie.
+* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset: .

@@ -21,7 +21,7 @@ Als voordeel nemen we een punt in de Zwitsere Alpen. Zet ergens een willekeurig 
 
 Vervolgens initieren we een Sentinel-2 collectie, maar ditmaal gebruik makend van de TOA-collectie (dus niet atmosferisch gecorrigeerd). De achterliggende reden is dat deze collectie zich langer uitstrekt binnen Earth Engine, terwijl de Sentinel-2 'Surfance Reflectance' pas sinds 2019 wereldwijd systematisch wordt toegevoegd.
 
-In volgende [code](https://code.earthengine.google.com/8f5ca170b181c4f226e3ec23a8b3b9a1) wordt:  
+In volgende [code](https://code.earthengine.google.com/735391c2fec3a4cb3d847d0714bdb34c) wordt:  
 
 - De NDSI berekend en toegevoegd over de beeldcollectie
 - De beeldcollectie wordt gefilterd op basis van de ROI.
