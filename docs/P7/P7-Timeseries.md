@@ -101,8 +101,10 @@ print(ui.Chart.image.doySeriesByYear(S2, 'NDSI', ROI, ee.Reducer.mean(), 10).set
 
 ## Opdracht
 
-Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Sentinel-2 beelden:
- * Verdeel onder je break-out room volgende [locaties](https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e):
+Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Sentinel-2 beelden:  
+
+ * Verdeel onder je break-out room volgende [locaties](https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e):  
+
     - Greenland  
     - Amazon  
     - Botswana (Okavango delta) 
