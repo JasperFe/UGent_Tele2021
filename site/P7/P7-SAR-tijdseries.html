@@ -579,13 +579,16 @@
 </code></pre></div></p>
 </li>
 <li>
-<p>Laat ons eens bekijken hoe elk afzonderlijk VV-gepolariseerd beeld per jaar er uit ziet:
-var VV_Param = {"opacity":1,"bands":["VV"],"min":-12.695602621422937,"max":-2.5938492158251467,"gamma":1}; 
-// Afzonderlijke beelden mappen: visueel weinig verschil te zien
-Map.addLayer(VV_2017,VV_Param,'VV_2017',0)
-Map.addLayer(VV_2018,VV_Param,'VV_2018',0)
-Map.addLayer(VV_2018,VV_Param,'VV_2019',0)</p>
+<p>Laat ons eens bekijken hoe elk afzonderlijk VV-gepolariseerd beeld per jaar er uit ziet:</p>
 </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">VV_Param</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"opacity"</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span><span class="s2">"bands"</span><span class="o">:</span><span class="p">[</span><span class="s2">"VV"</span><span class="p">],</span><span class="s2">"min"</span><span class="o">:-</span><span class="mf">12.695602621422937</span><span class="p">,</span><span class="s2">"max"</span><span class="o">:-</span><span class="mf">2.5938492158251467</span><span class="p">,</span><span class="s2">"gamma"</span><span class="o">:</span><span class="mf">1</span><span class="p">};</span> 
+<span class="c1">// Afzonderlijke beelden mappen: visueel weinig verschil te zien</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_2017</span><span class="p">,</span><span class="nx">VV_Param</span><span class="p">,</span><span class="s1">'VV_2017'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_2018</span><span class="p">,</span><span class="nx">VV_Param</span><span class="p">,</span><span class="s1">'VV_2018'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_2018</span><span class="p">,</span><span class="nx">VV_Param</span><span class="p">,</span><span class="s1">'VV_2019'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+</code></pre></div>
+<ul>
 <li>
 <p>Doe nu hetzelfde, maar voor de VH-polarisatie. Bekijk in welke maat de sensitiviteit voor verschillende landoppervlakten verschilt in beide polarisaties.</p>
 </li>
