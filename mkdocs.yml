@@ -56,6 +56,40 @@ markdown_extensions:
 
 plugins:
   - search
+  - with-pdf:
+        author: Jasper Feyen & Frieke Vancoillie
+        copyright: Remote Sensing/Spatial Analysis lab, Ugent (REMOSA)
+        #
+        #cover: false
+        #back_cover: true
+        cover_title: Teledetectie 2020
+        cover_subtitle: Practicals
+        #custom_template_path: TEMPLATES PATH
+        #
+        #toc_title: TOC TITLE TEXT
+        #heading_shift: false
+        #toc_level: 3
+        #ordered_chapter_level: 2
+        #excludes_children:
+        #    - 'release-notes/:upgrading'
+        #    - 'release-notes/:changelog'
+        #
+        exclude_pages:
+            - 'Home'
+        #convert_iframe:
+        #    - src: IFRAME SRC
+        #      img: POSTER IMAGE URL
+        #      text: ALTERNATE TEXT
+        #    - src: ...
+        two_columns_level: 3
+        #
+        #render_js: true
+        #output_path: any-place/document.pdf
+        #enabled_if_env: ENABLE_PDF_EXPORT
+        #
+        #debug_html: true
+        #show_anchors: true
+        #verbose: true
 
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML

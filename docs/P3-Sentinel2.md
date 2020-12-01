@@ -47,14 +47,14 @@ To register go to [registration page](https://scihub.copernicus.eu/dhus/#/self-r
     * Go to https://scihub.copernicus.eu/ 
     * Klick ‘Open hub’ to access the Interactive Graphical User Interface
     * Log in (or create an account)  
-      ![](/assets/images/P3/login_logo.jpg){: style="height:25px"}  
+      ![](/assets/images/P3/Login_logo.jpg){: style="height:25px"}  
      
 
     * Zoom to Belèm, a city in the north of Brazil, close to the gateway of the Amazon river
     * Switch the ‘Open street’ view to ‘sentinel-2 cloudless + Overlay’ view 
     * Switch to ‘navigation mode’
     * Draw a rectangle around Belèm:  
-      ![](/assets/images/P3/belem_scihub.jpg){: style="height:250px"}  
+      ![](/assets/images/P3/Belem_scihub.JPG){: style="height:250px"}  
 
     * At the button ‘Insert search criteria’: go for ‘advanced search’
     * Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:  
