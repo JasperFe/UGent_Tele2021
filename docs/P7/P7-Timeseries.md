@@ -21,7 +21,7 @@ Als voordeel nemen we een punt in de Zwitsere Alpen. Zet ergens een willekeurig 
 
 Vervolgens initieren we een Sentinel-2 collectie, maar ditmaal gebruik makend van de TOA-collectie (dus niet atmosferisch gecorrigeerd). De achterliggende reden is dat deze collectie zich langer uitstrekt binnen Earth Engine, terwijl de Sentinel-2 'Surfance Reflectance' pas sinds 2019 wereldwijd systematisch wordt toegevoegd.
 
-In volgende code wordt:  
+In volgende [code](https://code.earthengine.google.com/8f5ca170b181c4f226e3ec23a8b3b9a1) wordt:  
 
 - De NDSI berekend en toegevoegd over de beeldcollectie
 - De beeldcollectie wordt gefilterd op basis van de ROI.
@@ -70,14 +70,11 @@ Map.addLayer(S2.sort('CLOUDY_PIXEL_PERCENTAGE').first().select('NDSI'),NDSI_para
 Vervolgens maken we een *Chart* aan van de NDSI, over de hele collectie:
 
 ```javascript
-// Create and display a time series chart
-var fontS = 18;
+/ Create and display a time series chart
+print('Time series of NDSI at a random point in the Alpes');
+var Chart = ui.Chart.image.series(S2.select('NDSI'), ROI, ee.Reducer.mean(), 100);
 
-
-var Chart_NDSI = ui.Chart.image.series(S2.select(['NDSI']),ROI,ee.Reducer.mean(),100);
-
-print(Chart_NDSI.setOptions({
-  fontSize: fontS,
+print(Chart.setOptions({
   hAxis: {title: 'Time (-)'},
   vAxis: {title: 'Index mean (-)'},
   lineWidth: 2,
@@ -92,7 +89,6 @@ Een andere visualisatiemogelijkheid is om de NDSI per jaar te plotten als 'Day o
 ```javascript
 // Create and display a DOY time series chart
 print(ui.Chart.image.doySeriesByYear(S2, 'NDSI', ROI, ee.Reducer.mean(), 10).setOptions({
-  fontSize: fontS,
   hAxis: {title: 'DOY (-)'},
   vAxis: {title: 'NDSI (-)'},
   lineWidth: 2,
