@@ -262,7 +262,7 @@ In voorliggend voorbeeld maken we gebruik van een extra testdataset. Gezien we g
 
 Dit doen we aan de hand van onze validatie dataset als een externe testset. Deze set bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.
 
-Je kunt de shape-file hier downloaden: <a href="P6_testdata_poly.zip" download>P6_testdata (shapefile)</a>
+Je kunt de shape-file hier downloaden: [pdf-link](https://users.ugent.be/~jfeyen/pdf/document.pdf)
 
 Om deze toe te voegen aan Earth Engine, laad je deze op via de 'Asset'-tab. Daarna kun je het importeren als een ```FeatureCollection``` in je script. Noem dit 'Testdata_pol'. Bekijk ook even deze polygonen. Onder welke *property* zitten de klassen hier opgeslagen?
 

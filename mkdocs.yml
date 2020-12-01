@@ -75,7 +75,7 @@ plugins:
         #    - 'release-notes/:changelog'
         #
         exclude_pages:
-            - 'Home'
+            - 'index'
         #convert_iframe:
         #    - src: IFRAME SRC
         #      img: POSTER IMAGE URL
@@ -83,6 +83,7 @@ plugins:
         #    - src: ...
         two_columns_level: 3
         #
+        #headless_chrome_path: 'C:/Program Files (x86)/Google/Chrome/Application/' chrome --headless --disable-gpu  -- dump-dom 'https://google.com'
         #render_js: true
         #output_path: any-place/document.pdf
         #enabled_if_env: ENABLE_PDF_EXPORT
