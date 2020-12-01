@@ -37,10 +37,12 @@ var Area51 = ee.Geometry.Point([-115.81441562461978, 37.2386297535804]);
 
     - Welke features herken je thv Area 51?
 
-9. Het gebied geeft ook een ideale aanleiding om de 'Geology'-composiet eens uit te testen. De combinaties is als volgt: **RGB =  SWIR2-SWIR1-BLUE** . Vertaal dit zelf naar de Landsat-8 banden. (Maak gebruik van de [Landsat 8 bandentabel](https://landsat.gsfc.nasa.gov/sites/landsat/files/2013/01/BandpassesL7vL8_Jul20131.jpg)). Deze composiet maakt visuele inspectie van grote structurele eigenschappen van gesteenten (zoals plooien en breuken) gemakkelijker.
+9. Het gebied geeft ook een ideale aanleiding om de 'Geology'-composiet eens uit te testen. De combinaties is als volgt: **RGB =  SWIR2-SWIR1-BLUE** . Ga na welke Landsat-8 banden hiervoor benodigd zijn. (Maak gebruik van de [Landsat 8 bandentabel](https://landsat.gsfc.nasa.gov/sites/landsat/files/2013/01/BandpassesL7vL8_Jul20131.jpg)). Deze composiet maakt visuele inspectie van grote structurele eigenschappen van gesteenten (zoals plooien en breuken) gemakkelijker.
 
 ??? check "Oplossing"
     Script: [https://code.earthengine.google.com/724bbee7796ebd4ff9657dc5f0c1baaa](https://code.earthengine.google.com/724bbee7796ebd4ff9657dc5f0c1baaa)
 
 
-## Oefening 4.2 - 
+## Oefening 4.2
+
+*Coming Soon*

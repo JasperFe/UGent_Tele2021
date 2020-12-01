@@ -1,13 +1,14 @@
-Tot nu toe zijn we enkel bezig geweest met....
-
-Tijdserie analyse is een veel gebruikte operatie in Remote Sensing. Het draagt immers bij tot het modelleren van seizoenale patronen en het monitoren van landcover. Earth Engine is gezien het grote (historische) aanbod aan RS data een zeer geschikt medium om tijdseries te gaan analyseren.
 
 
-
+Tijdserie analyse is een veel gebruikte operatie in Remote Sensing. Het draagt immers bij tot het modelleren van temporele (seizoenaal of lange termijn) patronen en het monitoren van landcover. Gezien het grote (historische) aanbod aan RS data is Google Earth Engine een zeer geschikt medium om tijdseries te gaan analyseren.
 
 ## Tijdserieplots aanmaken in Google Earth Engine
 
-### De NDSI index
+### De Normalized Difference Snow Index (NDSI)
+
+<p align="center">
+<img src="images/NDSI_example.JPG">  <br>
+</p> 
 
 In onderstaand voorbeeldje bekijken we de aanwezigheid van sneeuw in Joensuu, Finland doorheen de afgelopen jaren. Hiervoor maken we gebruik van alweer een nieuwe index: de **Normalized Difference Snow Index (NDSI)**. Deze index wordt gebruikt om de aanwezigheid van sneeuw/ijs te benadrukken, ten opzichte van de andere landbekkingsklassen waaronder wolken. De NDSI maakt echter geen onderscheid tussen waterlichamen en sneeuw. (Meer info:)
 

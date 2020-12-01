@@ -10,6 +10,8 @@ var countries = ee.FeatureCollection( 'USDOS/LSIB_SIMPLE/2017' );
 var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 ```
 
+## Opdracht
+
 * Maak één wolkenvrij Landsat-8 beeld aan voor 2019. Weerhoud enkel de bruikbare banden voor classificatie: voor Landsat-8 dit zijn volgende banden: blauw, groen, rood, nir, swir1, swir2. 
 
 * Clip je resulterende beelden op basis van de Belgische grens.

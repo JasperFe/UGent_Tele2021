@@ -79,7 +79,7 @@ In volgende oefening maken we een analyse van een grote bosbrand (genaamd 'Camp 
 
 <p align="center">
   <img src="images/BurnSeverityTable.png">  <br>
-  <em> Burn severity klassen, met bijhorende grenzen volgens het verschil in NBR-index (dNBR). Opgesteld door de USGS. (Bron: [UN-spider](https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/burn-severity-earth-engine))
+  <em> Burn severity klassen, met bijhorende grenzen volgens het verschil in NBR-index (dNBR). Opgesteld door de USGS. (Bron: <a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/burn-severity-earth-engine">[UN-spider]</a>) </em>
 </p> 
 
 Om het NBR-verschil beeld om te zetten naar deze discrete klassen, dienen we het beeld te *reclassificeren*. In Earth Engine doen we dit volgens een .where(), functie. Pas onderstaande code aan in je script, om dit toe te passen. Eveneens werd de bijhorende palette meegegeven.
