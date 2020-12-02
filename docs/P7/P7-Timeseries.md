@@ -1,5 +1,3 @@
-
-
 Tijdserie analyse is een veel gebruikte operatie in Remote Sensing. Het draagt immers bij tot het modelleren van temporele (seizoenaal of lange termijn) patronen en het monitoren van landcover. Gezien het grote (historische) aanbod aan RS data is Google Earth Engine een zeer geschikt medium om tijdseries te gaan analyseren.
 
 ## Tijdserieplots aanmaken in Google Earth Engine
@@ -105,16 +103,32 @@ Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Se
 
  * Verdeel onder je break-out room volgende [locaties](https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e):  
 
-    - Greenland  
-    - Amazon  
-    - Botswana (Okavango delta) 
-    - Portugal  
-    - Namibia (Etosha pan)  
-    - Indonesia  
+    - Greenland
+    - Amazon
+    - Botswana
+    - Portugal
+    - Namibia
+    - Indonesia
     - Slovenia
 
  * Plot verschillende indices: NDVI, MNDWI en NDSI  
  * Deel de resultaten met elkaar bespreek de variatie binnen doorheen de verschillende jaren. 
+
+??? check "Oplossingen"
+    - [Greenland](https://code.earthengine.google.com/51441bccccdee2f9f6c73f7d02f6c48f)  
+    - [Amazon](https://code.earthengine.google.com/dd524b73865d4300322753dfab15ba0b)  
+    - [Botswana (Okavango delta)](https://code.earthengine.google.com/551915a0408c6b96178a767a16afa9d2) 
+    - [Portugal](https://code.earthengine.google.com/6e4eaeedeab338a498ff637026189e76)  
+    - [Namibia (Etosha pan)](https://code.earthengine.google.com/75729b5e683a7d08e2588c648545bb4f)  
+    - [Indonesia](https://code.earthengine.google.com/887bbf279fd7a6e5b074712e4a36dc1f)  
+    - [Slovenia](https://code.earthengine.google.com/b73f08ba7f58752a336a8d5faa7e9b1d)
+
+## Overige voorbeelden
+
+* NDWI tijdseries van het Titicaca meer (één polygoon): [https://code.earthengine.google.com/c68262aa235a78f60e898099601863a1](https://code.earthengine.google.com/c68262aa235a78f60e898099601863a1)
+
+* Temperatuur tijdseries over verschillende punten wereldwijd:
+[https://code.earthengine.google.com/470d63bbdc73a3800804c7dca9811ba3](https://code.earthengine.google.com/470d63bbdc73a3800804c7dca9811ba3)
 
 ## Bedankt!
 Bedankt aan Lisa Landuyt voor de input van deze scriptjes.
