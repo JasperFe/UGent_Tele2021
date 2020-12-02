@@ -103,7 +103,7 @@ Map.addLayer(S2_im,{min:500,max:4000,bands:'B8,B11,B2'},'Healthy_Vegetation_2020
 
 
 <p align="center">
-  <img src="images/GEE_train_water.JPG">  <br>
+  <img src="images/GEE_train_water.JPG" width=300>  <br>
 </p> 
 
 ???+ warning "Polygonen vs puntdata als traingdata"
@@ -117,13 +117,13 @@ Map.addLayer(S2_im,{min:500,max:4000,bands:'B8,B11,B2'},'Healthy_Vegetation_2020
 * Eenmaal je klaar bent met het intekenen van een klasse, kun je deze import configureren. Klink hiervoor op het tandwieltje naast de klasse. Geef het een gepaste naam. Daarna verander je de 'Import as' van *geometry* naar type *FeatureCollection*. Voeg daarna een *property* toe met de naam 'class', door te klikken op *'Add property'*. De eerste klasse geef je waarde 1, de 2e 2, .... Zorg er wel voor dat je goed weet welke waarde je aan welke klasse geeft. Neem hierbij eventueel de *class*-numering over van bovenstaande tabel.
 
 <p align="center">
-  <img src="images/GEE_Mangrove_class.JPG">  <br>
+  <img src="images/GEE_Mangrove_class.JPG" with=300>  <br>
 </p> 
 
 * Herhaal dit voor elke klasse. Uiteindelijk verschijnt elke klasse als een '*FeatureCollection*' bij de imports-lijst in je script:
 
 <p align="center">
-  <img src="images/GEE_Class_imports.JPG">  <br>
+  <img src="images/GEE_Class_imports.JPG" widt=300>  <br>
 </p> 
 
 <p align="center">
