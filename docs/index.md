@@ -8,7 +8,7 @@ Welkom bij de cursussite voor de practica van Teledetectie 2020.
 
 Doorheen de practica wordt deze site aangevuld met nieuwe documentatie, extra informatie en FAQ's.
 
-De PDF-versie van de practicas is via <a href="" download>pdf/document.pdf</a>.
+De PDF-versie van de practica's is te vinden via [deze link](https://users.ugent.be/~jfeyen/pdf/document.pdf).
 
 
 <p align="center">
