@@ -1,442 +1,867 @@
 
-<!DOCTYPE html>
-
-<html class="no-js" lang="nl">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/images/LOGO_REMOSA_2020.jpg" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-6.1.0" name="generator"/>
-<title>Satellietdata oproepen, filteren en visualiseren - (I002450) Practica Teledetectie 2020</title>
-<link href="../assets/stylesheets/main.bc7e593a.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ab28b872.min.css" rel="stylesheet"/>
-<meta content="#009485" name="theme-color"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
-<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-</head>
-<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#visualisatie-van-een-enkelvoudig-satellietbeeld">
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Satellietdata oproepen, filteren en visualiseren - (I002450) Practica Teledetectie 2020</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visualisatie-van-een-enkelvoudig-satellietbeeld" class="md-skip">
           Ga naar inhoud
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header-nav md-grid">
-<a aria-label="(I002450) Practica Teledetectie 2020" class="md-header-nav__button md-logo" href=".." title="(I002450) Practica Teledetectie 2020">
-<img alt="logo" src="../assets/images/LOGO_REMOSA_2020.jpg"/>
-</a>
-<label class="md-header-nav__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
-</label>
-<div class="md-header-nav__title" data-md-component="header-title">
-<div class="md-header-nav__ellipsis">
-<span class="md-header-nav__topic md-ellipsis">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="(I002450) Practica Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="(I002450) Practica Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
             (I002450) Practica Teledetectie 2020
           </span>
-<span class="md-header-nav__topic md-ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
             
               Satellietdata oproepen, filteren en visualiseren
             
           </span>
-</div>
-</div>
-<label class="md-header-nav__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-</label>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</label>
-<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-</button>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+    
+    
+  </nav>
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../index.html">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../index.html" class="md-tabs__link">
         Home
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P3-intro.html">
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../P3-intro.html" class="md-tabs__link">
           P3 - Beeldvoorbewerking
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="P4-Goals.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P4-Goals.html" class="md-tabs__link md-tabs__link--active">
           P4 - Intro tot Google Earth Engine
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P5/P5-Intro.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../P5/P5-Intro.html" class="md-tabs__link">
           P5 - Feature Extraction
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P6/P6-intro.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../P6/P6-intro.html" class="md-tabs__link">
           P6 - Beeldclassificatie
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P7/P7-Timeseries.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../P7/P7-Timeseries.html" class="md-tabs__link">
           P7 - Tijdseries en SAR
         </a>
-</li>
-</ul>
-</div>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="(I002450) Practica Teledetectie 2020" class="md-nav__button md-logo" href=".." title="(I002450) Practica Teledetectie 2020">
-<img alt="logo" src="../assets/images/LOGO_REMOSA_2020.jpg"/>
-</a>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="(I002450) Practica Teledetectie 2020" class="md-nav__button md-logo" aria-label="(I002450) Practica Teledetectie 2020">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
     (I002450) Practica Teledetectie 2020
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../index.html">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../index.html" class="md-nav__link">
       Home
     </a>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
-<label class="md-nav__link" for="nav-2">
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
       P3 - Beeldvoorbewerking
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P3 - Beeldvoorbewerking" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-2">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P3 - Beeldvoorbewerking" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
         P3 - Beeldvoorbewerking
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3-intro.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-intro.html" class="md-nav__link">
       Introduction
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3-Sentinel2.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-Sentinel2.html" class="md-nav__link">
       Sentinel-2 intro and download
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3-Snap-intro.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-Snap-intro.html" class="md-nav__link">
       Introduction to SNAP
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3-colour-composites.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-colour-composites.html" class="md-nav__link">
       RGB colour composites
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3-image-preprocessing.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-image-preprocessing.html" class="md-nav__link">
       Image preprocessing in SNAP
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3-colour-composites-ctd.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P3-colour-composites-ctd.html" class="md-nav__link">
       RGB colour composites 2
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
-<label class="md-nav__link" for="nav-3">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
       P4 - Intro tot Google Earth Engine
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P4 - Intro tot Google Earth Engine" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-3">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P4 - Intro tot Google Earth Engine" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
         P4 - Intro tot Google Earth Engine
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4-Goals.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Goals.html" class="md-nav__link">
       Doel van het practicum
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4-DataCatalog.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-DataCatalog.html" class="md-nav__link">
       EarthEngine data catalog
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4-Intro.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Intro.html" class="md-nav__link">
       Introductie tot Earth Engine
     </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Satellietdata oproepen, filteren en visualiseren
         <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="P4-ImageVisualization.html">
+      </label>
+    
+    <a href="P4-ImageVisualization.html" class="md-nav__link md-nav__link--active">
       Satellietdata oproepen, filteren en visualiseren
     </a>
-<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#visualisatie-van-een-enkelvoudig-satellietbeeld">
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visualisatie-van-een-enkelvoudig-satellietbeeld" class="md-nav__link">
     Visualisatie van een enkelvoudig satellietbeeld
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#beeldcollecties-zoeken-en-filteren">
+      
+        <li class="md-nav__item">
+  <a href="#beeldcollecties-zoeken-en-filteren" class="md-nav__link">
     Beeldcollecties zoeken en filteren
   </a>
-<nav aria-label="Beeldcollecties zoeken en filteren" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#area-of-interest-aoi">
+  
+    <nav class="md-nav" aria-label="Beeldcollecties zoeken en filteren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#area-of-interest-aoi" class="md-nav__link">
     Area of Interest (AOI)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#datacollecties-filteren-en-visualiseren">
+        
+          <li class="md-nav__item">
+  <a href="#datacollecties-filteren-en-visualiseren" class="md-nav__link">
     Datacollecties Filteren en Visualiseren
   </a>
+  
 </li>
-</ul>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4-Reducing.html">
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Reducing.html" class="md-nav__link">
       Reducing ImageCollections
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4-Cloud_masking.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Cloud_masking.html" class="md-nav__link">
       Cloud masking
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4-Oefeningen.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4-Oefeningen.html" class="md-nav__link">
       (Extra) Oefeningen
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
-<label class="md-nav__link" for="nav-4">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       P5 - Feature Extraction
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P5 - Feature Extraction" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-4">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P5 - Feature Extraction" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
         P5 - Feature Extraction
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P5/P5-Intro.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-Intro.html" class="md-nav__link">
       Intro
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P5/P5-Spectral_indices.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-Spectral_indices.html" class="md-nav__link">
       Spectrale indices
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P5/P5-ImageStatistics.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-ImageStatistics.html" class="md-nav__link">
       Beeldstatistieken
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P5/P5-Texture.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-Texture.html" class="md-nav__link">
       Textuuranalyse
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P5/P5-PCA.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-PCA.html" class="md-nav__link">
       Principale componenten analyse
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P5/P5-Oefeningen.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P5/P5-Oefeningen.html" class="md-nav__link">
       Oefeningen
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
-<label class="md-nav__link" for="nav-5">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       P6 - Beeldclassificatie
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P6 - Beeldclassificatie" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-5">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P6 - Beeldclassificatie" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
         P6 - Beeldclassificatie
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-intro.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-intro.html" class="md-nav__link">
       Intro
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-SurinameCase.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-SurinameCase.html" class="md-nav__link">
       CASE - Mangrove monitoring in Suriname
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-Unsupervised.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-Unsupervised.html" class="md-nav__link">
       Niet-gesuperviseerde classificatie
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-Supervised.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-Supervised.html" class="md-nav__link">
       Gesuperviseerde classificatie
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-Improvement.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-Improvement.html" class="md-nav__link">
       Verbeteren van de classificatie
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-SpectralResponse_oud.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-SpectralResponse_oud.html" class="md-nav__link">
       Spectrale responsiecurves
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P6/P6-Oefeningen.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P6/P6-Oefeningen.html" class="md-nav__link">
       Oefeningen
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
-<label class="md-nav__link" for="nav-6">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
       P7 - Tijdseries en SAR
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P7 - Tijdseries en SAR" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-6">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P7 - Tijdseries en SAR" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
         P7 - Tijdseries en SAR
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P7/P7-Timeseries.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P7/P7-Timeseries.html" class="md-nav__link">
       Tijdserie-analyse
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P7/P7-SAR-tijdseries.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../P7/P7-SAR-tijdseries.html" class="md-nav__link">
       SAR-analyse
     </a>
-</li>
-</ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#visualisatie-van-een-enkelvoudig-satellietbeeld">
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visualisatie-van-een-enkelvoudig-satellietbeeld" class="md-nav__link">
     Visualisatie van een enkelvoudig satellietbeeld
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#beeldcollecties-zoeken-en-filteren">
+      
+        <li class="md-nav__item">
+  <a href="#beeldcollecties-zoeken-en-filteren" class="md-nav__link">
     Beeldcollecties zoeken en filteren
   </a>
-<nav aria-label="Beeldcollecties zoeken en filteren" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#area-of-interest-aoi">
+  
+    <nav class="md-nav" aria-label="Beeldcollecties zoeken en filteren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#area-of-interest-aoi" class="md-nav__link">
     Area of Interest (AOI)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#datacollecties-filteren-en-visualiseren">
+        
+          <li class="md-nav__item">
+  <a href="#datacollecties-filteren-en-visualiseren" class="md-nav__link">
     Datacollecties Filteren en Visualiseren
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content">
-<article class="md-content__inner md-typeset">
-<h1>Satellietdata oproepen, filteren en visualiseren</h1>
-<h2 id="visualisatie-van-een-enkelvoudig-satellietbeeld">Visualisatie van een enkelvoudig satellietbeeld</h2>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Satellietdata oproepen, filteren en visualiseren</h1>
+                
+                <h2 id="visualisatie-van-een-enkelvoudig-satellietbeeld">Visualisatie van een enkelvoudig satellietbeeld</h2>
 <p>Laten we simpel starten met het afbeelden van een enkel rasterbeeld. In Practicum 3 gingen we te werk met een Sentinel-2 beeld van de Braziliaanse stad Bélem uit 2020. Aangezien de volledige <a href="https://developers.google.com/earth-engine/datasets/catalog/sentinel">Sentinel-bibliotheek</a> beschikbaar is binnen Earth Engine, kan dit beeld eenvoudig worden ingeladen. Bekijk hiervoor eerst de naam nog eens van je gedownload S2-bestand, bijvoorbeeld:</p>
 <blockquote>
 <p>S2B_MSIL1C_<strong>20200808T134219_N0209_R124_T22MGD</strong>_20200808T153444.SAFE</p>
 </blockquote>
 <p>In Earth Engine is het vette gedeelte van de filenaam belangrijk. Dit wordt als volgt in earth-engine ingeladen, via <strong>'ee.Image'</strong>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Voorbeeld: Sentinel-2 beeld van vorig practicum</span>
-<span class="kd">var</span> <span class="nx">S2_Belem</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">'COPERNICUS/S2_SR/20200808T134219_20200808T134214_T22MGD'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">S2_Belem</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S2_SR/20200808T134219_20200808T134214_T22MGD&#39;</span><span class="p">)</span>
 <span class="nx">print</span><span class="p">(</span><span class="nx">S2_Belem</span><span class="p">)</span>
 
 <span class="c1">// Zoom in de Map-view in naar het beeld, met Zoom-factor 9</span>
@@ -448,44 +873,50 @@
 </code></pre></div>
 Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald de visualisatie die we wensen.</p>
 <p align="center">
-<img src="images/MapaddLayer_1.JPG" width="400"/> <br/>
+  <img src="images/MapaddLayer_1.JPG" width="400">  <br>
 </p>
+
 <p>Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald de visualisatie die we wensen. Dit komt omdat we nog geen visualisatieparameters hebben aangegeven, waardoor de eerste 3 banden naar de rode, groene en blauwe band respectievelijk worden toegekend en de pixelrange zo groot is dat alle pixels een zwarte kleur krijgen. Om dit manueel aan te passen, zoek je je toegevoegde laag in 'Layers' in de Map-view. Klik op het tandwieltje. Een visualisatie-scherm springt open. Pas de parameters aan, zodat je een normale kleurencomposiet verkrijgt, met een stretch van 3 gamma en druk op 'Apply'. Een visueel beter resultaat wordt verkregen.</p>
 <p align="center">
-<img src="images/MapView_VisParam.JPG" width="200"/> <br/>
-<em> Handmatig instellen van de visualisatieparameters kan via 'Layers' in de Map view </em>
+  <img src="images/MapView_VisParam.JPG" width="200">  <br>
+  <em> Handmatig instellen van de visualisatieparameters kan via 'Layers' in de Map view </em>
 </p>
+
 <p align="center">
-<img src="images/MapaddLayer_2.JPG" width="400"/> <br/>
+  <img src="images/MapaddLayer_2.JPG" width="400">  <br>
 </p>
+
 <p>Het is echter niet handig om steeds opnieuw de visualisatie handmatig in te stellen. Gelukkig kan deze ook als code geïmporteerd worden in GEE (klik op 'Import'). De visualisatieparameters worden toegevoegd in de Imports. Deze kunnen dan in de Map.addLayer() -functie worden meegeven tijdens het visualiseren.</p>
 <p align="center">
-<img src="images/imageVisParam.JPG" width="400"/> <br/>
+  <img src="images/imageVisParam.JPG" width="400">  <br>
 </p>
+
 <p>In de code-editor zelf kunnen de visualisatieparameters eveneens gedefinieerd worden.
 <div class="highlight"><pre><span></span><code><span class="c1">// Aanmaken van visualizatieparameters</span>
 <span class="kd">var</span> <span class="nx">visualization</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
   <span class="nx">max</span><span class="o">:</span> <span class="mf">3000</span><span class="p">,</span>
-  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">'B4'</span><span class="p">,</span> <span class="s1">'B3'</span><span class="p">,</span> <span class="s1">'B2'</span><span class="p">],</span>
+  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">],</span>
 <span class="p">};</span>
 <span class="nx">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">S2_Belem</span><span class="p">,</span> <span class="mf">9</span><span class="p">);</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_Belem</span><span class="p">,</span> <span class="nx">visualization</span><span class="p">,</span><span class="s1">'Bèlem_met_Vis'</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_Belem</span><span class="p">,</span> <span class="nx">visualization</span><span class="p">,</span><span class="s1">&#39;Bèlem_met_Vis&#39;</span><span class="p">);</span>
 </code></pre></div></p>
 <h2 id="beeldcollecties-zoeken-en-filteren">Beeldcollecties zoeken en filteren</h2>
 <p>In voorgaande paragraaf visualiseerden we een Sentinel-2 beeld die we reeds hadden opgezocht waarvan wisten dat de kwaliteit goed zat én waarvan we de bestandsnaam reeds kenden. Het is natuurlijk niet handig om steeds een filenaam te moeten kennen om verder te kunnen werken in Earth Engine. Daarmee zouden we ook de geweldige kracht van het programma om doorheen vele petabytes aan Aardobservatiedata te zoeken onbenut laten.  </p>
 <p>In wat volgt gaan we op basis van een locatie op zoek gaan naar geschikte satellietbeelden, door het filteren van gehele beeldcollecties.</p>
 <h3 id="area-of-interest-aoi">Area of Interest (AOI)</h3>
 <p>Starten doen we met het intekenen van een gewenste <em>Area Of Interest</em> (AOI) in de Map View. Een AOI is niets anders dan de afbakening van het studiegebied, waarbinnen we onze data wensen te verkrijgen.  </p>
-<p>Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": <img alt="" src="images/GEE_knoppen.jpg" style="height:25px">.  </img></p>
+<p>Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": <img alt="" src="images/GEE_knoppen.jpg" style="height:25px" />.  </p>
 <p>In dit voorbeeld kiezen we voor de Konigin der badsteden, Oostende, als studiegebied:</p>
 <p align="center">
-<img src="images/Oostende_polygon.JPG" width="1000"/> <br/>
+  <img src="images/Oostende_polygon.JPG" width="1000">  <br>
 </p>
+
 <p>Automatisch wordt een nieuwe variabele aangemaakt onder de naam 'geometry', welke eenvoudig hernoemd kan worden naar een eenvoudig te gebruiken variabelenaam: </p>
 <p align="center">
-<img src="images/Ostend_Polygon.JPG" width="400"/> <br/>
+  <img src="images/Ostend_Polygon.JPG" width="400">  <br>
 </p>
+
 <p>Bekijk de eigenschappen van de polygoon door het naar de console te printen:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Polygoon-informatie naar de console schrijven:</span>
 
@@ -493,111 +924,133 @@ Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald 
 </code></pre></div>
 <h3 id="datacollecties-filteren-en-visualiseren">Datacollecties Filteren en Visualiseren</h3>
 <p>Voor deze oefening maken we als afwisseling gebruik van Landsat-8 beelden (zie ook het stukje omtrent de <a href="">Earth Engine data catalog</a>). De importeer-code kan gekopieerd worden uit de data catalog en ziet er als volgt uit:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">L8</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">'LANDSAT/LC08/C01/T1_SR'</span><span class="p">)</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Grootte van de L8-collectie :'</span><span class="p">,</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">size</span><span class="p">())</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">L8</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;LANDSAT/LC08/C01/T1_SR&#39;</span><span class="p">)</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Grootte van de L8-collectie :&#39;</span><span class="p">,</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">size</span><span class="p">())</span>
 </code></pre></div>
 <p>Hiermee verwijst de variabele 'L8' naar de volledige Landsat-8 collectie (surface reflectance). De '.size()'-functie geeft het aantal beelden dat in deze collectie zijn begrepen. Een hele hoop, sinds ze collectie veel beelden van de volledige aarde omvat. Deze verzameling dient bijgevolg gefilterd te worden. Filteren kan op basis van de metadata:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Filteren o.b.v. datum, locatie:</span>
-<span class="kd">var</span> <span class="nx">L8</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">'2020-01-01'</span><span class="p">,</span> <span class="s1">'2020-10-30'</span><span class="p">)</span> <span class="c1">//Op basis van datum</span>
+<span class="kd">var</span> <span class="nx">L8</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2020-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-10-30&#39;</span><span class="p">)</span> <span class="c1">//Op basis van datum</span>
            <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">Oostende</span><span class="p">)</span> <span class="c1">//op basis van locatie (de AOI);</span>
 
 <span class="c1">//Printen van de nieuwe grootte</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'L8 size na filtering'</span><span class="p">,</span><span class="nx">L8</span><span class="p">.</span><span class="nx">size</span><span class="p">())</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;L8 size na filtering&#39;</span><span class="p">,</span><span class="nx">L8</span><span class="p">.</span><span class="nx">size</span><span class="p">())</span>
 
 <span class="c1">// Printen van de collectie voor inspectie</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Filtered collection: '</span><span class="p">,</span> <span class="nx">L8</span><span class="p">)</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Filtered collection: &#39;</span><span class="p">,</span> <span class="nx">L8</span><span class="p">)</span>
 </code></pre></div>
 <p>De beelden in de collectie zijn standaard gesorteerd op datum, indien we dus het bovenste beeld eruit halen, zal dit het eerste Landsat-8 beeld zijn gemaakt in 2020. Met de functie <em>.first()</em>, halen we deze eruit.  Print deze naar de console en bekijk het verschil met de de Imagecollectie.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Krijg het eerste (standaard oudste) beeld uit de collectie:</span>
 <span class="kd">var</span> <span class="nx">L8_first</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">first</span><span class="p">()</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Eerste Beeld:'</span><span class="p">,</span> <span class="nx">L8_first</span><span class="p">)</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Eerste Beeld:&#39;</span><span class="p">,</span> <span class="nx">L8_first</span><span class="p">)</span>
 </code></pre></div>
 <p>In een volgende stap kunnen we dit beeld ook gaan visualiseren, met <code>javascript Map.addLayer()</code>. 6)    Ook nu kunnen we dit als een echte kleurencomposiet visualiseren (voor Landsat 8 betekent dit dus B2 (blauw), B3 (groen) en B4 (rood)). </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Landsat-8 visualisatie instellen.</span>
 <span class="kd">var</span> <span class="nx">trueColor</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">'B4'</span><span class="p">,</span> <span class="s1">'B3'</span><span class="p">,</span> <span class="s1">'B2'</span><span class="p">],</span>
+  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">],</span>
   <span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
   <span class="nx">max</span><span class="o">:</span> <span class="mf">3000</span><span class="p">,</span>
   <span class="nx">gamma</span><span class="o">:</span> <span class="mf">1.4</span><span class="p">,</span>
 <span class="p">};</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L8_first</span><span class="p">,</span> <span class="nx">trueColor</span><span class="p">,</span> <span class="s1">'L8_TrueColorComposite'</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L8_first</span><span class="p">,</span> <span class="nx">trueColor</span><span class="p">,</span> <span class="s1">&#39;L8_TrueColorComposite&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p align="center">
-<img src="images/Oostende_first.JPG" width="500"/> <br/>
-<em> Eerste Landsat 8 beeld binnen de gefilterede collectie </em>
+  <img src="images/Oostende_first.JPG" width="500">  <br>
+  <em> Eerste Landsat 8 beeld binnen de gefilterede collectie </em>
 </p>
+
 <p>Mogelijk is dit eerste beeld niet het meest ideale wat betreft de wolkbedekking, waardoor er weinig te zien valt. Laten we nu op zoek gaan naar het beeld met de laagste wolkenbedekking binnen de collectie. Dit doen we in eerste instantie door de collectie te sorteren volgens het percentage cloudcover, wat standaard tot de metadata van een Landsatbeeld behoort.
 Bekijk het beeld. Wat valt je op? Wordt het volledige gebied bedekt?</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Sorteren van de collectie obv cloud cover</span>
-<span class="kd">var</span> <span class="nx">L8_sortedCC</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">'CLOUD_COVER'</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L8_sortedCC</span><span class="p">.</span><span class="nx">first</span><span class="p">(),</span> <span class="nx">trueColor</span><span class="p">,</span> <span class="s1">'Least Cloud cover 2020'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">L8_sortedCC</span> <span class="o">=</span> <span class="nx">L8</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">&#39;CLOUD_COVER&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">L8_sortedCC</span><span class="p">.</span><span class="nx">first</span><span class="p">(),</span> <span class="nx">trueColor</span><span class="p">,</span> <span class="s1">&#39;Least Cloud cover 2020&#39;</span><span class="p">)</span>
 </code></pre></div>
 <p align="center">
-<img src="images/Oostende_LC.JPG" width="500"/> <br/>
-<em> Landsat 8-beeld met laagste wolkbedekking binnen de gefilterede collectie </em>
+  <img src="images/Oostende_LC.JPG" width="500">  <br>
+  <em> Landsat 8-beeld met laagste wolkbedekking binnen de gefilterede collectie </em>
 </p>
+
 <p>Bekijk op welke dag de sensor dit beeld heeft genomen. Gebruik hiervoor de ‘inspector’ om de beeldeigenschappen verder te bekijken.</p>
 <p align="center">
-<img src="images/Inspector.JPG" width="500"/> <br/>
-<em> De inspector </em>
+  <img src="images/Inspector.JPG" width="500">  <br>
+  <em> De inspector </em>
 </p>
+
 <div class="admonition note">
 <p class="admonition-title">Opdracht</p>
 <p>Visualiseer in een nieuw script een valse kleurencomposiet van een Sentinel-2 beeld (Tier 1, Surface Reflectance). Neem hierbij Gent als AOI, met een beeld uit de zomer van 2019 met een zo laag mogelijke wolkenbedekking.  </p>
 <p>Voor het sorteren van de wolkenbedekking, zoek je de gepaste eigenschap om op te sorteren. Deze kun je <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR#image-properties" target="_blank">hier</a> vinden.</p>
 <p>Bewaar je script.</p>
 </div>
-</article>
-</div>
-</div>
-</main>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
 <footer class="md-footer">
-<div class="md-footer-nav">
-<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="P4-Intro.html" rel="prev">
-<div class="md-footer-nav__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer-nav__title">
-<div class="md-ellipsis">
-<span class="md-footer-nav__direction">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="P4-Intro.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
                   Vorige
                 </span>
                 Introductie tot Earth Engine
               </div>
-</div>
-</a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="P4-Reducing.html" rel="next">
-<div class="md-footer-nav__title">
-<div class="md-ellipsis">
-<span class="md-footer-nav__direction">
+            </div>
+          </a>
+        
+        
+          <a href="P4-Reducing.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
                   Volgende
                 </span>
                 Reducing ImageCollections
               </div>
-</div>
-<div class="md-footer-nav__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
-</div>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
         
         Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
- ... <a class="link--pdf-download" download href="..\pdf\document.pdf" title="PDF">download PDF</a></div>
-</div>
-</div>
+      </div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-<script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-<script>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
         app = initialize({
           base: "..",
           features: ['navigation.sections', 'navigation.tabs'],
@@ -606,8 +1059,13 @@ Bekijk het beeld. Wat valt je op? Wordt het volledige gebied bedekt?</p>
           }, typeof search !== "undefined" && search)
         })
       </script>
-<script src="../javascripts/config.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
 </html>
