@@ -1,5 +1,8 @@
 ## Intro
 
+??? info "Volledig script"
+    Via deze link: [https://code.earthengine.google.com/daa928f77d99318a165e277c53d684d2](https://code.earthengine.google.com/daa928f77d99318a165e277c53d684d2)
+
 **Gesuperviseerde classificatie** is gebaseerd op een door de gebruiker opgestelde trainingdataset. Deze trainingsdata zijn representatief voor de specifieke gewenste klassen. Het gesuperviseerde algoritme gebruikt dan deze trainingsdata als referentie, om onbekende pixels te classificeren.
 
 Een belangrijk element hierbij is dus voorkennis van het desbetreffende gebied. De *trainingsamples* die worden opgesteld worden ook wel *ground truth data* genoemd en komen overeen met gekende landbekking op locaties.
@@ -14,7 +17,6 @@ Er zijn verschillende opties om aan gronddata te komen:
 
 
 Een ander aspect is dat de trainingdata zo dicht mogelijk opgenomen wordt bij het tijdstip van opname van het gebruike remote sensing beeld. Landbedekking kan immers snel veranderen: stadsontwikkeling, ontbossing, seizoenale impact, agrarische veranderingen, kusterosie, ...
-
 
 In deze oefening van gesuperviseerde classificatie zul je zelf trainingsamples moeten aanmaken, want er zijn geen GPS-punten beschikbaar. Wel beschik je over een beknopt verslag van een veldcampagne, dat je een idee kan geven van de aanwezige landbekkingsklassen en aangezien we ons beperken tot enkele brede klassen, zul je tevens gemakkelijk visueel trainingsamples kunnen aanmaken. Hiervoor is het aanmaken en analyseren van verschillende composieten aangewezen.
 
@@ -86,7 +88,7 @@ Map.addLayer(S2_im,{min:500,max:4000,bands:'B8,B11,B2'},'Healthy_Vegetation_2020
 
 * Hover met je muis over de *'Geometry Imports* box, dat zich naast de geometrietools bevindt. Klik op *'+new layer'.
 
-* Elke gewenste landbedekkingsklasse dient als een afzonderlijke laag te worden aangemaakt. Laat ons bijvoorbeeld starten met de eenvoudigste klasse 'water'. Zoom in op het beeld en teken polygonen in over oppervlaktes waar je zeker van bent dat het waterlichamen betreft. Het is goed hierin te variëren binnen verschillende types van zowel zee als rivieren en andere waterlichamen. Teken ca. 10 polygonen in per klasse. Neem hiervoor zeker je tijd, gezien het belangrijk is dit zeer precies te doen. De kwaliteit van de inputdata bepaalt tevens de kwaliteit van de classificatie. *Garbage in = Garbage out*. Als je een fout gemaakt heb, kun je even op 'exit' duwen en de laats ingetekende polygoon verwijderen.
+* Elke gewenste landbedekkingsklasse dient als een afzonderlijke laag te worden aangemaakt. Laat ons bijvoorbeeld starten met de eenvoudigste klasse 'water'. Zoom in op het beeld en teken polygonen in over oppervlaktes waar je zeker van bent dat het waterlichamen betreft. Het is goed hierin te variëren binnen verschillende types van zowel zee als rivieren en andere waterlichamen. Teken ca. 10 polygonen in per klasse. Neem hiervoor zeker je tijd, gezien het belangrijk is dit zeer precies te doen. De kwaliteit van de inputdata bepaalt tevens de kwaliteit van de classificatie, oftewel *Garbage in = Garbage out*. Als je een fout gemaakt heb, kun je even op 'exit' duwen en de laats ingetekende polygoon verwijderen.
 
 <center>
 
@@ -256,6 +258,37 @@ Een veel gebruikte methode bij het opstellen van modellen, is het opsplitsen van
 
 > **Testdata** = Deze afzonderlijke dataset wordt gebruikt om bij een finaal model accuraatheidsmaten van de bekomen classificatie te berekenen. Testdatasets worden meestal ook zeer goed verzorgd en zijn goed verzamelde (veld)datapunten. De *spatiale autocorrelatie* vervalt hier.
 
+### De Error Matrix: interpretatie
+De Error Matrix wordt opgesteld door het vergelijken van de geclassificeerde testdata-waarden en de referentiedata. Onderstaande matrix geeft een voorbeeld van dergelijke matrix:
+
+<p align="center">
+  <img src="images/ErrorMatrix.jpg" width= 600>  <br>
+</p> 
+
+* **Rijen**: resulaat van de classificatie
+* **Kolommen**: validatie data
+* **Diagonaal**: pixels die goed geclassificeerd zijn (validatie data = classificatie)
+* **Niet-diagonaal**:  
+
+      - **Omissie**: de niet diagonale kolom-elementen. Deze pixels behoren tot een klasse, maar werden ingedeeld in een verkeerde klasse. In het voorbeeld: 18 pixels moesten Mangrove zijn, maar werden ingedeeld onder andere klassen: 1 als 'Dead Mangrove', 8 als *Other Forest*, 7 als *Other Vegetation* en 2 als *Water.  
+
+      - **Commissie**: Deze pixels geven aan welke pixels verkeerd werden ingedeeld in deze klasse. Voor *Water* zijn dit er bijvoorbeeld 2 (moesten *'Dead Mangrove'*) + 2 (moest *Mangrove* zijn + 1 (moest *Other Vegetation* zijn) = 5 pixels verkeerdelijk als *'Water'* ingedeeld.  
+
+Op basis van de error matrix kunnen er enkele **accuraatheidsmaten** worden berekend.
+
+- **Overall accuracy**: Dit is de som van de diagonale elementen, gedeeld door het totaal aantal pixels (= "juist ingedeeld"/totaal).
+
+- **Producer accuracy**: een klasse-specifieke accuraatheidsmaat. Dit is het aantal correct ingedeeld pixels in elke klasse, gedeeld door het aantal validatiepixels van die klassen. (Bijvoorbeeld Mangrove = (125/143 = 87,41%)). Het is dus een maat hoe goed pixels van een bepaalde klasse zijn geclassificeerd.
+
+- **User/consumer accurcay**: Het aantal correct geclassificeerde pixels in elke klasse, gedeeld door het aantal pixels ingedeeld in die klasse (rij-totaal).
+
+- **Kappa (KHAT) index**: de kappa index is een gecorrigeerde accuraatheidsmaat, die intra- en interobserver agreement in rekening houdt. Het houdt m.a.w. rekening met pixels die per toeval juist geclassificeerd zijn. Onderstaande tabel geeft een interpretatie weer van de kappa-waarde.
+<p align="center">
+  <img src="images/kappa.png" width=300>  <br>
+</p> 
+
+### De Error matrix in Earth Engine
+#### Inlezen van de Testdataset
 In voorliggend voorbeeld maken we gebruik van een extra testdataset voor het opstellen van de error matrix. Gezien we geen optimalisatie van parameters gaan doorvoeren, maken we geen gebruik van validatiedata en wordt de volledige trainingscollectie ook trainingsdata.
 
 De gebruikte testdataset bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer rond de GPS-punten werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.
@@ -283,20 +316,47 @@ var testdata = S2_im.sampleRegions({
 print('Aantal testpixels: ',traindata.size());
 ```
 
-Nu we de testpixelwaarden geëxtraheerd hebben, kunnen we deze vergelijken met de geclassificeerde pixels in een **error matrix**. In onderstaand stukje code staat het voorbeeld voor de Minimum Distance classifier. Pas dit toe voor alle classifiers. Welke classifier heeft de grootste algemene accuraatheid (*Overall accuracy*)?
+Nu we de testpixelwaarden geëxtraheerd hebben, kunnen we deze vergelijken met de geclassificeerde pixels in een **error matrix**. Tevens staat Earth Engine een rechtstreekse berekening van de verschillende accuraatheidsmaten toe. In onderstaand stukje code staat het voorbeeld voor de Minimum Distance classifier. Pas dit toe voor alle classifiers. Welke classifier heeft de grootste algemene accuraatheid (*Overall accuracy*)? 
 
 ```javascript
-// Accuracy assessment uitvoeren per classifier
-
-// Validatie met de validatiedata
+// Validatie met de testdata
 var val_MinDist = testdata.classify(MinDist);
 var ErrorMatrix_MinDist = val_MinDist.errorMatrix('val', 'classification')
 
-print('Validation error matrix: ', ErrorMatrix_MinDist);
-print('Validation overall accuracy: ', ErrorMatrix_MinDist.accuracy());
+print('MinDist Validation error matrix: ', ErrorMatrix_MinDist.array().transpose());
+print('MinDist Validation overall accuracy: ', ErrorMatrix_MinDist.accuracy());
+print('MinDist Producer Accuracy: ', ErrorMatrix_MinDist.producersAccuracy());
+print('MinDist User/Consumer Accuracy: ', ErrorMatrix_MinDist.consumersAccuracy());
+
+//Omzetten naar een Feature + transpose
+var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array().transpose()}); 
+
 ```
 
-## Exporteren van de Error Matrix
+!!! warning "De Error matrix in Earth Engine"
+    In Earth Engine wordt de error matrix opgeroepen met de ```ee.ConfusionMatrix()```-functie. Resulterend is een lijst met 7 elementen (de rijen), waarbij elke rij op zijn beurt bestaat uit 7 elementen (de kolommen). In Earth Engine corresponderen de rijen met de referentiedata en de kolommen met de geclassificeerde data. Met de ```array.().transpose()``` functie kunnen we deze matrix transponeren, zodat deze overeenkomst met de matrix in het voorbeeld (kolommen: referentie, rijen: geclassificeerd), wat de standaard weergave is.
+    <p align="center">
+    <img src="images/GEE_ErrorMatrix.JPG" width=600>  <br>
+    </p> 
+    Daarnaast wordt ook klasse '0' meegerekend in de berekening. Gezien deze in ons voorbeeld niet bestaat, zal de 1e rij/kolom enkel 0-waarden bevatten.
+
+
+## Extra: interpretatie 
+
+In ons voorbeeldje werd onderstaande ErrorMatrix verkregen voor de MinDist classifier:
+<p align="center">
+<img src="images/MinDist_ErrorMatrix.JPG">  <br>
+</p> 
+
+Na wat opschoning in excel, ziet de error matrix van dit voorbeeld er uit als volgt:
+<p align="center">
+<img src="images/ErrorMatrix_P6.png" width=500>  <br>
+</p>
+
+Welke klassen scoren goed? Welke zijn minder accuraat? Aan de *overall accurcay* en de *Kappa index* kan worden afgeleid dat de classificatie reeds een goede indicatie heeft, maar nog voor verbetering vatbaar is. Hoofdzakelijk de klassen 'water' en 'crop' scoren goed, terwijl 'Soil' moeilijker te onderscheiden valt van 'crop' en 'urban'. Betere trainingsdata is hier dus de boodschap!
+
+## Extra: Exporteren van de Error Matrix
+
 In Google Earth Engine is de weergave van de error matrix niet zo handig. Om verdere accuraatheidsmaten uit te rekenen en een betere interpretatie te kunnen uitvoeren kan het handig zijn om de error matrix te exporteren als een .csv-bestand, dewelke in andere software (zoals excel) geopend kan worden. 
 
 Met de ```Export.table.toDrive()```-functie kunnen we de matrix exporteren naar onze Google Drive. Hiervoor dienen we dit eerst om te zetten naar een *feature*.

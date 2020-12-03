@@ -14,17 +14,18 @@ RED = reflectie in het rode gebied van het spectrum
 
 De resulterende index krijgt waarden binnen tussen -1 en 1.  
 
-Volgens deze formule is de densiteit van vegetatie (NDVI) op een gegeven plaats in het beeld gelijk aan de verschillen in intensiteit van het gereflecteerde licht in het rood en infrarode deel van het spectrum, gedeeld door de soms van deze intensiteiten. Vegetatie absorbeert immers een groot deel van het zichtbare licht ten behoeve van de fotosynthese (dus lage Rood-reflectie), maar weerkaatst vrijwel al het infrarode licht (hoge IR-reflectiewaarde), waardoor de ndvi stijgt. Hoe denser de vegetatie, hoe hoger de ndvi. Andere lichamen, zoals water, observeren IR dan weer beter tot zeer goed, waardoor de ndvi daalt.
+Volgens deze formule is de densiteit van vegetatie (NDVI) op een gegeven plaats in het beeld gelijk aan de verschillen in intensiteit van het gereflecteerde licht in het rood en infrarode deel van het spectrum, gedeeld door de soms van deze intensiteiten. Vegetatie absorbeert immers een groot deel van het zichtbare licht ten behoeve van de fotosynthese (dus lage Rood-reflectie), maar weerkaatst vrijwel al het infrarode licht (hoge IR-reflectiewaarde), waardoor de ndvi stijgt. Hoe denser de vegetatie, hoe hoger de ndvi. Andere lichamen, zoals water, observeren IR dan weer beter tot zeer goed, waardoor de ndvi daalt.  
 
-In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starten met de ‘meest conventionele’. 
 
-1.  We starten deze oefening in de Gentse haven. Maal een puntsymbool aan ergens ter hoogte van de Gentse haven in Evergem.
+In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starten met de ‘meest conventionele’:  
+
+  * We starten deze oefening in de Gentse haven. Maal een puntsymbool aan ergens ter hoogte van de Gentse haven in Evergem.
 
     <p align="center">
     <img src="Images/GEE_HavenGent.JPG">  <br>
     </p> 
 
-2.  Importeer de Sentinel-2 Surface Reflectance (Tier 1) collection en zoek naar het beeld met de laagste wolkbedekking uit 2019 in de periode mei-juni (= de late lente). Bekijk van welke datum het beeld afkomstig is. Visualiseer als een valse kleurencomposiet  
+  *  Importeer de Sentinel-2 Surface Reflectance (Tier 1) collection en zoek naar het beeld met de laagste wolkbedekking uit 2019 in de periode mei-juni (= de late lente). Bekijk van welke datum het beeld afkomstig is. Visualiseer als een valse kleurencomposiet  
   
     ```Javascript
     //1. Importeren van de Sentinel-2 collectie.
@@ -50,7 +51,7 @@ In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starte
     Map.addLayer(S2_Gent_Lente19,S2_ValseKleuren,'Valse Kleuren lente 2019')
     ```  
   
-3.  Een eerste methode om een NDVI aan te maken is via de ingebouwde ```.normalizedDifference()``` functie. Ga na welke Sentinel-2 banden je nodig hebt om de ndvi te berekenen. (Maak eventueel gebruik van de ‘Docs’-tab.)  
+  *  Een eerste methode om een NDVI aan te maken is via de ingebouwde ```.normalizedDifference()``` functie. Ga na welke Sentinel-2 banden je nodig hebt om de ndvi te berekenen. (Maak eventueel gebruik van de ‘Docs’-tab.)  
 
     ```Javascript
     //2. Aanmaken NDVI via NormalDifference()-functie. Vul de '?' in
@@ -62,7 +63,7 @@ In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starte
     <img src="Images/GEE_ndvi_noparams.JPG">  <br>
     </p> 
   
-4. Een ndvi wordt meestal afgebeeld met een kleurenschema, zoals onderstaand voorbeeld:
+  * Een ndvi wordt meestal afgebeeld met een kleurenschema, zoals onderstaand voorbeeld:
    ```Javascript
    // Met visualisatie
    var ndviParams = {min: -1, max: 1, palette: ['red','yellow','darkgreen']};
