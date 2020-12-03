@@ -240,10 +240,10 @@ Bij het visualiseren willen we een visueel overzichtelijk resultaat krijgen. Aan
 
 ## Accuracy assessment
 
-In de *accuracy assessment* gaan we de accuraatheid van het model nagaan. Dit doen we o.b.v. een **error matrix**. Om deze op te stellen hebben we nood aan testdata.
+In de *accuracy assessment* gaan we de accuraatheid van het model nagaan. Dit doen we op basis van een **error matrix**. Om deze op te stellen hebben we nood aan een set van (onafhankelijke) testdata. We willen met andere woorden weten hoe goed onbekende pixels worden geclassificeerd door de classifier.
 
-## Training- Validation en Testdata
-Voordat we onze data gebruiken om het model te trainen, splitsen we het in trainings en validatiedata. Daarnaast wordt er vak nog gebruik gemaakt van een derde, volledig afzonderlijke dataset: de **testdataset**.  In veel gevallen, zoals in komend voorbeeld, wordt de validatieset ook gebruikt als testdataset, maar dit is statistisch gezien niet de beste praktijk. 
+### Training- Validation en Testdata
+Een veel gebruikte methode bij het opstellen van modellen, is het opsplitsen van de *trainingset*-dataset in training- en validatiedata. Hierbij wordt de *training*data at random gesplits in meestal een 80/20-verhouding. Daarnaast wordt er vak nog gebruik gemaakt van een derde, volledig afzonderlijke dataset: de **testdataset**:
 
 <p align="center">
   <img src="images/Train_Val_Test.png">  <br>
@@ -252,13 +252,13 @@ Voordat we onze data gebruiken om het model te trainen, splitsen we het in train
 
 > **Traindata**= de data gebruikt om het model te trainen en dus te *fitten*. Het model bekijkt en leert van deze data.
 
-> **Validatiedata**= Het deel van de data dat gebruikt zal worden om na te gaan hoe goed het model werkt op onbekende data. Dit deel zal dus niet gebruikt worden om het model te trainen. Hierdoor kunnen verschillende classificatiemodellen en parameters binnen het model tegenover elkaar worden afgewogen en het model zo worden geperfectioneerd. Dit wordt ook wel *parameter tuning* genoemd. Validatiedata wordt dus gebruikt tijdens de ontwikkeling en het zoeken van het beste model. Aangezien deze data van dezelfde dataset komt treedt er *spatiale autocorrelatie* op, waarbij de validatiepixels veelal buurpixels zijn van trainpixels.
+> **Validatiedata**= Het deel van de data dat gebruikt zal worden om na te gaan hoe goed het model werkt op onbekende data. Dit deel zal dus niet gebruikt worden om het model te trainen. Hierdoor kunnen verschillende classificatiemodellen en parameters binnen het model tegenover elkaar worden afgewogen en het model zo worden geperfectioneerd. Dit wordt ook wel *parameter tuning* genoemd. Validatiedata wordt dus gebruikt tijdens de ontwikkeling en het zoeken van het beste model. Bij spatiale data echter, dient hier voorzichtig mee te worden omgegaan door het fenomeen van *spatiale autocorrelatie*. Hierbij zijn de validatiepixels veelal buurpixels van de trainpixels. Dit is het geval wanneer er bijvoorbeeld gebruik gemaakt wordt van polygonen als inputdata.
 
 > **Testdata** = Deze afzonderlijke dataset wordt gebruikt om bij een finaal model accuraatheidsmaten van de bekomen classificatie te berekenen. Testdatasets worden meestal ook zeer goed verzorgd en zijn goed verzamelde (veld)datapunten. De *spatiale autocorrelatie* vervalt hier.
 
-In voorliggend voorbeeld maken we gebruik van een extra testdataset. Gezien we geen optimalisatie van parameters gaan doorvoeren, maken we geen gebruik van validatiedata en wordt de volledige trainingscollectie trainingsdata.
+In voorliggend voorbeeld maken we gebruik van een extra testdataset voor het opstellen van de error matrix. Gezien we geen optimalisatie van parameters gaan doorvoeren, maken we geen gebruik van validatiedata en wordt de volledige trainingscollectie ook trainingsdata.
 
-Dit doen we aan de hand van onze validatie dataset als een externe testset. Deze set bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.
+De gebruikte testdataset bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer rond de GPS-punten werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.
 
 Je kunt de shape-file hier downloaden: [P6_testdata_poly.zip](https://users.ugent.be/~jfeyen/P6/P6_testdata_poly.zip)
 
