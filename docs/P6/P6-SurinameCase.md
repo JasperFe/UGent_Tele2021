@@ -19,7 +19,7 @@ In totaal bestaan er zo'n 55 mangrovesoorten die aan bovenstaande defenitie vold
 In Suriname bestaan er "slechts" 5 mangrovesoorten waarvan 2 soorten de grootste dominantie vertonen: de zwarte mangrove of 'Parwa' (*Avicennia germinans*) die hoofdzakelijk langs de kustlijnen groeit in homogene bestanden en de rode mangrove of 'Mangro' (*Rhizopora mangle*), die landinwaarste en langs rivieroevers terug te vinden is.
 
 <p align="center">
-  <img src="images/Mangrove_distribution.jpg">  <br>
+<img src="images/Mangrove_distribution.jpg" width=400>  <br>
  <em> Verspreiding van de 2 dominerende Mangrovesoorten in 2018 (SBB, 2019). </em> 
 </p>
 
