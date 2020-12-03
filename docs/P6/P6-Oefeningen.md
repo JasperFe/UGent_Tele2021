@@ -16,10 +16,23 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 * Clip je resulterende beelden op basis van de Belgische grens.
 
-* Voer een classificatie uit met volgende klassen: *bos, water, grasland, landbouw, urban, bodem*. Maak hiervoor je eigen trainingssamples aan. Vergeet ze niet samen te voegen tot één ```FeatureCollection```.
+* Voer een classificatie uit met volgende klassen: *bos, water, grasland, landbouw, urban*. Maak hiervoor je eigen trainingssamples aan. Vergeet ze niet samen te voegen tot één ```FeatureCollection```.
 
 * Kies 2 classifiers naar keuze.
 
 * Visualiseer je resultaat naar eigen keuze. Evalueer het visueel: is je classificatie geslaagd? Welke classifier lijkt beter? 
 
-* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset: .
+* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset:  [P6_Oef1_validation.zip](https://users.ugent.be/~jfeyen/P6/P6_Oef1_validation.zip). Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:
+
+<center>
+
+|  val  | Landbekkingsklasse |
+|:-----:|:------------------:|
+|   1   |        Bos         |
+|   2   |        Water       |
+|   3   |       Grasland     |
+|   4   |      Landbouw      |
+|   5   |       Urbaan       |
+
+
+</center>
