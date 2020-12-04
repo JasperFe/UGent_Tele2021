@@ -26,7 +26,7 @@ In Suriname bestaan er "slechts" 5 mangrovesoorten waarvan 2 soorten de grootste
 
 |    Parwa (*Avicennia germinans*)      |   Mangro (*Rhizopora Mangle*)|
 |:------------------------------:|:--------------------------------:|
-|![](images/Parwa_Suriname.jpg)  |  ![](images/Mangro_Suriname.jpg)|
+|![](images/Parwa_Suriname.jpg){: style="width:300px"}  |  ![](images/Mangro_Suriname.jpg){: style="width:300px"}|
 
 ## Mangrove mapping
 
@@ -64,6 +64,6 @@ De MVI wordt als volgt geformuleerd:
 
 $$MVI = { NIR - Green \over SWIR1 - Green}.$$
 
-Wat zicht vertaald in Sentinel-2 banden als:
+Wat zicht vertaald naar Sentinel-2 banden als:
 
 $$MVI = { B8 - B3 \over B11 - B3}.$$

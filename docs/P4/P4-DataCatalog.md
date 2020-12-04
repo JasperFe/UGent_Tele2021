@@ -1,4 +1,4 @@
-### De Earth Engine Data Catalog
+## De Earth Engine Data Catalog
 
 Om het aanbod aan Aardobservatie-data in GEE te bekijken en te doorzoeken, kan gebruik gemaakt worden van de Data Catalog: [https://developers.google.com/earth-engine/datasets](https://developers.google.com/earth-engine/datasets). Via deze catalogus kun je eenvoudig rasterdata allerhande opzoeken en de noodzakelijke code om de beelden in je script te importeren vinden.
 
