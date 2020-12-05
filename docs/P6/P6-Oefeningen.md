@@ -1,6 +1,6 @@
 ## OEF 6.1 - Classificatie van België
 
-## Gegeven
+### Gegeven
 In volgende oefening maken we een landclassificatie van België op basis van een Landsat-8 beeldcomposiet. Om de grenzen van België te bekomen, maken we gebruik van volgende dataset: [https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017](https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017)
 
 Om hieruit België te filteren, maak je gebruik van onderstaande code:
@@ -10,7 +10,7 @@ var countries = ee.FeatureCollection( 'USDOS/LSIB_SIMPLE/2017' );
 var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 ```
 
-## Opdracht
+### Opdracht
 
 * Maak één wolkenvrij Landsat-8 beeld aan voor 2019. Weerhoud enkel de bruikbare banden voor classificatie: voor Landsat-8 dit zijn volgende banden: blauw, groen, rood, nir, swir1, swir2. 
 
@@ -36,3 +36,40 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 
 </center>
+
+## OEF 6.2 - Eyjafjallajökull
+<p align="center">
+<img src="images/Oef6_2.jpg" width=500>  <br>
+</p>
+
+De gletsjer Eyjafjallajökull is een van de kleinere gletsjers op IJsland en heeft een oppervlakte van ongeveer 100 km². De Eyjafjallajökull ligt ten noorden van het plaatsje Skógar. Op de oostflank van de vulkaan, nabij de bergpas Fimmvörðuháls, vond op 20 maart 2010 nieuwe vulkanische activiteit plaats. Een tweede explosievere uitbarsting in de hoofdkrater van de Eyjafjallajökull, begon op 14 april 2010. In grote delen van Europa werd het vliegverkeer dagenlang volledig stilgelegd vanwege de aswolken die de vliegtuigen kunnen beschadigen.
+
+### Gegeven
+Maak gebruik van volgend Sentinel-2 beeld en ROI, genomen in 2019:  
+
+```javascript
+var S2 = ee.Image('COPERNICUS/S2_SR/20190810T125311_20190810T125306_T27VWL')
+var ROI =  ee.Geometry.Polygon(
+        [[[-19.967455239503007, 63.845568279400595],
+          [-19.967455239503007, 63.398959439658746],
+          [-18.824877114503007, 63.398959439658746],
+          [-18.824877114503007, 63.845568279400595]]], null, false);
+var S2 = ee.Image('COPERNICUS/S2_SR/20190810T125311_20190810T125306_T27VWL').clip(ROI)
+```
+
+* In deze oefening gaan we geen cloud mask toevoegen, maar de wolken en wolkenschaduwen opnemen in de classificatie. 
+* •	Training data: Chinese experten digitaliseerden verschillende polygonen in het gebied rond de vulkaan. Hierbij werd onderscheid gemaakt in 5 klassen: 
+1.	Gletsjer
+2.	Schaduw
+3.	Bodem
+4.	Vegetatie
+5.	Water
+6.	Wolken
+De Trainingfiles werden reeds ondergebracht in een ```FeatureCollection``` en kunnen via deze link worden ingelezen:
+
+```javascript
+var traindata = ee.FeatureCollection("users/jasperfeyen/TELEDETECTIE2020/P6_oef2_training");
+```
+
+
+
