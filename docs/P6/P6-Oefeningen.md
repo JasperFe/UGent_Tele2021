@@ -58,18 +58,24 @@ var S2 = ee.Image('COPERNICUS/S2_SR/20190810T125311_20190810T125306_T27VWL').cli
 ```
 
 * In deze oefening gaan we geen cloud mask toevoegen, maar de wolken en wolkenschaduwen opnemen in de classificatie. 
-* •	Training data: Chinese experten digitaliseerden verschillende polygonen in het gebied rond de vulkaan. Hierbij werd onderscheid gemaakt in 5 klassen: 
-1.	Gletsjer
-2.	Schaduw
-3.	Bodem
-4.	Vegetatie
-5.	Water
-6.	Wolken
+* Training data: Chinese experten digitaliseerden verschillende polygonen in het gebied rond de vulkaan. Hierbij werd onderscheid gemaakt in 5 klassen: 
+1. Gletsjer
+2. Schaduw
+3. Bodem
+4. Vegetatie
+5. Water
+6. Wolken  
+
 De Trainingfiles werden reeds ondergebracht in een ```FeatureCollection``` en kunnen via deze link worden ingelezen:
 
 ```javascript
 var traindata = ee.FeatureCollection("users/jasperfeyen/TELEDETECTIE2020/P6_oef2_training");
 ```
+
+* **Referentie data**: tijdens een veldcampagne in 2019 werd het gebied rond de vulkaan intensief bemonsterd. Honderden pixels werden op het terrein bezocht en de landbedekking werd geregistreerd.  
+
+### Gevraagd
+Classificeer het 2019 beeld met behulp van 2 supervised classifiers naar keuze. Voor de classificatie transformeer je de data, zodat je slechts 3 getransformeerde banden overhoudt die de meeste informatie bevatten.
 
 
 
