@@ -332,7 +332,8 @@
 <a class="md-nav__link" href="#oef-61-classificatie-van-belgie">
     OEF 6.1 - Classificatie van België
   </a>
-</li>
+<nav aria-label="OEF 6.1 - Classificatie van België" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#gegeven">
     Gegeven
@@ -342,6 +343,28 @@
 <a class="md-nav__link" href="#opdracht">
     Opdracht
   </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oef-62-eyjafjallajokull">
+    OEF 6.2 - Eyjafjallajökull
+  </a>
+<nav aria-label="OEF 6.2 - Eyjafjallajökull" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gegeven_1">
+    Gegeven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gevraagd">
+    Gevraagd
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -392,7 +415,8 @@
 <a class="md-nav__link" href="#oef-61-classificatie-van-belgie">
     OEF 6.1 - Classificatie van België
   </a>
-</li>
+<nav aria-label="OEF 6.1 - Classificatie van België" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#gegeven">
     Gegeven
@@ -405,6 +429,28 @@
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oef-62-eyjafjallajokull">
+    OEF 6.2 - Eyjafjallajökull
+  </a>
+<nav aria-label="OEF 6.2 - Eyjafjallajökull" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gegeven_1">
+    Gegeven
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#gevraagd">
+    Gevraagd
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </div>
@@ -412,13 +458,13 @@
 <article class="md-content__inner md-typeset">
 <h1>Oefeningen</h1>
 <h2 id="oef-61-classificatie-van-belgie">OEF 6.1 - Classificatie van België</h2>
-<h2 id="gegeven">Gegeven</h2>
+<h3 id="gegeven">Gegeven</h3>
 <p>In volgende oefening maken we een landclassificatie van België op basis van een Landsat-8 beeldcomposiet. Om de grenzen van België te bekomen, maken we gebruik van volgende dataset: <a href="https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017">https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017</a></p>
 <p>Om hieruit België te filteren, maak je gebruik van onderstaande code:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">countries</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span> <span class="s1">'USDOS/LSIB_SIMPLE/2017'</span> <span class="p">);</span>
 <span class="kd">var</span> <span class="nx">bel</span> <span class="o">=</span> <span class="nx">countries</span><span class="p">.</span><span class="nx">filterMetadata</span><span class="p">(</span> <span class="s1">'country_na'</span><span class="p">,</span> <span class="s1">'equals'</span><span class="p">,</span> <span class="s1">'Belgium'</span> <span class="p">);</span>
 </code></pre></div>
-<h2 id="opdracht">Opdracht</h2>
+<h3 id="opdracht">Opdracht</h3>
 <ul>
 <li>
 <p>Maak één wolkenvrij Landsat-8 beeld aan voor 2019. Weerhoud enkel de bruikbare banden voor classificatie: voor Landsat-8 dit zijn volgende banden: blauw, groen, rood, nir, swir1, swir2. </p>
@@ -471,6 +517,39 @@
 </tbody>
 </table>
 <p></p></article></div></div></main></div></body></html>
+<h2 id="oef-62-eyjafjallajokull">OEF 6.2 - Eyjafjallajökull</h2>
+<p align="center">
+<img src="images/Oef6_2.jpg" width="500"/> <br/>
+</p>
+<p>De gletsjer Eyjafjallajökull is een van de kleinere gletsjers op IJsland en heeft een oppervlakte van ongeveer 100 km². De Eyjafjallajökull ligt ten noorden van het plaatsje Skógar. Op de oostflank van de vulkaan, nabij de bergpas Fimmvörðuháls, vond op 20 maart 2010 nieuwe vulkanische activiteit plaats. Een tweede explosievere uitbarsting in de hoofdkrater van de Eyjafjallajökull, begon op 14 april 2010. In grote delen van Europa werd het vliegverkeer dagenlang volledig stilgelegd vanwege de aswolken die de vliegtuigen kunnen beschadigen.</p>
+<h3 id="gegeven_1">Gegeven</h3>
+<p>Maak gebruik van volgend Sentinel-2 beeld en ROI, genomen in 2019:  </p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">S2</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">'COPERNICUS/S2_SR/20190810T125311_20190810T125306_T27VWL'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">ROI</span> <span class="o">=</span>  <span class="nx">ee</span><span class="p">.</span><span class="nx">Geometry</span><span class="p">.</span><span class="nx">Polygon</span><span class="p">(</span>
+        <span class="p">[[[</span><span class="o">-</span><span class="mf">19.967455239503007</span><span class="p">,</span> <span class="mf">63.845568279400595</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mf">19.967455239503007</span><span class="p">,</span> <span class="mf">63.398959439658746</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mf">18.824877114503007</span><span class="p">,</span> <span class="mf">63.398959439658746</span><span class="p">],</span>
+          <span class="p">[</span><span class="o">-</span><span class="mf">18.824877114503007</span><span class="p">,</span> <span class="mf">63.845568279400595</span><span class="p">]]],</span> <span class="kc">null</span><span class="p">,</span> <span class="kc">false</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">S2</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">'COPERNICUS/S2_SR/20190810T125311_20190810T125306_T27VWL'</span><span class="p">).</span><span class="nx">clip</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>In deze oefening gaan we geen cloud mask toevoegen, maar de wolken en wolkenschaduwen opnemen in de classificatie. </li>
+<li>Training data: Chinese experten digitaliseerden verschillende polygonen in het gebied rond de vulkaan. Hierbij werd onderscheid gemaakt in 5 klassen: </li>
+<li>Gletsjer</li>
+<li>Schaduw</li>
+<li>Bodem</li>
+<li>Vegetatie</li>
+<li>Water</li>
+<li>Wolken  </li>
+</ul>
+<p>De Trainingfiles werden reeds ondergebracht in een <code>FeatureCollection</code> en kunnen via deze link worden ingelezen:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">traindata</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">"users/jasperfeyen/TELEDETECTIE2020/P6_oef2_training"</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>Referentie data</strong>: tijdens een veldcampagne in 2019 werd het gebied rond de vulkaan intensief bemonsterd. Honderden pixels werden op het terrein bezocht en de landbedekking werd geregistreerd.  </li>
+</ul>
+<h3 id="gevraagd">Gevraagd</h3>
+<p>Classificeer het 2019 beeld met behulp van 2 supervised classifiers naar keuze. Voor de classificatie transformeer je de data, zodat je slechts 3 getransformeerde banden overhoudt die de meeste informatie bevatten.</p>
 
 
 

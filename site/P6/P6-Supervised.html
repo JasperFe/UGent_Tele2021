@@ -641,6 +641,10 @@
 <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">500</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">4000</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">'B8,B11,B2'</span><span class="p">},</span><span class="s1">'Healthy_Vegetation_2020'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="trainingsamples-aanmaken">Trainingsamples aanmaken</h2>
+<blockquote>
+<p>"Whereas the actual classification of multispectral image data is a highly automated process, assembling the training data needed for classification is anything but automatic. In many ways, the training effort required in supervised classification is both an art and a science"
+<strong>Lillesand &amp; Kiefer (pg 544)</strong></p>
+</blockquote>
 <ul>
 <li>
 <p>Nadat het wolkenvrije Sentinel-2 beeld is ingeladen, kunnen we deze gebruiken om enkele representatieve <em>samples</em> te verzamelen van enkele landbedekkingklassen waar we in geïnteresseerd zijn. Er zijn 2 manieren om trainingsdata in Earth Engine op te laden:</p>
