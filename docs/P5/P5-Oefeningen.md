@@ -78,7 +78,7 @@ In volgende oefening maken we een analyse van een grote bosbrand (genaamd 'Camp 
 8. Visueel vallen er alvast heel wat zaken af te leiden. Echter voor verdere toepassing is het beter om de resulterende klassen op te delen, zoals in onderstaande tabel, opgesteld door de United States Geological Survey (USGS). 
 
 <p align="center">
-  <img src="images/BurnSeverityTable.png">  <br>
+  <img src="Images/BurnSeverityTable.png">  <br>
   <em> Burn severity klassen, met bijhorende grenzen volgens het verschil in NBR-index (dNBR). Opgesteld door de USGS. (Bron: <a href="https://un-spider.org/advisory-support/recommended-practices/recommended-practice-burn-severity/burn-severity-earth-engine">[UN-spider]</a>) </em>
 </p> 
 
