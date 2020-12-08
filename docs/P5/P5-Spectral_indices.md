@@ -202,7 +202,7 @@ var ndviParams = {
 ```
 
 !!! check "Oplossing Oefening NDVI per seizoen"
-    Via deze link: [https://code.earthengine.google.com/a1243399a079ca44bff6550e960354ed?noload=true](https://code.earthengine.google.com/a1243399a079ca44bff6550e960354ed?noload=true)
+    Via deze link: [https://code.earthengine.google.com/138d65e9dd498c4d78df6fa879bdbbb7?noload=true](https://code.earthengine.google.com/138d65e9dd498c4d78df6fa879bdbbb7?noload=true)
 
 
 ## EXTRA: Toevoegen van een legende

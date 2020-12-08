@@ -347,7 +347,8 @@ var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array().
 
 ## Voorbeeld: interpretatie error matrix
 
-In ons voorbeeldje werd onderstaande ErrorMatrix verkregen voor de MinDist classifier (met ```.transpose()```!):
+In ons voorbeeldje werd onderstaande ErrorMatrix verkregen voor de MinDist classifier. Door de ```.transpose()```-functie komt de referentiedata terecht in de kolommen, terwijl de classificatiedata zich in de rijen bevindt.
+
 <p align="center">
 <img src="images/MinDist_ErrorMatrix.JPG">  <br>
 </p> 
