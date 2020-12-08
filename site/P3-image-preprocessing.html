@@ -1,451 +1,882 @@
 
-<!DOCTYPE html>
-
-<html class="no-js" lang="nl">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="assets/images/LOGO_REMOSA_2020.jpg" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-6.1.0" name="generator"/>
-<title>Image preprocessing in SNAP - (I002450) Practica Teledetectie 2020</title>
-<link href="assets/stylesheets/main.bc7e593a.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.ab28b872.min.css" rel="stylesheet"/>
-<meta content="#009485" name="theme-color"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
-<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-</head>
-<body data-md-color-accent="" data-md-color-primary="teal" data-md-color-scheme="" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#radiometric-atmospheric-correction">
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Image preprocessing in SNAP - (I002450) Practica Teledetectie 2020</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab28b872.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="teal" data-md-color-accent="">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#radiometric-atmospheric-correction" class="md-skip">
           Ga naar inhoud
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+  
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header-nav md-grid">
-<a aria-label="(I002450) Practica Teledetectie 2020" class="md-header-nav__button md-logo" href="./index.html" title="(I002450) Practica Teledetectie 2020">
-<img alt="logo" src="assets/images/LOGO_REMOSA_2020.jpg"/>
-</a>
-<label class="md-header-nav__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
-</label>
-<div class="md-header-nav__title" data-md-component="header-title">
-<div class="md-header-nav__ellipsis">
-<span class="md-header-nav__topic md-ellipsis">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="./index.html" title="(I002450) Practica Teledetectie 2020" class="md-header-nav__button md-logo" aria-label="(I002450) Practica Teledetectie 2020">
+      
+  <img src="assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
             (I002450) Practica Teledetectie 2020
           </span>
-<span class="md-header-nav__topic md-ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
             
               Image preprocessing in SNAP
             
           </span>
-</div>
-</div>
-<label class="md-header-nav__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-</label>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</label>
-<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-</button>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+    
+    
+  </nav>
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="index.html">
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
         Home
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="P3-intro.html">
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P3-intro.html" class="md-tabs__link md-tabs__link--active">
           P3 - Beeldvoorbewerking
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="P4/P4-Goals.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P4/P4-Goals.html" class="md-tabs__link">
           P4 - Intro tot Google Earth Engine
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="P5/P5-Intro.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P5/P5-Intro.html" class="md-tabs__link">
           P5 - Feature Extraction
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="P6/P6-intro.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P6/P6-intro.html" class="md-tabs__link">
           P6 - Beeldclassificatie
         </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="P7/P7-Timeseries.html">
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="P7/P7-Timeseries.html" class="md-tabs__link">
           P7 - Tijdseries en SAR
         </a>
-</li>
-</ul>
-</div>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="(I002450) Practica Teledetectie 2020" class="md-nav__button md-logo" href="./index.html" title="(I002450) Practica Teledetectie 2020">
-<img alt="logo" src="assets/images/LOGO_REMOSA_2020.jpg"/>
-</a>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./index.html" title="(I002450) Practica Teledetectie 2020" class="md-nav__button md-logo" aria-label="(I002450) Practica Teledetectie 2020">
+      
+  <img src="assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
     (I002450) Practica Teledetectie 2020
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="index.html">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" class="md-nav__link">
       Home
     </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
-<label class="md-nav__link" for="nav-2">
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
       P3 - Beeldvoorbewerking
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P3 - Beeldvoorbewerking" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-2">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P3 - Beeldvoorbewerking" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
         P3 - Beeldvoorbewerking
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P3-intro.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P3-intro.html" class="md-nav__link">
       Introduction
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P3-Sentinel2.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P3-Sentinel2.html" class="md-nav__link">
       Sentinel-2 intro and download
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P3-Snap-intro.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P3-Snap-intro.html" class="md-nav__link">
       Introduction to SNAP
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P3-colour-composites.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P3-colour-composites.html" class="md-nav__link">
       RGB colour composites
     </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
         Image preprocessing in SNAP
         <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="P3-image-preprocessing.html">
+      </label>
+    
+    <a href="P3-image-preprocessing.html" class="md-nav__link md-nav__link--active">
       Image preprocessing in SNAP
     </a>
-<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#radiometric-atmospheric-correction">
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#radiometric-atmospheric-correction" class="md-nav__link">
     Radiometric &amp; atmospheric correction
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#intermezzo-cloud-masks">
+      
+        <li class="md-nav__item">
+  <a href="#intermezzo-cloud-masks" class="md-nav__link">
     Intermezzo: Cloud Masks
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resampling">
+      
+        <li class="md-nav__item">
+  <a href="#resampling" class="md-nav__link">
     Resampling
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-subsetting">
+      
+        <li class="md-nav__item">
+  <a href="#image-subsetting" class="md-nav__link">
     Image Subsetting
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mosaicing">
+      
+        <li class="md-nav__item">
+  <a href="#mosaicing" class="md-nav__link">
     Mosaicing
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P3-colour-composites-ctd.html">
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P3-colour-composites-ctd.html" class="md-nav__link">
       RGB colour composites 2
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
-<label class="md-nav__link" for="nav-3">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
       P4 - Intro tot Google Earth Engine
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P4 - Intro tot Google Earth Engine" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-3">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P4 - Intro tot Google Earth Engine" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
         P4 - Intro tot Google Earth Engine
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-Goals.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-Goals.html" class="md-nav__link">
       Doel van het practicum
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-DataCatalog.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-DataCatalog.html" class="md-nav__link">
       EarthEngine data catalog
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-Intro.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-Intro.html" class="md-nav__link">
       Introductie tot Earth Engine
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-ImageVisualization.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-ImageVisualization.html" class="md-nav__link">
       Satellietdata oproepen, filteren en visualiseren
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-Reducing.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-Reducing.html" class="md-nav__link">
       Reducing ImageCollections
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-Cloud_masking.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-Cloud_masking.html" class="md-nav__link">
       Cloud masking
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P4/P4-Oefeningen.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P4/P4-Oefeningen.html" class="md-nav__link">
       (Extra) Oefeningen
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
-<label class="md-nav__link" for="nav-4">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
       P5 - Feature Extraction
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P5 - Feature Extraction" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-4">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P5 - Feature Extraction" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
         P5 - Feature Extraction
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5/P5-Intro.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5/P5-Intro.html" class="md-nav__link">
       Intro
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5/P5-Spectral_indices.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5/P5-Spectral_indices.html" class="md-nav__link">
       Spectrale indices
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5/P5-ImageStatistics.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5/P5-ImageStatistics.html" class="md-nav__link">
       Beeldstatistieken
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5/P5-Texture.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5/P5-Texture.html" class="md-nav__link">
       Textuuranalyse
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5/P5-PCA.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5/P5-PCA.html" class="md-nav__link">
       Principale componenten analyse
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5/P5-Oefeningen.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P5/P5-Oefeningen.html" class="md-nav__link">
       Oefeningen
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
-<label class="md-nav__link" for="nav-5">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
       P6 - Beeldclassificatie
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P6 - Beeldclassificatie" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-5">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P6 - Beeldclassificatie" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon"></span>
         P6 - Beeldclassificatie
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-intro.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-intro.html" class="md-nav__link">
       Intro
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-SurinameCase.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-SurinameCase.html" class="md-nav__link">
       CASE - Mangrove monitoring in Suriname
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-Unsupervised.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-Unsupervised.html" class="md-nav__link">
       Niet-gesuperviseerde classificatie
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-Supervised.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-Supervised.html" class="md-nav__link">
       Gesuperviseerde classificatie
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-Improvement.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-Improvement.html" class="md-nav__link">
       Verbeteren van de classificatie
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-SpectralResponse_oud.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-SpectralResponse_oud.html" class="md-nav__link">
       Spectrale responsiecurves
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P6/P6-Oefeningen.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P6/P6-Oefeningen.html" class="md-nav__link">
       Oefeningen
     </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" id="nav-6" type="checkbox"/>
-<label class="md-nav__link" for="nav-6">
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
       P7 - Tijdseries en SAR
       <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P7 - Tijdseries en SAR" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-6">
-<span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="P7 - Tijdseries en SAR" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon"></span>
         P7 - Tijdseries en SAR
       </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P7/P7-Timeseries.html">
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P7/P7-Timeseries.html" class="md-nav__link">
       Tijdserie-analyse
     </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P7/P7-SAR-tijdseries.html">
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="P7/P7-SAR-tijdseries.html" class="md-nav__link">
       SAR-analyse
     </a>
-</li>
-</ul>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#radiometric-atmospheric-correction">
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#radiometric-atmospheric-correction" class="md-nav__link">
     Radiometric &amp; atmospheric correction
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#intermezzo-cloud-masks">
+      
+        <li class="md-nav__item">
+  <a href="#intermezzo-cloud-masks" class="md-nav__link">
     Intermezzo: Cloud Masks
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resampling">
+      
+        <li class="md-nav__item">
+  <a href="#resampling" class="md-nav__link">
     Resampling
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#image-subsetting">
+      
+        <li class="md-nav__item">
+  <a href="#image-subsetting" class="md-nav__link">
     Image Subsetting
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mosaicing">
+      
+        <li class="md-nav__item">
+  <a href="#mosaicing" class="md-nav__link">
     Mosaicing
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content">
-<article class="md-content__inner md-typeset">
-<h1>Image preprocessing in SNAP</h1>
-<h2 id="radiometric-atmospheric-correction">Radiometric &amp; atmospheric correction</h2>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Image preprocessing in SNAP</h1>
+                
+                <h2 id="radiometric-atmospheric-correction">Radiometric &amp; atmospheric correction</h2>
 <p>Satellite images obtained by the sensing device are not directly usable. They need to go through a series of pre-processing before they are ready to use. The scheme below illustrates the pre-processing steps that Sentinel-images undergo before they are made available for the user. This includes <strong>geometric</strong> correction, some <strong>radiometric correction</strong> (noise reduction, defective pixels identification) the computation of cloud masks, etc. The outcome is a level 1C product, which is Top-Of-the-Atmosphere (TOA). </p>
-<p><img alt="" src="assets/images/P3/sentinel2_preprocessing.jpg"/></p>
+<p><img alt="" src="assets/images/P3/sentinel2_preprocessing.jpg" /></p>
 <p>TOA reflectances are subjected to radiometric bias caused by different lighting conditions, atmospheric interactions and viewing geometry. In order to relate reflectances to physical field properties, TOA reflectance values are conversed to BOA (Bottom Of Atmosphere) corrected reflectance values. This radiometric correction is an essential part in image processing. BOA, Sentinel processing level 2A, is available for the user (except for recent images) or can be created by the user itself, using the Sen2Cor freeware.  </p>
 <p align="center">
-<img src="assets/images/P3/Sen2Cor_result.jpg" width="800"/>
-<em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em>
+
+  <img src="assets/images/P3/Sen2Cor_result.jpg" width="800"> 
+<em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em> 
 </p>
+
 <p>In Snap, the conversion of level 1C TOA-reflectance to level 2A BOA-reflectance can be done through Sen2Cor (plug-in or stand-alone).  Sen2Cor corrects the reflectance values based on (among others) ‘look-up tables’, these are tables that relate physical parameters to model coefficients. Parameters such as inclination and product type are sensor dependent (different for Landsat as for Sentinel or Spot). On board, optical satellites have some meteorological sensors that measure atmosphere features such as the air thickness and the amount of aerosols among others. This information is available as a ‘header file’ for each image.   </p>
 <p>Since December 2018, users can download Level-2A processed products directly. In case of this exercise, we downloaded a Level 1C product. Thus, let’s perform an atmospheric correction!</p>
 <div class="admonition note">
 <p class="admonition-title">Excercise: atmospheric correction with Sen2Cor</p>
 <ul>
 <li>In the folder where you have saved the image, unzip the Sentinel-image.  </li>
-<li>Go to <em>‘Optical’ &gt; ‘Thematic Land Processing’ &gt; ‘Sen2Cor processor’ &gt; ‘Sen2Cor280’</em> </li>
+<li>Go to <em>‘Optical’ &gt; ‘Thematic Land Processing’ &gt; ‘Sen2Cor processor’ &gt; ‘Sen2Cor280’</em>  </li>
 <li>When you choose the source product, click on the ‘…’, browse to the image and navigate to the ‘MTD_MSIL1C.xml’ product.</li>
 <li>In the tab ‘processing parameters’, set the resolution to ‘ALL’</li>
 <li>The other processing parameters are by default taken from a combination of the image metadata (header file) and look-up tables. This is why you will normally use the default processing parameters. However, if you want to adjust these parameters, you can do that manually. </li>
@@ -460,19 +891,25 @@
 <h2 id="intermezzo-cloud-masks">Intermezzo: Cloud Masks</h2>
 <p>The image contain clouds. This means that there are some blind pixels, which lack information on the reflectance of the earth’s surface at the sensing time. This phenomenon is very common in tropical areas with a rainy season. It is possible that over the whole period of the rainy season, you will not be able to obtain images with a cloud cover of less than 90%. In such cases, Radar imaging can be useful, but are complexer. An introduction to radar imaging will be given later in these practicals.</p>
 <p align="center">
-<img src="assets/images/P3/Folder_clouds.JPG" width="700"/>
+
+  <img src="assets/images/P3/Folder_clouds.JPG" width="700"> 
+
 </p>
+
 <p>Included in a Sentinel-2 image folder you can find some cloud masks at a resolution of 10m, 20m and 60m. These cloud masks enable the user to identify cloudy and cloud-free pixels. The masks include both dense clouds (opaque clouds) and cirrus clouds. These cloud masks are computed by a threshold algorithm. Below, the methods are described that identify the cloud pixels (for your information).</p>
 <p><strong>Identification of dense clouds</strong> </p>
 <p>Dense clouds, also called opaque clouds, are characterised by a high reflectance in the blue spectral region (B2). The method used to identify dense cloud pixels is based on B2 reflectance threshold. To avoid false detection, mainly due to snow/cloud confusion, SWIR reflectance in B11 and B12 are also used. Snow and clouds both have a high reflectance in the blue. Cloud reflectance is high in the SWIR, whereas snow presents a low reflectance. Additional criteria based on B10 reflectance are added to avoid high altitude ice cloud and snow confusion (both having a low reflectance in the SWIR bands B11 and B12). At B10, there is a high atmospheric absorption band and only high altitude clouds are detected. However, this last criterion is only applied after a first detection of cloud pixel in the blue band where cirrus is transparent.  </p>
-<p><strong>Identification of cirrus clouds</strong> </p>
+<p><strong>Identification of cirrus clouds</strong>  </p>
 <p>Cirrus clouds are thin, transparent or semi-transparent clouds, forming at high altitudes, approximately 6-7 km above the Earth's surface. The method of identifying cirrus cloud pixels from dense cloud pixel is based on two spectral criteria: (1) B10 corresponds to a high atmospheric absorption band: only high altitude clouds can be detected, (2) cirrus clouds, being semi-transparent, cannot be detected in the B2 blue band. A pixel with low reflectance in the B2 band and high reflectance in the B10 band has a good probability of being cirrus cloud but this is not a certainty. Some opaque clouds have a low reflectance in the blue and can be identified as cirrus cloud. To limit false detections (due to high reflectance in the blue or due to the fact that clouds are not spectrally registered), a filter using morphology-based operations is applied on both dense and cirrus cloud masks: (1) erosion, to remove isolated pixels, (2) dilatation, to fill the gap and extend clouds. If after morphology operations, a pixel is both dense and cirrus, the dense cloud mask prevails. </p>
-<p><strong>Sen2Cor scene classification</strong> </p>
+<p><strong>Sen2Cor scene classification</strong>  </p>
 <p>The Sen2Cor-processor you've runned for the atmospheric correction from the level 1C to the level 2A product also contains a scene classification algorithm. This algorithm creates a scene classification, where pixels als classified in some broad classes:</p>
 <p>Here, clouds are classified into 'cloud probability masks', which are in general more precise than the level 1C cloud masks.</p>
 <p align="center">
-<img src="assets/images/P3/sen2cor_sceneclassification.JPG" width="700"/>
+
+  <img src="assets/images/P3/sen2cor_sceneclassification.JPG" width="700"> 
+
 </p>
+
 <div class="admonition note">
 <p class="admonition-title">Excercise: Visualize cloud masks</p>
 <ul>
@@ -483,9 +920,13 @@
 <h2 id="resampling">Resampling</h2>
 <p>In order to display the other band combinations, some geometrical pre-processing is necessary. The bands have to be resampled to an equal resolution. The goal is to resample the image bands to 10m (you can take B2, B3, B4 or B8 as a reference band). This means that all other bands will be upsampled.</p>
 <p align="center">
-<img src="assets/images/P3/Resampling_principle.jpg" width="500"/><br/>
-<em>Image resampling scheme. Top: upsampling (nearest neighbor). Bottom: Downsampling (minimum). </em>
+
+  <img src="assets/images/P3/Resampling_principle.jpg" width="500"><br>
+
+  <em>Image resampling scheme. Top: upsampling (nearest neighbor). Bottom: Downsampling (minimum). </em> 
+
 </p>
+
 <div class="admonition note">
 <p class="admonition-title">Exercise: resampling</p>
 <ul>
@@ -505,13 +946,13 @@
 <li>Select the resampled image in the product explorer. Go to Raster &gt; Subset.</li>
 <li>Select a spatial subset by choice (by adjusting the scene start and end). Make sure your spatial extent is substantially smaller than the original image.
 <p align="center">
-<img src="assets/images/P3/snap_subsetting_1.jpg" width="400"/><br/>
-<em>Snap Subsetting screen.</em> </p></li>
+<img src="assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
+<em>Snap Subsetting screen.</em> </li>
 <li>Select only following bands: [B2, B3, B4, B5, B6, B7, B8, B8A, B11, B12]</li>
 <li>You can see an estimation of the new required storage space.
 <p align="center">
-<img src="assets/images/P3/snap_subsetting_2.jpg" width="400"/><br/>
-<em>Snap Subsetting screen.</em> </p></li>
+<img src="assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
+<em>Snap Subsetting screen.</em> </li>
 <li>Click OK</li>
 <li>Another option to make a subset is ‘Spatial subset from view’. Zoom in on your image. Rightclick and select ‘Spatial subset from view’. </li>
 <li>FYI: it is also possible to take a subset of an image, based on a vector layer. </li>
@@ -527,14 +968,14 @@
 <li>Resample the image. </li>
 <li>Go to raster &gt; Geometric operations &gt; Mosaicing 
 <p align="center">
-<img src="assets/images/P3/Mosaicing_screen.jpg" width="400"/><br/>
-<em>Snap mosaicing screen.</em> </p></li>
+<img src="assets/images/P3/Mosaicing_screen.jpg" width="400"><br>
+<em>Snap mosaicing screen.</em>  </li>
 <li>Add the two source products.</li>
 <li>Choose the directory in which you want to save the mosaic image.</li>
 <li>In the Map Projection Definition you can choose the Coordinate Reference System (CRS). Choose for UTM/WGS84 (automatic)</li>
 <li>Choose for a resolution of 10m.</li>
 <li>The input products don’t need to be orthorectified (because they already are).</li>
-<li>In the tab ‘Variables and Conditions’, click the  <img alt="" src="assets/images/P3/pages_symbol.jpg">- symbol.</img></li>
+<li>In the tab ‘Variables and Conditions’, click the  <img alt="" src="assets/images/P3/pages_symbol.jpg" />- symbol.</li>
 <li>Select Band 2,3,4 and 8</li>
 <li>Run Mosaicing.</li>
 <li>Open the RGB-image of the product. Compare it to the two original images. </li>
@@ -548,61 +989,80 @@
 <li>Why is there no observable colour difference in 2 and 4?</li>
 <li>Have you any idea how to eliminate the colour difference between 2 and 3, given that neighbouring satellite images always partly overlap?
 <p align="center">
-<img src="assets/images/P3/mosaicing_extra.jpg" width="400"/><br/>
-<em>Landsat images mosaic</em> </p></li>
+<img src="assets/images/P3/mosaicing_extra.jpg" width="400"><br>
+<em>Landsat images mosaic</em>  </li>
 </ol>
 </div>
-</article>
-</div>
-</div>
-</main>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
 <footer class="md-footer">
-<div class="md-footer-nav">
-<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="P3-colour-composites.html" rel="prev">
-<div class="md-footer-nav__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer-nav__title">
-<div class="md-ellipsis">
-<span class="md-footer-nav__direction">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="P3-colour-composites.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
                   Vorige
                 </span>
                 RGB colour composites
               </div>
-</div>
-</a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="P3-colour-composites-ctd.html" rel="next">
-<div class="md-footer-nav__title">
-<div class="md-ellipsis">
-<span class="md-footer-nav__direction">
+            </div>
+          </a>
+        
+        
+          <a href="P3-colour-composites-ctd.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
                   Volgende
                 </span>
                 RGB colour composites 2
               </div>
-</div>
-<div class="md-footer-nav__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
-</div>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
         
         Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
- ... <a class="link--pdf-download" download href="pdf\document.pdf" title="PDF">download PDF</a></div>
-</div>
-</div>
+      </div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
-<script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-<script>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
         app = initialize({
           base: ".",
           features: ['navigation.sections', 'navigation.tabs'],
@@ -611,8 +1071,13 @@
           }, typeof search !== "undefined" && search)
         })
       </script>
-<script src="javascripts/config.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+      
+        <script src="javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
 </html>
