@@ -37,6 +37,12 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 </center>
 
+??? check "Oplossing Oef 6.1"
+    Via dit scriptje: [https://code.earthengine.google.com/5070ae47b54c15074765eea15bb62cc0](https://code.earthengine.google.com/5070ae47b54c15074765eea15bb62cc0)
+    Opgelet: het spreekt voor zich dat de gebruikte trainingsvectoren in dit voorbeeld zeer rudimentair zijn, met een ruwe classificatie tot gevolg.
+    Daarbij werden de testpunten ook gehaald uit een bestaande landcover classificatie van België, maar met een resolutie van 100m, waardoor de kwaliteit van de testdata niet perfect is. Deze oefening is dus louter ter illustratie!
+
+
 ## OEF 6.2 - Eyjafjallajökull
 <p align="center">
 <img src="images/Oef6_2.jpg" width=500>  <br>

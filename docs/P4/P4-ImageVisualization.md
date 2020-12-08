@@ -164,10 +164,14 @@ Bekijk op welke dag de sensor dit beeld heeft genomen. Gebruik hiervoor de ‘in
 </p>  
 
 
-!!! note "Opdracht"
-    Visualiseer in een nieuw script een valse kleurencomposiet van een Sentinel-2 beeld (Tier 1, Surface Reflectance). Neem hierbij Gent als AOI, met een beeld uit de zomer van 2019 met een zo laag mogelijke wolkenbedekking.  
+### Opdracht
+Visualiseer in een nieuw script een valse kleurencomposiet van een Sentinel-2 beeld (Tier 1, Surface Reflectance). Neem hierbij Gent als AOI, met een beeld uit de zomer van 2019 met een zo laag mogelijke wolkenbedekking.  
     
-    Voor het sorteren van de wolkenbedekking, zoek je de gepaste eigenschap om op te sorteren. Deze kun je [hier](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR#image-properties){target=_blank} vinden.
+Voor het sorteren van de wolkenbedekking, zoek je de gepaste eigenschap om op te sorteren. Deze kun je [hier](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR#image-properties){target=_blank} vinden.
 
-    Bewaar je script.
+Bewaar je script.
+
+??? check Oplossing
+    GEE script: [https://code.earthengine.google.com/928f8e9dd69364ca7153771ec0c9d96e](https://code.earthengine.google.com/928f8e9dd69364ca7153771ec0c9d96e)
+
 

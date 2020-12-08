@@ -9,23 +9,22 @@ Dit laatste onderdeel vormt een introductie tot het verwerken en bekijken van SA
 
 Het voordeel van Radar ten opzichte van multispectrale beelden:
 
-- SAR-golven penetreren door wolkbedekking, waardoor wolken geen belemmering vormen tijden het monitoren van landbekking. Zeker in tropische landen biedt deze capaciteit van een sterk voordeel bv tegen illegale ontbossing gedurende grote regenperiodes.
+- SAR-golven penetreren door wolkbedekking, waardoor wolken geen belemmering vormen tijden het monitoren van landbekking. Zeker in tropische landen is dit een sterk voordeel gedurende grote regenperiodes.
 
-- Afhankelijk van het type SAR, penetreren de SAR-golven (gedeeltelijk) doorheen het kronendak, waardoor betere biomassa- en structuurinschattingen mogelijk zijn.
+- Afhankelijk van het type SAR, penetreren de SAR-golven (gedeeltelijk) doorheen het kronendak, waardoor betere biomassa- en structuurinschattingen mogelijk worden. Over het algemeen geldt: hoe groter de golflengte, hoe dieper de SAR-golven penetreren.
 
-- SAR remote sensing is een actieve vorm van teledetectie: de satelliet zorgt zelf voor energiebron. Hierdoor is het ook tijdsonafhankelijk en kan het zowel gedurende de dag- als nacht opereren.
+- SAR remote sensing is een actieve vorm van teledetectie: de satelliet zorgt zelf voor energiebron. Hierdoor is het ook tijdsonafhankelijk en kan het zowel gedurende de dag als nacht opereren.
 
-Bijgevolg is SAR een uitstekend middel om aan bosmonitoring, flood mapping en disaster management te doen. Voor de geïnteresseerden: [The SAR handbook (NASA, 2019)](https://servirglobal.net/Global/Articles/Article/2674/sar-handbook-comprehensive-methodologies-for-forest-monitoring-and-biomass-estimation) vormt een uitstekend handboek waar zowel de theoretische achtergrond als enkele toepassingen worden uitgelicht.
+Bijgevolg is SAR een uitstekend middel om aan bosmonitoring, flood mapping en disaster management te doen. [The SAR handbook (NASA, 2019)](https://servirglobal.net/Global/Articles/Article/2674/sar-handbook-comprehensive-methodologies-for-forest-monitoring-and-biomass-estimation) vormt een uitstekend handboek waar zowel de theoretische achtergrond als enkele toepassingen worden uitgelicht.
 
-
-Onderstaande voorbeelden hebben als doel slechts een introductie te bieden tot het gebruik van SAR in Google Earth Engine. Er wordt gewerkt met Sentinel-1 data.
+Onderstaande voorbeelden hebben als doel een introductie te bieden tot het gebruik van SAR in Google Earth Engine. Er wordt gewerkt met Sentinel-1 data.
 
 ??? info "Over Sentinel-1"
     <p align="center">
     <img src="images/Sentinel_1.jfif" width="350">  <br>
     </p>   
 
-    Sentinel-1 is een onderdeel van het ESA Copernicus-programma. Deze missie bestaat net zoals Sentinel-2 uit twee satellieten die 180° tegenoverklaar in orbit rond de aarde zweven. De waarnemingen gebeuren in de C-band (ca. 5,405 GHZ). Door deze positie dekt de missie om de twee weken de totale aarde. De meest voorkomende S1-doelstellingen zijn:
+    Sentinel-1 is een onderdeel van het ESA Copernicus-programma. Deze missie bestaat net zoals Sentinel-2 uit twee satellieten die 180° tegenoverklaar in orbit rond de aarde zweven. De waarnemingen gebeuren in de C-band (ca. 5,405 GHZ). Beide satellieten zorgen er gezamenlijk voor dat de volledige aardbol minstens elke 2 weken volledig wordt gedekt. De meest voorkomende S1-doelstellingen zijn:
     
     * Het opvolgen van zee-ijs verschuivingen  
     * In kaart brengen van humanitaire hulp in crisistijd  
@@ -100,9 +99,9 @@ Map.addLayer(VV_2018,VV_Param,'VV_2018',0)
 Map.addLayer(VV_2018,VV_Param,'VV_2019',0)
 ```
 
-* Doe nu hetzelfde, maar voor de VH-polarisatie. Bekijk in welke maat de sensitiviteit voor verschillende landoppervlakten verschilt in beide polarisaties.
+* Doe nu hetzelfde, maar voor de VH-polarisatie. Bekijk in welke mate de sensitiviteit voor verschillende landoppervlakten verschilt in beide polarisaties.
 
-* Op zich bieden de beelden afzonderlijk weinig informatie. In een volgende stappen creëeren we een beeldcomposiet, met volgende samenstelling: RGB= ['VV_2017', 'VV_2018', 'VV_2019']. Wat valt je op?
+* Op zich bieden de beelden afzonderlijk weinig informatie. In een volgende stappen creëren we een beeldcomposiet, met volgende samenstelling: RGB= ['VV_2017', 'VV_2018', 'VV_2019']. Wat valt je op?
 
 ```javascript
 //Afzonderlijke jaren samenvoegen
@@ -145,7 +144,7 @@ Map.addLayer(loss_20172019,{palette: 'red'},'Loss_2017_2019')
 
 ### Achtergrond
 
-SAR-gebaseerde overstromingskartering is een betrouwbare manier om op een snelle manier een inschatting te verkrijgen van de oppervlak waarover een overstroming zich heeft uitgestrekt. Gezien de onafhankelijkheid van de weersomstandigheden, kan deze cruciale informatie steeds asap worden afgeleid.
+SAR-gebaseerde overstromingskartering is een betrouwbare en snelle manier een inschatting te verkrijgen van de oppervlakte waarover een overstroming zich heeft uitgestrekt. Gezien de onafhankelijkheid van de weersomstandigheden, kan deze cruciale informatie steeds asap worden afgeleid.
 
 In wat volgt bekijken we een methode om op een snelle en eenvoudige manier dergelijke inschatting te maken, op basis van een analyse op 2 tijdstippen: voor en na een overstroming.
 

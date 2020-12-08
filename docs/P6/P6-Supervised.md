@@ -260,6 +260,9 @@ Een veel gebruikte methode bij het opstellen van modellen, is het opsplitsen van
 > **Testdata** = Deze afzonderlijke dataset wordt gebruikt om bij een finaal model accuraatheidsmaten van de bekomen classificatie te berekenen. Testdatasets worden meestal ook zeer goed verzorgd en zijn goed verzamelde (veld)datapunten. De *spatiale autocorrelatie* vervalt hier.
 
 ### De Error Matrix: interpretatie
+
+!!! info "Zie ook de foutenmatrix handboek pagina 577"
+
 De Error Matrix wordt opgesteld door het vergelijken van de geclassificeerde testdata-waarden en de referentiedata. Onderstaande matrix geeft een voorbeeld van dergelijke matrix:
 
 <p align="center">
@@ -279,9 +282,9 @@ Op basis van de error matrix kunnen er enkele **accuraatheidsmaten** worden bere
 
 - **Overall accuracy**: Dit is de som van de diagonale elementen, gedeeld door het totaal aantal pixels (= "juist ingedeeld"/totaal).
 
-- **Producer accuracy**: een klasse-specifieke accuraatheidsmaat. Dit is het aantal correct ingedeeld pixels in elke klasse, gedeeld door het aantal validatiepixels van die klassen. (Bijvoorbeeld Mangrove = (125/143 = 87,41%)). Het is dus een maat hoe goed pixels van een bepaalde klasse zijn geclassificeerd.
+- **Producer accuracy**:  het aantal correct ingedeeld pixels in elke klasse, gedeeld door het aantal validatiepixels van die klassen. Het geeft een indicatie hoe goed de validatiepixels geclassificeerd werden (Bijvoorbeeld Mangrove = (125/143 = 87,41% werd goed geclassificeerd)). Deze maat geeft de probabiliteit weer dat een pixel die in een bepaalde klasse werd gestopt in werkelijkheid ook tot die klasse behoort. 
 
-- **User/consumer accurcay**: Het aantal correct geclassificeerde pixels in elke klasse, gedeeld door het aantal pixels ingedeeld in die klasse (rij-totaal).
+- **User/consumer accurcay**: Het aantal correct geclassificeerde pixels in elke klasse (diagonaalelementen), gedeeld door het aantal pixels ingedeeld in die klasse (rijtotaal). 
 
 - **Kappa (KHAT) index**: de kappa index is een gecorrigeerde accuraatheidsmaat, die intra- en interobserver agreement in rekening houdt. Het houdt m.a.w. rekening met pixels die per toeval juist geclassificeerd zijn. Onderstaande tabel geeft een interpretatie weer van de kappa-waarde.
 <p align="center">
@@ -342,9 +345,9 @@ var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array().
     Daarnaast wordt ook klasse '0' meegerekend in de berekening. Gezien deze in ons voorbeeld niet bestaat, zal de 1e rij/kolom enkel 0-waarden bevatten.
 
 
-## Extra: interpretatie 
+## Voorbeeld: interpretatie error matrix
 
-In ons voorbeeldje werd onderstaande ErrorMatrix verkregen voor de MinDist classifier:
+In ons voorbeeldje werd onderstaande ErrorMatrix verkregen voor de MinDist classifier (met ```.transpose()```!):
 <p align="center">
 <img src="images/MinDist_ErrorMatrix.JPG">  <br>
 </p> 

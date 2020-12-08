@@ -61,7 +61,6 @@ Map.addLayer(L8_median, trueColor, 'L8_median')
   <em> Voorbeeld mediane reducer over de L8_sortedCC-collectie </em>
 </p>  
 
-!!! note "Opdracht"
-    Probeer enkele van de Reducers uit op je Sentinel-2 collectie van Gent.
-
-    Bewaar je script.
+### Opdracht
+Probeer enkele van de Reducers uit op je Sentinel-2 collectie van Gent.
+Bewaar je script.
