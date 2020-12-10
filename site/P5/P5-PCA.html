@@ -827,55 +827,57 @@
 </code></pre></div></p>
 </li>
 <li>
-<p>Opstellen van de PCA-functie (met bijhorende 'helper'-functie)<br />
-<div class="highlight"><pre><span></span><code><span class="c1">//PCA FUNCTIE</span>
+<p>Opstellen van de PCA-functie (met bijhorende 'helper'-functie) 
+//PCA-functie</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>  <span class="kd">var</span> <span class="nx">getPrincipalComponents</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="nx">scale</span><span class="p">,</span> <span class="nx">region</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Collapse the bands of the image into a 1D array per pixel.</span>
+        <span class="kd">var</span> <span class="nx">arrays</span> <span class="o">=</span> <span class="nx">centered</span><span class="p">.</span><span class="nx">toArray</span><span class="p">();</span>
 
-<span class="kd">var</span> <span class="nx">getPrincipalComponents</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="nx">scale</span><span class="p">,</span> <span class="nx">region</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// Collapse the bands of the image into a 1D array per pixel.</span>
-    <span class="kd">var</span> <span class="nx">arrays</span> <span class="o">=</span> <span class="nx">centered</span><span class="p">.</span><span class="nx">toArray</span><span class="p">();</span>
-
-    <span class="c1">// Berekenen van de covariantie a.d.h.v. een reduceRegion</span>
-     <span class="kd">var</span> <span class="nx">covar</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+        <span class="c1">// Berekenen van de covariantie a.d.h.v. een reduceRegion</span>
+        <span class="kd">var</span> <span class="nx">covar</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
           <span class="nx">reducer</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">centeredCovariance</span><span class="p">(),</span>
           <span class="nx">geometry</span><span class="o">:</span> <span class="nx">region</span><span class="p">,</span>
           <span class="nx">scale</span><span class="o">:</span> <span class="nx">scale</span><span class="p">,</span>
           <span class="nx">maxPixels</span><span class="o">:</span> <span class="mf">1e9</span>
         <span class="p">});</span>
+       <span class="nx">print</span><span class="p">(</span><span class="nx">covar</span><span class="p">,</span> <span class="s1">&#39;covariance&#39;</span><span class="p">)</span>
+        <span class="c1">// Get the &#39;array&#39; covariance result and cast to an array.</span>
+        <span class="c1">// This represents the band-to-band covariance within the region.</span>
+        <span class="kd">var</span> <span class="nx">covarArray</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">Array</span><span class="p">(</span><span class="nx">covar</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">));</span>
 
-    <span class="c1">// Get the &#39;array&#39; covariance result and cast to an array.</span>
-    <span class="c1">// This represents the band-to-band covariance within the region.</span>
-    <span class="kd">var</span> <span class="nx">covarArray</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">Array</span><span class="p">(</span><span class="nx">covar</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">));</span>
+        <span class="c1">// Perform an eigen analysis and slice apart the values and vectors.</span>
+        <span class="kd">var</span> <span class="nx">eigens</span> <span class="o">=</span> <span class="nx">covarArray</span><span class="p">.</span><span class="nx">eigen</span><span class="p">();</span>
+       <span class="nx">print</span><span class="p">(</span><span class="nx">eigens</span><span class="p">)</span>
+        <span class="c1">// eigenValues is a P-length vector of Eigenvalues.</span>
+        <span class="kd">var</span> <span class="nx">eigenValues</span> <span class="o">=</span> <span class="nx">eigens</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
 
-    <span class="c1">// Perform an eigen analysis and slice apart the values and vectors.</span>
-    <span class="kd">var</span> <span class="nx">eigens</span> <span class="o">=</span> <span class="nx">covarArray</span><span class="p">.</span><span class="nx">eigen</span><span class="p">();</span>
-    <span class="nx">print</span><span class="p">(</span><span class="nx">eigens</span><span class="p">)</span>
+        <span class="nx">print</span><span class="p">(</span><span class="nx">eigenValues</span><span class="p">,</span><span class="s1">&#39;EigenValues&#39;</span><span class="p">)</span>
+        <span class="c1">// This is a PxP matrix with eigenvectors in rows.</span>
+        <span class="kd">var</span> <span class="nx">eigenVectors</span> <span class="o">=</span> <span class="nx">eigens</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+       <span class="nx">print</span><span class="p">(</span><span class="nx">eigenVectors</span><span class="p">,</span> <span class="s1">&#39;Eigenvectors&#39;</span><span class="p">)</span>
+        <span class="c1">// Convert the array image to 2D arrays for matrix computations.</span>
+        <span class="kd">var</span> <span class="nx">arrayImage</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">toArray</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
 
-    <span class="c1">// eigenValues is a P-length vector of Eigenvalues.</span>
-    <span class="kd">var</span> <span class="nx">eigenValues</span> <span class="o">=</span> <span class="nx">eigens</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+        <span class="c1">// Left multiply the image array by the matrix of eigenvectors.</span>
+        <span class="kd">var</span> <span class="nx">principalComponents</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">eigenVectors</span><span class="p">).</span><span class="nx">matrixMultiply</span><span class="p">(</span><span class="nx">arrayImage</span><span class="p">);</span>
 
-    <span class="c1">// This is a PxP matrix with eigenvectors in rows.</span>
-    <span class="kd">var</span> <span class="nx">eigenVectors</span> <span class="o">=</span> <span class="nx">eigens</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
-
-    <span class="c1">// Convert the array image to 2D arrays for matrix computations.</span>
-    <span class="kd">var</span> <span class="nx">arrayImage</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">toArray</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
-
-    <span class="c1">// Left multiply the image array by the matrix of eigenvectors.</span>
-    <span class="kd">var</span> <span class="nx">principalComponents</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">eigenVectors</span><span class="p">).</span><span class="nx">matrixMultiply</span><span class="p">(</span><span class="nx">arrayImage</span><span class="p">);</span>
-
-    <span class="c1">// Turn the square roots of the Eigenvalues into a P-band image.</span>
-    <span class="kd">var</span> <span class="nx">sdImage</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">eigenValues</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">())</span>
+        <span class="c1">// Turn the square roots of the Eigenvalues into a P-band image.</span>
+        <span class="kd">var</span> <span class="nx">sdImage</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">eigenValues</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">())</span>
             <span class="p">.</span><span class="nx">arrayProject</span><span class="p">([</span><span class="mf">0</span><span class="p">]).</span><span class="nx">arrayFlatten</span><span class="p">([</span><span class="nx">getNewBandNames</span><span class="p">(</span><span class="s1">&#39;sd&#39;</span><span class="p">)]);</span>
 
-    <span class="c1">// Turn the PCs into a P-band image, normalized by SD.</span>
-    <span class="k">return</span> <span class="nx">principalComponents</span>
-         <span class="c1">// Throw out an an unneeded dimension, [[]] -&gt; [].</span>
-        <span class="p">.</span><span class="nx">arrayProject</span><span class="p">([</span><span class="mf">0</span><span class="p">])</span>
-        <span class="c1">// Make the one band array image a multi-band image, [] -&gt; ima            .arrayFlatten([getNewBandNames(&#39;pc&#39;)])</span>
-        <span class="c1">// Normalize the PCs by their SDs.</span>
-       <span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">sdImage</span><span class="p">);</span>
-      <span class="p">};</span>
+        <span class="c1">// Turn the PCs into a P-band image, normalized by SD.</span>
+        <span class="k">return</span> <span class="nx">principalComponents</span>
+            <span class="c1">// Throw out an an unneeded dimension, [[]] -&gt; [].</span>
+            <span class="p">.</span><span class="nx">arrayProject</span><span class="p">([</span><span class="mf">0</span><span class="p">])</span>
+            <span class="c1">// Make the one band array image a multi-band image, [] -&gt; image.</span>
+            <span class="p">.</span><span class="nx">arrayFlatten</span><span class="p">([</span><span class="nx">getNewBandNames</span><span class="p">(</span><span class="s1">&#39;pc&#39;</span><span class="p">)])</span>
+            <span class="c1">// Normalize the PCs by their SDs.</span>
+            <span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">sdImage</span><span class="p">);</span>
+    <span class="p">};</span>
 
-<span class="c1">// // De PCAfunctie heeft noog aan een helper-functie, dat een lijst met nieuwe bandnamen samenstelt</span>
+<span class="c1">// De PCAfunctie heeft noog aan een helper-functie, dat een lijst met nieuwe bandnamen samenstelt</span>
 
 <span class="kd">var</span> <span class="nx">getNewBandNames</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">seq</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">List</span><span class="p">.</span><span class="nx">sequence</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="nx">bandNames</span><span class="p">.</span><span class="nx">length</span><span class="p">());</span>
@@ -883,11 +885,9 @@
     <span class="k">return</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">String</span><span class="p">(</span><span class="nx">prefix</span><span class="p">).</span><span class="nx">cat</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="kr">int</span><span class="p">());</span>
   <span class="p">});</span>
 <span class="p">};</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Toepassen van de PCA-functie. Hiervoor dienen eerst enkele inputparameters met informatie worden aangemaakt</p>
-</li>
+</code></pre></div>
+<ol>
+<li>Toepassen van de PCA-functie. Hiervoor dienen eerst enkele inputparameters met informatie worden aangemaakt</li>
 </ol>
 <div class="highlight"><pre><span></span><code><span class="cm">/* DE PCA-functie is opgesteld. In wat volgt kunnen we deze toepassen */</span>
 <span class="c1">// Set some information about the input to be used later.</span>

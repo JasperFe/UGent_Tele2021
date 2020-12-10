@@ -96,7 +96,7 @@ var VV_Param = {"opacity":1,"bands":["VV"],"min":-12.695602621422937,"max":-2.59
 // Afzonderlijke beelden mappen: visueel weinig verschil te zien
 Map.addLayer(VV_2017,VV_Param,'VV_2017',0)
 Map.addLayer(VV_2018,VV_Param,'VV_2018',0)
-Map.addLayer(VV_2018,VV_Param,'VV_2019',0)
+Map.addLayer(VV_2019,VV_Param,'VV_2019',0)
 ```
 
 * Doe nu hetzelfde, maar voor de VH-polarisatie. Bekijk in welke mate de sensitiviteit voor verschillende landoppervlakten verschilt in beide polarisaties.
