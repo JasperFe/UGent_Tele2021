@@ -156,12 +156,22 @@ Nu hebben we reeds een ```FeatureCollection```met trainingspolygonen, maar deze 
 var traindata = S2_im.sampleRegions({
   collection: classNames, //De trainingspolygonen
   properties: ['class'], //Dit neemt de gewenste eigenschappen van de collection over
-  scale: 10
+  scale: 10,
+  tileScale:4
 });
 print('Aantal trainingspixels: ',traindata.size());
 //print(traindata) //Niet doen
 print(traindata.first()) //Eerste waarde bekijken,
 ```
+!!! warning "Layer error: Computed value is too Large"
+    Mogelijks heb je bij het gebruik van sampleRegions() al onderstaande foutmelding gehad:  
+    <p align="center">
+    <img src="images/GEE_Layer_error.jpg">  <br>
+    </p> 
+    Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit is eenvoudig op te lossen door het toevoegen van een extra parameter ```tileScale``` aand de sampleRegions()-functie, zoals in bovenstaand voorbeeld werd gedaan. Door het verhogen van de ```tileScale``` zal Earth Engine de opdracht in meerdere stukjes indelen, waardoor de berekening minder gemakkelijk *'out of memory'* zal lopen. De bewerking zal hierdoor wel meer tijd in beslag nemen, dus verhoog tileScale slechts gelijdelijk.  
+
+   Zie ook de 'Docs' van sampleRegions()
+    
 
 
 ## De classifier trainen
@@ -331,6 +341,7 @@ print('MinDist Validation error matrix: ', ErrorMatrix_MinDist.array().transpose
 print('MinDist Validation overall accuracy: ', ErrorMatrix_MinDist.accuracy());
 print('MinDist Producer Accuracy: ', ErrorMatrix_MinDist.producersAccuracy());
 print('MinDist User/Consumer Accuracy: ', ErrorMatrix_MinDist.consumersAccuracy());
+print('Kappa index: ', ErrorMatrix_MinDist.kappa());
 
 //Omzetten naar een Feature + transpose
 var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array().transpose()}); 

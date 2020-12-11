@@ -1196,16 +1196,15 @@
 
 <h2 id="de-trainingsdata-aanmaken">De trainingsdata aanmaken</h2>
 <p>Nu hebben we reeds een <code>FeatureCollection</code>met trainingspolygonen, maar deze zeggen nog niks over de trainingspixels. In een volgende stap, extraheren we de trainingspixels per band uit het Sentinel-2 beeld op basis van de aangemaakte polygonen. Dit doen we met de <code>sampleRegions()</code>functie. Deze functie extraheert alle pixels binnen opgegeven polygonen, en schrijft elke pixel afzonderlijk naar een nieuw <code>`Feature</code>binnen een <code>FeatureCollection</code>, dewelke ook de class-property meekrijgen. Afhankelijk van de grootte van de polygonen, kan deze dataset dus zeer lijvig worden.</p>
-<div class="highlight"><pre><span></span><code><span class="c1">//Trainingspixels extraheren naar featurecollection = trainingsdata</span>
-<span class="kd">var</span> <span class="nx">traindata</span> <span class="o">=</span> <span class="nx">S2_im</span><span class="p">.</span><span class="nx">sampleRegions</span><span class="p">({</span>
-  <span class="nx">collection</span><span class="o">:</span> <span class="nx">classNames</span><span class="p">,</span> <span class="c1">//De trainingspolygonen</span>
-  <span class="nx">properties</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">],</span> <span class="c1">//Dit neemt de gewenste eigenschappen van de collection over</span>
-  <span class="nx">scale</span><span class="o">:</span> <span class="mf">10</span>
-<span class="p">});</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Aantal trainingspixels: &#39;</span><span class="p">,</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>
-<span class="c1">//print(traindata) //Niet doen</span>
-<span class="nx">print</span><span class="p">(</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">first</span><span class="p">())</span> <span class="c1">//Eerste waarde bekijken,</span>
-</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Layer error: Computed value is too Large</p>
+<p>Mogelijks heb je bij het gebruik van sampleRegions() al onderstaande foutmelding gehad:<br />
+<p align="center">
+<img src="images/GEE_Layer_error.jpg">  <br>
+</p> 
+Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit is eenvoudig op te lossen door het toevoegen van een extra parameter <code>tileScale</code> aand de sampleRegions()-functie, zoals in bovenstaand voorbeeld werd gedaan. Door het verhogen van de <code>tileScale</code> zal Earth Engine de opdracht in meerdere stukjes indelen, waardoor de berekening minder gemakkelijk <em>'out of memory'</em> zal lopen. De bewerking zal hierdoor wel meer tijd in beslag nemen, dus verhoog tileScale slechts gelijdelijk.  </p>
+</div>
+<p>Zie ook de 'Docs' van sampleRegions()</p>
 <h2 id="de-classifier-trainen">De classifier trainen</h2>
 <p>In een volgende stap maken we een classificatiemodel aan en trainen we deze op basis van de traindata. Er bestaan verschillende mogelijke classifiers en 'machine learning'-algoritmen. In Google Earth Engine zitten deze beschikbaar in de <code>ee.Classifier</code>-groep. We gebruiken er 3, waarna we kijken dewelke tot de meest accurate classificatie leidt o.b.v. de validatiedata.</p>
 <h3 id="minimum-distance-classifier">Minimum Distance Classifier</h3>
@@ -1349,6 +1348,7 @@
 <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist Validation overall accuracy: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">accuracy</span><span class="p">());</span>
 <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist Producer Accuracy: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">producersAccuracy</span><span class="p">());</span>
 <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist User/Consumer Accuracy: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">consumersAccuracy</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Kappa index: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">kappa</span><span class="p">());</span>
 
 <span class="c1">//Omzetten naar een Feature + transpose</span>
 <span class="kd">var</span> <span class="nx">ErrorMatrix_MinDist</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="nx">matrix</span><span class="o">:</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">array</span><span class="p">().</span><span class="nx">transpose</span><span class="p">()});</span> 

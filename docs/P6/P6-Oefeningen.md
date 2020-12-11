@@ -80,6 +80,8 @@ var traindata = ee.FeatureCollection("users/jasperfeyen/TELEDETECTIE2020/P6_oef2
 
 * **Referentie data**: tijdens een veldcampagne in 2019 werd het gebied rond de vulkaan intensief bemonsterd. Honderden pixels werden op het terrein bezocht en de landbedekking werd geregistreerd.  
 
+Je kunt de shape-file hier downloaden: [P6_oef2_val.zip](https://users.ugent.be/~jfeyen/P6/P6_oef2_val.zip)
+
 ### Gevraagd
 Classificeer het 2019 beeld met behulp van 2 supervised classifiers naar keuze. Voor de classificatie transformeer je de data, zodat je slechts 3 getransformeerde banden overhoudt die de meeste informatie bevatten.
 

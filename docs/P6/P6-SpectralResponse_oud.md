@@ -92,8 +92,8 @@ var S2_im = S2_coll.map(addIndices).median().clip(Paramaribo);
 Vervolgens kunnen we de Chart aanmaken. Tevens linken we de overeenkomstige golflengtes aan de banden, om zo een spectrum te krijgen met de golflengte in de X-as.
 
 ```javascript
-// Golflengtes S2
-
+// Banden S2 aangeven (hier: volledig, inclusief B1 en B9 (worden weggelaten in classificatie wegens onbruikbaar)
+var wavelengths =['B1','B2','B3','B4','B5','B6','B7','B8','B8A','B9','B11','B12']
 
 //De overeenkomstige golflengte per band aangeven (zie bandenverdeling Sentinel-2).
 var wavelengths =[443.9,496.6,559,664.5,703.9,740.2,782.5,835.1,864.8,945,1613.7,2202.4]
