@@ -97,7 +97,7 @@ Om dus tot een collectie te komen waarbij de 'cloudmask' is toegepast, gebruik j
 var S2_coll = getS2_SR_CLOUD_PROBABILITY()
                 .filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than',50) //Voorselectie obv wolken
                 .filterDate('2019-08-01','2019-10-30') 
-                .map(maskClouds()
+                .map(maskClouds)
 ```
 
 

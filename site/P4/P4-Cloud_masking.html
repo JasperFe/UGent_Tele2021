@@ -942,7 +942,7 @@ Resulterend is een ImageCollectie met dezelfde beelden, maar waaruit de wolken g
 <span class="kd">var</span> <span class="nx">S2_coll</span> <span class="o">=</span> <span class="nx">getS2_SR_CLOUD_PROBABILITY</span><span class="p">()</span>
                 <span class="p">.</span><span class="nx">filterMetadata</span><span class="p">(</span><span class="s1">&#39;CLOUDY_PIXEL_PERCENTAGE&#39;</span><span class="p">,</span><span class="s1">&#39;less_than&#39;</span><span class="p">,</span><span class="mf">50</span><span class="p">)</span> <span class="c1">//Voorselectie obv wolken</span>
                 <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2019-08-01&#39;</span><span class="p">,</span><span class="s1">&#39;2019-10-30&#39;</span><span class="p">)</span> 
-                <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskClouds</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskClouds</span><span class="p">)</span>
 </code></pre></div>
                 
               
