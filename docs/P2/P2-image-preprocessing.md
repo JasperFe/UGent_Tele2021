@@ -8,7 +8,7 @@ TOA reflectances are subjected to radiometric bias caused by different lighting 
 
 <p align="center">
 
-  <img src="assets/images/P3/Sen2Cor_result.jpg" width="800"> 
+  <img src="Images/Sen2Cor_result.jpg" width="800"> 
 <em>Figure: A true color comparison of the surface reflectance product (top) and a top of atmosphere reflectance image (bottom) in adjacent scenes captured by the same satellite (Planet.com)</em> 
 </p> 
 
