@@ -1,6 +1,6 @@
 ## Cloud Masking
 
-Wolkbedekking is een grote barrière tijdens het analyseren en processen van (spectrale) satellietbeelden. Recente satellietdata komen veelal ook met automatische classificaties van de wolkbedekking, waardoor deze relatief eenvoudig uit het beeld verwijderd kunnen worden (zie ook [P3: cloud masking](../P3-image-preprocessing.md#intermezzo-cloud-masks)).  
+Wolkbedekking is een grote barrière tijdens het analyseren en processen van (spectrale) satellietbeelden. Recente satellietdata komen veelal ook met automatische classificaties van de wolkbedekking, waardoor deze relatief eenvoudig uit het beeld verwijderd kunnen worden (zie ook [P3: cloud masking](../P2/P2-image-preprocessing.md#intermezzo-cloud-masks)).  
 
 Earth engine bevat naast deze standaard ‘cloud masks’ ook eigen algoritmes om de wolken en wolkschaduw te verwijderen uit het beeld, maar bevat ook enkele andere mogelijkheden om de aanwezigheid ervan veel mogelijk te minimaliseren zoals het toepassen van reducties op beeldcollecties.
 

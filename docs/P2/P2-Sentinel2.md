@@ -5,7 +5,7 @@
 Under the copernicus programme, ESA is developing a series of next-generation Earth observation missions under the name of 'Sentinel' programme. This Sentinel Programme, consists of multiple satellites, each focussing on a different aspect of Earth observation: atmospheric, Oceanic and Land monitoring:
 
 <p align="center">
-<img src="assets/images/P3/Sentinel_overview.JPG" width="650">
+<img src="Images/Sentinel_overview.JPG" width="650">
 <em> Current Sentinel satellites, with their main goal. (Source: ESA) </em> 
 </p>
 
@@ -15,7 +15,7 @@ In this practical will focus on the multispectral imagery taken by Sentinel 2 sa
 ### The Sentinel-2 mission
 
 <p align="center">
-<img src="assets/images/P3/Sentinel2.jpg" width="400">
+<img src="Images/Sentinel2.jpg" width="400">
 </p>
 
 
@@ -41,28 +41,28 @@ To register go to [registration page](https://scihub.copernicus.eu/dhus/#/self-r
 
 
 
-!!! note "Ex 3.1 - Downloading a Sentinel 2 Level 1C image"
+!!! note "Ex 2.1 - Downloading a Sentinel 2 Level 1C image"
     In the first exercise, you will download an image from the Copernicus Open Access Hub.  
 
     * Go to https://scihub.copernicus.eu/ 
     * Klick ‘Open hub’ to access the Interactive Graphical User Interface
     * Log in (or create an account)  
-      ![](/assets/images/P3/Login_logo.jpg){: style="height:25px"}  
+      ![](Images/Login_logo.jpg){: style="height:25px"}  
      
 
     * Zoom to Belèm, a city in the north of Brazil, close to the gateway of the Amazon river
     * Switch the ‘Open street’ view to ‘sentinel-2 cloudless + Overlay’ view 
     * Switch to ‘navigation mode’
     * Draw a rectangle around Belèm:  
-      ![](/assets/images/P3/Belem_scihub.JPG){: style="height:250px"}  
+      ![](Images/Belem_scihub.JPG){: style="height:250px"}  
 
     * At the button ‘Insert search criteria’: go for ‘advanced search’
     * Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:  
-      ![](/assets/images/P3/Sentinel2_search.JPG){: style="width:400px"}  
+      ![](Images/Sentinel2_search.JPG){: style="width:400px"}  
  
     * Click on the search button  
     * Search for an image that contains the major part of the city (inspect the image in a quick look view )
-      ![](/assets/images/P3/Quicklook.jpg){: style="width:500px"}
+      ![](Images/Quicklook.JPG){: style="width:500px"}
     * Download this image to a folder on your computer.
 
 

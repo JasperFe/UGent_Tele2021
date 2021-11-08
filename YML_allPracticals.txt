@@ -1,0 +1,26 @@
+ - P4 - Intro tot Google Earth Engine:
+      - Doel van het practicum: P4/P4-Goals.md
+      - EarthEngine data catalog: P4/P4-DataCatalog.md
+      - Introductie tot Earth Engine: P4/P4-Intro.md
+      - Satellietdata oproepen, filteren en visualiseren: P4/P4-ImageVisualization.md
+      - Reducing ImageCollections: P4/P4-Reducing.md
+      - Cloud masking: P4/P4-Cloud_masking.md
+      - (Extra) Oefeningen: P4/P4-Oefeningen.md
+    - P5 - Feature Extraction:
+      - Intro: P5/P5-Intro.md
+      - Spectrale indices: P5/P5-Spectral_indices.md
+      - Beeldstatistieken: P5/P5-ImageStatistics.md
+      - Textuuranalyse: P5/P5-Texture.md
+      - Principale componenten analyse: P5/P5-PCA.md
+      - Oefeningen: P5/P5-Oefeningen.md
+    - P6 - Beeldclassificatie:
+      - Intro: P6/P6-intro.md
+      - CASE - Mangrove monitoring in Suriname: P6/P6-SurinameCase.md
+      - Niet-gesuperviseerde classificatie: P6/P6-Unsupervised.md
+      - Gesuperviseerde classificatie: P6/P6-Supervised.md
+      - Verbeteren van de classificatie: P6/P6-Improvement.md
+      - Spectrale responsiecurves: P6/P6-SpectralResponse_oud.md
+      - Oefeningen: P6/P6-Oefeningen.md
+    - P7 - Tijdseries en SAR:
+      - Tijdserie-analyse: P7/P7-Timeseries.md
+      - SAR-analyse: P7/P7-SAR-tijdseries.md

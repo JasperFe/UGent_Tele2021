@@ -1,19 +1,34 @@
-# Teledetectie Practica 2020
+# Over deze cursussite
 
 </p>   <p align="center">
   <img src="assets/images/Voorblad.jpg" width="400">
 </p> 
 
-Welkom bij de cursussite voor de practica van Teledetectie 2020. 
+## Over deze cursus
+
+Welkom bij de cursussite voor de practica van Teledetectie 2021. Deze cursus is ontworpen om studenten te basis aan te leren voor het verkrijgen, voorverwerken, analyseren en exporteren van remote sensing data.
+
+Volgende topics komen doorheen de 5 practica's aan bod:  
+
+- **Practicum 1**: Beeldinterpretatie (zie Ufora)
+- **Practicum 2**: Downloaden en voorverwerking van een enkel Sentinel-2 beeld in SNAP  
+- **Practicum 3**: Toegang en leren werken met Google Earth Engine. Basis beeldvisualisatie en  
+- **Practicum 4**: *Feature* extractie in Google Earth Engine
+- **Practicum 5**: Beeldclassificatie
+- **Practicum 6**: Tijdserieanalyse
+
+Deze cursussite laat toe om snel stukken scripts te kopiëren, om zo vlotte gang van zaken mogelijk te maken. In een 'tutorial' leer je bepaalde functionaliteit kennen door het copy-pasten van de voorbeeldscripts. In de hierop volgende oefeningen zul je zelf de gebruikte tools moeten toepassen.
 
 Doorheen de practica wordt deze site aangevuld met nieuwe documentatie, extra informatie en FAQ's.
 
-De PDF-versie van de practica's is te vinden via [deze link](https://users.ugent.be/~jfeyen/pdf/document.pdf).
+## Afrukbare PDF's
+
+Afdrukbare pdf's per practicum worden voorzien, voor wie hieraan de voorkeur geeft. De PDF-versie van de volledige practicasite is te vinden via [deze link](https://users.ugent.be/~jfeyen/pdf/document.pdf).
 
 
 <p align="center">
 
-  <img src="assets/images/Remosa_logo.png" width="150"><br> </p>
+  <img src="assets/images/Remosa_logo.png" width="80"><br> </p>
 <p align= "center" style="color:DodgerBlue;"> Remote Sensing | Spatial Analysis lab (REMOSA) </p> <br>   <p align="center">
   <img src="assets/images/UGent_logo.png" width="200">
   <img src="assets/images/FBW_logo.png" width = "250">   

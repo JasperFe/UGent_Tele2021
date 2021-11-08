@@ -67,7 +67,7 @@ In wat volgt gaan we op basis van een locatie op zoek gaan naar geschikte satell
 
 Starten doen we met het intekenen van een gewenste *Area Of Interest* (AOI) in de Map View. Een AOI is niets anders dan de afbakening van het studiegebied, waarbinnen we onze data wensen te verkrijgen.  
 
-Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": ![](images/GEE_knoppen.jpg){: style="height:25px"}.  
+Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of door het scrollen met de muis. Teken vervolgs een gewenste gebied in door gebruik te maken van de toolknoppen in de "Map View": ![](Images/GEE_knoppen.jpg){: style="height:25px"}.  
 
 In dit voorbeeld kiezen we voor de Konigin der badsteden, Oostende, als studiegebied:
 

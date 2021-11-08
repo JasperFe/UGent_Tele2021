@@ -4,8 +4,10 @@ Multispectral imagery, such as Sentinel-2, consists of several bands of data. As
 
 When creating a colour composite: the three primary colours are used: red, green and blue. When they are combined in various proportions, different colours are produced per pixel. When 3 spectral bands (both visible as non-visible bands) are assigned to a primary colour, a colour composite is formed.
 
-![rgb](assets/images/P3/rgb.gif){: align=center }  
-*By combining different proportions of the three primary colours Red, Green and Blue, various colours are created*
+<p align="center">
+  <img src="Images/rgb.gif" width="200">  <br>
+  <em> By combining different proportions of the three primary colours Red, Green and Blue, various colours are created </em>
+</p> 
 
 
 
@@ -14,12 +16,13 @@ When creating a colour composite: the three primary colours are used: red, green
 ### True Colour Composite
 The most straightforward colour composite is the **true colour composite** (also **natural colour composite**), where the three visual primary colour bands of a multispectral image are assigned to their corresponding colour. 
 
-For Sentinel 2, this composite is created as: Red: B4, Green: B3, Blue: B2.
+For Sentinel-2, this composite is created as: Red: B4, Green: B3, Blue: B2.
 
 <p align="center">
-  <img src="assets/images/P3/Gent_NormalColours.jpg" width="400">  <br>
-  <em> Sentinel-2 Normal Composite of Ghent. </em>
+<img src="Images/Gent_NormalColours.jpg" width="400">  <br>
+<em> Sentinel-2 Normal Composite of Ghent. </em>
 </p> 
+
 
 ### False Colour Composite
 
@@ -29,10 +32,10 @@ The most famous of these is the **False Colour Composite**, where the NIR-band i
 
 Clear water will appear dark-bluish, while turbid water (with a lot of sediments) will be cyan. Bare soils, roads and buildings may appear in various shades of blue, yellow or grey, depending on their composition.
 
-For Sentinel 2, this composite is created as: Red: B8, Green: B4, Blue: B3.
+For Sentinel-2, this composite is created as: Red: B8, Green: B4, Blue: B3.
 
 <p align="center">
-  <img src="assets/images/P3/Gent_FalseColour.jpg" width="400">  <br>
+  <img src="Images/Gent_FalseColour.jpg" width="400">  <br>
   <em> Sentinel-2 False Colour Composite of Ghent. </em>
 </p> 
 
@@ -42,7 +45,7 @@ Let's create our own image composites in SNAP! This is actually very easy to do.
 
 <p align="center">
 
-  <img src="assets/images/P3/snap_openrgb.jpg" width="300">  
+  <img src="Images/snap_openrgb.jpg" width="300">  
 
 </p> 
 
@@ -50,7 +53,7 @@ A window will appear with some possible S2 band combinations, but you can also c
 
 <p align="center">
 
-  <img src="assets/images/P3/Select-RGB.JPG" width="200">  
+  <img src="Images/Select-RGB.JPG" width="200">  
 
 </p> 
 

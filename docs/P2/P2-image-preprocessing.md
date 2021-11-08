@@ -2,9 +2,9 @@
 
 Satellite images obtained by the sensing device are not directly usable. They need to go through a series of pre-processing before they are ready to use. The scheme below illustrates the pre-processing steps that Sentinel-images undergo before they are made available for the user. This includes **geometric** correction, some **radiometric correction** (noise reduction, defective pixels identification) the computation of cloud masks, etc. The outcome is a level 1C product, which is Top-Of-the-Atmosphere (TOA). 
 
-![](assets/images/P3/sentinel2_preprocessing.jpg)
+![](Images/sentinel2_preprocessing.jpg)
 
-TOA reflectances are subjected to radiometric bias caused by different lighting conditions, atmospheric interactions and viewing geometry. In order to relate reflectances to physical field properties, TOA reflectance values are conversed to BOA (Bottom Of Atmosphere) corrected reflectance values. This radiometric correction is an essential part in image processing. BOA, Sentinel processing level 2A, is available for the user (except for recent images) or can be created by the user itself, using the Sen2Cor freeware.  
+TOA reflectances are subjected to radiometric bias caused by different lighting conditions, atmospheric interactions and viewing geometry. In order to relate reflectances to physical field properties, TOA reflectance values are conversed to BOA (Bottom Of Atmosphere) corrected reflectance values. This radiometric correction is an essential part in image processing. BOA, Sentinel-2 processing level 2A, is available for the user (except for recent images) or can be created by the user itself, using the Sen2Cor freeware.  
 
 <p align="center">
 
@@ -16,7 +16,7 @@ In Snap, the conversion of level 1C TOA-reflectance to level 2A BOA-reflectance 
 
 Since December 2018, users can download Level-2A processed products directly. In case of this exercise, we downloaded a Level 1C product. Thus, let’s perform an atmospheric correction!
 
-!!! note "Excercise: atmospheric correction with Sen2Cor"
+!!! note "Exercise: atmospheric correction with Sen2Cor"
     * In the folder where you have saved the image, unzip the Sentinel-image.  
     * Go to *‘Optical’ > ‘Thematic Land Processing’ > ‘Sen2Cor processor’ > ‘Sen2Cor280’*  
     * When you choose the source product, click on the ‘…’, browse to the image and navigate to the ‘MTD_MSIL1C.xml’ product.
@@ -35,7 +35,7 @@ The image contain clouds. This means that there are some blind pixels, which lac
 
 <p align="center">
 
-  <img src="assets/images/P3/Folder_clouds.JPG" width="700"> 
+  <img src="Images/Folder_clouds.JPG" width="700"> 
 
 </p> 
  
@@ -59,12 +59,12 @@ Here, clouds are classified into 'cloud probability masks', which are in general
  
 <p align="center">
 
-  <img src="assets/images/P3/sen2cor_sceneclassification.JPG" width="700"> 
+  <img src="Images/sen2cor_sceneclassification.JPG" width="700"> 
 
 </p> 
 
 
-!!! note "Excercise: Visualize cloud masks"
+!!! note "Exercise: Visualize cloud masks"
     - Visualize the cloud masks.
     - If you look at the cloud masks, you will see that these are not very precise. These cloud masks are useful for rough estimations. Later we will see alternative ways to identify cloud pixels more precise. 
 
@@ -74,7 +74,7 @@ In order to display the other band combinations, some geometrical pre-processing
 
 <p align="center">
 
-  <img src="assets/images/P3/Resampling_principle.jpg" width="500"><br>
+  <img src="Images/Resampling_principle.jpg" width="500"><br>
   
   <em>Image resampling scheme. Top: upsampling (nearest neighbor). Bottom: Downsampling (minimum). </em> 
 
@@ -88,21 +88,21 @@ In order to display the other band combinations, some geometrical pre-processing
     - Saving the images takes a lot of time. Again, be patient! 
 
 ## Image Subsetting
-Processing an entire Sentinel image takes a lot of processing capacity and time (as you probably have noted already). Therefore, you will now learn how to only process a small part of the image. You can choose to reduce the spatial extent of the image, or you can choose to reduce the amount of bands in the image, or a combination of both.
+Processing an entire Sentinel-2 image takes a lot of processing capacity and time (as you probably have noted already). Therefore, you will now learn how to only process a small part of the image. You can choose to reduce the spatial extent of the image, or you can choose to reduce the amount of bands in the image, or a combination of both.
 
 An important aspect is that creating a subset is only possible for bands that have the same size. Thus, this will only be possible **after resampling**.  
 
 
-!!! note "Excercise: subsetting an image"
+!!! note "Exercise: subsetting an image"
     - Select the resampled image in the product explorer. Go to Raster > Subset.
     - Select a spatial subset by choice (by adjusting the scene start and end). Make sure your spatial extent is substantially smaller than the original image.
     <p align="center">
-    <img src="assets/images/P3/snap_subsetting_1.jpg" width="400"><br>
+    <img src="Images/snap_subsetting_1.jpg" width="400"><br>
     <em>Snap Subsetting screen.</em> 
     - Select only following bands: [B2, B3, B4, B5, B6, B7, B8, B8A, B11, B12]
     - You can see an estimation of the new required storage space.
     <p align="center">
-    <img src="assets/images/P3/snap_subsetting_2.jpg" width="400"><br>
+    <img src="Images/snap_subsetting_2.jpg" width="400"><br>
     <em>Snap Subsetting screen.</em> 
     - Click OK
     - Another option to make a subset is ‘Spatial subset from view’. Zoom in on your image. Rightclick and select ‘Spatial subset from view’. 
@@ -112,20 +112,20 @@ An important aspect is that creating a subset is only possible for bands that ha
 ## Mosaicing
 Mosaicing is the merging of several arbitrarily shaped images and often used to merge two neighbouring satellite images.  
 
-!!! note "Excercise: mosaicing"
+!!! note "Exercise: mosaicing"
     - Download an image that is located next to the image you are already working with, dating from the same time as the original image was taken. 
     - You can download it directly in Level 2A, thus skipping the sen2cor atmospheric correction.
     - Resample the image. 
     - Go to raster > Geometric operations > Mosaicing 
     <p align="center">
-    <img src="assets/images/P3/Mosaicing_screen.jpg" width="400"><br>
+    <img src="Images/Mosaicing_screen.jpg" width="400"><br>
     <em>Snap mosaicing screen.</em>  
     - Add the two source products.
     - Choose the directory in which you want to save the mosaic image.
     - In the Map Projection Definition you can choose the Coordinate Reference System (CRS). Choose for UTM/WGS84 (automatic)
     - Choose for a resolution of 10m.
     - The input products don’t need to be orthorectified (because they already are).
-    - In the tab ‘Variables and Conditions’, click the  ![](assets/images/P3/pages_symbol.jpg)- symbol.
+    - In the tab ‘Variables and Conditions’, click the  ![](Images/pages_symbol.jpg)- symbol.
     - Select Band 2,3,4 and 8
     - Run Mosaicing.
     - Open the RGB-image of the product. Compare it to the two original images. 
@@ -137,5 +137,5 @@ Mosaicing is the merging of several arbitrarily shaped images and often used to 
     3. Why is there no observable colour difference in 2 and 4?
     4. Have you any idea how to eliminate the colour difference between 2 and 3, given that neighbouring satellite images always partly overlap?
     <p align="center">
-    <img src="assets/images/P3/mosaicing_extra.jpg" width="400"><br>
+    <img src="Images/mosaicing_extra.jpg" width="400"><br>
     <em>Landsat images mosaic</em>  
