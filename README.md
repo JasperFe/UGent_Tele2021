@@ -1,5 +1,5 @@
-# UGent_Tele2020
-Practicals Teledetectie 2020
+# UGent_Tele2021
+Practicals Teledetectie 2021
 
 Dutch Remote Sensing course notes in SNAP/ Google Earth Engine
 
