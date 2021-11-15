@@ -57,7 +57,7 @@ To register go to [registration page](https://scihub.copernicus.eu/dhus/#/self-r
       ![](Images/Belem_scihub.JPG){: style="height:250px"}  
 
     * At the button ‘Insert search criteria’: go for ‘advanced search’
-    * Look for a 2020 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:  
+    * Look for a 2021 image (sensing period), Sentinel-2A, level 1C (product type) with a cloud cover of maximum 10%. Then click on the search button:  
       ![](Images/Sentinel2_search.JPG){: style="width:400px"}  
  
     * Click on the search button  
