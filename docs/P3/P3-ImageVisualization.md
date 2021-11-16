@@ -25,7 +25,7 @@ Map.addLayer(S2_Belem);
 Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald de visualisatie die we wensen.
 
 <p align="center">
-  <img src="images/MapaddLayer_1.JPG" width="400">  <br>
+  <img src="Images/MapaddLayer_1.JPG" width="400">  <br>
 </p> 
 
 Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald de visualisatie die we wensen. Dit komt omdat we nog geen visualisatieparameters hebben aangegeven, waardoor de eerste 3 banden naar de rode, groene en blauwe band respectievelijk worden toegekend en de pixelrange zo groot is dat alle pixels een zwarte kleur krijgen. Om dit manueel aan te passen, zoek je je toegevoegde laag in 'Layers' in de Map-view. Klik op het tandwieltje. Een visualisatie-scherm springt open. Pas de parameters aan, zodat je een normale kleurencomposiet verkrijgt, met een stretch van 3 sigma en druk op 'Apply'. Een visueel beter resultaat wordt verkregen.
@@ -33,19 +33,19 @@ Bij het uitvoeren van bovenstaande code bekomen we een zwart vlak, niet bepaald 
 !!! info "Image stretching"
     Verschillende stretch opties laten toe de histogrammen van het beeld te strechten om een betere visualisatie te krijgen. De stretch wordt uitgevoerd op basis van de huidige map view: ben je bijvoorbeeld ingezoomd om een stuk homogeen bos, wordt de stretch hierbinnen uitgevoerd. 
     <p align="center">
-    <img src="images/MapView_VisParam.JPG" width="400">  <br>
+    <img src="Images/MapView_VisParam.JPG" width="400">  <br>
     <em> Instellen van de visualisatieparameters kan via 'Layers' in de Map view. </em>
     </p> 
     
 
 <p align="center">
-  <img src="images/MapaddLayer_2.JPG" width="400">  <br>
+  <img src="Images/MapaddLayer_2.JPG" width="400">  <br>
 </p> 
 
 Het is echter niet handig om steeds opnieuw de visualisatie handmatig in te stellen. Gelukkig kan deze ook als code geïmporteerd worden in GEE (klik op 'Import'). De visualisatieparameters worden toegevoegd in de Imports. Deze kunnen dan in de Map.addLayer() -functie worden meegeven tijdens het visualiseren.
 
 <p align="center">
-  <img src="images/imageVisParam.JPG" width="400">  <br>
+  <img src="Images/imageVisParam.JPG" width="400">  <br>
 </p> 
 
 In de code-editor zelf kunnen de visualisatieparameters eveneens gedefinieerd worden als een Object.
@@ -75,13 +75,13 @@ Er kan rechtstreeks gezoomd worden naar een locatie via de zoekbalk bovenaan of 
 In dit voorbeeld kiezen we voor de Konigin der badsteden, Oostende, als studiegebied:
 
 <p align="center">
-  <img src="images/Oostende_polygon.JPG" width="1000">  <br>
+  <img src="Images/Oostende_polygon.JPG" width="1000">  <br>
 </p> 
 
 Automatisch wordt een nieuwe variabele aangemaakt onder de naam 'geometry', welke eenvoudig hernoemd kan worden naar een eenvoudig te gebruiken variabelenaam: 
 
 <p align="center">
-  <img src="images/Ostend_Polygon.JPG" width="400">  <br>
+  <img src="Images/Ostend_Polygon.JPG" width="400">  <br>
 </p> 
 
 Bekijk de eigenschappen van de polygoon door het naar de console te printen:
@@ -140,7 +140,7 @@ Map.addLayer(L8_first, trueColor, 'L8_TrueColorComposite')
 ```
 
 <p align="center">
-  <img src="images/Oostende_first.JPG" width="500">  <br>
+  <img src="Images/Oostende_first.JPG" width="500">  <br>
   <em> Eerste Landsat 8 beeld binnen de gefilterede collectie </em>
 </p> 
 
@@ -155,14 +155,14 @@ Map.addLayer(L8_sortedCC.first(), trueColor, 'Least Cloud cover 2020')
 ```
 
 <p align="center">
-  <img src="images/Oostende_LC.JPG" width="500">  <br>
+  <img src="Images/Oostende_LC.JPG" width="500">  <br>
   <em> Landsat 8-beeld met laagste wolkbedekking binnen de gefilterede collectie </em>
 </p>  
 
 Bekijk op welke dag de sensor dit beeld heeft genomen. Gebruik hiervoor de ‘inspector’ om de beeldeigenschappen verder te bekijken.
 
 <p align="center">
-  <img src="images/Inspector.JPG" width="500">  <br>
+  <img src="Images/Inspector.JPG" width="500">  <br>
   <em> De inspector </em>
 </p>  
 

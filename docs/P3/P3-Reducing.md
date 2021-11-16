@@ -4,7 +4,7 @@
 In dit proces wordt een beeldcomposiet aangemaakt van de beschikbare beelden in de collectie, waarbij per pixel een bepaalde vooropgestelde waarde wordt gekozen, zoals het min, max, gemiddelde, mediaan,… De collectie wordt als het ware 'gereduceerd' tot één enkel visualiseerbaar beeld.
 
 <p align="center">
-  <img src="images/Reducer_image.png" width="200">  <br>
+  <img src="Images/Reducer_image.png" width="200">  <br>
   <em> Reducing an ImageCollection: principe. </em>
 </p>  
 
@@ -32,7 +32,7 @@ Map.addLayer(L8_first_red, visParams_first, 'L8_First pixels')
 !!! warning "Bandbenaming na reducing"
     Let ook, bij het aanroepen van ```ee.reducer```, worden ook de banden hernoemd. Houd hier rekening mee bij het visualiseren. Het eventueel hernoemen van banden kan via de functie **```.rename()```**
     <p align="center">
-    <img src="images/First_reducer_bands.JPG" width="250">  <br>
+    <img src="Images/First_reducer_bands.JPG" width="250">  <br>
     <em> Bandnamen bij de 'First'-gereduceerde collectie. </em>
     </p>
 
@@ -57,7 +57,7 @@ Map.addLayer(L8_median, trueColor, 'L8_median')
 ```
 
 <p align="center">
-  <img src="images/Voorbeeld_median_reducer.JPG">  <br>
+  <img src="Images/Voorbeeld_median_reducer.JPG">  <br>
   <em> Voorbeeld mediane reducer over de L8_sortedCC-collectie </em>
 </p>  
 

@@ -3,7 +3,7 @@ Onderstaande oefeningen kunnen gebruikt worden om P4 verder in te oefenen.
 ## Oefening 4.1 - Area 51
 
 <p align="center">
-  <img src="images/Area51.jpg">  <br>
+  <img src="Images/Area51.jpg">  <br>
 </p> 
 
 
