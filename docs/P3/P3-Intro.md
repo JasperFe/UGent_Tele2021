@@ -2,7 +2,7 @@
 ## De Google Earth Engine Interface
 
 <p align="center">
-  <img src="./images/GEE_interface.JPG" width="700">  <br>
+  <img src="./Images/GEE_interface.JPG" width="700">  <br>
   <em> The Google Earth Engine code editor interface. </em>
 </p> 
 
@@ -63,16 +63,16 @@ print(typeof(aString))
 ```
 
 #### Functies
-In een volgende stap maken we een **functie** aan, waarbij je een string naar keuze kunt groeten. Een functie in Google Earth Engine ziet er uit volgens volgende opbouw:
+Een functie in Google Earth Engine ziet er uit volgens volgende opbouw:
 
 ```javascript
 var functienaam = function(inputvariabelen) {
-//Hier de functie-bewerkingen
-//output = a + b
-Return  output
+  //Hier de functie-bewerkingen
+  //output = a + b
+  return  output
 };
 ```
-Bijvoorbeeld:
+Bijvoorbeeld: een functie waarbij je een string naar keuze kunt groeten. 
 
 ```javascript
 //Hello Function:
@@ -85,7 +85,8 @@ var hello_function = function(String) {
 var hallo = hello_function('Boerekot');
 print(hallo)
 
-//Variabelen aangemaakt binnen de functie worden enkel daar gebruikt:
+//Variabelen aangemaakt binnen de functie worden enkel daar gebruikt. 
+// Ze gebruiken buiten de functie levert dus foutmeldingen op:
 print(goeindag)
 ```
 
@@ -127,20 +128,22 @@ print(beelden.Sensor)
 print('Regios: ', beelden['Regios'])
 ```
 
+!!! note "Javascript referenties"
+    
+    Het spreekt voor zich dat we hier slechts de basic-syntax van Javascript hebben aangehaald. Het is zeker niet nodig om eerst Javascript onder de knie te krijgen om in Google Earth Engine te kunnen werken. Aangezien Google Earth Engine slechts specifieke codes gebruikt, zul je doorheen de practica het nodige leren.
+
 
 ## Specifieke Earth Engine objecten
 
-### ee.Thing
-
-Om objecten/elementen/processen richting de google server te sturen, wordt gebruik gemaakt van zogenaamde 'containers'. Om dit aan te duiden wordt gebruik gemaakt van een ee.Thing structuur. Dit zal doorheen de komende practica wat duidelijker worden.
-
-### ee.Images
+### ee.Image
 
 Een ```Image``` is rasterdata bestaande uit één of meerdere banden, waarvan elke band een eigen naam, datatype, resolutie en projectie heeft. Een enkel Sentinel-2 beeld zoals in Practicum 3 gedownload werd, zal als één ```Image``` kunnen worden opgeslagen.
 
 Om een Image in te laden en Earth Engine wordt gebruik gemaakt van ```ee.Image```. In volgend hoofdstuk wordt dit geïllustreerd. 
 
-### ee.ImageCollections
 
-Een ```ImageCollection``` is een collectie van meerdere ```Image```'s, zoals bijvoorbeeld de volledige Sentinel-2 collectie. Het bevat m.a.w. heel wat beelden die in een bepaalde volgorde gesorteerd zijn. Standaard is dit o.b.v. datum, maar aangepaste sorteringen zijn eveneens mogelijk, zoals we in een komende oefening gaan zien.
+
+### ee.ImageCollection
+
+Een ```ImageCollection``` is een collectie van meerdere ```Image```'s. De <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S2_SR" target="_blank">Sentinel-2 MSI Level-2A collectie</a> bevat bijvoorbeeld het volledige aanbod aan atmosferisch gecorrigeerde Sentinel-2 beelden. Elke collectie bevat verdere informatie in de Data Catalog. Een collectie is steeds in een bepaalde volgorde gesorteerd zijn. Standaard is dit o.b.v. datum, maar aangepaste sorteringen zijn eveneens mogelijk, zoals we in een komende oefening gaan zien.
 

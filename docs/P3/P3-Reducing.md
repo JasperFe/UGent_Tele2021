@@ -18,9 +18,9 @@ var L8_first_red = L8_sortedCC.reduce(ee.Reducer.first());
 print(L8_first_red)
 
 var visParams_first = {
-  bands: ['B4_first', 'B3_first', 'B2_first'],
-  min: 0,
-  max: 3000,
+  bands: ['SR_B4_first', 'SR_B3_first', 'SR_B2_first'],
+  min: 8000,
+  max: 15000,
   gamma: 1.4,
 };
 
@@ -30,7 +30,7 @@ Map.addLayer(L8_first_red, visParams_first, 'L8_First pixels')
 ```
 
 !!! warning "Bandbenaming na reducing"
-    Let ook, bij het aanroepen van de reducer functie, worden ook de banden hernoemd. Houd hier rekening mee bij het visualiseren. Het eventueel hernoemen van banden kan via de functie **```.rename()```**
+    Let ook, bij het aanroepen van ```ee.reducer```, worden ook de banden hernoemd. Houd hier rekening mee bij het visualiseren. Het eventueel hernoemen van banden kan via de functie **```.rename()```**
     <p align="center">
     <img src="images/First_reducer_bands.JPG" width="250">  <br>
     <em> Bandnamen bij de 'First'-gereduceerde collectie. </em>
@@ -41,7 +41,7 @@ Map.addLayer(L8_first_red, visParams_first, 'L8_First pixels')
 
 ## Shortcut syntax
 
-Bepaalde – veel gebruikte – reducers hebben ook een zogenaamde ‘shortcut’ syntax in Earth engine zoals ```mean()```, ```median()```, ```min()``` en ```sum()```. Deze shortcut syntax zorgt ervoor dat een collectie eenvoudiger te reduceren is, zonder de hele ```.reduce()(ee.Reducer.mean())``` syntax te moeten gebruiken. Een voorbeeld:
+Bepaalde – veel gebruikte – reducers hebben ook een zogenaamde ‘shortcut’ syntax in Earth engine: ```mean()```, ```median()```, ```min()``` en ```sum()``` kunnen rechtstreeks gebruikt worden. Deze shortcut syntax zorgt ervoor dat een collectie eenvoudiger te reduceren is, zonder de hele ```.reduce((ee.Reducer.mean())``` syntax te moeten gebruiken. Een voorbeeld:
 
 ```javascript
 
@@ -61,6 +61,6 @@ Map.addLayer(L8_median, trueColor, 'L8_median')
   <em> Voorbeeld mediane reducer over de L8_sortedCC-collectie </em>
 </p>  
 
-### Opdracht
+### Opdracht 3.2
 Probeer enkele van de Reducers uit op je Sentinel-2 collectie van Gent.
 Bewaar je script.

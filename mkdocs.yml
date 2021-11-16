@@ -11,6 +11,14 @@ nav:
       - RGB colour composites: P2/P2-colour-composites.md
       - Image preprocessing in SNAP: P2/P2-image-preprocessing.md
       - RGB colour composites 2: P2/P2-colour-composites-ctd.md
+    - P3- Intro tot Google Earth Engine:
+      - Doel van het practicum: P3/P3-Goals.md
+      - EarthEngine data catalog: P3/P3-DataCatalog.md
+      - Introductie tot Earth Engine: P3/P3-Intro.md
+      - Satellietdata oproepen, filteren en visualiseren: P3/P3-ImageVisualization.md
+      - Reducing ImageCollections: P3/P3-Reducing.md
+      - Cloud masking: P3/P3-Cloud_masking.md
+      - (Extra) Oefeningen: P3/P3-Oefeningen.md
 
 
 theme:
