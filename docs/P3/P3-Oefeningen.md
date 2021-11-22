@@ -65,7 +65,7 @@ Maak een 2 Sentinel-2 beelden aan, met volgende specificaties:
 
 **SUBVRAAG 1.1**  - Hoeveel beelden resteren er nog in beide collecties na filtering?
 **SUBVRAAG 1.2**  - Visualiseer een Normale Kleurencomposiet voor beide jaren.
-<<<<<<< HEAD
+
 =======
 
 ## Oefening 4.2
