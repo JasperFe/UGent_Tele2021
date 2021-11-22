@@ -45,4 +45,23 @@ var Area51 = ee.Geometry.Point([-115.81441562461978, 37.2386297535804]);
 
 ## Oefening 4.2
 
-*Coming Soon*
+Fires are raging in Bolivia, hitting particularly hard the Chiquitano dry forests of the country’s southern Santa Cruz region. The fires are largely the result of intentional burning to convert forest to farmland. Sources say this practice has recently intensified after Bolivian president Evo Morales signed a decree in July expanding land demarcated for livestock production and the agribusiness sector to include Permanent Forest Production Lands in the regions of Beni and Santa Cruz.  Satellite data indicate 2019 may be a banner year for forest loss, with tree cover loss alerts spiking in late August to levels more than double the average of previous years. Human communities are suffering due to the fires, with reports of smoke-caused illnesses and drinking water shortages. Meanwhile, biologists are worried about the plants and animals of the Chiquitano dry forests, many of which are unique, isolated and found nowhere else in the world.
+
+**GEGEVEN**: 
+Startscript met aanduiding van het studiegebied (ROI)  [ttps://code.earthengine.google.com/2eba6fb83f6efb634a8286b52fd89bbc](https://code.earthengine.google.com/2eba6fb83f6efb634a8286b52fd89bbc)
+
+**GEVRAAGD**:
+Maak een 2 Sentinel-2 beelden aan, met volgende specificaties:  
+  - Gebruik van de Sentinel-2 Top-Of-Atmosphere (TOA) collectie.  
+  - Gefilterd op het studiegebied (ROI)  
+  - Gefilterd op maximale wolkbedekking van 30%  
+  - Wolken dienen worden te verwijderd uit de beelden.  
+  - Gefilterd op de periodes:  
+
+       - Beeld 1: het jaar 2017 (1 juni t.e.m 30 oktober)
+       - Beeld 2: het jaar 2019 (1 juni t.e.m 30 oktober))
+
+- Voor elke pixel de mediane waarde van beide overgebleven collecties
+
+**SUBVRAAG 1.1**  - Hoeveel beelden resteren er nog in beide collecties na filtering?
+**SUBVRAAG 1.2**  - Visualiseer een Normale Kleurencomposiet voor beide jaren.
