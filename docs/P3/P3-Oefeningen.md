@@ -1,9 +1,9 @@
 Onderstaande oefeningen kunnen gebruikt worden om P4 verder in te oefenen.
 
-## Oefening 4.1 - Area 51
+## Oefening .1 - Area 51
 
 <p align="center">
-  <img src="images/Area51.jpg">  <br>
+  <img src="Images/Area51.jpg">  <br>
 </p> 
 
 
@@ -65,3 +65,8 @@ Maak een 2 Sentinel-2 beelden aan, met volgende specificaties:
 
 **SUBVRAAG 1.1**  - Hoeveel beelden resteren er nog in beide collecties na filtering?
 **SUBVRAAG 1.2**  - Visualiseer een Normale Kleurencomposiet voor beide jaren.
+<<<<<<< HEAD
+=======
+
+## Oefening 4.2
+*Coming Soon*

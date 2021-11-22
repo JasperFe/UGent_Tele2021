@@ -1,4 +1,4 @@
-Tot nu toe zijn we enkel bezig geweest met....
+Tot nu toe zijn we enkel bezig geweest met.... FOREST COVER DENSITY ANALYSE (FCDA) OEFENING TOEVOEGEN
 
 Tijdserie analyse is een veel gebruikte operatie in Remote Sensing. Het draagt immers bij tot het modelleren van seizoenale patronen en het monitoren van landcover. Earth Engine is gezien het grote (historische) aanbod aan RS data een zeer geschikt medium om tijdseries te gaan analyseren.
 

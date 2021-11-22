@@ -15,7 +15,7 @@ Een tweede opdeling van de landsatcollectie gebeurd op basis van de de uitgevoer
   - **'Raw Images'**: niet radiometrisch gecalibreerd.
 
 <p align="center">
-  <img src="images/Landsat_GEE_Quality.JPG" width="700">  <br>
+  <img src="Images/Landsat_GEE_Quality.JPG" width="700">  <br>
 </p> 
 
 Een derde opdeling gebeurt ten slotte op basis van de beeldkwaliteit:  
@@ -28,12 +28,12 @@ Een derde opdeling gebeurt ten slotte op basis van de beeldkwaliteit:
     Landsat is het langst lopende aardobservatie satellietprogramma en is sinds 1972 continue operationeel. Het is een samenwerking tussen de *United States Geological Survey* (USGS) en de NASA. Op 27 september 2021 werd de Landsat 9 gelanceerd en is daarmee de meest recente Landsat-satelliet.
 
     <p align="center">
-    <img src="images/Landsat_overzicht.jpg" width="500">  <br>
+    <img src="Images/Landsat_overzicht.jpg" width="500">  <br>
     </p> 
     
     Onderstaande grafiek geeft een overzicht van de bandverdeling van de Landsatsatellieten. Huidig actieve Landsat-satellieten zijn Landsat 9 (OLI-2/TIRS-2) 8 (OLI/TIRS) en Landsat 7 (ETM+) (Bron: [NASA](https://landsat.gsfc.nasa.gov/landsat-9/landsat-9-spectral-bands))
 
     <p align="center">
-    <img src="images/Landsat.jpg" width="700">  <br>
+    <img src="Images/Landsat.jpg" width="700">  <br>
     </p> 
 
