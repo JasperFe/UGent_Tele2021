@@ -57,8 +57,9 @@ print(ndviHist)
 
 ## Bandstatistieken
 
-Om beeldstatistieken binnen een bepaalde ROI te berekenen binnen Earth Engine wordt gebruik gemaakt van ```image.reduceRegion()```. Het principe van deze 'beeldreducer' is hetzelfde als een recuder van een  ```ImageCollection```, met dat verschil dat de pixels binnen een regio van eenzelfde beeld worden gereduceerd, zoals in onderstaande figuur wordt geïllustreerd. Hiermee kan m.a.w. - binnen een bepaalde ROI - bepaalde statistieken berekend worden, zoals het minimum, gemiddelde pixelwaarde, maximum, mediane waarde, ...
+Om beeldstatistieken binnen een bepaalde ROI te berekenen binnen Earth Engine wordt gebruik gemaakt van ```image.reduceRegion()```, of binnen meerdere regio's ```image.reduceRegions()```. Het principe van deze 'beeldreducer' is hetzelfde als een recuder van een  ```ImageCollection```, met dat verschil dat de pixels binnen een regio van eenzelfde beeld worden gereduceerd, zoals in onderstaande figuur wordt geïllustreerd. Hiermee kan m.a.w. - binnen een bepaalde ROI - bepaalde statistieken berekend worden, zoals het minimum, gemiddelde pixelwaarde, maximum, mediane waarde, ...
 
+### Voorbeeld 1 - ReduceRegion
 
 <p align="center">
 <img src="Images/Reduce_region_diagram.png">  <br>
@@ -76,6 +77,48 @@ var ndvi_mean = ndvi.reduceRegion({
 
 print('Gemiddelde NDVI-waarde', ndvi_mean)
 ```
+
+### Voorbeeld 2 - ReduceRegions
+
+In dit voorbeeld werken we met de [WorldClim-data](https://developers.google.com/earth-engine/datasets/catalog/WORLDCLIM_V1_MONTHLY#image-properties). We berekenen per provincie de totale maandelijkse gemiddelde neerslag. In welke provinice valt er het meeste regen in de maand Januari?
+
+  - Start met het visualizeren van het beeld.
+  - Filter het beeld op basis van de Maand-eigenschap tot de maand Januari
+  - Gebruik de 	ReduceRegions-functie, gelijkaardig aan de reduceRegion(), maar ditmaal geef je aan volgens welke collectie (= featurecollectie) je de reductie wilt uitvoeren. Geef daarnaast ook de te gebruiken reducer aan (Sum)
+ 
+??? check "Oplossingen"
+    ```javascript
+    var dataset = ee.ImageCollection('WORLDCLIM/V1/MONTHLY');
+    var meanPrec = dataset.select('prec');
+    var meanPrecVis = {
+      min: 0.0,
+      max: 100.0,
+      palette: ['blue', 'purple', 'cyan', 'green', 'yellow', 'red'],
+    };
+
+
+    var meanPrecJan = meanPrec.filter(ee.Filter.eq('month',1)).first()
+    print(meanPrec)
+    // Clippen op basis van de provincies
+    var provinces = ee.FeatureCollection('projects/ee-teledetectie-2021/assets/P5-    FeatureExtraction/Belgium_provinces')
+    var prec_Belgium = meanPrecJan.clip(provinces)
+    Map.addLayer(prec_Belgium , meanPrecVis, 'Mean Precipitation');
+
+    //Map.addLayer(provincies)
+    Map.centerObject(provinces)
+
+    //REDUCE REGIONS
+    var reduced = prec_Belgium.reduceRegions({
+      'collection': provinces,
+      'reducer':ee.Reducer.sum(),
+      //'scale':927,
+    })
+
+    print(reduced)
+    ```
+
+
+
 
 
 

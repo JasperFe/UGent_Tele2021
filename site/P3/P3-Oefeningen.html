@@ -204,6 +204,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P4/P4-Intro.html" class="md-tabs__link">
+        P4 - Feature Extraction
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -565,10 +581,135 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#oefening-42_1" class="md-nav__link">
+    Oefening 4.2
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          P4 - Feature Extraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P4 - Feature Extraction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          P4 - Feature Extraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Spectral_indices.html" class="md-nav__link">
+        Spectrale indices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-ImageStatistics.html" class="md-nav__link">
+        Beeldstatistieken
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Texture.html" class="md-nav__link">
+        Textuuranalyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-PCA.html" class="md-nav__link">
+        Principale componenten analyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
     </li>
   
 
@@ -614,6 +755,13 @@
       
         <li class="md-nav__item">
   <a href="#oefening-42" class="md-nav__link">
+    Oefening 4.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oefening-42_1" class="md-nav__link">
     Oefening 4.2
   </a>
   
@@ -690,6 +838,25 @@
 <details class="check"><summary>Oplossing</summary><p>Script: <a href="https://code.earthengine.google.com/724bbee7796ebd4ff9657dc5f0c1baaa">https://code.earthengine.google.com/724bbee7796ebd4ff9657dc5f0c1baaa</a></p>
 </details>
 <h2 id="oefening-42">Oefening 4.2</h2>
+<p>Fires are raging in Bolivia, hitting particularly hard the Chiquitano dry forests of the country’s southern Santa Cruz region. The fires are largely the result of intentional burning to convert forest to farmland. Sources say this practice has recently intensified after Bolivian president Evo Morales signed a decree in July expanding land demarcated for livestock production and the agribusiness sector to include Permanent Forest Production Lands in the regions of Beni and Santa Cruz.  Satellite data indicate 2019 may be a banner year for forest loss, with tree cover loss alerts spiking in late August to levels more than double the average of previous years. Human communities are suffering due to the fires, with reports of smoke-caused illnesses and drinking water shortages. Meanwhile, biologists are worried about the plants and animals of the Chiquitano dry forests, many of which are unique, isolated and found nowhere else in the world.</p>
+<p><strong>GEGEVEN</strong>: 
+Startscript met aanduiding van het studiegebied (ROI)  <a href="https://code.earthengine.google.com/2eba6fb83f6efb634a8286b52fd89bbc">ttps://code.earthengine.google.com/2eba6fb83f6efb634a8286b52fd89bbc</a></p>
+<p><strong>GEVRAAGD</strong>:
+Maak een 2 Sentinel-2 beelden aan, met volgende specificaties:<br />
+  - Gebruik van de Sentinel-2 Top-Of-Atmosphere (TOA) collectie.<br />
+  - Gefilterd op het studiegebied (ROI)<br />
+  - Gefilterd op maximale wolkbedekking van 30%<br />
+  - Wolken dienen worden te verwijderd uit de beelden.<br />
+  - Gefilterd op de periodes:  </p>
+<div class="highlight"><pre><span></span><code>   - Beeld 1: het jaar 2017 (1 juni t.e.m 30 oktober)
+   - Beeld 2: het jaar 2019 (1 juni t.e.m 30 oktober))
+</code></pre></div>
+<ul>
+<li>Voor elke pixel de mediane waarde van beide overgebleven collecties</li>
+</ul>
+<p><strong>SUBVRAAG 1.1</strong>  - Hoeveel beelden resteren er nog in beide collecties na filtering?
+<strong>SUBVRAAG 1.2</strong>  - Visualiseer een Normale Kleurencomposiet voor beide jaren.</p>
+<h2 id="oefening-42_1">Oefening 4.2</h2>
 <p><em>Coming Soon</em></p>
                 
               
@@ -724,6 +891,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../P4/P4-Intro.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Intro" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Intro
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   

@@ -1,4 +1,4 @@
-## Spectral indices  
+## 1. Spectral indices  
 
 **Spectral indices** zijn combinaties van 2 of meerdere spectrale banden die gebruikt worden om bepaalde features extra in de verf te zetten of ze te herberekenen naar een relatieve schaal.
 
@@ -17,15 +17,24 @@ De resulterende index krijgt waarden binnen tussen -1 en 1.
 Volgens deze formule is de densiteit van vegetatie (NDVI) op een gegeven plaats in het beeld gelijk aan de verschillen in intensiteit van het gereflecteerde licht in het rood en infrarode deel van het spectrum, gedeeld door de soms van deze intensiteiten. Vegetatie absorbeert immers een groot deel van het zichtbare licht ten behoeve van de fotosynthese (dus lage Rood-reflectie), maar weerkaatst vrijwel al het infrarode licht (hoge IR-reflectiewaarde), waardoor de ndvi stijgt. Hoe denser de vegetatie, hoe hoger de ndvi. Andere lichamen, zoals water, observeren IR dan weer beter tot zeer goed, waardoor de ndvi daalt.  
 
 
-In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starten met de ‘meest conventionele’:  
+In Earth Engine kan de NDVI (en andere indices) op verschillende manieren berekend worden. We starten met de ‘meest conventionele’:  
 
-  * We starten deze oefening in de Gentse haven. Maal een puntsymbool aan ergens ter hoogte van de Gentse haven in Evergem.
+  * We starten deze oefening door het aanmaken van een Sentinel-2 beeld in Gent. Maak een punt-geometrie aan ergens ter hoogte van de Gentse haven te Evergem.
 
     <p align="center">
     <img src="Images/GEE_HavenGent.JPG">  <br>
     </p> 
 
-  *  Importeer de Sentinel-2 Surface Reflectance (Tier 1) collection en zoek naar het beeld met de laagste wolkbedekking uit 2019 in de periode mei-juni (= de late lente). Bekijk van welke datum het beeld afkomstig is. Visualiseer als een valse kleurencomposiet  
+  * ** Stap 1 - Importeren en visualisatie Sentinel-2 beeld: ** Importeer de Sentinel-2 Surface Reflectance  collection en zoek naar het beeld met de laagste wolkbedekking uit 2019 in de periode mei-juni (= de late lente). Bekijk op welke datum het beeld werd genomen. Visualiseer als een valse kleurencomposiet.
+
+* ** Stap 2 ** - We beschikken tevens over de grenzen van Gent in een vectorfile (een polygoon). Voeg deze toe aan je script. De vectorfile bevat alle gemeenten in België, waaruit we Gent op basis van de 'Name'-eigenschap filteren. 
+
+```Javascript
+var Gent = ee.FeatureCollection('projects/ee-teledetectie-2021/assets/P5-FeatureExtraction/Belgium_municipalities').filter(ee.Filter.eq('Name','Gent'))
+```
+  Je kunt je beeld nu verder begrenzen a.d.h.v. deze vectorfile. Gebruik hiervoor de functie ```.clip(Gent)``` die je toepast op je verkregen Sentinel-2 beeld.
+
+??? Tip "Oplossing"
   
     ```Javascript
     //1. Importeren van de Sentinel-2 collectie.
@@ -39,6 +48,10 @@ In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starte
 
     print('Gent_Lente19:',S2_Gent_Lente19)
 
+    //Clippen naar Grenzen Gent
+    var Gent = ee.FeatureCollection('projects/ee-teledetectie-2021/assets/P5-FeatureExtraction/Gent_Bounds')
+    var S2_Gent_Lente19 = S2_Gent_Lente19.clip(Gent)
+
     //Visualisatieparameters (of handmatig instellen)
     var S2_ValseKleuren = {
       gamma: 2,
@@ -51,7 +64,7 @@ In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starte
     Map.addLayer(S2_Gent_Lente19,S2_ValseKleuren,'Valse Kleuren lente 2019')
     ```  
   
-  *  Een eerste methode om een NDVI aan te maken is via de ingebouwde ```.normalizedDifference()``` functie. Ga na welke Sentinel-2 banden je nodig hebt om de ndvi te berekenen. (Maak eventueel gebruik van de ‘Docs’-tab.)  
+  *  ** Stap 3 - Toevoegen van de NDVI: ** Een eerste methode om een NDVI aan te maken is via de ingebouwde ```.normalizedDifference()``` functie. Ga na welke Sentinel-2 banden je nodig hebt om de ndvi te berekenen. (Maak eventueel gebruik van de ‘Docs’-tab.)  
 
     ```Javascript
     //2. Aanmaken NDVI via NormalDifference()-functie. Vul de '?' in
@@ -92,13 +105,13 @@ In Earth Engine kan de NDVI op verschillende manieren berekend worden. We starte
 
 
 
-## Band Math (bandbewerkingen)
+## 2. Bandbewerkingen
 
 Bandbewerkingen kunnen worden gebruikt om een nieuw beeld aan te maken van de reeds bestaande banden. Het berekenen van indices zoals de NDVI, is al een treffend voorbeeld hiervan. Andere mogelijkheden zijn ratio’s, het verschil van 2 beelden op 2 verschillende tijdstippen om mogelijke veranderingen visueel te benadrukken, …
 
 Er zijn 2 manieren om in Earth Engine een bewerking uit te voeren.
 
-### Bewerkingen via operatoren
+### Optie 1 - Bewerkingen via operatoren
 
 De basisoperators maken gebruik van 2 inputs: ofwel 2 beelden, ofwel 1 beeld en 1 constante. De bewerkingen worden steeds per pixel en per band uitgevoerd. Voorbeeld van operatoren zijn  ```add()```, ```subtract()``` en ```divide()```. 
 
@@ -114,7 +127,7 @@ Map.addLayer(ndvi2, ndviParams, 'ndvi via operatoren');
 
 Het resultaat is logischerwijs identiek als de voorgaande ndvi-berekening.
 
-### Bewerkingen via expressies
+### Optie 2 - Bewerkingen via expressies
 Het spreekt voor zich dat bovenstaande methode voor complex wiskundige bewerkingen niet handig is. Voor dergelijke bewerkingen wordt aangeraden om gebruik te maken van ```image.expression()```, gezien de inputvariabelen hier afzonderlijk worden aangegeven, waardoor de bewerking gemakkelijker wordt weergegeven en het coderen zo vereenvoudigd wordt. De expressie aanvaardt tevens ook constanten. Variabelen die binnen de expressie worden gebruikt, moeten steeds worden aangegeven, zoals in onderstaande NDVI-berekening;
 
 ```Javascript
@@ -155,9 +168,10 @@ $$NDWI = { GREEN - NIR \over GREEN + NIR}.$$
 
 ## Opdrachten
 
-### NDVI voor elk seizoen
+### Oef 4.1 - NDVI per seizoen  seizoen
 
-1. Maak een wolkenvrije beeldencollectie aan (via 30%-'CLOUDY_PIXEL_PERCENTAGE'-filter + een cloudmask toepassen) aan van de regio Durbuy binnen volgende periodes. Gebruik onderstaande Cloudmask-functie:  
+1. Maak een wolkenvrije beeldencollectie aan (gebruik een maximaal aan wolkbedekking van 30%) aan van de regio Durbuy
+. Gebruik onderstaande cloudmask-functie voor Sentinel-2:  
 
 ```javascript
    function maskS2clouds(image) {
