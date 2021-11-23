@@ -16,6 +16,8 @@ Mathematisch gezien kan een PCA worden gezien als een zoektocht naar een transla
 
 De eigenwaarden en eigenvectoren van de originele covariantiematrix worden dus berekend. Elke eigenwaarde met de geassocieerde eigenvector beschrijven dan de nieuwe principale component, waarbij de eigenvector de richting geeft van de nieuwe component en de eigenwaarde als een proxy dient voor de hoeveel informatie dat de component bevat. (voor de specifieke wiskundige details kan worden verwezen naar de cursus van Wiskunde 1 (Lineaire algebra) of naar [deze 5-minuten durende opfrissing.](https://www.youtube.com/watch?v=HMOI_lkzW08&ab_channel=StatQuestwithJoshStarmer). 
 
+### Oefening
+
 In Earth Engine is het relatief eenvoudig om de PCA-berekeningen door te voeren.
 
 1. Open een Nieuw Script: 'PC5-PCA'
@@ -30,10 +32,9 @@ In Earth Engine is het relatief eenvoudig om de PCA-berekeningen door te voeren.
    var S2_Belem = S2_Belem.select(bands)
    ```
 
-3. Opstellen van de PCA-functie (met bijhorende 'helper'-functie) 
-//PCA-functie
- 
-```javascript
+3. Opstellen van de PCA-functie (met bijhorende 'helper'-functie)
+  ```javascript
+  // Code adapted from https://developers.google.com/earth-engine/guides/arrays_eigen_analysis
   var getPrincipalComponents = function(centered, scale, region) {
         // Collapse the bands of the image into a 1D array per pixel.
         var arrays = centered.toArray();
@@ -80,29 +81,27 @@ In Earth Engine is het relatief eenvoudig om de PCA-berekeningen door te voeren.
             .divide(sdImage);
     };
 
-// De PCAfunctie heeft noog aan een helper-functie, dat een lijst met nieuwe bandnamen samenstelt
+  // De PCAfunctie heeft noog aan een helper-functie, dat een lijst met nieuwe bandnamen samenstelt
 
-var getNewBandNames = function(prefix) {
-  var seq = ee.List.sequence(1, bandNames.length());
-  return seq.map(function(b) {
-    return ee.String(prefix).cat(ee.Number(b).int());
-  });
-};
+  var getNewBandNames = function(prefix) {
+    var seq = ee.List.sequence(1, bandNames.length());
+    return seq.map(function(b) {
+      return ee.String(prefix).cat(ee.Number(b).int());
+    });
+  };
 
-```
+  ```  
 
 4. Toepassen van de PCA-functie. Hiervoor dienen eerst enkele inputparameters met informatie worden aangemaakt
+   ```javascript
+   /* DE PCA-functie is opgesteld. In wat volgt kunnen we deze toepassen */
+   // We zetten enkele parameters klaar, die we later zullen gebruiken.
+       var scale = 30; //(30m om processingtijd wat te verminderen => sentinel2 kan tot 10m)
+       var bandNames = S2_Belem.bandNames(); //De bandnamen overnamen naar een lijst
+       var region = S2_Belem.geometry(); // We nemen de regio van het volledige beeld
+   ```  
 
-```javascript
-/* DE PCA-functie is opgesteld. In wat volgt kunnen we deze toepassen */
-// Set some information about the input to be used later.
-    var scale = 30; //(30m om processingtijd wat te verminderen => sentinel2 kan tot 10m)
-    var bandNames = S2_Belem.bandNames(); 
-    var region = S2_Belem.geometry(); // We nemen de regio van het volledige beeld
-``` 
-
-5. De gebruikte  PCA-functie heeft een *'mean centered'* beeld nodig. Dit betekend dat het gemiddelde per band de nieuwe '0-waarde' wordt en elke pixel een waarde krijgt relatief aan deze 0-waarde. Dit zorgt voor een snellere covariantie-berekening.
-
+5. De gebruikte  PCA-functie heeft een *'mean centered'* beeld nodig. Dit betekent dat per band het gemiddelde de nieuwe '0-waarde' wordt, waarbij elke pixel een nieuwe waarde krijgt relatief aan deze 0-waarde. Dit zorgt voor een snellere covariantie-berekening.
 ```javascript
 // Mean center the data to enable a faster covariance reducer
 // and an SD stretch of the principal components.
@@ -120,7 +119,6 @@ var getNewBandNames = function(prefix) {
     print(centered, 'Mean centered Image')
 ``` 
 6. Vervolgens kunnen we de PCA-functie toepassen
-
 ```javascript
 // Uitvoeren van de PCA-functie => resultaat is beeld met PC's als nieuwe banden
   var pcaImage = getPrincipalComponents(centered, scale, region);
@@ -128,8 +126,7 @@ var getNewBandNames = function(prefix) {
 //Bekijken van pcaImage
 //print(pcaImage)
 ```
-7. De resulterende ```Image``` , **pcaImage** is een beeld met als banden de berekende principale componenten. Via een ```for```-lus kunnen we elk deze banden ook in 1x plotten naar de MA
-
+7. De resulterende ```Image``` , **pcaImage** is een beeld met als banden de berekende principale componenten. Via een ```for```-lus kunnen we elk deze banden ook in 1x plotten naar de mapview.
 ```javascript
 // Plot each PC as a new layer
     for (var i = 0; i < bandNames.length().getInfo(); i++) {

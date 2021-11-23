@@ -61,7 +61,7 @@ Map.addLayer(ent,
 ```
 
 !!! warning "GLCM-textuur in Earth Engine"
-    Je merkt wellicht dat de textuurafbeelding van verschillende textuurmaten uit de GLCM varieert naarmate je in- en uitzoomt. Dit is ligt aan het feit dat Earth Engine dit steeds per 'view window' uitrekend, waardoor de resultaten zo verschillend lijken. Echter, als je het beeld exporteert uit Earth Engine en bijvoorbeeld in SNAP opent, bekom je wel een visueel begrijpbaar resultaat.
+    Je merkt wellicht dat de textuurafbeelding van verschillende textuurmaten uit de GLCM varieert naarmate je in- en uitzoomt. Dit is ligt aan het feit dat Earth Engine dit steeds per 'view window' uitrekent, waardoor de resultaten zo verschillend lijken. Echter, als je het beeld exporteert uit Earth Engine en bijvoorbeeld in SNAP opent, bekom je wel een visueel begrijpbaar resultaat.
    
    De berekende banden kunnen in Earth Engine echter wel verder gebruikt worden voor classificatie.
 
