@@ -390,6 +390,6 @@ var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array()}
 ```
 
 ??? info "Volledig script"
-    Via deze link: [https://code.earthengine.google.com/daa928f77d99318a165e277c53d684d2](https://code.earthengine.google.com/daa928f77d99318a165e277c53d684d2)
+    Via deze link: [https://code.earthengine.google.com/665cbaa3a887d685d4d07c6081902f19](https://code.earthengine.google.com/665cbaa3a887d685d4d07c6081902f19)
 
 

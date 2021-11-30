@@ -38,7 +38,11 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 </center>
 
 ??? check "Oplossing Oef 5.1"
-    Via dit scriptje: [https://code.earthengine.google.com/75c71e349c6640eee8a7a3f891c73212](https://code.earthengine.google.com/75c71e349c6640eee8a7a3f891c73212)
+    Voor deze oefening kun je zowel Landsat Collectie 2 (de allernieuwste) of Landsat Collectie 1 (toekomstig niet meer gebruikt, maar momenteel nog in een overgangsfase) gebruiken. Het verschil is verwaarloosbaar.  
+
+    Oplossing Landsat 8 Collectie 1: [https://code.earthengine.google.com/b80d9ab8e0be2e309dbd64fe3f7a0f81](https://code.earthengine.google.com/b80d9ab8e0be2e309dbd64fe3f7a0f81)
+    Oplossing Landsat 8 Collectie 2: [https://code.earthengine.google.com/021d9c2592813d2779aff69722edf08a](https://code.earthengine.google.com/021d9c2592813d2779aff69722edf08a)  
+
     Opgelet: het spreekt voor zich dat de gebruikte trainingsvectoren in dit voorbeeld zeer rudimentair zijn, met een ruwe classificatie tot gevolg.
     Daarbij werden de testpunten ook gehaald uit een bestaande landcover classificatie van België, maar met een resolutie van 100m, waardoor de kwaliteit van de testdata niet perfect is. 
      Verder is een verbetering van het classificatieresultaat ook mogelijk door het gebruik maken van Multitemporele beelden: hiermee wordt het seizoenaal karakter van de o.a. de landbouwvelden mee in rekening gebracht, waardoor een beter onderscheid tussen o.a. grasland en landbouw (sterker temporeel karakter) behaald kan worden.
@@ -88,4 +92,4 @@ Classificeer het 2019 beeld met behulp van 2 supervised classifiers naar keuze. 
 
 
 ??? check "Oplossing"
-     Via volgend script: [https://code.earthengine.google.com/f0c9f029d8a0330a5d10266e4beae74c](https://code.earthengine.google.com/f0c9f029d8a0330a5d10266e4beae74c)
+     Via volgend script: [https://code.earthengine.google.com/38fd0ac0f35c8a4175afb7273d8eae4b](https://code.earthengine.google.com/38fd0ac0f35c8a4175afb7273d8eae4b)
