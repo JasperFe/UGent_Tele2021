@@ -14,7 +14,23 @@ In volgende oefening maken we een analyse van een grote bosbrand (genaamd 'Camp 
 
 ### Stappenplan
 
-1. Start met een nieuwe script. Kopieer alvast de Cloud-mask functie (maskL8sr) voor Landsat-8 uit de datacatalog.
+1. Start met een nieuwe script. Kopieer en plak alvast de Cloud-mask functie voor Landsat-8 (zie vorig practicum):
+```javascript
+function maskL8sr(image) {
+  // Gebaseerd op de QA-waarde, wat de uitkomst is van het FMASK algoritme
+  // QA-waarde 4 komt overeen met wolken
+  var cloudShadowBitMask = (1 << 3); 
+  var cloudsBitMask = (1 << 4);
+  // Get the pixel QA band. 
+  var qa = image.select('QA_PIXEL');
+
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+  return image.updateMask(mask);
+
+}
+```
 
 2. Filter de L8 (Surface Reflectance, Tier 1) collectie op basis van volgende ROI:
 ```javascript
@@ -65,9 +81,76 @@ Map.addLayer(Burn_severity,BurnSeverity_VIS, 'Burn Severity classes')
 ??? check "Oplossing"
     Script met volledige uitwerking: [https://code.earthengine.google.com/77ed985d48b3ed27bbb531f1e8a4f19f](https://code.earthengine.google.com/77ed985d48b3ed27bbb531f1e8a4f19f)
 
+## Oefening 5.2 - Herbebossing Regenwoud in Aimores, Brazilië
+
+**OPGELET!**: deze oefening werd opgesteld met de Collectie-1 Landsat beelden: [Landsat-8](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_SR), [Landsat-7](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LE07_C01_T1_SR). Dus maak deze best adhv deze collecties (er worden geen nieuwe beelden meer in deze collectie toegevoegd, de historische beelden zullen beschikbaar blijven). 
+
+**Info**: Examenopdracht 2019-2020.  
+**Tip:** Gebruik van NDVI als indicator van ontbossing
+
+### Context
+Voor deze opdracht trekken we naar Aimores, in de Braziliaanse provincie Minas Gerais. Dit gebied bestond honderden jaren geleden uit uitgestrekt tropisch bos, het Atlantische woud, en bevat een buitengewoon grote biodiversiteit. In de 20e eeuw werd het leeuwendeel van dit gebied echter ontbost, waardoor naar schatting slechts 15% van het Atlantische woud is overgebleven.  
+
+In 1999 besloot een koppel om het heft in eigen handen te nemen door het starten van een herbebossingsproject in het gebied, met groot succes.
+
+### Gegeven:
+- Afbakening van het projectgebied (als <a href="Aimores_shape.zip" download>Shape-file (Studiegebied).</a>).  
+
+- Tijdstip 1: 2000. Hiervoor dien je gebruik te maken van een [Landsat-7 beeld](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LE07_C01_T1_SR). OPMERKING: je kunt in dit geval nog gebruik maken van de Collectie 1 (zie link), ondanks deze als 'deprecated' gelabeld is. 
+
+- Tijdstip 2: 2020. Hiervoor maak je gebruik van een [Landsat-8 beeld, Collectie 1](```"LANDSAT/LC08/C01/T1_SR"```).
+
+- Cloudmask-functie voor L457 (Collectie 1):  
+
+```javascript 
+var cloudMaskL457 = function(image) {
+  var qa = image.select('pixel_qa');
+  // If the cloud bit (5) is set and the cloud confidence (7) is high
+  // or the cloud shadow bit is set (3), then it's a bad pixel.
+  var cloud = qa.bitwiseAnd(1 << 5)
+                  .and(qa.bitwiseAnd(1 << 7))
+                  .or(qa.bitwiseAnd(1 << 3));
+  // Remove edge pixels that don't occur in all bands
+  var mask2 = image.mask().reduce(ee.Reducer.min());
+  return image.updateMask(cloud.not()).updateMask(mask2);
+};
+```
+
+- Cloudmask-functie voor L8 (Collectie 1):  
+
+```javascript 
+function maskL8sr(image) {
+  // Bits 3 and 5 are cloud shadow and cloud, respectively.
+  var cloudShadowBitMask = (1 << 3);
+  var cloudsBitMask = (1 << 5);
+  // Get the pixel QA band.
+  var qa = image.select('pixel_qa');
+  // Both flags should be set to zero, indicating clear conditions.
+  var mask = qa.bitwiseAnd(cloudShadowBitMask).eq(0)
+                 .and(qa.bitwiseAnd(cloudsBitMask).eq(0));
+  return image.updateMask(mask);
+}
+```
 
 
-## Oefening 5.2 - De *Enhanced Vegetation Index* (EVI) 
+
+### Gevraagd:
+
+Maak een beeld aan, waar voor elke pixel te zien is of er vegetatie is bijgekomen of verdwenen tussen 2000 en 2020 binnen het projectgebied.
+
+### Tips:
+
+- Maak zelf een beeld aan per jaar aan waar de wolkbedekking ontbreekt of gemaskeerd is.
+
+- Gebruik een gepaste index.
+
+- De bandverdeling van Landsat 7/8 is verschillend! Houd hier rekening mee.
+
+
+??? check "Oplossing"
+    Script: [https://code.earthengine.google.com/2a3fec22e58b9d8cc2f508606b151726](https://code.earthengine.google.com/2a3fec22e58b9d8cc2f508606b151726)
+
+## Oefening 5.3 - De *Enhanced Vegetation Index* (EVI) 
 
 ### De EVI index
 De EVI is gelijkaardig aan de NDVI daar het gebruikt wordt om de aanwezigheid (of ‘greenness’) van vegetatie a.d.h.v. satellietbeelden te kwantificeren. Het werd ontwikkeld om aan enkele “limitaties” van de ndvi te voldoen:  
@@ -86,6 +169,8 @@ $$EVI = G * {NIR - R \over NIR + C1 * RED – C2*BLUE + L}.$$
 
 Voor Sentinel 2, wordt deze formule:
 $$EVI_{S2} = 2.5 * {B8 - B4 \over B8 + 6 * B4 – 7.5*B2 + 1}.$$
+
+Gevraagd: vergelijk de EVI met de NDVI voor het S2-beeld in Belém.
 
 
 
