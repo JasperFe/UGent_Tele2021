@@ -35,6 +35,8 @@ nav:
       - Oppervlaktebepaling: P5/P5-Oppervlaktebepaling.md
       - Spectrale responsiecurves: P5/P5-SpectralResponse_oud.md
       - Oefeningen: P5/P5-Oefeningen.md
+    - P6 - Tijdseries:
+      - Tijdserie-analyse: P6/P6-Timeseries.md
 
 
 theme:

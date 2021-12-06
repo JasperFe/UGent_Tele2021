@@ -1,579 +1,1258 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Gesuperviseerde classificatie - (I002450) Teledetectie practica 2021</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
 
-<html class="no-js" lang="nl">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../assets/images/LOGO_REMOSA_2020.jpg" rel="shortcut icon"/>
-<meta content="mkdocs-1.1.2, mkdocs-material-6.1.0" name="generator"/>
-<title>Gesuperviseerde classificatie - (I002450) Teledetectie practica 2021</title>
-<link href="../assets/stylesheets/main.bc7e593a.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.ab28b872.min.css" rel="stylesheet"/>
-<meta content="#4051b5" name="theme-color"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
-<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-</head>
-<body data-md-color-accent="" data-md-color-primary="indigo" data-md-color-scheme="" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#intro">
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intro" class="md-skip">
           Ga naar inhoud
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
 <header class="md-header" data-md-component="header">
-<nav aria-label="Header" class="md-header-nav md-grid">
-<a aria-label="(I002450) Teledetectie practica 2021" class="md-header-nav__button md-logo" href=".." title="(I002450) Teledetectie practica 2021">
-<img alt="logo" src="../assets/images/LOGO_REMOSA_2020.jpg"/>
-</a>
-<label class="md-header-nav__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
-</label>
-<div class="md-header-nav__title" data-md-component="header-title">
-<div class="md-header-nav__ellipsis">
-<span class="md-header-nav__topic md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="(I002450) Teledetectie practica 2021" class="md-header__button md-logo" aria-label="(I002450) Teledetectie practica 2021" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             (I002450) Teledetectie practica 2021
           </span>
-<span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Gesuperviseerde classificatie
             
           </span>
-</div>
-</div>
-<label class="md-header-nav__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-</label>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</label>
-<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
-</button>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../index.html">
-          Home
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P2/P2-intro.html">
-          P2 - Beeldvoorbewerking
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P3/P3-Goals.html">
-          P3- Intro tot Google Earth Engine
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../P4/P4-Intro.html">
-          P4 - Feature Extraction
-        </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="P5-intro.html">
-          P5 - Beeldclassificatie
-        </a>
-</li>
-</ul>
-</div>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P2/P2-intro.html" class="md-tabs__link">
+        P2 - Beeldvoorbewerking
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P3/P3-Goals.html" class="md-tabs__link">
+        P3- Intro tot Google Earth Engine
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P4/P4-Intro.html" class="md-tabs__link">
+        P4 - Feature Extraction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="P5-intro.html" class="md-tabs__link md-tabs__link--active">
+        P5 - Beeldclassificatie
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P6/P6-Timeseries.html" class="md-tabs__link">
+        P6 - Tijdseries
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
 </nav>
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="(I002450) Teledetectie practica 2021" class="md-nav__button md-logo" href=".." title="(I002450) Teledetectie practica 2021">
-<img alt="logo" src="../assets/images/LOGO_REMOSA_2020.jpg"/>
-</a>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="(I002450) Teledetectie practica 2021" class="md-nav__button md-logo" aria-label="(I002450) Teledetectie practica 2021" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
     (I002450) Teledetectie practica 2021
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
-<label class="md-nav__link" for="nav-1">
-      Home
-      <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Home" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-1">
-<span class="md-nav__icon md-icon"></span>
-        Home
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../index.html">
-      Over deze cursussite
-    </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
-<label class="md-nav__link" for="nav-2">
-      P2 - Beeldvoorbewerking
-      <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P2 - Beeldvoorbewerking" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-2">
-<span class="md-nav__icon md-icon"></span>
-        P2 - Beeldvoorbewerking
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P2/P2-intro.html">
-      Introduction
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P2/P2-Sentinel2.html">
-      Sentinel-2 intro and download
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P2/P2-Snap-intro.html">
-      Introduction to SNAP
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P2/P2-colour-composites.html">
-      RGB colour composites
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P2/P2-image-preprocessing.html">
-      Image preprocessing in SNAP
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P2/P2-colour-composites-ctd.html">
-      RGB colour composites 2
-    </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
-<label class="md-nav__link" for="nav-3">
-      P3- Intro tot Google Earth Engine
-      <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P3- Intro tot Google Earth Engine" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-3">
-<span class="md-nav__icon md-icon"></span>
-        P3- Intro tot Google Earth Engine
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-Goals.html">
-      Doel van het practicum
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-DataCatalog.html">
-      EarthEngine data catalog
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-Intro.html">
-      Introductie tot Earth Engine
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-ImageVisualization.html">
-      Satellietdata oproepen, filteren en visualiseren
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-Reducing.html">
-      Reducing ImageCollections
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-Cloud_masking.html">
-      Cloud masking
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P3/P3-Oefeningen.html">
-      (Extra) Oefeningen
-    </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
-<label class="md-nav__link" for="nav-4">
-      P4 - Feature Extraction
-      <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P4 - Feature Extraction" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-4">
-<span class="md-nav__icon md-icon"></span>
-        P4 - Feature Extraction
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P4/P4-Intro.html">
-      Intro
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P4/P4-Spectral_indices.html">
-      Spectrale indices
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P4/P4-ImageStatistics.html">
-      Beeldstatistieken
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P4/P4-Texture.html">
-      Textuuranalyse
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P4/P4-PCA.html">
-      Principale componenten analyse
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../P4/P4-Oefeningen.html">
-      Oefeningen
-    </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
-<label class="md-nav__link" for="nav-5">
-      P5 - Beeldclassificatie
-      <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="P5 - Beeldclassificatie" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="nav-5">
-<span class="md-nav__icon md-icon"></span>
-        P5 - Beeldclassificatie
-      </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-intro.html">
-      Intro
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-SurinameCase.html">
-      CASE - Mangrove monitoring in Suriname
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-Unsupervised.html">
-      Niet-gesuperviseerde classificatie
-    </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Over deze cursussite
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          P2 - Beeldvoorbewerking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P2 - Beeldvoorbewerking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          P2 - Beeldvoorbewerking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-intro.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Sentinel2.html" class="md-nav__link">
+        Sentinel-2 intro and download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Snap-intro.html" class="md-nav__link">
+        Introduction to SNAP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-colour-composites.html" class="md-nav__link">
+        RGB colour composites
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-image-preprocessing.html" class="md-nav__link">
+        Image preprocessing in SNAP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-colour-composites-ctd.html" class="md-nav__link">
+        RGB colour composites 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          P3- Intro tot Google Earth Engine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P3- Intro tot Google Earth Engine" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          P3- Intro tot Google Earth Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Goals.html" class="md-nav__link">
+        Doel van het practicum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-DataCatalog.html" class="md-nav__link">
+        EarthEngine data catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Intro.html" class="md-nav__link">
+        Introductie tot Earth Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-ImageVisualization.html" class="md-nav__link">
+        Satellietdata oproepen, filteren en visualiseren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Reducing.html" class="md-nav__link">
+        Reducing ImageCollections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Cloud_masking.html" class="md-nav__link">
+        Cloud masking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Oefeningen.html" class="md-nav__link">
+        (Extra) Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          P4 - Feature Extraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P4 - Feature Extraction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          P4 - Feature Extraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Spectral_indices.html" class="md-nav__link">
+        Spectrale indices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-ImageStatistics.html" class="md-nav__link">
+        Beeldstatistieken
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Texture.html" class="md-nav__link">
+        Textuuranalyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-PCA.html" class="md-nav__link">
+        Principale componenten analyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          P5 - Beeldclassificatie
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P5 - Beeldclassificatie" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          P5 - Beeldclassificatie
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-SurinameCase.html" class="md-nav__link">
+        CASE - Mangrove monitoring in Suriname
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-Unsupervised.html" class="md-nav__link">
+        Niet-gesuperviseerde classificatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Gesuperviseerde classificatie
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="P5-Supervised.html" class="md-nav__link md-nav__link--active">
         Gesuperviseerde classificatie
-        <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="P5-Supervised.html">
-      Gesuperviseerde classificatie
-    </a>
-<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#intro">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
     Intro
   </a>
-<nav aria-label="Intro" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#achtergrond">
+  
+    <nav class="md-nav" aria-label="Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#achtergrond" class="md-nav__link">
     Achtergrond
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#beeldcomposieten-aanmaken">
+      
+        <li class="md-nav__item">
+  <a href="#beeldcomposieten-aanmaken" class="md-nav__link">
     Beeldcomposieten aanmaken
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#trainingsamples-aanmaken">
+      
+        <li class="md-nav__item">
+  <a href="#trainingsamples-aanmaken" class="md-nav__link">
     Trainingsamples aanmaken
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-trainingsdata-aanmaken">
+      
+        <li class="md-nav__item">
+  <a href="#de-trainingsdata-aanmaken" class="md-nav__link">
     De trainingsdata aanmaken
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-classifier-trainen">
+      
+        <li class="md-nav__item">
+  <a href="#de-classifier-trainen" class="md-nav__link">
     De classifier trainen
   </a>
-<nav aria-label="De classifier trainen" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#minimum-distance-classifier">
+  
+    <nav class="md-nav" aria-label="De classifier trainen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-distance-classifier" class="md-nav__link">
     Minimum Distance Classifier
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cart-classifier">
+        
+          <li class="md-nav__item">
+  <a href="#cart-classifier" class="md-nav__link">
     CART classifier
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#random-forest-classifier">
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-classifier" class="md-nav__link">
     Random Forest classifier
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#beeld-classificeren-en-visualiseren">
+      
+        <li class="md-nav__item">
+  <a href="#beeld-classificeren-en-visualiseren" class="md-nav__link">
     Beeld classificeren en visualiseren
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#accuraatheidsbepaling-accuracy-assessment">
+      
+        <li class="md-nav__item">
+  <a href="#accuraatheidsbepaling-accuracy-assessment" class="md-nav__link">
     Accuraatheidsbepaling (Accuracy assessment)
   </a>
-<nav aria-label="Accuraatheidsbepaling (Accuracy assessment)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#training-validation-en-testdata">
+  
+    <nav class="md-nav" aria-label="Accuraatheidsbepaling (Accuracy assessment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-validation-en-testdata" class="md-nav__link">
     Training- Validation en Testdata
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-error-matrix-interpretatie">
+        
+          <li class="md-nav__item">
+  <a href="#de-error-matrix-interpretatie" class="md-nav__link">
     De Error Matrix: interpretatie
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-error-matrix-in-earth-engine">
+        
+          <li class="md-nav__item">
+  <a href="#de-error-matrix-in-earth-engine" class="md-nav__link">
     De Error matrix in Earth Engine
   </a>
-<nav aria-label="De Error matrix in Earth Engine" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inlezen-van-de-testdataset">
+  
+    <nav class="md-nav" aria-label="De Error matrix in Earth Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inlezen-van-de-testdataset" class="md-nav__link">
     Inlezen van de Testdataset
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#voorbeeld-interpretatie-error-matrix">
+      
+        <li class="md-nav__item">
+  <a href="#voorbeeld-interpretatie-error-matrix" class="md-nav__link">
     Voorbeeld: interpretatie error matrix
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#extra-exporteren-van-de-error-matrix">
+      
+        <li class="md-nav__item">
+  <a href="#extra-exporteren-van-de-error-matrix" class="md-nav__link">
     Extra: Exporteren van de Error Matrix
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-Improvement.html">
-      Verbeteren van de classificatie
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-Oppervlaktebepaling.html">
-      Oppervlaktebepaling
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-SpectralResponse_oud.html">
-      Spectrale responsiecurves
-    </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="P5-Oefeningen.html">
-      Oefeningen
-    </a>
-</li>
-</ul>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-Improvement.html" class="md-nav__link">
+        Verbeteren van de classificatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-Oppervlaktebepaling.html" class="md-nav__link">
+        Oppervlaktebepaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-SpectralResponse_oud.html" class="md-nav__link">
+        Spectrale responsiecurves
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          P6 - Tijdseries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P6 - Tijdseries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          P6 - Tijdseries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6/P6-Timeseries.html" class="md-nav__link">
+        Tijdserie-analyse
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#intro">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
     Intro
   </a>
-<nav aria-label="Intro" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#achtergrond">
+  
+    <nav class="md-nav" aria-label="Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#achtergrond" class="md-nav__link">
     Achtergrond
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#beeldcomposieten-aanmaken">
+      
+        <li class="md-nav__item">
+  <a href="#beeldcomposieten-aanmaken" class="md-nav__link">
     Beeldcomposieten aanmaken
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#trainingsamples-aanmaken">
+      
+        <li class="md-nav__item">
+  <a href="#trainingsamples-aanmaken" class="md-nav__link">
     Trainingsamples aanmaken
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-trainingsdata-aanmaken">
+      
+        <li class="md-nav__item">
+  <a href="#de-trainingsdata-aanmaken" class="md-nav__link">
     De trainingsdata aanmaken
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-classifier-trainen">
+      
+        <li class="md-nav__item">
+  <a href="#de-classifier-trainen" class="md-nav__link">
     De classifier trainen
   </a>
-<nav aria-label="De classifier trainen" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#minimum-distance-classifier">
+  
+    <nav class="md-nav" aria-label="De classifier trainen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#minimum-distance-classifier" class="md-nav__link">
     Minimum Distance Classifier
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cart-classifier">
+        
+          <li class="md-nav__item">
+  <a href="#cart-classifier" class="md-nav__link">
     CART classifier
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#random-forest-classifier">
+        
+          <li class="md-nav__item">
+  <a href="#random-forest-classifier" class="md-nav__link">
     Random Forest classifier
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#beeld-classificeren-en-visualiseren">
+      
+        <li class="md-nav__item">
+  <a href="#beeld-classificeren-en-visualiseren" class="md-nav__link">
     Beeld classificeren en visualiseren
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#accuraatheidsbepaling-accuracy-assessment">
+      
+        <li class="md-nav__item">
+  <a href="#accuraatheidsbepaling-accuracy-assessment" class="md-nav__link">
     Accuraatheidsbepaling (Accuracy assessment)
   </a>
-<nav aria-label="Accuraatheidsbepaling (Accuracy assessment)" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#training-validation-en-testdata">
+  
+    <nav class="md-nav" aria-label="Accuraatheidsbepaling (Accuracy assessment)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#training-validation-en-testdata" class="md-nav__link">
     Training- Validation en Testdata
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-error-matrix-interpretatie">
+        
+          <li class="md-nav__item">
+  <a href="#de-error-matrix-interpretatie" class="md-nav__link">
     De Error Matrix: interpretatie
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#de-error-matrix-in-earth-engine">
+        
+          <li class="md-nav__item">
+  <a href="#de-error-matrix-in-earth-engine" class="md-nav__link">
     De Error matrix in Earth Engine
   </a>
-<nav aria-label="De Error matrix in Earth Engine" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#inlezen-van-de-testdataset">
+  
+    <nav class="md-nav" aria-label="De Error matrix in Earth Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inlezen-van-de-testdataset" class="md-nav__link">
     Inlezen van de Testdataset
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#voorbeeld-interpretatie-error-matrix">
+      
+        <li class="md-nav__item">
+  <a href="#voorbeeld-interpretatie-error-matrix" class="md-nav__link">
     Voorbeeld: interpretatie error matrix
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#extra-exporteren-van-de-error-matrix">
+      
+        <li class="md-nav__item">
+  <a href="#extra-exporteren-van-de-error-matrix" class="md-nav__link">
     Extra: Exporteren van de Error Matrix
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content">
-<article class="md-content__inner md-typeset">
-<h1>Gesuperviseerde classificatie</h1>
-<h2 id="intro">Intro</h2>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Gesuperviseerde classificatie</h1>
+                
+                <h2 id="intro">Intro</h2>
 <h3 id="achtergrond">Achtergrond</h3>
 <p><strong>Gesuperviseerde classificatie</strong> is gebaseerd op een door de gebruiker opgestelde trainingdataset. Deze trainingsdata zijn representatief voor de specifieke gewenste klassen. Het gesuperviseerde algoritme gebruikt dan deze trainingsdata als referentie, om onbekende pixels te classificeren.</p>
 <p>Een belangrijk element hierbij is dus voorkennis van het desbetreffende gebied. De <em>trainingsamples</em> die worden opgesteld worden ook wel <em>ground truth data</em> genoemd en komen overeen met gekende landbekking op locaties.</p>
@@ -603,16 +1282,16 @@
     <span class="c1">// meer info: https://medium.com/sentinel-hub/cloud-masks-at-your-service-6e5b2cb2ce8a</span>
        <span class="kd">var</span> <span class="nx">getS2_SR_CLOUD_PROBABILITY</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
               <span class="kd">var</span> <span class="nx">innerJoined</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Join</span><span class="p">.</span><span class="nx">inner</span><span class="p">().</span><span class="nx">apply</span><span class="p">({</span>
-                  <span class="nx">primary</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">"COPERNICUS/S2_SR"</span><span class="p">),</span>
-                  <span class="nx">secondary</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">"COPERNICUS/S2_CLOUD_PROBABILITY"</span><span class="p">),</span>
+                  <span class="nx">primary</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_SR&quot;</span><span class="p">),</span>
+                  <span class="nx">secondary</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_CLOUD_PROBABILITY&quot;</span><span class="p">),</span>
                   <span class="nx">condition</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">equals</span><span class="p">({</span>
-                    <span class="nx">leftField</span><span class="o">:</span> <span class="s1">'system:index'</span><span class="p">,</span>
-                    <span class="nx">rightField</span><span class="o">:</span> <span class="s1">'system:index'</span>
+                    <span class="nx">leftField</span><span class="o">:</span> <span class="s1">&#39;system:index&#39;</span><span class="p">,</span>
+                    <span class="nx">rightField</span><span class="o">:</span> <span class="s1">&#39;system:index&#39;</span>
                   <span class="p">})</span>
                 <span class="p">});</span>
               <span class="kd">var</span> <span class="nx">mergeImageBands</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">joinResult</span><span class="p">)</span> <span class="p">{</span>
-                  <span class="k">return</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">joinResult</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'primary'</span><span class="p">))</span>
-                        <span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">joinResult</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'secondary'</span><span class="p">));</span>
+                  <span class="k">return</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">joinResult</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;primary&#39;</span><span class="p">))</span>
+                        <span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">joinResult</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;secondary&#39;</span><span class="p">));</span>
                 <span class="p">};</span>
               <span class="kd">var</span> <span class="nx">newCollection</span> <span class="o">=</span> <span class="nx">innerJoined</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">mergeImageBands</span><span class="p">);</span>
               <span class="k">return</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="nx">newCollection</span><span class="p">);</span>
@@ -621,14 +1300,14 @@
    <span class="c1">// Mask out clouds</span>
         <span class="kd">var</span> <span class="nx">maskClouds</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
           <span class="kd">var</span> <span class="nx">cloudProbabilityThreshold</span> <span class="o">=</span> <span class="mf">40</span><span class="p">;</span>
-          <span class="kd">var</span> <span class="nx">cloudMask</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'probability'</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="nx">cloudProbabilityThreshold</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">cloudMask</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;probability&#39;</span><span class="p">).</span><span class="nx">lt</span><span class="p">(</span><span class="nx">cloudProbabilityThreshold</span><span class="p">);</span>
           <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">cloudMask</span><span class="p">);</span>
         <span class="p">};</span>
 
 <span class="c1">//Aanmaken van een ImageCollection ter hoogte van Mangroves Paramaribo, Suriname</span>
   <span class="kd">var</span> <span class="nx">S2_coll</span> <span class="o">=</span> <span class="nx">getS2_SR_CLOUD_PROBABILITY</span><span class="p">()</span>
-        <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">'2019-08-01'</span><span class="p">,</span><span class="s1">'2019-10-30'</span><span class="p">)</span><span class="c1">// Filteren voor het jaar 2020, droge tijd</span>
-        <span class="p">.</span><span class="nx">filterMetadata</span><span class="p">(</span><span class="s1">'CLOUDY_PIXEL_PERCENTAGE'</span><span class="p">,</span><span class="s1">'less_than'</span><span class="p">,</span> <span class="mf">50</span><span class="p">)</span> <span class="c1">//Voorselectie obv wolken</span>
+        <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2019-08-01&#39;</span><span class="p">,</span><span class="s1">&#39;2019-10-30&#39;</span><span class="p">)</span><span class="c1">// Filteren voor het jaar 2020, droge tijd</span>
+        <span class="p">.</span><span class="nx">filterMetadata</span><span class="p">(</span><span class="s1">&#39;CLOUDY_PIXEL_PERCENTAGE&#39;</span><span class="p">,</span><span class="s1">&#39;less_than&#39;</span><span class="p">,</span> <span class="mf">50</span><span class="p">)</span> <span class="c1">//Voorselectie obv wolken</span>
         <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskClouds</span><span class="p">)</span> <span class="c1">//toepassen van de cloudmaskfunctie</span>
         <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">ROI</span><span class="p">);</span> <span class="c1">//collectie filteren obv de Kustzonegeometrie</span>
 
@@ -636,16 +1315,16 @@
 
 <span class="c1">//Omzetten collectie naar een Image, door .median() te nemen. Hierna clippen we ook tot onze ROI</span>
 <span class="c1">//Ook selecteren we de banden waarmee we verder willen werken</span>
-<span class="kd">var</span> <span class="nx">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'B2'</span><span class="p">,</span><span class="s1">'B3'</span><span class="p">,</span><span class="s1">'B4'</span><span class="p">,</span><span class="s1">'B5'</span><span class="p">,</span><span class="s1">'B6'</span><span class="p">,</span><span class="s1">'B7'</span><span class="p">,</span><span class="s1">'B8'</span><span class="p">,</span><span class="s1">'B8A'</span><span class="p">,</span><span class="s1">'B11'</span><span class="p">,</span><span class="s1">'B12'</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;B2&#39;</span><span class="p">,</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span><span class="s1">&#39;B5&#39;</span><span class="p">,</span><span class="s1">&#39;B6&#39;</span><span class="p">,</span><span class="s1">&#39;B7&#39;</span><span class="p">,</span><span class="s1">&#39;B8&#39;</span><span class="p">,</span><span class="s1">&#39;B8A&#39;</span><span class="p">,</span><span class="s1">&#39;B11&#39;</span><span class="p">,</span><span class="s1">&#39;B12&#39;</span><span class="p">];</span>
 
 <span class="kd">var</span> <span class="nx">S2_im</span> <span class="o">=</span> <span class="nx">S2_coll</span><span class="p">.</span><span class="nx">median</span><span class="p">()</span>
                      <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">bands</span><span class="p">)</span>
                      <span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span> <span class="c1">//Bekijk de .clip-eigenschappen in de Docs</span>
 
 <span class="nx">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,</span> <span class="mf">11</span><span class="p">)</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">50</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">1800</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">'B4,B3,B2'</span><span class="p">},</span><span class="s1">'NormaleKleuren_2020'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">700</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">4500</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">'B8,B4,B3'</span><span class="p">},</span><span class="s1">'ValseKleuren_2020'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">500</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">4000</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">'B8,B11,B2'</span><span class="p">},</span><span class="s1">'Healthy_Vegetation_2020'</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">50</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">1800</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">&#39;B4,B3,B2&#39;</span><span class="p">},</span><span class="s1">&#39;NormaleKleuren_2020&#39;</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">700</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">4500</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">&#39;B8,B4,B3&#39;</span><span class="p">},</span><span class="s1">&#39;ValseKleuren_2020&#39;</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_im</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">500</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">4000</span><span class="p">,</span><span class="nx">bands</span><span class="o">:</span><span class="s1">&#39;B8,B11,B2&#39;</span><span class="p">},</span><span class="s1">&#39;Healthy_Vegetation_2020&#39;</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="trainingsamples-aanmaken">Trainingsamples aanmaken</h2>
 <blockquote>
@@ -679,11 +1358,12 @@
 |   3   |        Water       |
 |   4   |        Crop        |
 |   5   |        Urban       |
-|   6   |      BareSoil      |</center></p>
-<p></p>
+|   6   |      BareSoil      |</p>
+<p></center></p>
 <p align="center">
-<img src="images/GEE_train_water.JPG" width="300"/> <br/>
+  <img src="images/GEE_train_water.JPG" width=300>  <br>
 </p>
+
 <details class="warning" open="open"><summary>Polygonen vs puntdata als traingdata</summary><p>Trainingdata kan bestaan uit puntdata of trainingdata. Beiden hebben hun voor- en nadeel.  </p>
 <p><strong>Puntdata</strong> gebruiken als inputdata kan bijvoorbeeld als je beschikt over een grote set GPS-veldpunten van locaties waar je exact weet tot welke landbedekkingsklasse een pixel hoort. Deze pixel wordt dan als referentie aanschouwt. Deze zekerheid van de trainingsdata is dus groot. Een nadeel bij pixels is dat het minder de variëteit van de pixels binnen de klasse opneemt en de totale set aan trainingspixels beperkt blijft.  </p>
 <p><strong>Polygonen</strong> worden gebruikt om gebieden in te tekenen voor een bepaalde klasse. In earth engine wordt elke pixel binnen deze polygoon dan gebruikt als inputdata. Dit zorgt ervoor dat de trainingsset groter wordt en de variatie binnen een bepaalde klasse beter wordt omvat. Een nadeel is echter dat zo ook foute pixels kunnen worden meegenomen door het onzorgvuldig intekenen van de polygoon.  </p>
@@ -692,18 +1372,21 @@
 <li>Eenmaal je klaar bent met het intekenen van een klasse, kun je deze import configureren. Klink hiervoor op het tandwieltje naast de klasse. Geef het een gepaste naam. Daarna verander je de 'Import as' van <em>geometry</em> naar type <em>FeatureCollection</em>. Voeg daarna een <em>property</em> toe met de naam 'class', door te klikken op <em>'Add property'</em>. De eerste klasse geef je waarde 1, de 2e 2, .... Zorg er wel voor dat je goed weet welke waarde je aan welke klasse geeft. Neem hierbij eventueel de <em>class</em>-numering over van bovenstaande tabel.</li>
 </ul>
 <p align="center">
-<img src="images/GEE_Mangrove_class.JPG" with="300"/> <br/>
+  <img src="images/GEE_Mangrove_class.JPG" with=300>  <br>
 </p>
+
 <ul>
 <li>Herhaal dit voor elke klasse. Uiteindelijk verschijnt elke klasse als een '<em>FeatureCollection</em>' bij de imports-lijst in je script:</li>
 </ul>
 <p align="center">
-<img src="images/GEE_Class_imports.JPG" widt="300"/> <br/>
+  <img src="images/GEE_Class_imports.JPG" widt=300>  <br>
 </p>
+
 <p align="center">
-<img src="images/GEE_importAsset.jpg" width="300"/> <br/>
-<em> Voorbeeld trainingsamples voor Mangrove </em>
+  <img src="images/GEE_importAsset.jpg" width=300>  <br>
+ <em> Voorbeeld trainingsamples voor Mangrove </em>
 </p>
+
 <ul>
 <li>Nu de 5 klassen aangemaakt zijn, dienen we ze samen te vatten als een complete trainingsset in earth engine; een gezamenlijke <code>FeatureCollection</code>, waarbij de 'class'-<em>property</em> wordt overgenomen.</li>
 </ul>
@@ -713,28 +1396,29 @@
 <span class="nx">print</span><span class="p">(</span><span class="nx">classNames</span><span class="p">)</span>
 </code></pre></div>
 <p align="center">
-<img src="images/GEE_FeatureCollection.JPG"/> <br/>
+  <img src="images/GEE_FeatureCollection.JPG">  <br>
 </p>
+
 <h2 id="de-trainingsdata-aanmaken">De trainingsdata aanmaken</h2>
 <p>Nu hebben we reeds een <code>FeatureCollection</code>met trainingspolygonen, maar deze zeggen nog niks over de trainingspixels. In een volgende stap, extraheren we de trainingspixels per band uit het Sentinel-2 beeld op basis van de aangemaakte polygonen. Dit doen we met de <code>sampleRegions()</code>functie. Deze functie extraheert alle pixels binnen opgegeven polygonen, en schrijft elke pixel afzonderlijk naar een nieuw <code>`Feature</code>binnen een <code>FeatureCollection</code>, dewelke ook de class-property meekrijgen. Afhankelijk van de grootte van de polygonen, kan deze dataset dus zeer lijvig worden.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Trainingspixels extraheren naar featurecollection = trainingsdata</span>
 <span class="kd">var</span> <span class="nx">traindata</span> <span class="o">=</span> <span class="nx">S2_im</span><span class="p">.</span><span class="nx">sampleRegions</span><span class="p">({</span>
   <span class="nx">collection</span><span class="o">:</span> <span class="nx">classNames</span><span class="p">,</span> <span class="c1">//De trainingspolygonen</span>
-  <span class="nx">properties</span><span class="o">:</span> <span class="p">[</span><span class="s1">'class'</span><span class="p">],</span> <span class="c1">//Dit neemt de gewenste eigenschappen van de collection over</span>
+  <span class="nx">properties</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">],</span> <span class="c1">//Dit neemt de gewenste eigenschappen van de collection over</span>
   <span class="nx">scale</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
   <span class="nx">tileScale</span><span class="o">:</span><span class="mf">4</span>
 <span class="p">});</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Aantal trainingspixels: '</span><span class="p">,</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Aantal trainingspixels: &#39;</span><span class="p">,</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>
 <span class="c1">//print(traindata) //Niet doen</span>
 <span class="nx">print</span><span class="p">(</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">first</span><span class="p">())</span> <span class="c1">//Eerste waarde bekijken,</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Layer error: Computed value is too Large</p>
-<p>Mogelijks heb je bij het gebruik van sampleRegions() al onderstaande foutmelding gehad:<br>
+<p>Mogelijks heb je bij het gebruik van sampleRegions() al onderstaande foutmelding gehad:<br />
 <p align="center">
-<img src="images/GEE_Layer_error.jpg"/> <br/>
+<img src="images/GEE_Layer_error.jpg">  <br>
 </p> 
-Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit is eenvoudig op te lossen door het toevoegen van een extra parameter <code>tileScale</code> aand de sampleRegions()-functie, zoals in bovenstaand voorbeeld werd gedaan. Door het verhogen van de <code>tileScale</code> zal Earth Engine de opdracht in meerdere stukjes indelen, waardoor de berekening minder gemakkelijk <em>'out of memory'</em> zal lopen. De bewerking zal hierdoor wel meer tijd in beslag nemen, dus verhoog tileScale slechts gelijdelijk.  </br></p>
+Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit is eenvoudig op te lossen door het toevoegen van een extra parameter <code>tileScale</code> aand de sampleRegions()-functie, zoals in bovenstaand voorbeeld werd gedaan. Door het verhogen van de <code>tileScale</code> zal Earth Engine de opdracht in meerdere stukjes indelen, waardoor de berekening minder gemakkelijk <em>'out of memory'</em> zal lopen. De bewerking zal hierdoor wel meer tijd in beslag nemen, dus verhoog tileScale slechts gelijdelijk.  </p>
 </div>
 <p>Zie ook de 'Docs' van sampleRegions()</p>
 <h2 id="de-classifier-trainen">De classifier trainen</h2>
@@ -742,10 +1426,10 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 <h3 id="minimum-distance-classifier">Minimum Distance Classifier</h3>
 <p>In een eerste instantie dienen we de classifier te trainen, op basis van de opgestelde trainingsdata. We dienen ook aan te geven welke van de <em>properties</em> binnen de trainingssamples de 'class'-bevat, en welke <em>properties</em> gebruikt moeten worden om mee te classificeren (de banden).</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//4. De classifiers trainen en toepassen</span>
-   <span class="c1">// A. Minimum Distance classifier (gebruik van default-waarde 'euclidische afstand')</span>
+   <span class="c1">// A. Minimum Distance classifier (gebruik van default-waarde &#39;euclidische afstand&#39;)</span>
     <span class="kd">var</span> <span class="nx">MinDist</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Classifier</span><span class="p">.</span><span class="nx">minimumDistance</span><span class="p">().</span><span class="nx">train</span><span class="p">({</span>
       <span class="nx">features</span><span class="o">:</span> <span class="nx">traindata</span><span class="p">,</span>
-      <span class="nx">classProperty</span><span class="o">:</span> <span class="s1">'class'</span><span class="p">,</span>
+      <span class="nx">classProperty</span><span class="o">:</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span>
       <span class="nx">inputProperties</span><span class="o">:</span> <span class="nx">bands</span> <span class="c1">//verwijzing naar de eerder aangemaakte bands-lijst</span>
     <span class="p">});</span>
 </code></pre></div>
@@ -753,7 +1437,7 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 <div class="highlight"><pre><span></span><code><span class="c1">// B. CART classifier</span>
     <span class="kd">var</span> <span class="nx">Cart</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Classifier</span><span class="p">.</span><span class="nx">smileCart</span><span class="p">().</span><span class="nx">train</span><span class="p">({</span>
       <span class="nx">features</span><span class="o">:</span> <span class="nx">traindata</span><span class="p">,</span>
-      <span class="nx">classProperty</span><span class="o">:</span> <span class="s1">'class'</span><span class="p">,</span>
+      <span class="nx">classProperty</span><span class="o">:</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span>
       <span class="nx">inputProperties</span><span class="o">:</span> <span class="nx">bands</span> <span class="c1">//verwijzing naar de eerder aangemaakte bands-lijst</span>
     <span class="p">});</span>
 </code></pre></div>
@@ -763,7 +1447,7 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
       <span class="nx">numberOfTrees</span><span class="o">:</span> <span class="mf">60</span>
     <span class="p">}).</span><span class="nx">train</span><span class="p">({</span>
       <span class="nx">features</span><span class="o">:</span> <span class="nx">traindata</span><span class="p">,</span>
-      <span class="nx">classProperty</span><span class="o">:</span> <span class="s1">'class'</span><span class="p">,</span>
+      <span class="nx">classProperty</span><span class="o">:</span> <span class="s1">&#39;class&#39;</span><span class="p">,</span>
       <span class="nx">inputProperties</span><span class="o">:</span> <span class="nx">bands</span> <span class="c1">//verwijzing naar de eerder aangemaakte bands-lijst</span>
     <span class="p">});</span>
 </code></pre></div>
@@ -778,27 +1462,28 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 </code></pre></div>
 <p>Bij het visualiseren willen we een visueel overzichtelijk resultaat krijgen. Aangezien we eindigen met discrete klassen, stellen we hiervoor een palette op, dat per klasse een kleur aangeeft.</p>
 <div class="highlight"><pre><span></span><code> <span class="kd">var</span> <span class="nx">palette</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">'FF0000'</span><span class="p">,</span> <span class="c1">// mangrove (1)  // rood</span>
-    <span class="s1">'7CFC00'</span><span class="p">,</span> <span class="c1">//  ander bos (2) // lichtgroen</span>
-    <span class="s1">'1E90FF'</span><span class="p">,</span> <span class="c1">//water (3) // blauw</span>
-    <span class="s1">'FFFD10'</span><span class="p">,</span> <span class="c1">//crop (4) //geel</span>
-    <span class="s1">'000000'</span><span class="p">,</span> <span class="c1">//stad // zwart</span>
-    <span class="s1">'876829'</span><span class="p">,</span> <span class="c1">//BareSoil // bruin</span>
+    <span class="s1">&#39;FF0000&#39;</span><span class="p">,</span> <span class="c1">// mangrove (1)  // rood</span>
+    <span class="s1">&#39;7CFC00&#39;</span><span class="p">,</span> <span class="c1">//  ander bos (2) // lichtgroen</span>
+    <span class="s1">&#39;1E90FF&#39;</span><span class="p">,</span> <span class="c1">//water (3) // blauw</span>
+    <span class="s1">&#39;FFFD10&#39;</span><span class="p">,</span> <span class="c1">//crop (4) //geel</span>
+    <span class="s1">&#39;000000&#39;</span><span class="p">,</span> <span class="c1">//stad // zwart</span>
+    <span class="s1">&#39;876829&#39;</span><span class="p">,</span> <span class="c1">//BareSoil // bruin</span>
   <span class="p">];</span>
 
   <span class="kd">var</span> <span class="nx">classvis</span> <span class="o">=</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span><span class="mf">6</span><span class="p">,</span> <span class="nx">palette</span><span class="o">:</span> <span class="nx">palette</span><span class="p">}</span>
 
-   <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">classified_MD</span><span class="p">,</span><span class="nx">classvis</span><span class="p">,</span><span class="s1">'MinimumDistance'</span><span class="p">)</span>
-   <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">classified_CART</span><span class="p">,</span><span class="nx">classvis</span><span class="p">,</span><span class="s1">'CART'</span><span class="p">)</span>
-   <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">classified_RF</span><span class="p">,</span><span class="nx">classvis</span><span class="p">,</span><span class="s1">'RandomForest'</span><span class="p">)</span>
+   <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">classified_MD</span><span class="p">,</span><span class="nx">classvis</span><span class="p">,</span><span class="s1">&#39;MinimumDistance&#39;</span><span class="p">)</span>
+   <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">classified_CART</span><span class="p">,</span><span class="nx">classvis</span><span class="p">,</span><span class="s1">&#39;CART&#39;</span><span class="p">)</span>
+   <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">classified_RF</span><span class="p">,</span><span class="nx">classvis</span><span class="p">,</span><span class="s1">&#39;RandomForest&#39;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="accuraatheidsbepaling-accuracy-assessment">Accuraatheidsbepaling (Accuracy assessment)</h2>
 <p>In de <em>accuracy assessment</em> toetsen we de bruikbaarheid van het classificatiemodel: welke foutenmarge is er aanwezig? Dit doen we op basis van een foutenmatrix (<strong>error matrix</strong>). Om deze op te stellen hebben we nood aan een set van (onafhankelijke) testdata. We willen met andere woorden weten hoe goed onbekende pixels worden geclassificeerd door de classifier.</p>
 <h3 id="training-validation-en-testdata">Training- Validation en Testdata</h3>
 <p>Een veel gebruikte methode bij het opstellen van modellen, is het opsplitsen van de <em>trainingset</em>-dataset in training- en validatiedata. Hierbij wordt de <em>training</em>data at random gesplits in meestal een 80/20-verhouding. Daarnaast wordt er vak nog gebruik gemaakt van een derde, volledig afzonderlijke dataset: de <strong>testdataset</strong>:</p>
 <p align="center">
-<img src="images/Train_Val_Test.png"/> <br/>
+  <img src="images/Train_Val_Test.png">  <br>
 </p>
+
 <blockquote>
 <p><strong>Traindata</strong>= de data gebruikt om het model te trainen en dus te <em>fitten</em>. Het model bekijkt en leert van deze data.</p>
 <p><strong>Validatiedata</strong>= Het deel van de data dat gebruikt zal worden om na te gaan hoe goed het model werkt op onbekende data. Dit deel zal dus niet gebruikt worden om het model te trainen. Hierdoor kunnen verschillende classificatiemodellen en parameters binnen het model tegenover elkaar worden afgewogen en het model zo worden geperfectioneerd. Dit wordt ook wel <em>parameter tuning</em> genoemd. Validatiedata wordt dus gebruikt tijdens de ontwikkeling en het zoeken van het beste model. Bij spatiale data echter, dient hier voorzichtig mee te worden omgegaan door het fenomeen van <em>spatiale autocorrelatie</em>. Hierbij zijn de validatiepixels veelal buurpixels van de trainpixels. Dit is het geval wanneer er bijvoorbeeld gebruik gemaakt wordt van polygonen als inputdata.</p>
@@ -810,8 +1495,9 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 </div>
 <p>De Error Matrix wordt opgesteld door het vergelijken van de geclassificeerde testdata-waarden en de referentiedata. Onderstaande matrix geeft een voorbeeld van dergelijke matrix:</p>
 <p align="center">
-<img src="images/ErrorMatrix.jpg" width="600"/> <br/>
+  <img src="images/ErrorMatrix.jpg" width= 600>  <br>
 </p>
+
 <ul>
 <li><strong>Rijen</strong>: resulaat van de classificatie</li>
 <li><strong>Kolommen</strong>: validatie data</li>
@@ -844,39 +1530,41 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 </li>
 </ul>
 <p align="center">
-<img src="images/kappa.png" width="300"/> <br/>
+  <img src="images/kappa.png" width=300>  <br>
 </p>
+
 <h3 id="de-error-matrix-in-earth-engine">De Error matrix in Earth Engine</h3>
 <h4 id="inlezen-van-de-testdataset">Inlezen van de Testdataset</h4>
 <p>In voorliggend voorbeeld maken we gebruik van een extra testdataset voor het opstellen van de error matrix. Gezien we geen optimalisatie van parameters gaan doorvoeren, maken we geen gebruik van validatiedata en wordt de volledige trainingscollectie ook trainingsdata.</p>
 <p>De gebruikte testdataset bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer rond de GPS-punten werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.</p>
-<p>Je kunt de shape-file hier downloaden: <a href="https://users.ugent.be/~jfeyen/P6/P6_testdata_poly.zip">P6_testdata_poly.zip</a></p>
+<p>Je kunt de shape-file hier downloaden: <a href="https://users.ugent.be/~jfeyen/P5/P5_testdata_poly.zip">P5_testdata_poly.zip</a></p>
 <p>Om deze toe te voegen aan Earth Engine, laad je deze op via de 'Asset'-tab. Daarna kun je het importeren als een <code>FeatureCollection</code> in je script. Noem dit 'Testdata_pol'. Bekijk ook even deze polygonen. Onder welke <em>property</em> zitten de klassen hier opgeslagen?</p>
 <p align="center">
-<img src="images/GEE_importAsset.jpg" width="300"/> <br/>
+  <img src="images/GEE_importAsset.jpg" width=300>  <br>
 </p>
+
 <p>Vervolgens extraheren we de pixelwaarden op basis van deze testpolygonen, net zoals we dit gedaan hebben bij de trainingspixels:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Na inlezen van validatiedata: maak een testdatacollectie, zoals bij het opmaken van traindata</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Testpolygonen'</span><span class="p">,</span><span class="nx">Testdata_pol</span><span class="p">)</span> <span class="c1">//bekijk de properties</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Testpolygonen&#39;</span><span class="p">,</span><span class="nx">Testdata_pol</span><span class="p">)</span> <span class="c1">//bekijk de properties</span>
 
 <span class="c1">//Testpixels extraheren naar featurecollection</span>
 <span class="kd">var</span> <span class="nx">testdata</span> <span class="o">=</span> <span class="nx">S2_im</span><span class="p">.</span><span class="nx">sampleRegions</span><span class="p">({</span>
   <span class="nx">collection</span><span class="o">:</span> <span class="nx">Testdata_pol</span><span class="p">,</span> <span class="c1">//De trainingspolygonen</span>
-  <span class="nx">properties</span><span class="o">:</span> <span class="p">[</span><span class="s1">'val'</span><span class="p">],</span> <span class="c1">//Dit neemt de gewenste eigenschappen van de collection over</span>
+  <span class="nx">properties</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;val&#39;</span><span class="p">],</span> <span class="c1">//Dit neemt de gewenste eigenschappen van de collection over</span>
   <span class="nx">scale</span><span class="o">:</span> <span class="mf">10</span>
 <span class="p">});</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Aantal testpixels: '</span><span class="p">,</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Aantal testpixels: &#39;</span><span class="p">,</span><span class="nx">traindata</span><span class="p">.</span><span class="nx">size</span><span class="p">());</span>
 </code></pre></div>
 <p>Nu we de testpixelwaarden geëxtraheerd hebben, kunnen we deze vergelijken met de geclassificeerde pixels in een <strong>error matrix</strong>. Tevens staat Earth Engine een rechtstreekse berekening van de verschillende accuraatheidsmaten toe. In onderstaand stukje code staat het voorbeeld voor de Minimum Distance classifier. Pas dit toe voor alle classifiers. Welke classifier heeft de grootste algemene accuraatheid (<em>Overall accuracy</em>)? </p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Validatie met de testdata</span>
 <span class="kd">var</span> <span class="nx">val_MinDist</span> <span class="o">=</span> <span class="nx">testdata</span><span class="p">.</span><span class="nx">classify</span><span class="p">(</span><span class="nx">MinDist</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">ErrorMatrix_MinDist</span> <span class="o">=</span> <span class="nx">val_MinDist</span><span class="p">.</span><span class="nx">errorMatrix</span><span class="p">(</span><span class="s1">'val'</span><span class="p">,</span> <span class="s1">'classification'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">ErrorMatrix_MinDist</span> <span class="o">=</span> <span class="nx">val_MinDist</span><span class="p">.</span><span class="nx">errorMatrix</span><span class="p">(</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="s1">&#39;classification&#39;</span><span class="p">)</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s1">'MinDist Validation error matrix: '</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">array</span><span class="p">().</span><span class="nx">transpose</span><span class="p">());</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'MinDist Validation overall accuracy: '</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">accuracy</span><span class="p">());</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'MinDist Producer Accuracy: '</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">producersAccuracy</span><span class="p">());</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'MinDist User/Consumer Accuracy: '</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">consumersAccuracy</span><span class="p">());</span>
-<span class="nx">print</span><span class="p">(</span><span class="s1">'Kappa index: '</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">kappa</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist Validation error matrix: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">array</span><span class="p">().</span><span class="nx">transpose</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist Validation overall accuracy: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">accuracy</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist Producer Accuracy: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">producersAccuracy</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;MinDist User/Consumer Accuracy: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">consumersAccuracy</span><span class="p">());</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Kappa index: &#39;</span><span class="p">,</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">kappa</span><span class="p">());</span>
 
 <span class="c1">//Omzetten naar een Feature + transpose</span>
 <span class="kd">var</span> <span class="nx">ErrorMatrix_MinDist</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Feature</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="p">{</span><span class="nx">matrix</span><span class="o">:</span> <span class="nx">ErrorMatrix_MinDist</span><span class="p">.</span><span class="nx">array</span><span class="p">().</span><span class="nx">transpose</span><span class="p">()});</span> 
@@ -885,19 +1573,21 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 <p class="admonition-title">De Error matrix in Earth Engine</p>
 <p>In Earth Engine wordt de error matrix opgeroepen met de <code>ee.ConfusionMatrix()</code>-functie. Resulterend is een lijst met 7 elementen (de rijen), waarbij elke rij op zijn beurt bestaat uit 7 elementen (de kolommen). In Earth Engine corresponderen de rijen met de referentiedata en de kolommen met de geclassificeerde data. Met de <code>array.().transpose()</code> functie kunnen we deze matrix transponeren, zodat deze overeenkomst met de matrix in het voorbeeld (kolommen: referentie, rijen: geclassificeerd), wat de standaard weergave is.
 <p align="center">
-<img src="images/GEE_ErrorMatrix.JPG" width="600"/> <br/>
+<img src="images/GEE_ErrorMatrix.JPG" width=600>  <br>
 </p> 
 Daarnaast wordt ook klasse '0' meegerekend in de berekening. Gezien deze in ons voorbeeld niet bestaat, zal de 1e rij/kolom enkel 0-waarden bevatten.</p>
 </div>
 <h2 id="voorbeeld-interpretatie-error-matrix">Voorbeeld: interpretatie error matrix</h2>
 <p>In ons voorbeeldje werd onderstaande ErrorMatrix verkregen voor de MinDist classifier. Door de <code>.transpose()</code>-functie komt de referentiedata terecht in de kolommen, terwijl de classificatiedata zich in de rijen bevindt.</p>
 <p align="center">
-<img src="images/MinDist_ErrorMatrix.JPG"/> <br/>
+<img src="images/MinDist_ErrorMatrix.JPG">  <br>
 </p>
+
 <p>Na wat opschoning in excel, ziet de error matrix van dit voorbeeld er uit als volgt:</p>
 <p align="center">
-<img src="images/ErrorMatrix_P6.png" width="500"/> <br/>
+<img src="images/ErrorMatrix_P6.png" width=500>  <br>
 </p>
+
 <p>Welke klassen scoren goed? Welke zijn minder accuraat? Aan de <em>overall accurcay</em> en de <em>Kappa index</em> kan worden afgeleid dat de classificatie reeds een goede indicatie heeft, maar nog voor verbetering vatbaar is. Hoofdzakelijk de klassen 'water' en 'crop' scoren goed, terwijl 'Soil' moeilijker te onderscheiden valt van 'crop' en 'urban'. Betere trainingsdata is hier dus de boodschap!</p>
 <h2 id="extra-exporteren-van-de-error-matrix">Extra: Exporteren van de Error Matrix</h2>
 <p>In Google Earth Engine is de weergave van de error matrix niet zo handig. Om verdere accuraatheidsmaten uit te rekenen en een betere interpretatie te kunnen uitvoeren kan het handig zijn om de error matrix te exporteren als een .csv-bestand, dewelke in andere software (zoals excel) geopend kan worden. </p>
@@ -908,74 +1598,96 @@ Daarnaast wordt ook klasse '0' meegerekend in de berekening. Gezien deze in ons 
 <span class="c1">//Exporteren van de errormatrix</span>
   <span class="nx">Export</span><span class="p">.</span><span class="nx">table</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span>
       <span class="nx">collection</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="nx">ErrorMatrix_MinDist</span><span class="p">),</span>
-      <span class="nx">description</span><span class="o">:</span> <span class="s1">'P6_Errormatrix'</span><span class="p">,</span>
-      <span class="nx">fileFormat</span><span class="o">:</span> <span class="s1">'CSV'</span><span class="p">,</span>
-      <span class="nx">folder</span><span class="o">:</span> <span class="s1">'TELEDETECTIE_2021'</span>
+      <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;P6_Errormatrix&#39;</span><span class="p">,</span>
+      <span class="nx">fileFormat</span><span class="o">:</span> <span class="s1">&#39;CSV&#39;</span><span class="p">,</span>
+      <span class="nx">folder</span><span class="o">:</span> <span class="s1">&#39;TELEDETECTIE_2021&#39;</span>
     <span class="p">});</span>
 </code></pre></div>
 <details class="info"><summary>Volledig script</summary><p>Via deze link: <a href="https://code.earthengine.google.com/665cbaa3a887d685d4d07c6081902f19">https://code.earthengine.google.com/665cbaa3a887d685d4d07c6081902f19</a></p>
 </details>
-</article>
-</div>
-</div>
-</main>
-<footer class="md-footer">
-<div class="md-footer-nav">
-<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
-<a class="md-footer-nav__link md-footer-nav__link--prev" href="P5-Unsupervised.html" rel="prev">
-<div class="md-footer-nav__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
-</div>
-<div class="md-footer-nav__title">
-<div class="md-ellipsis">
-<span class="md-footer-nav__direction">
-                  Vorige
-                </span>
-                Niet-gesuperviseerde classificatie
-              </div>
-</div>
-</a>
-<a class="md-footer-nav__link md-footer-nav__link--next" href="P5-Improvement.html" rel="next">
-<div class="md-footer-nav__title">
-<div class="md-ellipsis">
-<span class="md-footer-nav__direction">
-                  Volgende
-                </span>
-                Verbeteren van de classificatie
-              </div>
-</div>
-<div class="md-footer-nav__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
-</div>
-</a>
-</nav>
-</div>
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-footer-copyright">
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
         
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
-          Material for MkDocs
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="P5-Unsupervised.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Niet-gesuperviseerde classificatie" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              Niet-gesuperviseerde classificatie
+            </div>
+          </div>
         </a>
- ... <a class="link--pdf-download" download href="..\pdf\document.pdf" title="PDF">download PDF</a></div>
-</div>
-</div>
+      
+      
+        
+        <a href="P5-Improvement.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Verbeteren van de classificatie" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Verbeteren van de classificatie
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
-<script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-<script>
-        app = initialize({
-          base: "..",
-          features: ['navigation.sections', 'navigation.tabs'],
-          search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
-<script src="../javascripts/config.js"></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-</body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
 </html>
