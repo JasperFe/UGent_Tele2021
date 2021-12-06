@@ -1,1102 +1,515 @@
 
-<!doctype html>
-<html lang="nl" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-      
-      <link rel="icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
-    
-    
-      
-        <title>Spectrale indices - (I002450) Teledetectie practica 2021</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#4051b5">
-        
-      
-    
-    
-    
-      
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
-      
-    
-    
-    
-    
-      
+<!DOCTYPE html>
 
-
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
-  
-    
-    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#1-spectral-indices" class="md-skip">
+<html class="no-js" lang="nl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../assets/images/LOGO_REMOSA_2020.jpg" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-6.1.0" name="generator"/>
+<title>Spectrale indices - (I002450) Teledetectie practica 2021</title>
+<link href="../assets/stylesheets/main.bc7e593a.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.ab28b872.min.css" rel="stylesheet"/>
+<meta content="#4051b5" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+</head>
+<body data-md-color-accent="" data-md-color-primary="indigo" data-md-color-scheme="" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1-spectral-indices">
           Ga naar inhoud
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="(I002450) Teledetectie practica 2021" class="md-header__button md-logo" aria-label="(I002450) Teledetectie practica 2021" data-md-component="logo">
-      
-  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="(I002450) Teledetectie practica 2021" class="md-header-nav__button md-logo" href=".." title="(I002450) Teledetectie practica 2021">
+<img alt="logo" src="../assets/images/LOGO_REMOSA_2020.jpg"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
             (I002450) Teledetectie practica 2021
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
             
               Spectrale indices
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-    
-    
-      <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-      </label>
-      
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
 <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Zoeken" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Zoeken" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list"></ol>
 </div>
-    
-    
-  </nav>
-  
-</header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
-  <div class="md-tabs__inner md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
-        Home
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../P2/P2-intro.html" class="md-tabs__link">
-        P2 - Beeldvoorbewerking
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../P3/P3-Goals.html" class="md-tabs__link">
-        P3- Intro tot Google Earth Engine
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-    
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="P4-Intro.html" class="md-tabs__link md-tabs__link--active">
-        P4 - Feature Extraction
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../P5/P5-intro.html" class="md-tabs__link">
-        P5 - Beeldclassificatie
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-  
-
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="(I002450) Teledetectie practica 2021" class="md-nav__button md-logo" aria-label="(I002450) Teledetectie practica 2021" data-md-component="logo">
-      
-  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
-
-    </a>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs md-tabs--active" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../index.html">
+          Home
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../P2/P2-intro.html">
+          P2 - Beeldvoorbewerking
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../P3/P3-Goals.html">
+          P3- Intro tot Google Earth Engine
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="P4-Intro.html">
+          P4 - Feature Extraction
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../P5/P5-intro.html">
+          P5 - Beeldclassificatie
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="(I002450) Teledetectie practica 2021" class="md-nav__button md-logo" href=".." title="(I002450) Teledetectie practica 2021">
+<img alt="logo" src="../assets/images/LOGO_REMOSA_2020.jpg"/>
+</a>
     (I002450) Teledetectie practica 2021
   </label>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_1">
-          Home
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Home" data-md-level="1">
-        <label class="md-nav__title" for="__nav_1">
-          <span class="md-nav__icon md-icon"></span>
-          Home
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
-        Over deze cursussite
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          P2 - Beeldvoorbewerking
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="P2 - Beeldvoorbewerking" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          P2 - Beeldvoorbewerking
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P2/P2-intro.html" class="md-nav__link">
-        Introduction
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P2/P2-Sentinel2.html" class="md-nav__link">
-        Sentinel-2 intro and download
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P2/P2-Snap-intro.html" class="md-nav__link">
-        Introduction to SNAP
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P2/P2-colour-composites.html" class="md-nav__link">
-        RGB colour composites
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P2/P2-image-preprocessing.html" class="md-nav__link">
-        Image preprocessing in SNAP
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P2/P2-colour-composites-ctd.html" class="md-nav__link">
-        RGB colour composites 2
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_3">
-          P3- Intro tot Google Earth Engine
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="P3- Intro tot Google Earth Engine" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          P3- Intro tot Google Earth Engine
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-Goals.html" class="md-nav__link">
-        Doel van het practicum
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-DataCatalog.html" class="md-nav__link">
-        EarthEngine data catalog
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-Intro.html" class="md-nav__link">
-        Introductie tot Earth Engine
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-ImageVisualization.html" class="md-nav__link">
-        Satellietdata oproepen, filteren en visualiseren
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-Reducing.html" class="md-nav__link">
-        Reducing ImageCollections
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-Cloud_masking.html" class="md-nav__link">
-        Cloud masking
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P3/P3-Oefeningen.html" class="md-nav__link">
-        (Extra) Oefeningen
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_4">
-          P4 - Feature Extraction
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="P4 - Feature Extraction" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
-          <span class="md-nav__icon md-icon"></span>
-          P4 - Feature Extraction
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="P4-Intro.html" class="md-nav__link">
-        Intro
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Spectrale indices
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="P4-Spectral_indices.html" class="md-nav__link md-nav__link--active">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Home" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../index.html">
+      Over deze cursussite
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      P2 - Beeldvoorbewerking
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="P2 - Beeldvoorbewerking" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon"></span>
+        P2 - Beeldvoorbewerking
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P2/P2-intro.html">
+      Introduction
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P2/P2-Sentinel2.html">
+      Sentinel-2 intro and download
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P2/P2-Snap-intro.html">
+      Introduction to SNAP
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P2/P2-colour-composites.html">
+      RGB colour composites
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P2/P2-image-preprocessing.html">
+      Image preprocessing in SNAP
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P2/P2-colour-composites-ctd.html">
+      RGB colour composites 2
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      P3- Intro tot Google Earth Engine
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="P3- Intro tot Google Earth Engine" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon"></span>
+        P3- Intro tot Google Earth Engine
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-Goals.html">
+      Doel van het practicum
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-DataCatalog.html">
+      EarthEngine data catalog
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-Intro.html">
+      Introductie tot Earth Engine
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-ImageVisualization.html">
+      Satellietdata oproepen, filteren en visualiseren
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-Reducing.html">
+      Reducing ImageCollections
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-Cloud_masking.html">
+      Cloud masking
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P3/P3-Oefeningen.html">
+      (Extra) Oefeningen
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="nav-4" id="nav-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-4">
+      P4 - Feature Extraction
+      <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="P4 - Feature Extraction" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-4">
+<span class="md-nav__icon md-icon"></span>
+        P4 - Feature Extraction
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="P4-Intro.html">
+      Intro
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
         Spectrale indices
-      </a>
-      
-        
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+        <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="P4-Spectral_indices.html">
+      Spectrale indices
+    </a>
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-spectral-indices" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-spectral-indices">
     1. Spectral indices
   </a>
-  
-    <nav class="md-nav" aria-label="1. Spectral indices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ndvi" class="md-nav__link">
+<nav aria-label="1. Spectral indices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ndvi">
     NDVI
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-bandbewerkingen" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-bandbewerkingen">
     2. Bandbewerkingen
   </a>
-  
-    <nav class="md-nav" aria-label="2. Bandbewerkingen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#optie-1-bewerkingen-via-operatoren" class="md-nav__link">
+<nav aria-label="2. Bandbewerkingen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optie-1-bewerkingen-via-operatoren">
     Optie 1 - Bewerkingen via operatoren
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#optie-2-bewerkingen-via-expressies" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optie-2-bewerkingen-via-expressies">
     Optie 2 - Bewerkingen via expressies
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#andere-indices" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#andere-indices">
     Andere indices
   </a>
-  
-    <nav class="md-nav" aria-label="Andere indices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#de-normalized-difference-water-index-ndwi" class="md-nav__link">
+<nav aria-label="Andere indices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#de-normalized-difference-water-index-ndwi">
     De Normalized Difference Water Index (NDWI)
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#opdrachten" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opdrachten">
     Opdrachten
   </a>
-  
-    <nav class="md-nav" aria-label="Opdrachten">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#oef-41-ndvi-per-seizoen-seizoen" class="md-nav__link">
+<nav aria-label="Opdrachten" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oef-41-ndvi-per-seizoen-seizoen">
     Oef 4.1 - NDVI per seizoen  seizoen
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-toevoegen-van-een-legende" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extra-toevoegen-van-een-legende">
     EXTRA: Toevoegen van een legende
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="P4-ImageStatistics.html" class="md-nav__link">
-        Beeldstatistieken
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="P4-Texture.html" class="md-nav__link">
-        Textuuranalyse
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="P4-PCA.html" class="md-nav__link">
-        Principale componenten analyse
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="P4-Oefeningen.html" class="md-nav__link">
-        Oefeningen
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_5">
-          P5 - Beeldclassificatie
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="P5 - Beeldclassificatie" data-md-level="1">
-        <label class="md-nav__title" for="__nav_5">
-          <span class="md-nav__icon md-icon"></span>
-          P5 - Beeldclassificatie
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-intro.html" class="md-nav__link">
-        Intro
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-SurinameCase.html" class="md-nav__link">
-        CASE - Mangrove monitoring in Suriname
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-Unsupervised.html" class="md-nav__link">
-        Niet-gesuperviseerde classificatie
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-Supervised.html" class="md-nav__link">
-        Gesuperviseerde classificatie
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-Improvement.html" class="md-nav__link">
-        Verbeteren van de classificatie
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-Oppervlaktebepaling.html" class="md-nav__link">
-        Oppervlaktebepaling
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-SpectralResponse_oud.html" class="md-nav__link">
-        Spectrale responsiecurves
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../P5/P5-Oefeningen.html" class="md-nav__link">
-        Oefeningen
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-  </ul>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="P4-ImageStatistics.html">
+      Beeldstatistieken
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="P4-Texture.html">
+      Textuuranalyse
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="P4-PCA.html">
+      Principale componenten analyse
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="P4-Oefeningen.html">
+      Oefeningen
+    </a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" id="nav-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-5">
+      P5 - Beeldclassificatie
       <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="P5 - Beeldclassificatie" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-5">
+<span class="md-nav__icon md-icon"></span>
+        P5 - Beeldclassificatie
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-intro.html">
+      Intro
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-SurinameCase.html">
+      CASE - Mangrove monitoring in Suriname
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-Unsupervised.html">
+      Niet-gesuperviseerde classificatie
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-Supervised.html">
+      Gesuperviseerde classificatie
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-Improvement.html">
+      Verbeteren van de classificatie
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-Oppervlaktebepaling.html">
+      Oppervlaktebepaling
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-SpectralResponse_oud.html">
+      Spectrale responsiecurves
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../P5/P5-Oefeningen.html">
+      Oefeningen
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Inhoudsopgave" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Inhoudsopgave
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-spectral-indices" class="md-nav__link">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-spectral-indices">
     1. Spectral indices
   </a>
-  
-    <nav class="md-nav" aria-label="1. Spectral indices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ndvi" class="md-nav__link">
+<nav aria-label="1. Spectral indices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ndvi">
     NDVI
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-bandbewerkingen" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-bandbewerkingen">
     2. Bandbewerkingen
   </a>
-  
-    <nav class="md-nav" aria-label="2. Bandbewerkingen">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#optie-1-bewerkingen-via-operatoren" class="md-nav__link">
+<nav aria-label="2. Bandbewerkingen" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optie-1-bewerkingen-via-operatoren">
     Optie 1 - Bewerkingen via operatoren
   </a>
-  
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#optie-2-bewerkingen-via-expressies" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optie-2-bewerkingen-via-expressies">
     Optie 2 - Bewerkingen via expressies
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#andere-indices" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#andere-indices">
     Andere indices
   </a>
-  
-    <nav class="md-nav" aria-label="Andere indices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#de-normalized-difference-water-index-ndwi" class="md-nav__link">
+<nav aria-label="Andere indices" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#de-normalized-difference-water-index-ndwi">
     De Normalized Difference Water Index (NDWI)
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#opdrachten" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#opdrachten">
     Opdrachten
   </a>
-  
-    <nav class="md-nav" aria-label="Opdrachten">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#oef-41-ndvi-per-seizoen-seizoen" class="md-nav__link">
+<nav aria-label="Opdrachten" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#oef-41-ndvi-per-seizoen-seizoen">
     Oef 4.1 - NDVI per seizoen  seizoen
   </a>
-  
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#extra-toevoegen-van-een-legende" class="md-nav__link">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#extra-toevoegen-van-een-legende">
     EXTRA: Toevoegen van een legende
   </a>
-  
 </li>
-      
-    </ul>
-  
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-          
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
-                
-                
-                  <h1>Spectrale indices</h1>
-                
-                <h2 id="1-spectral-indices">1. Spectral indices</h2>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<h1>Spectrale indices</h1>
+<h2 id="1-spectral-indices">1. Spectral indices</h2>
 <p><strong>Spectral indices</strong> zijn combinaties van 2 of meerdere spectrale banden die gebruikt worden om bepaalde features extra in de verf te zetten of ze te herberekenen naar een relatieve schaal.</p>
 <h3 id="ndvi">NDVI</h3>
 <p>De meest gebruikte index is de <strong>Normalized Difference Vegatation Index (NDVI)</strong>, en wordt berekend als:</p>
 <div class="arithmatex">\[NDVI = { NIR - RED \over NIR + RED}.\]</div>
-<p>Waarbij:<br />
-NIR = reflectie in het nabij-infrarode gebied van het spectrum (oftwel Near-Infrared)<br />
+<p>Waarbij:<br/>
+NIR = reflectie in het nabij-infrarode gebied van het spectrum (oftwel Near-Infrared)<br/>
 RED = reflectie in het rode gebied van het spectrum  </p>
 <p>De resulterende index krijgt waarden binnen tussen -1 en 1.  </p>
 <p>Volgens deze formule is de densiteit van vegetatie (NDVI) op een gegeven plaats in het beeld gelijk aan de verschillen in intensiteit van het gereflecteerde licht in het rood en infrarode deel van het spectrum, gedeeld door de soms van deze intensiteiten. Vegetatie absorbeert immers een groot deel van het zichtbare licht ten behoeve van de fotosynthese (dus lage Rood-reflectie), maar weerkaatst vrijwel al het infrarode licht (hoge IR-reflectiewaarde), waardoor de ndvi stijgt. Hoe denser de vegetatie, hoe hoger de ndvi. Andere lichamen, zoals water, observeren IR dan weer beter tot zeer goed, waardoor de ndvi daalt.  </p>
@@ -1105,7 +518,7 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <li>
 <p>We starten deze oefening door het aanmaken van een Sentinel-2 beeld in Gent. Maak een punt-geometrie aan ergens ter hoogte van de Gentse haven te Evergem.</p>
 <p><p align="center">
-<img src="Images/GEE_HavenGent.JPG">  <br>
+<img src="Images/GEE_HavenGent.JPG"/> <br/>
 </p> </p>
 </li>
 <li>
@@ -1115,22 +528,22 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <p><strong> Stap 2 </strong> - We beschikken tevens over de grenzen van Gent in een vectorfile (een polygoon). Voeg deze toe aan je script. De vectorfile bevat alle gemeenten in België, waaruit we Gent op basis van de 'Name'-eigenschap filteren. </p>
 </li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">Gent</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s1">&#39;projects/ee-teledetectie-2021/assets/P5-FeatureExtraction/Belgium_municipalities&#39;</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;Gent&#39;</span><span class="p">))</span>
+<p><div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">Gent</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s1">'projects/ee-teledetectie-2021/assets/P5-FeatureExtraction/Belgium_municipalities'</span><span class="p">).</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">'Name'</span><span class="p">,</span><span class="s1">'Gent'</span><span class="p">))</span>
 </code></pre></div>
   Je kunt je beeld nu verder begrenzen a.d.h.v. deze vectorfile. Gebruik hiervoor de functie <code>.clip(Gent)</code> die je toepast op je verkregen Sentinel-2 beeld.</p>
 <details class="tip"><summary>Oplossing</summary><div class="highlight"><pre><span></span><code><span class="c1">//1. Importeren van de Sentinel-2 collectie.</span>
-<span class="kd">var</span> <span class="nx">S2</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">&quot;COPERNICUS/S2_SR&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">S2</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s2">"COPERNICUS/S2_SR"</span><span class="p">);</span>
 
 <span class="c1">//Filteren op basis van datum (lente 2019) + beeld met laagste wolkenpercentage selecteren</span>
 <span class="kd">var</span> <span class="nx">S2_Gent_Lente19</span> <span class="o">=</span> <span class="nx">S2</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">HavenGent</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2019-03-20&#39;</span><span class="p">,</span> <span class="s1">&#39;2019-06-30&#39;</span><span class="p">)</span>
-    <span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">&#39;CLOUDY_PIXEL_PERCENTAGE&#39;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">'2019-03-20'</span><span class="p">,</span> <span class="s1">'2019-06-30'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">'CLOUDY_PIXEL_PERCENTAGE'</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">first</span><span class="p">();</span>
 
-<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Gent_Lente19:&#39;</span><span class="p">,</span><span class="nx">S2_Gent_Lente19</span><span class="p">)</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">'Gent_Lente19:'</span><span class="p">,</span><span class="nx">S2_Gent_Lente19</span><span class="p">)</span>
 
 <span class="c1">//Clippen naar Grenzen Gent</span>
-<span class="kd">var</span> <span class="nx">Gent</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s1">&#39;projects/ee-teledetectie-2021/assets/P5-FeatureExtraction/Gent_Bounds&#39;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">Gent</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s1">'projects/ee-teledetectie-2021/assets/P5-FeatureExtraction/Gent_Bounds'</span><span class="p">)</span>
 <span class="kd">var</span> <span class="nx">S2_Gent_Lente19</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">clip</span><span class="p">(</span><span class="nx">Gent</span><span class="p">)</span>
 
 <span class="c1">//Visualisatieparameters (of handmatig instellen)</span>
@@ -1138,32 +551,32 @@ RED = reflectie in het rode gebied van het spectrum  </p>
   <span class="nx">gamma</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
   <span class="nx">min</span><span class="o">:</span> <span class="mf">275</span><span class="p">,</span>
   <span class="nx">max</span><span class="o">:</span> <span class="mf">2088</span><span class="p">,</span>
-  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B8&#39;</span><span class="p">,</span> <span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">],</span>
+  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">'B8'</span><span class="p">,</span> <span class="s1">'B4'</span><span class="p">,</span> <span class="s1">'B3'</span><span class="p">],</span>
   <span class="p">};</span>
 
 <span class="c1">//Toevoegen aan Map</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_Gent_Lente19</span><span class="p">,</span><span class="nx">S2_ValseKleuren</span><span class="p">,</span><span class="s1">&#39;Valse Kleuren lente 2019&#39;</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_Gent_Lente19</span><span class="p">,</span><span class="nx">S2_ValseKleuren</span><span class="p">,</span><span class="s1">'Valse Kleuren lente 2019'</span><span class="p">)</span>
 </code></pre></div>
 </details>
 <ul>
 <li>
 <p><strong> Stap 3 - Toevoegen van de NDVI: </strong> Een eerste methode om een NDVI aan te maken is via de ingebouwde <code>.normalizedDifference()</code> functie. Ga na welke Sentinel-2 banden je nodig hebt om de ndvi te berekenen. (Maak eventueel gebruik van de ‘Docs’-tab.)  </p>
-<div class="highlight"><pre><span></span><code><span class="c1">//2. Aanmaken NDVI via NormalDifference()-functie. Vul de &#39;?&#39; in</span>
-<span class="kd">var</span> <span class="nx">ndvi</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">normalizedDifference</span><span class="p">([</span><span class="s1">&#39;?&#39;</span><span class="p">,</span> <span class="s1">&#39;?&#39;</span><span class="p">]).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,{},</span><span class="s1">&#39;ndvi_lente_2019&#39;</span><span class="p">)</span> <span class="c1">//Zonder visualisatieparametes</span>
+<div class="highlight"><pre><span></span><code><span class="c1">//2. Aanmaken NDVI via NormalDifference()-functie. Vul de '?' in</span>
+<span class="kd">var</span> <span class="nx">ndvi</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">normalizedDifference</span><span class="p">([</span><span class="s1">'?'</span><span class="p">,</span> <span class="s1">'?'</span><span class="p">]).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">'NDVI'</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,{},</span><span class="s1">'ndvi_lente_2019'</span><span class="p">)</span> <span class="c1">//Zonder visualisatieparametes</span>
 </code></pre></div>
 <p><p align="center">
-<img src="Images/GEE_ndvi_noparams.JPG">  <br>
+<img src="Images/GEE_ndvi_noparams.JPG"/> <br/>
 </p> </p>
 </li>
 <li>
 <p>Een ndvi wordt meestal afgebeeld met een kleurenschema, zoals onderstaand voorbeeld:
    <div class="highlight"><pre><span></span><code><span class="c1">// Met visualisatie</span>
-<span class="kd">var</span> <span class="nx">ndviParams</span> <span class="o">=</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">palette</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">]};</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,</span> <span class="nx">ndviParams</span><span class="p">,</span> <span class="s1">&#39;ndvi_2019_vis&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ndviParams</span> <span class="o">=</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">1</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">palette</span><span class="o">:</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span><span class="s1">'yellow'</span><span class="p">,</span><span class="s1">'darkgreen'</span><span class="p">]};</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi</span><span class="p">,</span> <span class="nx">ndviParams</span><span class="p">,</span> <span class="s1">'ndvi_2019_vis'</span><span class="p">);</span>
 </code></pre></div></p>
 <p><p align="center">
-<img src="Images/GEE_ndvi_params.JPG">  <br>
+<img src="Images/GEE_ndvi_params.JPG"/> <br/>
 </p></p>
 </li>
 </ul>
@@ -1228,25 +641,25 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <p>De basisoperators maken gebruik van 2 inputs: ofwel 2 beelden, ofwel 1 beeld en 1 constante. De bewerkingen worden steeds per pixel en per band uitgevoerd. Voorbeeld van operatoren zijn  <code>add()</code>, <code>subtract()</code> en <code>divide()</code>. </p>
 <div class="highlight"><pre><span></span><code><span class="c1">//NDVI berekenen aan de hand van bandwerkingen met operatoren</span>
 <span class="c1">// Lange uitwerking: noodzakelijke banden eerst selecteren en onderbrengen in een nieuwe variabele</span>
-<span class="kd">var</span> <span class="nx">nir</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">ndvi2</span> <span class="o">=</span> <span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDVI&#39;</span><span class="p">);</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi2</span><span class="p">,</span> <span class="nx">ndviParams</span><span class="p">,</span> <span class="s1">&#39;ndvi via operatoren&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">nir</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'B8'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">red</span> <span class="o">=</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ndvi2</span> <span class="o">=</span> <span class="nx">nir</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">red</span><span class="p">).</span><span class="nx">divide</span><span class="p">(</span><span class="nx">nir</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">red</span><span class="p">)).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">'NDVI'</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ndvi2</span><span class="p">,</span> <span class="nx">ndviParams</span><span class="p">,</span> <span class="s1">'ndvi via operatoren'</span><span class="p">);</span>
 </code></pre></div>
 <p>Het resultaat is logischerwijs identiek als de voorgaande ndvi-berekening.</p>
 <h3 id="optie-2-bewerkingen-via-expressies">Optie 2 - Bewerkingen via expressies</h3>
 <p>Het spreekt voor zich dat bovenstaande methode voor complex wiskundige bewerkingen niet handig is. Voor dergelijke bewerkingen wordt aangeraden om gebruik te maken van <code>image.expression()</code>, gezien de inputvariabelen hier afzonderlijk worden aangegeven, waardoor de bewerking gemakkelijker wordt weergegeven en het coderen zo vereenvoudigd wordt. De expressie aanvaardt tevens ook constanten. Variabelen die binnen de expressie worden gebruikt, moeten steeds worden aangegeven, zoals in onderstaande NDVI-berekening;</p>
 <div class="highlight"><pre><span></span><code><span class="c1">//NDVI aan de hand van een expressie</span>
   <span class="kd">var</span> <span class="nx">ndvi3</span> <span class="o">=</span> <span class="nx">SS2_Gent_Lente19</span><span class="p">.</span><span class="nx">expression</span><span class="p">(</span>
-      <span class="s1">&#39;(NIR - RED)/(NIR + RED)&#39;</span><span class="p">,</span> <span class="p">{</span>
-        <span class="s1">&#39;NIR&#39;</span><span class="o">:</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;RED&#39;</span><span class="o">:</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">)</span>
+      <span class="s1">'(NIR - RED)/(NIR + RED)'</span><span class="p">,</span> <span class="p">{</span>
+        <span class="s1">'NIR'</span><span class="o">:</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'B8'</span><span class="p">),</span>
+        <span class="s1">'RED'</span><span class="o">:</span> <span class="nx">S2_Gent_Lente19</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'B4'</span><span class="p">)</span>
   <span class="p">});</span>
 </code></pre></div>
 <p>Ook hier is het resultaat hetzelfde als de vorige ndvi-berekeningen.</p>
 <details class="info" open="open"><summary>Gebruikte operators binnen expressies</summary><p>Onderstaande tabel geeft de binnen de expressies gehanteerde operators weer (bron: <a href="https://developers.google.com/earth-engine/guides/image_math">Earth Engine guide</a>)</p>
 <p><p align="center">
-<img src="Images/GEE_operators.JPG">  <br>
+<img src="Images/GEE_operators.JPG"/> <br/>
 </p></p>
 </details>
 <h2 id="andere-indices">Andere indices</h2>
@@ -1272,7 +685,7 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 . Gebruik onderstaande cloudmask-functie voor Sentinel-2:  </li>
 </ol>
 <p><div class="highlight"><pre><span></span><code>   <span class="kd">function</span> <span class="nx">maskS2clouds</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-     <span class="kd">var</span> <span class="nx">qa</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;QA60&#39;</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">qa</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'QA60'</span><span class="p">);</span>
 
      <span class="c1">// Bits 10 and 11 are clouds and cirrus, respectively.</span>
      <span class="kd">var</span> <span class="nx">cloudBitMask</span> <span class="o">=</span> <span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">10</span><span class="p">;</span>
@@ -1289,9 +702,9 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <ol>
 <li>
 <p>Maak aan de hand van de collectie 3 beelden aan met een <code>median()</code>-reducer, binnen volgende periodes:  </p>
-<p>A. Jan-Februari (Winter)<br />
- B. April-Mei (Lente)<br />
- C. Juli-Augustus (Zomer)  </p>
+<p>A. Jan-Februari (Winter)<br>
+ B. April-Mei (Lente)<br>
+ C. Juli-Augustus (Zomer)  </br></br></p>
 </li>
 <li>
 <p>Visualiseer voor elk seizoen een Normale Kleurencomposiet en een NDVI-beeld. Gebruik onderstaande visualisatieparameters bij het plotten:</p>
@@ -1301,14 +714,14 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <span class="kd">var</span> <span class="nx">NormaleKleuren</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
   <span class="nx">max</span><span class="o">:</span> <span class="mf">1500</span><span class="p">,</span>
-  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">],</span>
+  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">'B4'</span><span class="p">,</span> <span class="s1">'B3'</span><span class="p">,</span> <span class="s1">'B2'</span><span class="p">],</span>
 <span class="p">};</span>
 
 <span class="kd">var</span> <span class="nx">ndviParams</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
   <span class="nx">max</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
-  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;NDVI&#39;</span><span class="p">],</span>
-  <span class="nx">palette</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">]</span>
+  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">'NDVI'</span><span class="p">],</span>
+  <span class="nx">palette</span><span class="o">:</span> <span class="p">[</span><span class="s1">'red'</span><span class="p">,</span><span class="s1">'yellow'</span><span class="p">,</span><span class="s1">'darkgreen'</span><span class="p">]</span>
 <span class="p">};</span>
 </code></pre></div>
 <div class="admonition check">
@@ -1324,19 +737,19 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <span class="c1">// set position of panel</span>
 <span class="kd">var</span> <span class="nx">legend</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
   <span class="nx">style</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;bottom-left&#39;</span><span class="p">,</span>
-    <span class="nx">padding</span><span class="o">:</span> <span class="s1">&#39;8px 15px&#39;</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="s1">'bottom-left'</span><span class="p">,</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="s1">'8px 15px'</span>
   <span class="p">}</span>
 <span class="p">});</span>
 
 <span class="c1">// Create legend title</span>
 <span class="kd">var</span> <span class="nx">legendTitle</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">({</span>
-  <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;ndvi&#39;</span><span class="p">,</span>
+  <span class="nx">value</span><span class="o">:</span> <span class="s1">'ndvi'</span><span class="p">,</span>
   <span class="nx">style</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">fontWeight</span><span class="o">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span>
-    <span class="nx">fontSize</span><span class="o">:</span> <span class="s1">&#39;18px&#39;</span><span class="p">,</span>
-    <span class="nx">margin</span><span class="o">:</span> <span class="s1">&#39;0 0 4px 0&#39;</span><span class="p">,</span>
-    <span class="nx">padding</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span>
+    <span class="nx">fontWeight</span><span class="o">:</span> <span class="s1">'bold'</span><span class="p">,</span>
+    <span class="nx">fontSize</span><span class="o">:</span> <span class="s1">'18px'</span><span class="p">,</span>
+    <span class="nx">margin</span><span class="o">:</span> <span class="s1">'0 0 4px 0'</span><span class="p">,</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="s1">'0'</span>
     <span class="p">}</span>
 <span class="p">});</span>
 
@@ -1344,14 +757,14 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <span class="nx">legend</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">legendTitle</span><span class="p">);</span> 
 
 <span class="c1">// create the legend image</span>
-<span class="kd">var</span> <span class="nx">lon</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">pixelLonLat</span><span class="p">().</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">lon</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">pixelLonLat</span><span class="p">().</span><span class="nx">select</span><span class="p">(</span><span class="s1">'latitude'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">gradient</span> <span class="o">=</span> <span class="nx">lon</span><span class="p">.</span><span class="nx">multiply</span><span class="p">((</span><span class="nx">ndviParams</span><span class="p">.</span><span class="nx">max</span><span class="o">-</span><span class="nx">ndviParams</span><span class="p">.</span><span class="nx">min</span><span class="p">)</span><span class="o">/</span><span class="mf">100.0</span><span class="p">).</span><span class="nx">add</span><span class="p">(</span><span class="nx">ndviParams</span><span class="p">.</span><span class="nx">min</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">legendImage</span> <span class="o">=</span> <span class="nx">gradient</span><span class="p">.</span><span class="nx">visualize</span><span class="p">(</span><span class="nx">ndviParams</span><span class="p">);</span>
 
 <span class="c1">// create text on top of legend</span>
 <span class="kd">var</span> <span class="nx">panel</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
     <span class="nx">widgets</span><span class="o">:</span> <span class="p">[</span>
-      <span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="nx">ndviParams</span><span class="p">[</span><span class="s1">&#39;max&#39;</span><span class="p">])</span>
+      <span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="nx">ndviParams</span><span class="p">[</span><span class="s1">'max'</span><span class="p">])</span>
     <span class="p">],</span>
   <span class="p">});</span>
 
@@ -1360,8 +773,8 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <span class="c1">// create thumbnail from the image</span>
 <span class="kd">var</span> <span class="nx">thumbnail</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Thumbnail</span><span class="p">({</span>
   <span class="nx">image</span><span class="o">:</span> <span class="nx">legendImage</span><span class="p">,</span> 
-  <span class="nx">params</span><span class="o">:</span> <span class="p">{</span><span class="nx">bbox</span><span class="o">:</span><span class="s1">&#39;0,0,10,100&#39;</span><span class="p">,</span> <span class="nx">dimensions</span><span class="o">:</span><span class="s1">&#39;10x200&#39;</span><span class="p">},</span>  
-  <span class="nx">style</span><span class="o">:</span> <span class="p">{</span><span class="nx">padding</span><span class="o">:</span> <span class="s1">&#39;1px&#39;</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;bottom-center&#39;</span><span class="p">}</span>
+  <span class="nx">params</span><span class="o">:</span> <span class="p">{</span><span class="nx">bbox</span><span class="o">:</span><span class="s1">'0,0,10,100'</span><span class="p">,</span> <span class="nx">dimensions</span><span class="o">:</span><span class="s1">'10x200'</span><span class="p">},</span>  
+  <span class="nx">style</span><span class="o">:</span> <span class="p">{</span><span class="nx">padding</span><span class="o">:</span> <span class="s1">'1px'</span><span class="p">,</span> <span class="nx">position</span><span class="o">:</span> <span class="s1">'bottom-center'</span><span class="p">}</span>
 <span class="p">});</span>
 
 <span class="c1">// add the thumbnail to the legend</span>
@@ -1371,7 +784,7 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 <span class="c1">// create text on top of legend</span>
 <span class="kd">var</span> <span class="nx">panel</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Panel</span><span class="p">({</span>
     <span class="nx">widgets</span><span class="o">:</span> <span class="p">[</span>
-      <span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="nx">ndviParams</span><span class="p">[</span><span class="s1">&#39;min&#39;</span><span class="p">])</span>
+      <span class="nx">ui</span><span class="p">.</span><span class="nx">Label</span><span class="p">(</span><span class="nx">ndviParams</span><span class="p">[</span><span class="s1">'min'</span><span class="p">])</span>
     <span class="p">],</span>
   <span class="p">});</span>
 
@@ -1379,89 +792,67 @@ RED = reflectie in het rode gebied van het spectrum  </p>
 
 <span class="nx">Map</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">legend</span><span class="p">);</span>
 </code></pre></div>
-                
-              
-              
-                
-
-
-              
-            </article>
-          </div>
-        </div>
-        
-      </main>
-      
-        
+</article>
+</div>
+</div>
+</main>
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
+<div class="md-footer-nav">
+<nav aria-label="Footer" class="md-footer-nav__inner md-grid">
+<a class="md-footer-nav__link md-footer-nav__link--prev" href="P4-Intro.html" rel="prev">
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Vorige
+                </span>
+                Intro
+              </div>
+</div>
+</a>
+<a class="md-footer-nav__link md-footer-nav__link--next" href="P4-ImageStatistics.html" rel="next">
+<div class="md-footer-nav__title">
+<div class="md-ellipsis">
+<span class="md-footer-nav__direction">
+                  Volgende
+                </span>
+                Beeldstatistieken
+              </div>
+</div>
+<div class="md-footer-nav__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"></path></svg>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
         
-        <a href="P4-Intro.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Intro" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Vorige
-              </span>
-              Intro
-            </div>
-          </div>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
         </a>
-      
-      
-        
-        <a href="P4-ImageStatistics.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Beeldstatistieken" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Volgende
-              </span>
-              Beeldstatistieken
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        
-          Made with
-          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-            Material for MkDocs
-          </a>
-        
-        
-      </div>
-      
-    </div>
-  </div>
+ ... <a class="link--pdf-download" download href="..\pdf\document.pdf" title="PDF">download PDF</a></div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
-      
-        <script src="../javascripts/config.js"></script>
-      
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-    
-  </body>
+</div>
+<script src="../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+<script src="../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+<script>
+        app = initialize({
+          base: "..",
+          features: ['navigation.sections', 'navigation.tabs'],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+<script src="../javascripts/config.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
 </html>
