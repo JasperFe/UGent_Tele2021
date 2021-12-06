@@ -236,6 +236,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P6/P6-Timeseries.html" class="md-tabs__link">
+        P6 - Tijdseries
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -1005,6 +1021,54 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          P6 - Tijdseries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P6 - Tijdseries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          P6 - Tijdseries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P6/P6-Timeseries.html" class="md-nav__link">
+        Tijdserie-analyse
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1473,7 +1537,7 @@ Dit krijg je dus als je berekening de maximum-memorycapaciteit overschrijdt. Dit
 <h4 id="inlezen-van-de-testdataset">Inlezen van de Testdataset</h4>
 <p>In voorliggend voorbeeld maken we gebruik van een extra testdataset voor het opstellen van de error matrix. Gezien we geen optimalisatie van parameters gaan doorvoeren, maken we geen gebruik van validatiedata en wordt de volledige trainingscollectie ook trainingsdata.</p>
 <p>De gebruikte testdataset bestaat uit kleine polygonen met een diameter van 25m en representeren GPS-punten genomen op veldbezoek. De 25m-buffer rond de GPS-punten werd genomen om voldoende testpixels te weerhouden voor de accuracy assessment.</p>
-<p>Je kunt de shape-file hier downloaden: <a href="https://users.ugent.be/~jfeyen/P6/P6_testdata_poly.zip">P6_testdata_poly.zip</a></p>
+<p>Je kunt de shape-file hier downloaden: <a href="https://users.ugent.be/~jfeyen/P5/P5_testdata_poly.zip">P5_testdata_poly.zip</a></p>
 <p>Om deze toe te voegen aan Earth Engine, laad je deze op via de 'Asset'-tab. Daarna kun je het importeren als een <code>FeatureCollection</code> in je script. Noem dit 'Testdata_pol'. Bekijk ook even deze polygonen. Onder welke <em>property</em> zitten de klassen hier opgeslagen?</p>
 <p align="center">
   <img src="images/GEE_importAsset.jpg" width=300>  <br>

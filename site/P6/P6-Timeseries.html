@@ -14,7 +14,7 @@
     
     
       
-        <title>P7 Intro - (I002450) Teledetectie practica 2021</title>
+        <title>Tijdserie-analyse - (I002450) Teledetectie practica 2021</title>
       
     
     
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              P7 Intro
+              Tijdserie-analyse
             
           </span>
         </div>
@@ -229,6 +229,24 @@
     <li class="md-tabs__item">
       <a href="../P5/P5-intro.html" class="md-tabs__link">
         P5 - Beeldclassificatie
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="P6-Timeseries.html" class="md-tabs__link md-tabs__link--active">
+        P6 - Tijdseries
       </a>
     </li>
   
@@ -827,6 +845,149 @@
   
 
     
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          P6 - Tijdseries
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P6 - Tijdseries" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          P6 - Tijdseries
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tijdserie-analyse
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="P6-Timeseries.html" class="md-nav__link md-nav__link--active">
+        Tijdserie-analyse
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tijdserieplots-aanmaken-in-google-earth-engine" class="md-nav__link">
+    Tijdserieplots aanmaken in Google Earth Engine
+  </a>
+  
+    <nav class="md-nav" aria-label="Tijdserieplots aanmaken in Google Earth Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#de-normalized-difference-snow-index-ndsi" class="md-nav__link">
+    De Normalized Difference Snow Index (NDSI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht-ndsi-tijdseries" class="md-nav__link">
+    Opdracht: NDSI-tijdseries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    Charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-of-year-doy-plot" class="md-nav__link">
+    Day of Year (DOY) plot.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    Opdracht
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overige-voorbeelden" class="md-nav__link">
+    Overige voorbeelden
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedankt" class="md-nav__link">
+    Bedankt!
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -861,15 +1022,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#de-ndsi-index" class="md-nav__link">
-    De NDSI index
+  <a href="#de-normalized-difference-snow-index-ndsi" class="md-nav__link">
+    De Normalized Difference Snow Index (NDSI)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ndsi-tijdseries" class="md-nav__link">
-    NDSI-tijdseries
+  <a href="#opdracht-ndsi-tijdseries" class="md-nav__link">
+    Opdracht: NDSI-tijdseries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#charts" class="md-nav__link">
+    Charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#day-of-year-doy-plot" class="md-nav__link">
+    Day of Year (DOY) plot.
   </a>
   
 </li>
@@ -882,6 +1057,13 @@
         <li class="md-nav__item">
   <a href="#opdracht" class="md-nav__link">
     Opdracht
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overige-voorbeelden" class="md-nav__link">
+    Overige voorbeelden
   </a>
   
 </li>
@@ -906,70 +1088,46 @@
               
                 
                 
-                  <h1>P7 Intro</h1>
+                  <h1>Tijdserie-analyse</h1>
                 
-                <p>Tot nu toe zijn we enkel bezig geweest met.... FOREST COVER DENSITY ANALYSE (FCDA) OEFENING TOEVOEGEN</p>
-<p>Tijdserie analyse is een veel gebruikte operatie in Remote Sensing. Het draagt immers bij tot het modelleren van seizoenale patronen en het monitoren van landcover. Earth Engine is gezien het grote (historische) aanbod aan RS data een zeer geschikt medium om tijdseries te gaan analyseren.</p>
+                <p>Tijdserie analyse is een veel gebruikte operatie in Remote Sensing. Het draagt immers bij tot het modelleren van temporele (seizoenaal of lange termijn) patronen en het monitoren van landcover. Gezien het grote (historische) aanbod aan RS data is Google Earth Engine een zeer geschikt medium om tijdseries te gaan analyseren.</p>
 <h2 id="tijdserieplots-aanmaken-in-google-earth-engine">Tijdserieplots aanmaken in Google Earth Engine</h2>
-<h3 id="de-ndsi-index">De NDSI index</h3>
-<p>In onderstaand voorbeeldje bekijken we de aanwezigheid van sneeuw in Joensuu, Finland doorheen de afgelopen jaren. Hiervoor maken we gebruik van alweer een nieuwe index: de <strong>Normalized Difference Snow Index (NDSI)</strong>. Deze index wordt gebruikt om de aanwezigheid van sneeuw/ijs te benadrukken, ten opzichte van de andere landbekkingsklassen waaronder wolken. De NDSI maakt echter geen onderscheid tussen waterlichamen en sneeuw. (Meer info:)</p>
+<h3 id="de-normalized-difference-snow-index-ndsi">De Normalized Difference Snow Index (NDSI)</h3>
+<p align="center">
+<img src="images/NDSI_example.JPG">  <br>
+</p>
+
+<p>In onderstaand voorbeeldje bekijken we de aanwezigheid van sneeuw in de Alpen doorheen de afgelopen jaren. Hiervoor maken we gebruik van alweer een nieuwe index: de <strong>Normalized Difference Snow Index (NDSI)</strong>. Deze index wordt gebruikt om de aanwezigheid van sneeuw/ijs te accentueren, ten opzichte van de andere landbekkingsklassen waaronder wolken. De NDSI maakt echter geen onderscheid tussen waterlichamen en sneeuw. </p>
 <p>De NDSI wordt berekend als: </p>
 <div class="arithmatex">\[NDSI = { GREEN - SWIR \over GREEN + SWIR}.\]</div>
-<h3 id="ndsi-tijdseries">NDSI-tijdseries</h3>
-<p>Als voordeel nemen we een punt in de Zwitsere Alpen. Zet ergens een willekeurig punt in de bergen.</p>
-<p>Vervolgens initieren we een Sentinel-2 collectie, maar ditmaal gebruik makend van de TOA-collectie (dus niet atmosferisch gecorrigeerd). De achterliggende reden is dat deze collectie zich langer uitstrekt binnen Earth Engine, terwijl de Sentinel-2 'Surfance Reflectance' pas sinds 2019 wereldwijd systematisch wordt toegevoegd.</p>
-<p>In volgende code wordt:  </p>
+<h3 id="opdracht-ndsi-tijdseries">Opdracht: NDSI-tijdseries</h3>
+<p>Zet ergens een willekeurig punt in de Alpen.</p>
+<p>Vervolgens initieren we een Sentinel-2 collectie, maar ditmaal gebruik makend van de TOA-collectie (dus de niet atmosferisch gecorrigeerde Sentinel-2 collectie). De reden dat we deze collectie hier gaan gebruiken, is omdat het een groter temporeel bereik heeft binnen Earth Engine (2015 - ...), terwijl de Sentinel-2 'Surfance Reflectance' pas vanaf 2019 wereldwijd systematisch wordt toegevoegd.</p>
+<p>In volgende wordt:  </p>
 <ul>
 <li>De NDSI berekend en toegevoegd over de beeldcollectie</li>
 <li>De beeldcollectie wordt gefilterd op basis van de ROI.</li>
 <li>Het beeld met minste wolkbedekking gevisualiseerd</li>
 <li>De NDSI voor dit beeld gevisualiseerd.</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="c1">//CloudMask +  NDSI berekenen</span>
-<span class="kd">function</span> <span class="nx">maskS2clouds</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">qa</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;QA60&#39;</span><span class="p">);</span>
-  <span class="kd">var</span> <span class="nx">cloudBitMask</span> <span class="o">=</span> <span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">10</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">cirrusBitMask</span> <span class="o">=</span> <span class="mf">1</span> <span class="o">&lt;&lt;</span> <span class="mf">11</span><span class="p">;</span>
-  <span class="kd">var</span> <span class="nx">mask</span> <span class="o">=</span> <span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="nx">cloudBitMask</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">0</span><span class="p">)</span>
-      <span class="p">.</span><span class="nx">and</span><span class="p">(</span><span class="nx">qa</span><span class="p">.</span><span class="nx">bitwiseAnd</span><span class="p">(</span><span class="nx">cirrusBitMask</span><span class="p">).</span><span class="nx">eq</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span>
-  <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">mask</span><span class="p">);</span>
-<span class="p">}</span>
+<details class="check"><summary>Scriptje</summary><p><a href="https://code.earthengine.google.com/735391c2fec3a4cb3d847d0714bdb34c">code</a> </p>
+</details>
+<h3 id="charts">Charts</h3>
+<p>Naast de capaciteit voor beeldverwerking en visualisatie is Google Earth Engine ook een goed platform voor het aanmaken van enkele  standaard-grafieken: pie charts, bar charts, column charts, line charts, ...</p>
+<p>In dit voorbeeld maken we een lijnplot (line chart) aan voor de NDSI. Aangezien we een de NDSI-waarde over het volledige bereik van de <code>Imagecollection</code> willen plotten voor het geplaatste punt, maken we gebruik van een <strong>ui.Chart.image.series</strong>.</p>
+<p align="center">
+<img src="images/Chartseries.JPG">  <br>
+<em> De Chart.image.series-functie, met de voornaamste functie-parameters. </em>
+</p>
 
-<span class="c1">// Indicesberekenen</span>
-<span class="kd">var</span> <span class="nx">addNDSI</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
-   <span class="kd">var</span> <span class="nx">ndsi</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">normalizedDifference</span><span class="p">([</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B11&#39;</span><span class="p">]).</span><span class="nx">rename</span><span class="p">(</span><span class="s1">&#39;NDSI&#39;</span><span class="p">);</span>
-   <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">ndsi</span><span class="p">);</span>
-<span class="p">};</span>
-
-
-<span class="c1">//Satellietdata klaarzetten</span>
-<span class="kd">var</span> <span class="nx">S2</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S2&#39;</span><span class="p">)</span> <span class="c1">//Gebruik van TOA, gezien groter temporele bereik</span>
-                  <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span>
-                  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">maskS2clouds</span><span class="p">)</span>
-                  <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">addNDSI</span><span class="p">);</span>
-
-<span class="kd">var</span> <span class="nx">visParams</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">],</span>
-  <span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
-  <span class="nx">max</span><span class="o">:</span> <span class="mf">3000</span><span class="p">,</span>
-  <span class="nx">gamma</span><span class="o">:</span> <span class="mf">1.4</span><span class="p">,</span>
-<span class="p">};</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">ROI</span><span class="p">,</span><span class="mf">9</span><span class="p">);</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">&#39;CLOUDY_PIXEL_PERCENTAGE&#39;</span><span class="p">).</span><span class="nx">first</span><span class="p">(),</span> <span class="nx">visParams</span><span class="p">);</span>
-
-<span class="c1">//NDSI: geschikt voor onderscheid sneeuw, maar niet voor onderscheid met water</span>
-<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2</span><span class="p">.</span><span class="nx">sort</span><span class="p">(</span><span class="s1">&#39;CLOUDY_PIXEL_PERCENTAGE&#39;</span><span class="p">).</span><span class="nx">first</span><span class="p">().</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;NDSI&#39;</span><span class="p">),</span><span class="nx">NDSI_params</span><span class="p">,</span><span class="s1">&#39;NDSI&#39;</span><span class="p">)</span>
+<p>Ingevuld met de noodzakelijke parameters ziet deze functie eruit als volgt. Zoals andere zaken in Earth Engine, wordt de Chart eerst als een variabele aangemaakt.</p>
+<div class="highlight"><pre><span></span><code><span class="err">/ Create and display a time series chart</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Time series of NDSI at a random point in the Alpes&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Chart</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Chart</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">series</span><span class="p">(</span><span class="nx">S2</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;NDSI&#39;</span><span class="p">),</span> <span class="nx">ROI</span><span class="p">,</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mean</span><span class="p">(),</span> <span class="mf">100</span><span class="p">);</span>
 </code></pre></div>
-<p>Vervolgens maken we een <em>Chart</em> aan van de NDSI, over de hele collectie:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Create and display a time series chart</span>
-<span class="kd">var</span> <span class="nx">fontS</span> <span class="o">=</span> <span class="mf">18</span><span class="p">;</span>
-
-
-<span class="kd">var</span> <span class="nx">Chart_NDSI</span> <span class="o">=</span> <span class="nx">ui</span><span class="p">.</span><span class="nx">Chart</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">series</span><span class="p">(</span><span class="nx">S2</span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="s1">&#39;NDSI&#39;</span><span class="p">]),</span><span class="nx">ROI</span><span class="p">,</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mean</span><span class="p">(),</span><span class="mf">100</span><span class="p">);</span>
-
-<span class="nx">print</span><span class="p">(</span><span class="nx">Chart_NDSI</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
-  <span class="nx">fontSize</span><span class="o">:</span> <span class="nx">fontS</span><span class="p">,</span>
-  <span class="nx">hAxis</span><span class="o">:</span> <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Time (-)&#39;</span><span class="p">},</span>
+<p>De layout van een Chart nog worden aangepast met de <code>setOptions()</code>-functie. Met de parameters <code>hAxis</code> &amp; <code>vAxis</code> kun je een titel toekennen aan de assen.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">print</span><span class="p">(</span><span class="nx">Chart</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
+  <span class="nx">hAxis</span><span class="o">:</span> <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Time (-)&#39;</span><span class="p">},</span>   <span class="c1">//hAxis is een functie op zich</span>
   <span class="nx">vAxis</span><span class="o">:</span> <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Index mean (-)&#39;</span><span class="p">},</span>
   <span class="nx">lineWidth</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
   <span class="nx">pointSize</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
@@ -977,10 +1135,10 @@
   <span class="nx">legend</span><span class="o">:</span> <span class="p">{</span><span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;upper right&#39;</span><span class="p">}</span>
 <span class="p">}));</span>
 </code></pre></div>
-<p>Een andere visualisatiemogelijkheid is om de NDSI per jaar te plotten als 'Day of Year' (DOY):</p>
+<h3 id="day-of-year-doy-plot">Day of Year (DOY) plot.</h3>
+<p>Een andere visualisatiemogelijkheid is om de NDSI per jaar te plotten als 'Day of Year' (DOY)? In plaats van een doorlopende lijnplot, wordt hierbij de NDSI-waarden binnen elkar jaar als een afzonderlijke lijn geplot. Dit is m.a.w. bruikbaar om verschillende jaren te vergelijken.</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Create and display a DOY time series chart</span>
 <span class="nx">print</span><span class="p">(</span><span class="nx">ui</span><span class="p">.</span><span class="nx">Chart</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">doySeriesByYear</span><span class="p">(</span><span class="nx">S2</span><span class="p">,</span> <span class="s1">&#39;NDSI&#39;</span><span class="p">,</span> <span class="nx">ROI</span><span class="p">,</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mean</span><span class="p">(),</span> <span class="mf">10</span><span class="p">).</span><span class="nx">setOptions</span><span class="p">({</span>
-  <span class="nx">fontSize</span><span class="o">:</span> <span class="nx">fontS</span><span class="p">,</span>
   <span class="nx">hAxis</span><span class="o">:</span> <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;DOY (-)&#39;</span><span class="p">},</span>
   <span class="nx">vAxis</span><span class="o">:</span> <span class="p">{</span><span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;NDSI (-)&#39;</span><span class="p">},</span>
   <span class="nx">lineWidth</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
@@ -990,18 +1148,44 @@
 <span class="p">}));</span>
 </code></pre></div>
 <h2 id="opdracht">Opdracht</h2>
-<p>Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Sentinel-2 beelden:
- * Verdeel onder je break-out room volgende <a href="https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e">locaties</a>:
-    - Greenland<br />
-    - Amazon<br />
-    - Botswana (Okavango delta) 
-    - Portugal<br />
-    - Namibia (Etosha pan)<br />
-    - Indonesia<br />
-    - Slovenia</p>
+<p>Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Sentinel-2 beelden:  </p>
 <ul>
-<li>Plot verschillende indices: NDVI, MNDWI en NDSI  </li>
+<li>
+<p>Verdeel onder je break-out room de volgende <a href="https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e">locaties</a>:  </p>
+<ul>
+<li>Greenland</li>
+<li>Amazon</li>
+<li>Botswana</li>
+<li>Portugal</li>
+<li>Namibia</li>
+<li>Indonesia</li>
+<li>Slovenia</li>
+</ul>
+</li>
+<li>
+<p>Plot verschillende indices: NDVI, MNDWI en NDSI  </p>
+</li>
 <li>Deel de resultaten met elkaar bespreek de variatie binnen doorheen de verschillende jaren. </li>
+</ul>
+<details class="check"><summary>Oplossingen</summary><ul>
+<li><a href="https://code.earthengine.google.com/51441bccccdee2f9f6c73f7d02f6c48f">Greenland</a>  </li>
+<li><a href="https://code.earthengine.google.com/dd524b73865d4300322753dfab15ba0b">Amazon</a>  </li>
+<li><a href="https://code.earthengine.google.com/551915a0408c6b96178a767a16afa9d2">Botswana (Okavango delta)</a> </li>
+<li><a href="https://code.earthengine.google.com/6e4eaeedeab338a498ff637026189e76">Portugal</a>  </li>
+<li><a href="https://code.earthengine.google.com/75729b5e683a7d08e2588c648545bb4f">Namibia (Etosha pan)</a>  </li>
+<li><a href="https://code.earthengine.google.com/887bbf279fd7a6e5b074712e4a36dc1f">Indonesia</a>  </li>
+<li><a href="https://code.earthengine.google.com/b73f08ba7f58752a336a8d5faa7e9b1d">Slovenia</a></li>
+</ul>
+</details>
+<h2 id="overige-voorbeelden">Overige voorbeelden</h2>
+<ul>
+<li>
+<p>NDWI tijdseries van het Titicaca meer (één polygoon): <a href="https://code.earthengine.google.com/c68262aa235a78f60e898099601863a1">https://code.earthengine.google.com/c68262aa235a78f60e898099601863a1</a></p>
+</li>
+<li>
+<p>Temperatuur tijdseries over verschillende punten wereldwijd:
+<a href="https://code.earthengine.google.com/470d63bbdc73a3800804c7dca9811ba3">https://code.earthengine.google.com/470d63bbdc73a3800804c7dca9811ba3</a></p>
+</li>
 </ul>
 <h2 id="bedankt">Bedankt!</h2>
 <p>Bedankt aan Lisa Landuyt voor de input van deze scriptjes.</p>
@@ -1020,6 +1204,26 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../P5/P5-Oefeningen.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Oefeningen" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              Oefeningen
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

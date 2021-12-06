@@ -1,4 +1,4 @@
-# Practicum 6: Beeldclassificatie
+# Practicum 5: Beeldclassificatie
 
 ## Doelstelling
 
