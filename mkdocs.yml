@@ -65,34 +65,34 @@ markdown_extensions:
 
 plugins:
   - search
-#  - with-pdf:
-#        author: ir. Jasper Feyen & prof. Frieke Vancoillie
-#        copyright: Remote Sensing/Spatial Analysis lab, Ugent (REMOSA)
-#        cover: false
-#        back_cover: true
-#        cover_title: Teledetectie 2021
-#        cover_subtitle: Practicals
+  - with-pdf:
+        author: ir. Jasper Feyen & prof. Frieke Vancoillie
+        copyright: Remote Sensing/Spatial Analysis lab, Ugent (REMOSA)
+        cover: false
+        back_cover: true
+        cover_title: Teledetectie 2021
+        cover_subtitle: Practicals
         #custom_template_path: TEMPLATES PATH
         #toc_title: Ihoud
-#        heading_shift: true
-#        toc_level: 2
-#        ordered_chapter_level: 2
+        heading_shift: true
+        toc_level: 2
+        ordered_chapter_level: 2
         #excludes_children:
         #    - 'release-notes/:upgrading'
         #    - 'release-notes/:changelog'
-#        exclude_pages:
-#            - 'index.md'
-#            - 'Extra_info.md'
-#            - 'Afdrukbare_pdfs.md'
+        exclude_pages:
+            - 'index.md'
+            - 'Extra_info.md'
+            - 'Afdrukbare_pdfs.md'
         #convert_iframe:
         #    - src: IFRAME SRC
         #      img: POSTER IMAGE URL
         #      text: ALTERNATE TEXT
         #    - src: ...
-#        two_columns_level: 3
-#        render_js: true
-#        headless_chrome_path: C:\Program Files\Google\Chrome\Application\chrome.exe
-#        output_path: C:\Users\jaspe\Documents\Ugent\Onderwijs\Teledetectie\Tele_Practicalsd\document.pdf
+        two_columns_level: 3
+        render_js: true
+        headless_chrome_path: C:\Program Files\Google\Chrome\Application\chrome.exe
+        output_path: C:\Users\jaspe\Documents\Ugent\Onderwijs\Teledetectie\Tele_Practicalsd\document.pdf
 #        enabled_if_env: ENABLE_PDF_EXPORT
         #debug_html: true
         #show_anchors: true
