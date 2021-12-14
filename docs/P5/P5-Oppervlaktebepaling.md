@@ -38,7 +38,7 @@ var area_Mangrove = areaImage.reduceRegion({
   - **Stap 4** - Het resultaat is een dictionary, waarbij de enige 'waarde' de oppervlakte is (check dit door het resultaar naar de Console te prunten).Print nu de oppervlakte naar de console. Deze is momenteel uitgedrukt in m<sup>2</sup>
 
 ```javascript
-var MangroveAreaHa = ee.Number(area.get('classification')).divide(1e4).round()
+var MangroveAreaHa = ee.Number(area_Mangrove.get('classification')).divide(1e4).round()
 print('Oppervlakte Mangrove: ', MangroveAreaHa)
 
 ```

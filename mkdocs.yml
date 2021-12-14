@@ -37,6 +37,9 @@ nav:
       - Oefeningen: P5/P5-Oefeningen.md
     - P6 - Tijdseries:
       - Tijdserie-analyse: P6/P6-Timeseries.md
+    - Oefeningen:
+      - Oefening 1 - Overstromingen Roermond: Oefeningen/Oef1_Roermond.md
+      - Oefening 2 - Het Zwarte Woud: Oefeningen/Oef2_Fritz.md
 
 
 theme:

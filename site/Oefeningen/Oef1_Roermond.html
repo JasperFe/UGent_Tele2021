@@ -14,7 +14,7 @@
     
     
       
-        <title>P4 Colormanipulation - (I002450) Teledetectie practica 2021</title>
+        <title>Oefening 1 - Overstromingen Roermond - (I002450) Teledetectie practica 2021</title>
       
     
     
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              P4 Colormanipulation
+              Oefening 1 - Overstromingen Roermond
             
           </span>
         </div>
@@ -206,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="P4-Intro.html" class="md-tabs__link">
+      <a href="../P4/P4-Intro.html" class="md-tabs__link">
         P4 - Feature Extraction
       </a>
     </li>
@@ -248,13 +248,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../Oefeningen/Oef1_Roermond.html" class="md-tabs__link">
+      <a href="Oef1_Roermond.html" class="md-tabs__link md-tabs__link--active">
         Oefeningen
       </a>
     </li>
@@ -624,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="P4-Intro.html" class="md-nav__link">
+      <a href="../P4/P4-Intro.html" class="md-nav__link">
         Intro
       </a>
     </li>
@@ -638,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="P4-Spectral_indices.html" class="md-nav__link">
+      <a href="../P4/P4-Spectral_indices.html" class="md-nav__link">
         Spectrale indices
       </a>
     </li>
@@ -652,7 +654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="P4-ImageStatistics.html" class="md-nav__link">
+      <a href="../P4/P4-ImageStatistics.html" class="md-nav__link">
         Beeldstatistieken
       </a>
     </li>
@@ -666,7 +668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="P4-Texture.html" class="md-nav__link">
+      <a href="../P4/P4-Texture.html" class="md-nav__link">
         Textuuranalyse
       </a>
     </li>
@@ -680,7 +682,7 @@
   
   
     <li class="md-nav__item">
-      <a href="P4-PCA.html" class="md-nav__link">
+      <a href="../P4/P4-PCA.html" class="md-nav__link">
         Principale componenten analyse
       </a>
     </li>
@@ -694,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="P4-Oefeningen.html" class="md-nav__link">
+      <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
         Oefeningen
       </a>
     </li>
@@ -908,12 +910,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
       
@@ -934,11 +938,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../Oefeningen/Oef1_Roermond.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="Oef1_Roermond.html" class="md-nav__link md-nav__link--active">
         Oefening 1 - Overstromingen Roermond
       </a>
+      
     </li>
   
 
@@ -950,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Oefeningen/Oef2_Fritz.html" class="md-nav__link">
+      <a href="Oef2_Fritz.html" class="md-nav__link">
         Oefening 2 - Het Zwarte Woud
       </a>
     </li>
@@ -977,9 +989,34 @@
               
                 
                 
-                  <h1>P4 Colormanipulation</h1>
+                  <h1>Oefening 1 - Overstromingen Roermond</h1>
                 
-                
+                <p><strong>Gegeven</strong>: startscript met ROI met uit te voeren stappen
+Link: <a href="https://code.earthengine.google.com/7e9d4703332801ad0fee89d546cf1863">https://code.earthengine.google.com/7e9d4703332801ad0fee89d546cf1863</a></p>
+<p><strong>Gevraagd</strong>: 
+Visualisatie van het overstromingsgebied op 18/07/2021 (overstromingen) in vergelijking met toestand op 16/06/2021 (voor overstromingen)</p>
+<p><strong>Tips:</strong>  </p>
+<ul>
+<li>Maak gebruik van de MNDWI-index voor een eenvoudig onderscheid tussen water en land.
+    MNDWI formule (<a href="tandfonline.com/doi/abs/10.1080/01431160600589179">Xu, 2005</a>):  </li>
+</ul>
+<div class="arithmatex">\[MNDWI = { GREEN - SWIR 1 \over GREEN + SWIR 1}.\]</div>
+<ul>
+<li>
+<p>Zoek naar de geschikte MNDWI-waarden om water af te scheiden van de andere gebieden (= "<em>tresholding</em>")</p>
+</li>
+<li>
+<p>Maak gebruik van de <code>.updateMask()</code>-functie</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Over <code>.updateMask</code></p>
+<p>De updateMask-functie maskeert een beeld, waar het 'mask'-beeld gelijk is aan 0 (m.a.w. gebruik je een binair beeld als 'mask', dan houdt je alle rasterwaarden over die overlappen met de '1'-waarde van je mask.</p>
+<p>Bijvoorbeeld: 
+<p align="center">
+<img src="images/UpdateMask_vb.JPG">  <br>
+</p> </p>
+</div>
                 
               
               
@@ -995,6 +1032,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../P6/P6-Timeseries.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Tijdserie-analyse" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              Tijdserie-analyse
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Oef2_Fritz.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Oefening 2 - Het Zwarte Woud" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Oefening 2 - Het Zwarte Woud
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

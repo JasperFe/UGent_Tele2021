@@ -252,6 +252,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Oefeningen/Oef1_Roermond.html" class="md-tabs__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -953,6 +969,68 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Oefeningen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Oefeningen" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Oefeningen
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef1_Roermond.html" class="md-nav__link">
+        Oefening 1 - Overstromingen Roermond
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef2_Fritz.html" class="md-nav__link">
+        Oefening 2 - Het Zwarte Woud
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1061,7 +1139,7 @@
 <ul>
 <li><strong>Stap 4</strong> - Het resultaat is een dictionary, waarbij de enige 'waarde' de oppervlakte is (check dit door het resultaar naar de Console te prunten).Print nu de oppervlakte naar de console. Deze is momenteel uitgedrukt in m<sup>2</sup></li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">MangroveAreaHa</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">Number</span><span class="p">(</span><span class="nx">area</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;classification&#39;</span><span class="p">)).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">1e4</span><span class="p">).</span><span class="nx">round</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">MangroveAreaHa</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">Number</span><span class="p">(</span><span class="nx">area_Mangrove</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;classification&#39;</span><span class="p">)).</span><span class="nx">divide</span><span class="p">(</span><span class="mf">1e4</span><span class="p">).</span><span class="nx">round</span><span class="p">()</span>
 <span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Oppervlakte Mangrove: &#39;</span><span class="p">,</span> <span class="nx">MangroveAreaHa</span><span class="p">)</span>
 </code></pre></div>
 <h3 id="opdracht">Opdracht</h3>

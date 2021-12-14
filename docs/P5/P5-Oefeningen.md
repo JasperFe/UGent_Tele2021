@@ -22,7 +22,7 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 * Visualiseer je resultaat naar eigen keuze. Evalueer het visueel: is je classificatie geslaagd? Welke classifier lijkt beter? 
 
-* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset:  [P6_Oef1_validation.zip](https://users.ugent.be/~jfeyen/P6/P6_Oef1_validation.zip). Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:
+* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset:  [P5_Oef1_validation.zip](https://users.ugent.be/~jfeyen/P5/P5_Oef1_validation.zip). Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:
 
 <center>
 
@@ -80,12 +80,12 @@ var S2 = ee.Image('COPERNICUS/S2_SR/20190810T125311_20190810T125306_T27VWL').cli
 De Trainingfiles werden reeds ondergebracht in een ```FeatureCollection``` en kunnen via deze link worden ingelezen:
 
 ```javascript
-var traindata = ee.FeatureCollection("users/jasperfeyen/TELEDETECTIE2020/P6_oef2_training");
+var traindata = ee.FeatureCollection("projects/ee-teledetectie-2021/assets/P5-Classification/P5_oef2_training");
 ```
 
 * **Referentie data**: tijdens een veldcampagne in 2019 werd het gebied rond de vulkaan intensief bemonsterd. Honderden pixels werden op het terrein bezocht en de landbedekking werd geregistreerd.  
 
-Je kunt de shape-file hier downloaden: [P6_oef2_val.zip](https://users.ugent.be/~jfeyen/P6/P6_oef2_val.zip)
+Je kunt de shape-file hier downloaden: [P5_oef2_val.zip](https://users.ugent.be/~jfeyen/P5/P5_oef2_val.zip)
 
 ### Gevraagd
 Classificeer het 2019 beeld met behulp van 2 supervised classifiers naar keuze. Voor de classificatie transformeer je de data, zodat je slechts 3 getransformeerde banden overhoudt die de meeste informatie bevatten.

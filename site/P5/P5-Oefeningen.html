@@ -252,6 +252,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Oefeningen/Oef1_Roermond.html" class="md-tabs__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -980,6 +996,68 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Oefeningen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Oefeningen" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Oefeningen
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef1_Roermond.html" class="md-nav__link">
+        Oefening 1 - Overstromingen Roermond
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef2_Fritz.html" class="md-nav__link">
+        Oefening 2 - Het Zwarte Woud
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1099,7 +1177,7 @@
 <p>Visualiseer je resultaat naar eigen keuze. Evalueer het visueel: is je classificatie geslaagd? Welke classifier lijkt beter? </p>
 </li>
 <li>
-<p>Bereken de <em>Overall Accuracy</em> van je classificatie. Maak gebruik van deze validatieset:  <a href="https://users.ugent.be/~jfeyen/P6/P6_Oef1_validation.zip">P6_Oef1_validation.zip</a>. Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:</p>
+<p>Bereken de <em>Overall Accuracy</em> van je classificatie. Maak gebruik van deze validatieset:  <a href="https://users.ugent.be/~jfeyen/P5/P5_Oef1_validation.zip">P5_Oef1_validation.zip</a>. Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:</p>
 </li>
 </ul>
 <p><center></p>
@@ -1168,12 +1246,12 @@ Daarbij werden de testpunten ook gehaald uit een bestaande landcover classificat
 <li>Wolken  </li>
 </ul>
 <p>De Trainingfiles werden reeds ondergebracht in een <code>FeatureCollection</code> en kunnen via deze link worden ingelezen:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">traindata</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;users/jasperfeyen/TELEDETECTIE2020/P6_oef2_training&quot;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">traindata</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">FeatureCollection</span><span class="p">(</span><span class="s2">&quot;projects/ee-teledetectie-2021/assets/P5-Classification/P5_oef2_training&quot;</span><span class="p">);</span>
 </code></pre></div>
 <ul>
 <li><strong>Referentie data</strong>: tijdens een veldcampagne in 2019 werd het gebied rond de vulkaan intensief bemonsterd. Honderden pixels werden op het terrein bezocht en de landbedekking werd geregistreerd.  </li>
 </ul>
-<p>Je kunt de shape-file hier downloaden: <a href="https://users.ugent.be/~jfeyen/P6/P6_oef2_val.zip">P6_oef2_val.zip</a></p>
+<p>Je kunt de shape-file hier downloaden: <a href="https://users.ugent.be/~jfeyen/P5/P5_oef2_val.zip">P5_oef2_val.zip</a></p>
 <h3 id="gevraagd">Gevraagd</h3>
 <p>Classificeer het 2019 beeld met behulp van 2 supervised classifiers naar keuze. Voor de classificatie transformeer je de data, zodat je slechts 3 getransformeerde banden overhoudt die de meeste informatie bevatten.</p>
 <details class="check"><summary>Oplossing</summary><p>Via volgend script: <a href="https://code.earthengine.google.com/38fd0ac0f35c8a4175afb7273d8eae4b">https://code.earthengine.google.com/38fd0ac0f35c8a4175afb7273d8eae4b</a></p>
