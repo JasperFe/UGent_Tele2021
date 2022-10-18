@@ -6,16 +6,16 @@
 
 ## Over deze cursus
 
-Welkom bij de cursussite voor de practica van Teledetectie 2021. Deze cursus is ontworpen om studenten te basis aan te leren voor het verkrijgen, voorverwerken, analyseren en exporteren van remote sensing data.
+Welkom bij de cursussite voor de practica van Teledetectie 2022. Deze cursus is ontworpen om studenten te basis aan te leren voor het verkrijgen, voorverwerken, analyseren en exporteren van remote sensing data.
 
 Volgende topics komen doorheen de 5 practica's aan bod:  
 
-- **Practicum 1**: Beeldinterpretatie (zie Ufora)
-- **Practicum 2**: Downloaden en voorverwerking van een enkel Sentinel-2 beeld in SNAP  
-- **Practicum 3**: Toegang en leren werken met Google Earth Engine. Basis beeldvisualisatie en  
-- **Practicum 4**: *Feature* extractie in Google Earth Engine
-- **Practicum 5**: Beeldclassificatie
-- **Practicum 6**: Tijdserieanalyse
+- **Practicum 1**: Downloaden en beeldinterpretatie
+- **Practicum 2**: Intro Google Earth Engine  
+- **Practicum 3**: *Feature* extractie  
+- **Practicum 4**: Beeldclassificatie
+- **Practicum 5**: Tijdserieanalyse
+- **Practicum 6**: Intro tot Synthetic Apperture Radar (SAR)
 
 Deze cursussite laat toe om snel stukken scripts te kopiëren, om zo vlotte gang van zaken mogelijk te maken. In een 'tutorial' leer je bepaalde functionaliteit kennen door het copy-pasten van de voorbeeldscripts. In de hierop volgende oefeningen zul je zelf de gebruikte tools moeten toepassen.
 

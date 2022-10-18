@@ -2,7 +2,7 @@ Fritz, een Duitse student Fernerkundung  aan de universiteit van Freiburg, is be
 
 ### Gegeven 
 
-  * Een startscript: https://code.earthengine.google.com/7a184f3697db1574544bafd1b73e772e
+  * Een startscript: [https://code.earthengine.google.com/7a184f3697db1574544bafd1b73e772e](https://code.earthengine.google.com/7a184f3697db1574544bafd1b73e772e)
      - Met 4 polygonen met onbekende landbekkingsklassen (genummerd op property class).
      -	Met afbakening van het studiegebied (ROI)
 
@@ -28,3 +28,13 @@ Fritz wenst een Valse Kleurencomposiet van zijn studiegebied, waarbij rekening w
 
 **Vraag 2.2**:  
 Ga na hoe je de 4 klassen spectraal van elkaar kan onderscheiden en illustreer dit a.d.h.v een grafiek. Verklaar. Kun je de 4 klassen correct toewijzen? Maak enkel gebruik van de noodzakelijke banden.
+
+
+### Tip: centrale golflengtes Landsat 8
+<p align="center">
+<img src="images/Landsat8_bands.jpg" width=500>  <br>
+</p>
+
+
+??? check "Oplossing"
+    Link: [https://code.earthengine.google.com/3ad5b5e87ebbbfd859d103ab60fc4d2f](https://code.earthengine.google.com/3ad5b5e87ebbbfd859d103ab60fc4d2f)

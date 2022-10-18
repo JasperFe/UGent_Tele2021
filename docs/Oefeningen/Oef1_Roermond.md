@@ -22,3 +22,6 @@ $$MNDWI = { GREEN - SWIR 1 \over GREEN + SWIR 1}.$$
     <p align="center">
     <img src="images/UpdateMask_vb.JPG">  <br>
     </p> 
+
+??? check "Oplossing"
+    Link: [https://code.earthengine.google.com/5eee98814a3dbe48f9a0da6312179e91](https://code.earthengine.google.com/5eee98814a3dbe48f9a0da6312179e91)

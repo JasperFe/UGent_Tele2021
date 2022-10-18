@@ -1,45 +1,22 @@
-site_name: (I002450) Teledetectie practica 2021
+site_name: (I002450) Teledetectie practica 2022
 nav:
     - Home: 
       - index.md
     #  - Extra_info.md
     #  - Afdrukbare_pdfs.md
-    - P2 - Beeldvoorbewerking: 
-      - Introduction: P2/P2-intro.md
-      - Sentinel-2 intro and download: P2/P2-Sentinel2.md
-      - Introduction to SNAP: P2/P2-Snap-intro.md
-      - RGB colour composites: P2/P2-colour-composites.md
-      - Image preprocessing in SNAP: P2/P2-image-preprocessing.md
-      - RGB colour composites 2: P2/P2-colour-composites-ctd.md
-    - P3- Intro tot Google Earth Engine:
-      - Doel van het practicum: P3/P3-Goals.md
-      - EarthEngine data catalog: P3/P3-DataCatalog.md
-      - Introductie tot Earth Engine: P3/P3-Intro.md
-      - Satellietdata oproepen, filteren en visualiseren: P3/P3-ImageVisualization.md
-      - Reducing ImageCollections: P3/P3-Reducing.md
-      - Cloud masking: P3/P3-Cloud_masking.md
-      - (Extra) Oefeningen: P3/P3-Oefeningen.md
-    - P4 - Feature Extraction:
-      - Intro: P4/P4-Intro.md
-      - Spectrale indices: P4/P4-Spectral_indices.md
-      - Beeldstatistieken: P4/P4-ImageStatistics.md
-      - Textuuranalyse: P4/P4-Texture.md
-      - Principale componenten analyse: P4/P4-PCA.md
-      - Oefeningen: P4/P4-Oefeningen.md
-    - P5 - Beeldclassificatie:
-      - Intro: P5/P5-intro.md
-      - CASE - Mangrove monitoring in Suriname: P5/P5-SurinameCase.md
-      - Niet-gesuperviseerde classificatie: P5/P5-Unsupervised.md
-      - Gesuperviseerde classificatie: P5/P5-Supervised.md
-      - Verbeteren van de classificatie: P5/P5-Improvement.md
-      - Oppervlaktebepaling: P5/P5-Oppervlaktebepaling.md
-      - Spectrale responsiecurves: P5/P5-SpectralResponse_oud.md
-      - Oefeningen: P5/P5-Oefeningen.md
-    - P6 - Tijdseries:
-      - Tijdserie-analyse: P6/P6-Timeseries.md
-    - Oefeningen:
-      - Oefening 1 - Overstromingen Roermond: Oefeningen/Oef1_Roermond.md
-      - Oefening 2 - Het Zwarte Woud: Oefeningen/Oef2_Fritz.md
+    - P1 - Beeldvoorbewerking: 
+      - Introduction: P1/P1-intro.md
+      - Sentinel-2 intro and download: P1/P1-Sentinel2.md
+      - Het elektromagnetisch spectrum: P1/P1-QGIS-intro.md
+      - Kleurcomposieten: P1/P1-colour-composites.md
+    - P2 - Introductie tot Google Earth Engine: 
+      - Doel van het practicum: P2/P2-Goals.md
+      - EarthEngine data catalog: P2/P2-DataCatalog.md
+      - Introductie tot Earth Engine: P2/P2-Intro.md
+      - Satellietdata oproepen, filteren en visualiseren: P2/P2-ImageVisualization.md
+      - Reducing ImageCollections: P2/P2-Reducing.md
+      - Cloud masking: P2/P2-Cloud_masking.md
+      - (Extra) Oefeningen: P2/P2-Oefeningen.md
 
 
 theme:
@@ -64,35 +41,35 @@ markdown_extensions:
 #  - mdx_math
 
 plugins:
-  - search
-  - with-pdf:
-        author: ir. Jasper Feyen & prof. Frieke Vancoillie
-        copyright: Remote Sensing/Spatial Analysis lab, Ugent (REMOSA)
-        cover: false
-        back_cover: true
-        cover_title: Teledetectie 2021
-        cover_subtitle: Practicals
+#  - search
+#  - with-pdf:
+#        author: ir. Jasper Feyen & prof. Frieke Vancoillie
+#        copyright: Remote Sensing/Spatial Analysis lab, Ugent (REMOSA)
+#        cover: false
+#        back_cover: true
+#        cover_title: Teledetectie 2021
+#        cover_subtitle: Practicals
         #custom_template_path: TEMPLATES PATH
         #toc_title: Ihoud
-        heading_shift: true
-        toc_level: 2
-        ordered_chapter_level: 2
+#        heading_shift: true
+#        toc_level: 2
+#        ordered_chapter_level: 2
         #excludes_children:
         #    - 'release-notes/:upgrading'
         #    - 'release-notes/:changelog'
-        exclude_pages:
-            - 'index.md'
-            - 'Extra_info.md'
-            - 'Afdrukbare_pdfs.md'
+#        exclude_pages:
+#            - 'index.md'
+#            - 'Extra_info.md'
+#            - 'Afdrukbare_pdfs.md'
         #convert_iframe:
         #    - src: IFRAME SRC
         #      img: POSTER IMAGE URL
         #      text: ALTERNATE TEXT
         #    - src: ...
-        two_columns_level: 3
-        render_js: true
-        headless_chrome_path: C:\Program Files\Google\Chrome\Application\chrome.exe
-        output_path: C:\Users\jaspe\Documents\Ugent\Onderwijs\Teledetectie\Tele_Practicalsd\document.pdf
+#        two_columns_level: 3
+#        render_js: true
+#        headless_chrome_path: C:\Program Files\Google\Chrome\Application\chrome.exe
+#        output_path: C:\Users\jaspe\Documents\Ugent\Onderwijs\Teledetectie\Tele_Practicalsd\document.pdf
 #        enabled_if_env: ENABLE_PDF_EXPORT
         #debug_html: true
         #show_anchors: true
