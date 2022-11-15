@@ -1,0 +1,983 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Principale componenten analyse - (I002450) Teledetectie practica 2022</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#de-principale-componentenanalyse" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="(I002450) Teledetectie practica 2022" class="md-header__button md-logo" aria-label="(I002450) Teledetectie practica 2022" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            (I002450) Teledetectie practica 2022
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Principale componenten analyse
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P1/P1-intro.html" class="md-tabs__link">
+        P1 - Beeldvoorbewerking
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P2/P2-Goals.html" class="md-tabs__link">
+        P2 - Introductie tot Google Earth Engine
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="P3-Intro.html" class="md-tabs__link md-tabs__link--active">
+        P3 - Feature Extraction
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="(I002450) Teledetectie practica 2022" class="md-nav__button md-logo" aria-label="(I002450) Teledetectie practica 2022" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    (I002450) Teledetectie practica 2022
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Over deze cursussite
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          P1 - Beeldvoorbewerking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P1 - Beeldvoorbewerking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          P1 - Beeldvoorbewerking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-intro.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-Sentinel2.html" class="md-nav__link">
+        Sentinel-2 intro and download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-QGIS-intro.html" class="md-nav__link">
+        Het elektromagnetisch spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-colour-composites.html" class="md-nav__link">
+        Kleurcomposieten
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          P2 - Introductie tot Google Earth Engine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P2 - Introductie tot Google Earth Engine" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          P2 - Introductie tot Google Earth Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Goals.html" class="md-nav__link">
+        Doel van het practicum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-DataCatalog.html" class="md-nav__link">
+        EarthEngine data catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Intro.html" class="md-nav__link">
+        Introductie tot Earth Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-ImageVisualization.html" class="md-nav__link">
+        Satellietdata oproepen, filteren en visualiseren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Reducing.html" class="md-nav__link">
+        Reducing ImageCollections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Cloud_masking.html" class="md-nav__link">
+        Cloud masking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Oefeningen.html" class="md-nav__link">
+        (Extra) Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          P3 - Feature Extraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P3 - Feature Extraction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          P3 - Feature Extraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Spectral_indices.html" class="md-nav__link">
+        Spectrale indices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-ImageStatistics.html" class="md-nav__link">
+        Beeldstatistieken
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Texture.html" class="md-nav__link">
+        Textuuranalyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Principale componenten analyse
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="P3-PCA.html" class="md-nav__link md-nav__link--active">
+        Principale componenten analyse
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-principale-componentenanalyse" class="md-nav__link">
+    De Principale componentenanalyse
+  </a>
+  
+    <nav class="md-nav" aria-label="De Principale componentenanalyse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening" class="md-nav__link">
+    Oefening
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#de-principale-componentenanalyse" class="md-nav__link">
+    De Principale componentenanalyse
+  </a>
+  
+    <nav class="md-nav" aria-label="De Principale componentenanalyse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oefening" class="md-nav__link">
+    Oefening
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Principale componenten analyse</h1>
+                
+                <h2 id="de-principale-componentenanalyse">De Principale componentenanalyse</h2>
+<p>Een <strong>principale componentenanalyse (PCA)</strong> is een lineaire transformatie  waarbij de banden worden gezocht die het meeste informatie bevatten. Veelal wordt deze gebruikt om processingtijd van grote datasets te beperken, zoals vaak bij hyperspectrale beelden het geval is.  </p>
+<p>Het achterliggende principe is dat de verschillende spectrale banden van een sensor vaak informatie dragen die (gedeeltelijk) gecorreleerd zijn aan elkaar, waardoor er sprake is van onnodige of dubbele informatie. PCA zorgt voor een transformatie van de multispectrale data zodat nieuwe variabelen niet meer of amper met elkaar gecorreleerd zijn.  </p>
+<p align="center">
+<img src="Images/PCA_principe.png" width=300>  <br>
+<em> Principe van PCA voor een dataset met 2 banden (rood en groen) die met elkaar gecorreleerd zijn. Een PCA werd uitgevoerd, bestaande uit een translate (van o naar o’) en een rotatie zodoende dat de er 2 nieuwe variabelen ontstaan (PC1 en PC2). </em>
+</p>
+
+<p>De eerste principale component wordt dus gevonden door de richting in de data waar het meeste variatie te vinden is en bijgevolg de meeste data. De 2e principale component komt hier loodrecht op te staan. Het spreekt voor zich dit dit in een 2-dimensionale ruimte zoals in bovenstaande figuur eenvoudig is, maar dit kan eveneens worden toegepast in een meer-dimensionale dataset (zoals bijvoorbeeld een Sentinel-2 beeld met 12 banden). </p>
+<p>Mathematisch gezien kan een PCA worden gezien als een zoektocht naar een translatie en rotatie van de multidimensionale dataset, waardoor de covariantiematrix van de dataset een diagonale matrix wordt na transformatie. In andere woorden, elke nieuwe variabele is gecorreleerd met zichzelf en niet meer met de andere variabele.</p>
+<p>De eigenwaarden en eigenvectoren van de originele covariantiematrix worden dus berekend. Elke eigenwaarde met de geassocieerde eigenvector beschrijven dan de nieuwe principale component, waarbij de eigenvector de richting geeft van de nieuwe component en de eigenwaarde als een proxy dient voor de hoeveel informatie dat de component bevat. (voor de specifieke wiskundige details kan worden verwezen naar de cursus van Wiskunde 1 (Lineaire algebra) of naar <a href="https://www.youtube.com/watch?v=HMOI_lkzW08&amp;ab_channel=StatQuestwithJoshStarmer">deze 5-minuten durende opfrissing.</a>. </p>
+<h3 id="oefening">Oefening</h3>
+<p>In Earth Engine is het relatief eenvoudig om de PCA-berekeningen door te voeren.</p>
+<ol>
+<li>
+<p>Open een Nieuw Script: 'PC5-PCA'</p>
+</li>
+<li>
+<p>We nemen opnieuw het Sentinel-2 beeld uit Belem. Aangezien enkel de banden B2, B3, B4, B5, B6, B6, B8, B8A, B11 en B12 relevant zijn voor verdere analyse, weerwhouden we enkel deze banden met de functie <code>.select()</code>.
+   <div class="highlight"><pre><span></span><code><span class="c1">//Importeren van het Sentinel-2 beeld van Belem</span>
+<span class="kd">var</span> <span class="nx">S2_Belem</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S2_SR/20200808T134219_20200808T134214_T22MGD&#39;</span><span class="p">)</span>
+
+<span class="c1">//Enkel banden relevant voor de PCA weerhouden in de Image</span>
+<span class="kd">var</span> <span class="nx">bands</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;B2&#39;</span><span class="p">,</span><span class="s1">&#39;B3&#39;</span><span class="p">,</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span><span class="s1">&#39;B5&#39;</span><span class="p">,</span><span class="s1">&#39;B6&#39;</span><span class="p">,</span><span class="s1">&#39;B7&#39;</span><span class="p">,</span><span class="s1">&#39;B8&#39;</span><span class="p">,</span><span class="s1">&#39;B8A&#39;</span><span class="p">,</span><span class="s1">&#39;B11&#39;</span><span class="p">,</span><span class="s1">&#39;B12&#39;</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">S2_Belem</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="nx">bands</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Opstellen van de PCA-functie (met bijhorende 'helper'-functie)
+  <div class="highlight"><pre><span></span><code><span class="c1">// Code adapted from https://developers.google.com/earth-engine/guides/arrays_eigen_analysis</span>
+<span class="kd">var</span> <span class="nx">getPrincipalComponents</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="nx">scale</span><span class="p">,</span> <span class="nx">region</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Collapse the bands of the image into a 1D array per pixel.</span>
+      <span class="kd">var</span> <span class="nx">arrays</span> <span class="o">=</span> <span class="nx">centered</span><span class="p">.</span><span class="nx">toArray</span><span class="p">();</span>
+
+      <span class="c1">// Berekenen van de covariantie a.d.h.v. een reduceRegion</span>
+      <span class="kd">var</span> <span class="nx">covar</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+        <span class="nx">reducer</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">centeredCovariance</span><span class="p">(),</span>
+        <span class="nx">geometry</span><span class="o">:</span> <span class="nx">region</span><span class="p">,</span>
+        <span class="nx">scale</span><span class="o">:</span> <span class="nx">scale</span><span class="p">,</span>
+        <span class="nx">maxPixels</span><span class="o">:</span> <span class="mf">1e9</span>
+      <span class="p">});</span>
+     <span class="nx">print</span><span class="p">(</span><span class="nx">covar</span><span class="p">,</span> <span class="s1">&#39;covariance&#39;</span><span class="p">)</span>
+      <span class="c1">// Get the &#39;array&#39; covariance result and cast to an array.</span>
+      <span class="c1">// This represents the band-to-band covariance within the region.</span>
+      <span class="kd">var</span> <span class="nx">covarArray</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">Array</span><span class="p">(</span><span class="nx">covar</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">));</span>
+
+      <span class="c1">// Perform an eigen analysis and slice apart the values and vectors.</span>
+      <span class="kd">var</span> <span class="nx">eigens</span> <span class="o">=</span> <span class="nx">covarArray</span><span class="p">.</span><span class="nx">eigen</span><span class="p">();</span>
+     <span class="nx">print</span><span class="p">(</span><span class="nx">eigens</span><span class="p">)</span>
+      <span class="c1">// eigenValues is a P-length vector of Eigenvalues.</span>
+      <span class="kd">var</span> <span class="nx">eigenValues</span> <span class="o">=</span> <span class="nx">eigens</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+
+      <span class="nx">print</span><span class="p">(</span><span class="nx">eigenValues</span><span class="p">,</span><span class="s1">&#39;EigenValues&#39;</span><span class="p">)</span>
+      <span class="c1">// This is a PxP matrix with eigenvectors in rows.</span>
+      <span class="kd">var</span> <span class="nx">eigenVectors</span> <span class="o">=</span> <span class="nx">eigens</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="mf">1</span><span class="p">);</span>
+     <span class="nx">print</span><span class="p">(</span><span class="nx">eigenVectors</span><span class="p">,</span> <span class="s1">&#39;Eigenvectors&#39;</span><span class="p">)</span>
+      <span class="c1">// Convert the array image to 2D arrays for matrix computations.</span>
+      <span class="kd">var</span> <span class="nx">arrayImage</span> <span class="o">=</span> <span class="nx">arrays</span><span class="p">.</span><span class="nx">toArray</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+
+      <span class="c1">// Left multiply the image array by the matrix of eigenvectors.</span>
+      <span class="kd">var</span> <span class="nx">principalComponents</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">eigenVectors</span><span class="p">).</span><span class="nx">matrixMultiply</span><span class="p">(</span><span class="nx">arrayImage</span><span class="p">);</span>
+
+      <span class="c1">// Turn the square roots of the Eigenvalues into a P-band image.</span>
+      <span class="kd">var</span> <span class="nx">sdImage</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">eigenValues</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">())</span>
+          <span class="p">.</span><span class="nx">arrayProject</span><span class="p">([</span><span class="mf">0</span><span class="p">]).</span><span class="nx">arrayFlatten</span><span class="p">([</span><span class="nx">getNewBandNames</span><span class="p">(</span><span class="s1">&#39;sd&#39;</span><span class="p">)]);</span>
+
+      <span class="c1">// Turn the PCs into a P-band image, normalized by SD.</span>
+      <span class="k">return</span> <span class="nx">principalComponents</span>
+          <span class="c1">// Throw out an an unneeded dimension, [[]] -&gt; [].</span>
+          <span class="p">.</span><span class="nx">arrayProject</span><span class="p">([</span><span class="mf">0</span><span class="p">])</span>
+          <span class="c1">// Make the one band array image a multi-band image, [] -&gt; image.</span>
+          <span class="p">.</span><span class="nx">arrayFlatten</span><span class="p">([</span><span class="nx">getNewBandNames</span><span class="p">(</span><span class="s1">&#39;pc&#39;</span><span class="p">)])</span>
+          <span class="c1">// Normalize the PCs by their SDs.</span>
+          <span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">sdImage</span><span class="p">);</span>
+  <span class="p">};</span>
+
+<span class="c1">// De PCAfunctie heeft noog aan een helper-functie, dat een lijst met nieuwe bandnamen samenstelt</span>
+
+<span class="kd">var</span> <span class="nx">getNewBandNames</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prefix</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">seq</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">List</span><span class="p">.</span><span class="nx">sequence</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="nx">bandNames</span><span class="p">.</span><span class="nx">length</span><span class="p">());</span>
+  <span class="k">return</span> <span class="nx">seq</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">ee</span><span class="p">.</span><span class="nb">String</span><span class="p">(</span><span class="nx">prefix</span><span class="p">).</span><span class="nx">cat</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">).</span><span class="kr">int</span><span class="p">());</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Toepassen van de PCA-functie. Hiervoor dienen eerst enkele inputparameters met informatie worden aangemaakt
+   <div class="highlight"><pre><span></span><code><span class="cm">/* DE PCA-functie is opgesteld. In wat volgt kunnen we deze toepassen */</span>
+<span class="c1">// We zetten enkele parameters klaar, die we later zullen gebruiken.</span>
+    <span class="kd">var</span> <span class="nx">scale</span> <span class="o">=</span> <span class="mf">30</span><span class="p">;</span> <span class="c1">//(30m om processingtijd wat te verminderen =&gt; sentinel2 kan tot 10m)</span>
+    <span class="kd">var</span> <span class="nx">bandNames</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">();</span> <span class="c1">//De bandnamen overnamen naar een lijst</span>
+    <span class="kd">var</span> <span class="nx">region</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">geometry</span><span class="p">();</span> <span class="c1">// We nemen de regio van het volledige beeld</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>De gebruikte  PCA-functie heeft een <em>'mean centered'</em> beeld nodig. Dit betekent dat per band het gemiddelde de nieuwe '0-waarde' wordt, waarbij elke pixel een nieuwe waarde krijgt relatief aan deze 0-waarde. Dit zorgt voor een snellere covariantie-berekening.
+<div class="highlight"><pre><span></span><code><span class="c1">// Mean center the data to enable a faster covariance reducer</span>
+<span class="c1">// and an SD stretch of the principal components.</span>
+
+    <span class="kd">var</span> <span class="nx">meanDict</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+        <span class="nx">reducer</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">mean</span><span class="p">(),</span>
+        <span class="nx">geometry</span><span class="o">:</span> <span class="nx">region</span><span class="p">,</span>
+        <span class="nx">scale</span><span class="o">:</span> <span class="nx">scale</span><span class="p">,</span>
+        <span class="nx">maxPixels</span><span class="o">:</span> <span class="mf">1e12</span>
+    <span class="p">});</span>
+
+    <span class="kd">var</span> <span class="nx">means</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">constant</span><span class="p">(</span><span class="nx">meanDict</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">bandNames</span><span class="p">));</span>
+    <span class="nx">print</span><span class="p">(</span><span class="nx">means</span><span class="p">,</span> <span class="s1">&#39;Gemiddeldes per band&#39;</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">centered</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">means</span><span class="p">);</span>
+    <span class="nx">print</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="s1">&#39;Mean centered Image&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>Vervolgens kunnen we de PCA-functie toepassen
+<div class="highlight"><pre><span></span><code><span class="c1">// Uitvoeren van de PCA-functie =&gt; resultaat is beeld met PC&#39;s als nieuwe banden</span>
+  <span class="kd">var</span> <span class="nx">pcaImage</span> <span class="o">=</span> <span class="nx">getPrincipalComponents</span><span class="p">(</span><span class="nx">centered</span><span class="p">,</span> <span class="nx">scale</span><span class="p">,</span> <span class="nx">region</span><span class="p">);</span>
+
+<span class="c1">//Bekijken van pcaImage</span>
+<span class="c1">//print(pcaImage)</span>
+</code></pre></div></li>
+<li>De resulterende <code>Image</code> , <strong>pcaImage</strong> is een beeld met als banden de berekende principale componenten. Via een <code>for</code>-lus kunnen we elk deze banden ook in 1x plotten naar de mapview.
+<div class="highlight"><pre><span></span><code><span class="c1">// Plot each PC as a new layer</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">bandNames</span><span class="p">.</span><span class="nx">length</span><span class="p">().</span><span class="nx">getInfo</span><span class="p">();</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">band</span> <span class="o">=</span> <span class="nx">pcaImage</span><span class="p">.</span><span class="nx">bandNames</span><span class="p">().</span><span class="nx">get</span><span class="p">(</span><span class="nx">i</span><span class="p">).</span><span class="nx">getInfo</span><span class="p">();</span>
+      <span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">pcaImage</span><span class="p">.</span><span class="nx">select</span><span class="p">([</span><span class="nx">band</span><span class="p">]),</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">2</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">2</span><span class="p">},</span> <span class="nx">band</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div></li>
+</ol>
+<p>Resultaten:</p>
+<p align="center">
+<img src="Images/GEE_PCA_1.JPG">  <br>
+<em> Principale Component 1 </em>
+</p>
+
+<p align="center">
+<img src="Images/GEE_PCA_2.JPG">  <br>
+<em> Principale Component 2 </em>
+</p>
+
+<p align="center">
+<img src="Images/GEE_PCA_3.JPG">  <br>
+<em> Principale Component 3 </em>
+</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="P3-Texture.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Textuuranalyse" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              Textuuranalyse
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="P3-Oefeningen.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Oefeningen" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Oefeningen
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,941 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>Textuuranalyse - (I002450) Teledetectie practica 2022</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#textuuranalyse" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="(I002450) Teledetectie practica 2022" class="md-header__button md-logo" aria-label="(I002450) Teledetectie practica 2022" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            (I002450) Teledetectie practica 2022
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Textuuranalyse
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P1/P1-intro.html" class="md-tabs__link">
+        P1 - Beeldvoorbewerking
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P2/P2-Goals.html" class="md-tabs__link">
+        P2 - Introductie tot Google Earth Engine
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="P3-Intro.html" class="md-tabs__link md-tabs__link--active">
+        P3 - Feature Extraction
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="(I002450) Teledetectie practica 2022" class="md-nav__button md-logo" aria-label="(I002450) Teledetectie practica 2022" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    (I002450) Teledetectie practica 2022
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Over deze cursussite
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          P1 - Beeldvoorbewerking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P1 - Beeldvoorbewerking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          P1 - Beeldvoorbewerking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-intro.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-Sentinel2.html" class="md-nav__link">
+        Sentinel-2 intro and download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-QGIS-intro.html" class="md-nav__link">
+        Het elektromagnetisch spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-colour-composites.html" class="md-nav__link">
+        Kleurcomposieten
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          P2 - Introductie tot Google Earth Engine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P2 - Introductie tot Google Earth Engine" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          P2 - Introductie tot Google Earth Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Goals.html" class="md-nav__link">
+        Doel van het practicum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-DataCatalog.html" class="md-nav__link">
+        EarthEngine data catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Intro.html" class="md-nav__link">
+        Introductie tot Earth Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-ImageVisualization.html" class="md-nav__link">
+        Satellietdata oproepen, filteren en visualiseren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Reducing.html" class="md-nav__link">
+        Reducing ImageCollections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Cloud_masking.html" class="md-nav__link">
+        Cloud masking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Oefeningen.html" class="md-nav__link">
+        (Extra) Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          P3 - Feature Extraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P3 - Feature Extraction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          P3 - Feature Extraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Spectral_indices.html" class="md-nav__link">
+        Spectrale indices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-ImageStatistics.html" class="md-nav__link">
+        Beeldstatistieken
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Textuuranalyse
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="P3-Texture.html" class="md-nav__link md-nav__link--active">
+        Textuuranalyse
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#textuuranalyse" class="md-nav__link">
+    Textuuranalyse
+  </a>
+  
+    <nav class="md-nav" aria-label="Textuuranalyse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standaard-deviatie" class="md-nav__link">
+    Standaard deviatie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grey-level-co-occurence-matrix" class="md-nav__link">
+    Grey Level Co-occurence matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entropie" class="md-nav__link">
+    Entropie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-export-script" class="md-nav__link">
+    EXTRA: Export-script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-PCA.html" class="md-nav__link">
+        Principale componenten analyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P3-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#textuuranalyse" class="md-nav__link">
+    Textuuranalyse
+  </a>
+  
+    <nav class="md-nav" aria-label="Textuuranalyse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standaard-deviatie" class="md-nav__link">
+    Standaard deviatie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grey-level-co-occurence-matrix" class="md-nav__link">
+    Grey Level Co-occurence matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entropie" class="md-nav__link">
+    Entropie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extra-export-script" class="md-nav__link">
+    EXTRA: Export-script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Textuuranalyse</h1>
+                
+                <h2 id="textuuranalyse">Textuuranalyse</h2>
+<p>Beeldtextuur kan worden gedefinieerd als <em>‘de set van metrieken die berekend worden om bepaalde waargenomen textuureigenschappen van het beeld te kwantificeren’</em>. Het geeft informatie over de spatiale verspreiding van kleuren of intensiteiten binnen het beeld of een bepaalde regio.
+De spectrale reflectie van wolken en ijs kan bijvoorbeeld zeer gelijkend zijn, maar de textuur zeer verschillend. Textuur toevoegen als een extra input-band kan dus helpen bij het optimaliseren van een beeldclassificatie.</p>
+<p>Textuur wordt steeds berekend binnen een bepaalde zone, ook wel <em>neighborhood</em> genoemd.</p>
+<p>In volgende paragraaf, zullen we enkele textuur indices berekenen. We keren hiervoor even terug naar ons satellietbeeld uit Belém, gezien dit beeld geschikt is ter illustratie van textuur. Hier nog even de code om tot het beeld te komen:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//Inladen van het gekende Belém Sentinel-2 beeld</span>
+<span class="kd">var</span> <span class="nx">S2_Belem</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S2_SR/20200808T134219_20200808T134214_T22MGD&#39;</span><span class="p">)</span>
+
+<span class="c1">// Zoom in de Map-view in naar het beeld, met Zoom-factor 9</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">S2_Belem</span><span class="p">,</span> <span class="mf">9</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">S2_Belem</span><span class="p">,</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">3000</span><span class="p">,</span> <span class="nx">bands</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;B3&#39;</span><span class="p">,</span> <span class="s1">&#39;B2&#39;</span><span class="p">]});</span>
+</code></pre></div>
+<h3 id="standaard-deviatie">Standaard deviatie</h3>
+<p>De <strong>Standaard Deviatie</strong> (SD) berekent de spreiding van de pixelwaarde-distributie binnen de neighborhood.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">//1) Standaard deviatie</span>
+<span class="c1">// Compute standard deviation (SD) as texture van B8</span>
+<span class="kd">var</span> <span class="nx">stdev</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">).</span><span class="nx">reduceNeighborhood</span><span class="p">({</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">stdDev</span><span class="p">(),</span>
+  <span class="nx">kernel</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Kernel</span><span class="p">.</span><span class="nx">circle</span><span class="p">(</span><span class="mf">7</span><span class="p">),</span>
+<span class="p">});</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">stdev</span><span class="p">,</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="mf">2000</span><span class="p">},</span> <span class="s1">&#39;SD of NDVI&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="grey-level-co-occurence-matrix">Grey Level Co-occurence matrix</h3>
+<p>Voor het beschrijven van de textuur wordt gebruik gemaakt van de grey level co-occurence
+matrix (GLCM) van Haralick et al. (1973). Het is een matrix dat weergeeft hoeveel verschillende combinaties van pixelgrijswaarden voorkomen in een bepaalde <em>neighborhood</em>. Aan de hand van de GLCM kunnen vervolgens verschillende textuurattributen berekend worden om de textuur te beschrijven.</p>
+<h3 id="entropie">Entropie</h3>
+<p>Een eerste voorbeeld is de entropie. De entropie van een beeld vertaalt de <em>randomness</em> van de intensiteit naar een index. Het kan worden gezien als een maat voor ‘pixeldiversiteit’ binnen een bepaalde zone (<em>neighborhood</em>).  In dit voorbeeld wordt een kernel aangemaakt met radius 7m, waardoor de textuurberekening dus steeds binnen een radius van 7m wordt berekend. Gezien een entropy-berekening enkel kan worden uitgevoerd op discrete waarden, dienen we het pixeltype eerst om te zetten naar een integer.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Compute the gray-level co-occurrence matrix (GLCM), get contrast.</span>
+<span class="kd">var</span> <span class="nx">glcm</span> <span class="o">=</span> <span class="nx">S2_Belem</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8&#39;</span><span class="p">).</span><span class="nx">glcmTexture</span><span class="p">({</span><span class="nx">size</span><span class="o">:</span> <span class="mf">4</span><span class="p">});</span>
+<span class="kd">var</span> <span class="nx">contrast</span> <span class="o">=</span> <span class="nx">glcm</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8_contrast&#39;</span><span class="p">);</span>
+
+<span class="c1">//Mappen van contrast: speel met de min, max waarden (via stretching)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">contrast</span><span class="p">,</span>
+             <span class="p">{},</span>
+             <span class="s1">&#39;contrast&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">variance</span> <span class="o">=</span> <span class="nx">glcm</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8_var&#39;</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">variance</span><span class="p">,</span>
+             <span class="p">{},</span>
+             <span class="s1">&#39;variance&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">ent</span> <span class="o">=</span> <span class="nx">glcm</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;B8_ent&#39;</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">ent</span><span class="p">,</span>
+             <span class="p">{},</span>
+             <span class="s1">&#39;Entropy&#39;</span><span class="p">);</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">GLCM-textuur in Earth Engine</p>
+<p>Je merkt wellicht dat de textuurafbeelding van verschillende textuurmaten uit de GLCM varieert naarmate je in- en uitzoomt. Dit is ligt aan het feit dat Earth Engine dit steeds per 'view window' uitrekent, waardoor de resultaten zo verschillend lijken. Echter, als je het beeld exporteert uit Earth Engine en bijvoorbeeld in SNAP opent, bekom je wel een visueel begrijpbaar resultaat.</p>
+</div>
+<p>De berekende banden kunnen in Earth Engine echter wel verder gebruikt worden voor classificatie.</p>
+<h3 id="extra-export-script">EXTRA: Export-script</h3>
+<p>Hieronder kun je een voorbeeldscriptje vinden om een raster naar je Google Drive te exporteren. Na een 10-tal minuten kun je dit terug vinden op je persoonlijke Google Drive en downloaden naar je desktop.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">Export</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">toDrive</span><span class="p">({</span>
+      <span class="nx">image</span><span class="o">:</span> <span class="nx">entropy</span><span class="p">,</span>
+      <span class="nx">description</span><span class="o">:</span> <span class="s1">&#39;B8_Entropy&#39;</span><span class="p">,</span>
+      <span class="nx">scale</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span> <span class="c1">//RESOLUTIE</span>
+      <span class="nx">folder</span><span class="o">:</span> <span class="s1">&#39;Sentinel_2_export&#39;</span><span class="p">,</span>
+       <span class="nx">maxPixels</span><span class="o">:</span> <span class="mf">1e12</span> <span class="c1">//Vergroot de exportcapaciteit</span>
+     <span class="p">});</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="P3-ImageStatistics.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Beeldstatistieken" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              Beeldstatistieken
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="P3-PCA.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Principale componenten analyse" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Principale componenten analyse
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
