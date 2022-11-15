@@ -17,7 +17,13 @@ nav:
       - Reducing ImageCollections: P2/P2-Reducing.md
       - Cloud masking: P2/P2-Cloud_masking.md
       - (Extra) Oefeningen: P2/P2-Oefeningen.md
-
+    - P3 - Feature Extraction: 
+      - Intro: P3/P3-Intro.md
+      - Spectrale indices: P3/P3-Spectral_indices.md
+      - Beeldstatistieken: P3/P3-ImageStatistics.md
+      - Textuuranalyse: P3/P3-Texture.md
+      - Principale componenten analyse: P3/P3-PCA.md
+      - Oefeningen: P3/P3-Oefeningen.md
 
 theme:
   name: material
