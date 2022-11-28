@@ -24,6 +24,15 @@ nav:
       - Textuuranalyse: P3/P3-Texture.md
       - Principale componenten analyse: P3/P3-PCA.md
       - Oefeningen: P3/P3-Oefeningen.md
+    - P4 - Beeldclassificatie:
+      - Intro: P4/P4-intro.md
+      - CASE - Mangrove monitoring in Suriname: P4/P4-SurinameCase.md
+      - Niet-gesuperviseerde classificatie: P4/P4-Unsupervised.md
+      - Gesuperviseerde classificatie: P4/P4-Supervised.md
+      - Verbeteren van de classificatie: P4/P4-Improvement.md
+      - Oppervlaktebepaling: P4/P4-Oppervlaktebepaling.md
+      - Spectrale responsiecurves: P4/P4-SpectralResponse_oud.md
+      - Oefeningen: P4/P4-Oefeningen.md
 
 theme:
   name: material
