@@ -1029,7 +1029,7 @@
 </li>
 </ul>
 <p><div class="highlight"><pre><span></span><code><span class="c1">// Clusterer opstellen en trainen. Opgeven van 7 klassen, de andere parameters laten we op &quot;default&quot;.</span>
-<span class="kd">var</span> <span class="nx">Kmeans_cl</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Clusterer</span><span class="p">.</span><span class="nx">wekaKMeans</span><span class="p">(</span><span class="mf">5</span><span class="p">).</span><span class="nx">train</span><span class="p">(</span><span class="nx">training</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Kmeans_cl</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Clusterer</span><span class="p">.</span><span class="nx">wekaKMeans</span><span class="p">(</span><span class="mf">7</span><span class="p">).</span><span class="nx">train</span><span class="p">(</span><span class="nx">training</span><span class="p">);</span>
 
 <span class="c1">// Laat de cluster los op het volledige beeld</span>
 <span class="kd">var</span> <span class="nx">classified</span> <span class="o">=</span> <span class="nx">S2_im</span><span class="p">.</span><span class="nx">cluster</span><span class="p">(</span><span class="nx">Kmeans_cl</span><span class="p">);</span>

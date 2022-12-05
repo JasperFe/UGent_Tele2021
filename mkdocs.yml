@@ -33,6 +33,7 @@ nav:
       - Oppervlaktebepaling: P4/P4-Oppervlaktebepaling.md
       - Spectrale responsiecurves: P4/P4-SpectralResponse_oud.md
       - Oefeningen: P4/P4-Oefeningen.md
+    - P5 - Tijdseries:
 
 theme:
   name: material

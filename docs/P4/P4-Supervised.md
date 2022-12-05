@@ -30,7 +30,7 @@ In deze oefening van gesuperviseerde classificatie zul je zelf trainingsamples m
     // meer info: https://medium.com/sentinel-hub/cloud-masks-at-your-service-6e5b2cb2ce8a
        var getS2_SR_CLOUD_PROBABILITY = function () {
               var innerJoined = ee.Join.inner().apply({
-                  primary: ee.ImageCollection("COPERNICUS/S2_SR"),
+                  primary: ee.ImageCollection("COPERNICUS/S2_SR_HARMONIZED"),
                   secondary: ee.ImageCollection("COPERNICUS/S2_CLOUD_PROBABILITY"),
                   condition: ee.Filter.equals({
                     leftField: 'system:index',
@@ -49,17 +49,17 @@ In deze oefening van gesuperviseerde classificatie zul je zelf trainingsamples m
         var maskClouds = function(image) {
           var cloudProbabilityThreshold = 40;
           var cloudMask = image.select('probability').lt(cloudProbabilityThreshold);
-          return image.updateMask(cloudMask);
+          return image.updateMask(cloudMask).divide(10000);
         };
 
 //Aanmaken van een ImageCollection ter hoogte van Mangroves Paramaribo, Suriname
   var S2_coll = getS2_SR_CLOUD_PROBABILITY()
-        .filterDate('2019-08-01','2019-10-30')// Filteren voor het jaar 2020, droge tijd
-        .filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than', 50) //Voorselectie obv wolken
+        .filterDate('2021-08-01','2021-10-30')// Filteren voor het jaar 2021, droge tijd
+        .filterMetadata('CLOUDY_PIXEL_PERCENTAGE','less_than',50) //Voorselectie obv wolken
         .map(maskClouds) //toepassen van de cloudmaskfunctie
         .filterBounds(ROI); //collectie filteren obv de Kustzonegeometrie
   
-print(S2_coll)
+//print('Sentinel-2_collectie, S2_coll)
 
 //Omzetten collectie naar een Image, door .median() te nemen. Hierna clippen we ook tot onze ROI
 //Ook selecteren we de banden waarmee we verder willen werken
@@ -70,9 +70,9 @@ var S2_im = S2_coll.median()
                      .clip(ROI) //Bekijk de .clip-eigenschappen in de Docs
                      
 Map.centerObject(S2_im, 11)
-Map.addLayer(S2_im,{min:50,max:1800,bands:'B4,B3,B2'},'NormaleKleuren_2020',0)
-Map.addLayer(S2_im,{min:700,max:4500,bands:'B8,B4,B3'},'ValseKleuren_2020',0)
-Map.addLayer(S2_im,{min:500,max:4000,bands:'B8,B11,B2'},'Healthy_Vegetation_2020',0)
+Map.addLayer(S2_im,{min:0.05,max:0.1800,bands:'B4,B3,B2'},'NormaleKleuren_2021',0)
+Map.addLayer(S2_im,{min:0.0700,max:0.4500,bands:'B8,B4,B3'},'ValseKleuren_2021',0)
+Map.addLayer(S2_im,{min:0.0500,max:0.4000,bands:'B8,B11,B2'},'Healthy_Vegetation_2021',0)
 ```
 
 ## Trainingsamples aanmaken
@@ -383,13 +383,13 @@ var ErrorMatrix_MinDist = ee.Feature(null, {matrix: ErrorMatrix_MinDist.array()}
 //Exporteren van de errormatrix
   Export.table.toDrive({
       collection: ee.FeatureCollection(ErrorMatrix_MinDist),
-      description: 'P6_Errormatrix',
+      description: 'P4_Errormatrix',
       fileFormat: 'CSV',
-      folder: 'TELEDETECTIE_2021'
+      folder: 'TELEDETECTIE_2022'
     });
 ```
 
 ??? info "Volledig script"
-    Via deze link: [https://code.earthengine.google.com/665cbaa3a887d685d4d07c6081902f19](https://code.earthengine.google.com/665cbaa3a887d685d4d07c6081902f19)
+    Via deze link: [https://code.earthengine.google.com/ee3fc3029e84e0baf24728dbe4f2bb6f](https://code.earthengine.google.com/ee3fc3029e84e0baf24728dbe4f2bb6f)
 
 

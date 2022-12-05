@@ -1,4 +1,4 @@
-## OEF 5.1 - Classificatie van België
+## OEF 4.1 - Classificatie van België
 
 ### Gegeven
 In volgende oefening maken we een landclassificatie van België op basis van een Landsat-8 beeldcomposiet. Om de grenzen van België te bekomen, maken we gebruik van volgende dataset: [https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017](https://developers.google.com/earth-engine/datasets/catalog/USDOS_LSIB_SIMPLE_2017)
@@ -22,7 +22,7 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 * Visualiseer je resultaat naar eigen keuze. Evalueer het visueel: is je classificatie geslaagd? Welke classifier lijkt beter? 
 
-* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset:  [P5_Oef1_validation.zip](https://users.ugent.be/~jfeyen/P5/P5_Oef1_validation.zip). Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:
+* Bereken de *Overall Accuracy* van je classificatie. Maak gebruik van deze validatieset:  [P4_Oef1_validation.zip](https://users.ugent.be/~jfeyen/P4/P4_Oef1_validation.zip). Hierbij maak je gebruik van de eigenschap 'val', waarbij volgend schema geldt:
 
 <center>
 
@@ -37,18 +37,16 @@ var bel = countries.filterMetadata( 'country_na', 'equals', 'Belgium' );
 
 </center>
 
-??? check "Oplossing Oef 5.1"
-    Voor deze oefening kun je zowel Landsat Collectie 2 (de allernieuwste) of Landsat Collectie 1 (toekomstig niet meer gebruikt, maar momenteel nog in een overgangsfase) gebruiken. Het verschil is verwaarloosbaar.  
+??? check "Oplossing Oef 4.1"
 
-    Oplossing Landsat 8 Collectie 1: [https://code.earthengine.google.com/b80d9ab8e0be2e309dbd64fe3f7a0f81](https://code.earthengine.google.com/b80d9ab8e0be2e309dbd64fe3f7a0f81)
-    Oplossing Landsat 8 Collectie 2: [https://code.earthengine.google.com/021d9c2592813d2779aff69722edf08a](https://code.earthengine.google.com/021d9c2592813d2779aff69722edf08a)  
+    Oplossing Landsat 8 Collectie 2: [https://code.earthengine.google.com/682de9333367e66955cafbc276354806](https://code.earthengine.google.com/682de9333367e66955cafbc276354806)  
 
     Opgelet: het spreekt voor zich dat de gebruikte trainingsvectoren in dit voorbeeld zeer rudimentair zijn, met een ruwe classificatie tot gevolg.
     Daarbij werden de testpunten ook gehaald uit een bestaande landcover classificatie van België, maar met een resolutie van 100m, waardoor de kwaliteit van de testdata niet perfect is. 
      Verder is een verbetering van het classificatieresultaat ook mogelijk door het gebruik maken van Multitemporele beelden: hiermee wordt het seizoenaal karakter van de o.a. de landbouwvelden mee in rekening gebracht, waardoor een beter onderscheid tussen o.a. grasland en landbouw (sterker temporeel karakter) behaald kan worden.
 
 
-## OEF 5.2 - Eyjafjallajökull
+## OEF 4.2 - Eyjafjallajökull
 <p align="center">
 <img src="images/Oef6_2.jpg" width=500>  <br>
 </p>
