@@ -33,7 +33,15 @@ nav:
       - Oppervlaktebepaling: P4/P4-Oppervlaktebepaling.md
       - Spectrale responsiecurves: P4/P4-SpectralResponse_oud.md
       - Oefeningen: P4/P4-Oefeningen.md
-    - P5 - Tijdseries:
+    - P5 - Tijdseries & Radar:
+      - Tijdseries: P5/P5-Timeseries.md
+      - SAR: P5/P5-SAR-tijdseries.md
+    - Oefeningen:
+      - Oefening 1 - Overstromingen Roermond: Oefeningen/Oef1_Roermond.md
+      - Oefening 2 - Het Zwarte Woud: Oefeningen/Oef2_Fritz.md
+      - Oefening 3 - Ferrarisbossen: Oefeningen/Oef3_Ferrarisbossen.md
+      - Oefening 4 - Overstroming Kerala: Oefeningen/Oef4_OverstromingKerala.md
+
 
 theme:
   name: material

@@ -27,7 +27,7 @@ In volgende wordt:
 - De NDSI voor dit beeld gevisualiseerd.
 
 ??? check "Scriptje"
-    [code](https://code.earthengine.google.com/735391c2fec3a4cb3d847d0714bdb34c) 
+    [code](https://code.earthengine.google.com/735391c2fec3a4cb3d847d0714bdb34c)
 
 
 ### Charts
@@ -84,7 +84,8 @@ print(ui.Chart.image.doySeriesByYear(S2, 'NDSI', ROI, ee.Reducer.mean(), 10).set
 
 Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Sentinel-2 beelden:  
 
- * Verdeel onder je break-out room de volgende [locaties](https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e):  
+ 
+ * Verdeel één der volgende [locaties](https://code.earthengine.google.com/ceeefb643efa7c93503d5b8ba1d8da0e) onder je buren en vergelijk:  
 
     - Greenland
     - Amazon
@@ -98,7 +99,7 @@ Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Se
  * Deel de resultaten met elkaar bespreek de variatie binnen doorheen de verschillende jaren. 
 
 ??? check "Oplossingen"
-    - [Greenland](https://code.earthengine.google.com/51441bccccdee2f9f6c73f7d02f6c48f)  
+    - [Greenland](https://code.earthengine.google.com/0909deed3f6a849dda1e5774f964fd79)  
     - [Amazon](https://code.earthengine.google.com/dd524b73865d4300322753dfab15ba0b)  
     - [Botswana (Okavango delta)](https://code.earthengine.google.com/551915a0408c6b96178a767a16afa9d2) 
     - [Portugal](https://code.earthengine.google.com/6e4eaeedeab338a498ff637026189e76)  
@@ -112,6 +113,3 @@ Visualiseer en analyseer de landdynamica op 3 locaties gebaseerd op basis van Se
 
 * Temperatuur tijdseries over verschillende punten wereldwijd:
 [https://code.earthengine.google.com/470d63bbdc73a3800804c7dca9811ba3](https://code.earthengine.google.com/470d63bbdc73a3800804c7dca9811ba3)
-
-## Bedankt!
-Bedankt aan Lisa Landuyt voor de input van deze scriptjes.

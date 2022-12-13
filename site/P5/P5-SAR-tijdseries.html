@@ -1,0 +1,1590 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/LOGO_REMOSA_2020.jpg">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+    
+    
+      
+        <title>SAR - (I002450) Teledetectie practica 2022</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a57b2b03.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sar-synthetic-aperture-radar" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="(I002450) Teledetectie practica 2022" class="md-header__button md-logo" aria-label="(I002450) Teledetectie practica 2022" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            (I002450) Teledetectie practica 2022
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SAR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Zoeken" placeholder="Zoeken" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P1/P1-intro.html" class="md-tabs__link">
+        P1 - Beeldvoorbewerking
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P2/P2-Goals.html" class="md-tabs__link">
+        P2 - Introductie tot Google Earth Engine
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P3/P3-Intro.html" class="md-tabs__link">
+        P3 - Feature Extraction
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../P4/P4-intro.html" class="md-tabs__link">
+        P4 - Beeldclassificatie
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="P5-Timeseries.html" class="md-tabs__link md-tabs__link--active">
+        P5 - Tijdseries & Radar
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Oefeningen/Oef1_Roermond.html" class="md-tabs__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="(I002450) Teledetectie practica 2022" class="md-nav__button md-logo" aria-label="(I002450) Teledetectie practica 2022" data-md-component="logo">
+      
+  <img src="../assets/images/LOGO_REMOSA_2020.jpg" alt="logo">
+
+    </a>
+    (I002450) Teledetectie practica 2022
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        Over deze cursussite
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          P1 - Beeldvoorbewerking
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P1 - Beeldvoorbewerking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          P1 - Beeldvoorbewerking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-intro.html" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-Sentinel2.html" class="md-nav__link">
+        Sentinel-2 intro and download
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-QGIS-intro.html" class="md-nav__link">
+        Het elektromagnetisch spectrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1/P1-colour-composites.html" class="md-nav__link">
+        Kleurcomposieten
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          P2 - Introductie tot Google Earth Engine
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P2 - Introductie tot Google Earth Engine" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          P2 - Introductie tot Google Earth Engine
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Goals.html" class="md-nav__link">
+        Doel van het practicum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-DataCatalog.html" class="md-nav__link">
+        EarthEngine data catalog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Intro.html" class="md-nav__link">
+        Introductie tot Earth Engine
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-ImageVisualization.html" class="md-nav__link">
+        Satellietdata oproepen, filteren en visualiseren
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Reducing.html" class="md-nav__link">
+        Reducing ImageCollections
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Cloud_masking.html" class="md-nav__link">
+        Cloud masking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P2/P2-Oefeningen.html" class="md-nav__link">
+        (Extra) Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          P3 - Feature Extraction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P3 - Feature Extraction" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          P3 - Feature Extraction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Spectral_indices.html" class="md-nav__link">
+        Spectrale indices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-ImageStatistics.html" class="md-nav__link">
+        Beeldstatistieken
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Texture.html" class="md-nav__link">
+        Textuuranalyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-PCA.html" class="md-nav__link">
+        Principale componenten analyse
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P3/P3-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          P4 - Beeldclassificatie
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P4 - Beeldclassificatie" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          P4 - Beeldclassificatie
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-intro.html" class="md-nav__link">
+        Intro
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-SurinameCase.html" class="md-nav__link">
+        CASE - Mangrove monitoring in Suriname
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Unsupervised.html" class="md-nav__link">
+        Niet-gesuperviseerde classificatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Supervised.html" class="md-nav__link">
+        Gesuperviseerde classificatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Improvement.html" class="md-nav__link">
+        Verbeteren van de classificatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Oppervlaktebepaling.html" class="md-nav__link">
+        Oppervlaktebepaling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-SpectralResponse_oud.html" class="md-nav__link">
+        Spectrale responsiecurves
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P4/P4-Oefeningen.html" class="md-nav__link">
+        Oefeningen
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          P5 - Tijdseries & Radar
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="P5 - Tijdseries & Radar" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          P5 - Tijdseries & Radar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="P5-Timeseries.html" class="md-nav__link">
+        Tijdseries
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SAR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="P5-SAR-tijdseries.html" class="md-nav__link md-nav__link--active">
+        SAR
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sar-synthetic-aperture-radar" class="md-nav__link">
+    SAR: 'Synthetic Aperture Radar'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voorbeeld-1-kartering-van-overstromingen-met-sentinel-1" class="md-nav__link">
+    Voorbeeld 1 - Kartering van overstromingen met Sentinel-1
+  </a>
+  
+    <nav class="md-nav" aria-label="Voorbeeld 1 - Kartering van overstromingen met Sentinel-1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#achtergrond" class="md-nav__link">
+    Achtergrond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualiseren-van-sentinel-1-data" class="md-nav__link">
+    Visualiseren van Sentinel-1 data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    Opdracht
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voorbeeld-2-near-real-time-forest-monitoring-nrtm" class="md-nav__link">
+    Voorbeeld 2 - Near-Real Time Forest Monitoring (NRTM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Voorbeeld 2 - Near-Real Time Forest Monitoring (NRTM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#over-nrtm" class="md-nav__link">
+    Over NRTM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualiseren-van-sentinel-1-data_1" class="md-nav__link">
+    Visualiseren van Sentinel-1 data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht-1-mangrove-monitoring-met-sar" class="md-nav__link">
+    Opdracht 1: Mangrove monitoring met SAR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Oefeningen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Oefeningen" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Oefeningen
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef1_Roermond.html" class="md-nav__link">
+        Oefening 1 - Overstromingen Roermond
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef2_Fritz.html" class="md-nav__link">
+        Oefening 2 - Het Zwarte Woud
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef3_Ferrarisbossen.html" class="md-nav__link">
+        Oefening 3 - Ferrarisbossen
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Oefeningen/Oef4_OverstromingKerala.html" class="md-nav__link">
+        Oefening 4 - Overstroming Kerala
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sar-synthetic-aperture-radar" class="md-nav__link">
+    SAR: 'Synthetic Aperture Radar'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voorbeeld-1-kartering-van-overstromingen-met-sentinel-1" class="md-nav__link">
+    Voorbeeld 1 - Kartering van overstromingen met Sentinel-1
+  </a>
+  
+    <nav class="md-nav" aria-label="Voorbeeld 1 - Kartering van overstromingen met Sentinel-1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#achtergrond" class="md-nav__link">
+    Achtergrond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualiseren-van-sentinel-1-data" class="md-nav__link">
+    Visualiseren van Sentinel-1 data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht" class="md-nav__link">
+    Opdracht
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voorbeeld-2-near-real-time-forest-monitoring-nrtm" class="md-nav__link">
+    Voorbeeld 2 - Near-Real Time Forest Monitoring (NRTM)
+  </a>
+  
+    <nav class="md-nav" aria-label="Voorbeeld 2 - Near-Real Time Forest Monitoring (NRTM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#over-nrtm" class="md-nav__link">
+    Over NRTM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualiseren-van-sentinel-1-data_1" class="md-nav__link">
+    Visualiseren van Sentinel-1 data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opdracht-1-mangrove-monitoring-met-sar" class="md-nav__link">
+    Opdracht 1: Mangrove monitoring met SAR
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>SAR</h1>
+                
+                <p align="center">
+<img src="images/Sentinel1_belspo.jpg">  <br>
+<em> Sentinel-1 composite Mato Groso, Brazil. (Source: [BELSPO](https://eo.belspo.be/nl/news/sentinel-1-captures-mato-grosso)) </em>
+</p>
+
+<h2 id="sar-synthetic-aperture-radar">SAR: <em>'Synthetic Aperture Radar'</em></h2>
+<p>Dit laatste onderdeel vormt een introductie tot het verwerken en visualizeren van SAR-data in Google Earth Engine. SAR staat voor <em>'Synthetic Aperture Radar'</em> (NL: Apertuursyntheseradar). Het is wellicht het meest gebruikte type Radar-systeem binnen de Remote Sensing en biedt hoge resolutie radarbeelden. </p>
+<p>Het voordeel van Radar ten opzichte van multispectrale beelden:</p>
+<ul>
+<li>
+<p>SAR-golven penetreren door wolkbedekking, waardoor wolken geen belemmering vormen tijden het monitoren van landbekking. Zeker in tropische landen is dit een sterk voordeel gedurende grote regenperiodes.</p>
+</li>
+<li>
+<p>Afhankelijk van het type SAR, penetreren de SAR-golven (gedeeltelijk) doorheen het kronendak, waardoor betere biomassa- en structuurinschattingen mogelijk worden. Over het algemeen geldt: hoe groter de golflengte, hoe dieper de SAR-golven penetreren.</p>
+</li>
+<li>
+<p>SAR remote sensing is een actieve vorm van teledetectie: de satelliet zorgt zelf voor energiebron. Hierdoor is het ook tijdsonafhankelijk en kan het zowel gedurende de dag als nacht opereren.</p>
+</li>
+</ul>
+<p>Bijgevolg zijn de meest frequente toepassingen van SAR bosmonitoring, flood mapping en disaster management,  <a href="https://servirglobal.net/Global/Articles/Article/2674/sar-handbook-comprehensive-methodologies-for-forest-monitoring-and-biomass-estimation">The SAR handbook (NASA, 2019)</a> vormt een uitstekend handboek waar zowel de theoretische achtergrond als enkele toepassingen worden uitgelicht.</p>
+<p>Onderstaande voorbeelden hebben als doel een introductie te bieden tot het gebruik van SAR in Google Earth Engine. Er wordt gewerkt met Sentinel-1 data.</p>
+<details class="info"><summary>Over Sentinel-1</summary><p><p align="center">
+<img src="images/Sentinel_1.jfif" width="350">  <br>
+</p>   </p>
+<p>Sentinel-1 is een onderdeel van het ESA Copernicus-programma. Deze missie bestaat net zoals Sentinel-2 uit twee satellieten die 180° tegenoverklaar in orbit rond de aarde zweven. De waarnemingen gebeuren in de C-band (ca. 5,405 GHZ). Beide satellieten zorgen er gezamenlijk voor dat de volledige aardbol minstens elke 2 weken volledig wordt gedekt. De meest voorkomende S1-doelstellingen zijn:</p>
+<ul>
+<li>Het opvolgen van zee-ijs verschuivingen  </li>
+<li>In kaart brengen van humanitaire hulp in crisistijd  </li>
+<li>Monitoring van het mariene milieu  </li>
+<li>Monitoring van landbouw en bosbouw  </li>
+</ul>
+</details>
+<h2 id="voorbeeld-1-kartering-van-overstromingen-met-sentinel-1">Voorbeeld 1 - Kartering van overstromingen met Sentinel-1</h2>
+<details class="info"><summary>Link naar het volledige script:</summary><p><a href="https://code.earthengine.google.com/4856b647703cccf6e03fcbf4acc2f16c">https://code.earthengine.google.com/4856b647703cccf6e03fcbf4acc2f16c</a></p>
+</details>
+<h3 id="achtergrond">Achtergrond</h3>
+<p>SAR-gebaseerde overstromingskartering is een betrouwbare en snelle manier een inschatting te verkrijgen van de oppervlakte waarover een overstroming zich heeft uitgestrekt. Gezien de onafhankelijkheid van de weersomstandigheden, kan deze cruciale informatie steeds asap worden afgeleid.</p>
+<p>In wat volgt bekijken we een methode om op een snelle en eenvoudige manier dergelijke inschatting te maken, op basis van een analyse op 2 tijdstippen: voor en na een overstroming.</p>
+<ul>
+<li>
+<p>Het studiegebied betreft Pakistan, waar in 2022  het landschap danig aanttaste. De tol: naar schatting 1800 doden en duizenden die hun woning zagen verdwijnen. Daarnaast werd een enorme schade opgetekend aan de infrastructuur van ongeveer $15 miljard. We analyseren in deze oefening de impact (op grotere schaal) binnen de provincie Sindh, één van de zwaarder getroffen regio's.</p>
+</li>
+<li>
+<p>Studiegebied: <code>var ROI = ee.FeatureCollection("projects/ee-tele-2022/assets/Sindh");</code></p>
+</li>
+</ul>
+<h3 id="visualiseren-van-sentinel-1-data">Visualiseren van Sentinel-1 data</h3>
+<ul>
+<li>Als eerste stap, filteren we de S1 collectie. Hierbij werken we uit eenvoud met de VV polarisatie. Let op de naamgeving van je studiegebied.</li>
+</ul>
+<details class="check"><summary>Code</summary><div class="highlight"><pre><span></span><code><span class="c1">// Inladen van Sentinel-1 collectie</span>
+<span class="kd">var</span> <span class="nx">S1_VV</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S1_GRD&#39;</span><span class="p">)</span>
+        <span class="c1">//.filter(ee.Filter.listContains(&#39;transmitterReceiverPolarisation&#39;, &#39;VV&#39;))</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;instrumentMode&#39;</span><span class="p">,</span> <span class="s1">&#39;IW&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VV&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">edge</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">30.0</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">maskedImage</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">mask</span><span class="p">().</span><span class="nx">and</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">not</span><span class="p">());</span>
+          <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">maskedImage</span><span class="p">);</span>
+        <span class="p">});</span>
+
+<span class="c1">// Richting van S1-overtoch is van belang: hier enkel de &#39;descending&#39; richting nemen</span>
+<span class="kd">var</span> <span class="nx">desc</span> <span class="o">=</span> <span class="nx">S1_VV</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;orbitProperties_pass&#39;</span><span class="p">,</span> <span class="s1">&#39;DESCENDING&#39;</span><span class="p">));</span>
+</code></pre></div>
+</details>
+<ul>
+<li>Maak vervolgens 2 afzonderlijke beelden aan; een VV-polarisatie binnen de periode 20 augustus t.e.m. 15 september 2021 (ter referentie) en 20 augustus t.e.m. 15 september 2022, de periode net na de grootste overstroming.</li>
+</ul>
+<details class="check"><summary>Code</summary><div class="highlight"><pre><span></span><code><span class="c1">//Voor floods (2021)</span>
+<span class="kd">var</span> <span class="nx">VV_2021</span> <span class="o">=</span> <span class="nx">desc</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2021-08-20&#39;</span><span class="p">,</span><span class="s1">&#39;2021-09-15&#39;</span><span class="p">)</span>
+<span class="c1">// Na floods (2022)</span>
+<span class="kd">var</span> <span class="nx">VV_2022</span> <span class="o">=</span> <span class="nx">desc</span><span class="p">.</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2022-08-20&#39;</span><span class="p">,</span><span class="s1">&#39;2022-09-15&#39;</span><span class="p">)</span>
+
+<span class="c1">// Bekijken van de geselecteerde collecties:</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Tiles selected: Before Flood&#39;</span><span class="p">,</span> <span class="nx">VV_2021</span><span class="p">)</span><span class="c1">//5 beelden</span>
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Tiles selected: After Flood&#39;</span><span class="p">,</span> <span class="nx">VV_2022</span><span class="p">)</span><span class="c1">//12 beelden</span>
+</code></pre></div>
+</details>
+<ul>
+<li>Hierna kunnen we 2 VV-beelden aanmaken met een mean()-reducer: Voor- en na. Tevens zorgen we voor een 'speckle'-filter dat het peper-zout effect typerend aan radar wat reduceert. Hierna kunnen we het beeld visualiseren.</li>
+</ul>
+<details class="check"><summary>Code</summary><div class="highlight"><pre><span></span><code><span class="c1">//------------------------------  DISPLAY PRODUCTS  ----------------------------------//</span>
+<span class="c1">// Before and after flood SAR mosaic</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">ROI</span><span class="p">,</span><span class="mf">8</span><span class="p">);</span>
+<span class="c1">//Voor floods (2021)</span>
+<span class="kd">var</span> <span class="nx">imgVV_2021</span> <span class="o">=</span> <span class="nx">VV_2021</span><span class="p">.</span><span class="nx">mean</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span>
+<span class="c1">// Na floods (2022)</span>
+<span class="kd">var</span> <span class="nx">imgVV_2022</span> <span class="o">=</span> <span class="nx">VV_2022</span><span class="p">.</span><span class="nx">mean</span><span class="p">().</span><span class="nx">clip</span><span class="p">(</span><span class="nx">ROI</span><span class="p">)</span>
+<span class="c1">// Peper-zout effect filteren (Speckle Filter)</span>
+<span class="kd">var</span> <span class="nx">smoothing_radius</span> <span class="o">=</span> <span class="mf">50</span><span class="p">;</span>
+<span class="nx">imgVV_2021</span> <span class="o">=</span> <span class="nx">imgVV_2021</span><span class="p">.</span><span class="nx">focal_mean</span><span class="p">(</span><span class="nx">smoothing_radius</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;meters&#39;</span><span class="p">);</span>
+<span class="nx">imgVV_2022</span> <span class="o">=</span> <span class="nx">imgVV_2022</span><span class="p">.</span><span class="nx">focal_mean</span><span class="p">(</span><span class="nx">smoothing_radius</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;meters&#39;</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">imgVV_2021</span><span class="p">,{</span><span class="nx">min</span><span class="o">:-</span><span class="mf">23</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">0</span><span class="p">}</span><span class="s1">&#39;VV August 2021&#39;</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">imgVV_2022</span><span class="p">,{</span><span class="nx">min</span><span class="o">:-</span><span class="mf">23</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">0</span><span class="p">},</span><span class="s1">&#39;VV August 2022&#39;</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<ul>
+<li>
+<p>We hebben nu de 2 VV-beelden (NA/VOOR de overstroming). Op basis van de ratio beide, kunnen we informatie over de impact van de overstroming achterhalen. Neem de ratio (Na/voor). Aangezien water doorgaans een lagere 'backscatter' heeft, zal dit dus resulteren in een nieuwe laag waar de overstroomde gebieden een hogere waarde krijgen (want Voor = geen water = hogere (minder negatief) backscatter, Na = overstroomd = lagere (negatievere) backscatter.)</p>
+</li>
+<li>
+<p>Vervolgens nemen we een treshold (via trial/error), waarbij enkel de waarden in het verschilbeeld groter dan 1.25 worden behouden (<code>.gt()</code>-functie). Het resultaat is een binair raster.</p>
+</li>
+</ul>
+<details class="check"><summary>Code</summary><div class="highlight"><pre><span></span><code><span class="c1">//------------------------------- Berekening overstromingsgeboed -------------------------------//</span>
+
+<span class="c1">// Calculate the difference between the before and after images</span>
+<span class="kd">var</span> <span class="nx">difference</span> <span class="o">=</span> <span class="nx">imgVV_2022</span><span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="nx">imgVV_2021</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">threshold</span> <span class="o">=</span> <span class="mf">1.25</span><span class="p">;</span> <span class="c1">//Via Trial- and error dit bekomen</span>
+<span class="kd">var</span> <span class="nx">difference_binary</span> <span class="o">=</span> <span class="nx">difference</span><span class="p">.</span><span class="nx">gt</span><span class="p">(</span><span class="nx">threshold</span><span class="p">);</span>
+</code></pre></div>
+</details>
+<p>Volgend stukje code verfijnt het verschilbeeld op basis van additionele datasets. Hierdoor worden de seizoenale overstromingen en de rivieroppervlakten (die dus geen onderdeel van de ramp zijn) uit het verschilbeeld weerhouden. Daarnaast zorgt een pixelconnectiveitsberekening ook dat enkele pixels worden gewist en enkel de 'grotere' vlakken overblijven.</p>
+<ul>
+<li>Maak eeb 'mask' aan, waarbij de oppevlaktewaterpixels van (eizoenaal) overstroomde gebieden worden verwijderd (gebieden met water gedurende minstens 10 maand op een jaar). Gebruik hiervoor het <code>ee.Image('JRC/GSW1_0/GlobalSurfaceWater')</code> beeld.</li>
+</ul>
+<div class="highlight"><pre><span></span><code>    <span class="c1">// Refine flood result using additional datasets</span>
+
+          <span class="c1">// Include JRC layer on surface water seasonality to mask flood pixels from areas</span>
+          <span class="c1">// of &quot;permanent&quot; water (where there is water &gt; 10 months of the year)</span>
+          <span class="kd">var</span> <span class="nx">swater</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="s1">&#39;JRC/GSW1_0/GlobalSurfaceWater&#39;</span><span class="p">).</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;seasonality&#39;</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">swater_mask</span> <span class="o">=</span> <span class="nx">swater</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="mf">10</span><span class="p">).</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">swater</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="mf">10</span><span class="p">));</span>
+
+          <span class="c1">//Flooded layer where perennial water bodies (water &gt; 10 mo/yr) is assigned a 0 value</span>
+          <span class="kd">var</span> <span class="nx">flooded_mask</span> <span class="o">=</span> <span class="nx">difference_binary</span><span class="p">.</span><span class="nx">where</span><span class="p">(</span><span class="nx">swater_mask</span><span class="p">,</span><span class="mf">0</span><span class="p">);</span>
+          <span class="c1">// final flooded area without pixels in perennial waterbodies</span>
+          <span class="kd">var</span> <span class="nx">flooded</span> <span class="o">=</span> <span class="nx">flooded_mask</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">flooded_mask</span><span class="p">);</span>
+
+          <span class="c1">// Compute connectivity of pixels to eliminate those connected to 8 or fewer neighbours</span>
+          <span class="c1">// This operation reduces noise of the flood extent product </span>
+          <span class="kd">var</span> <span class="nx">connections</span> <span class="o">=</span> <span class="nx">flooded</span><span class="p">.</span><span class="nx">connectedPixelCount</span><span class="p">();</span>    
+          <span class="kd">var</span> <span class="nx">flooded</span> <span class="o">=</span> <span class="nx">flooded</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">connections</span><span class="p">.</span><span class="nx">gte</span><span class="p">(</span><span class="mf">8</span><span class="p">));</span>
+</code></pre></div>
+<ul>
+<li>Op basis van het verkregen <code>flooded</code>-beeld kunnen we oppervlakteberekeningen uitvoeren. Bereken de oppervlakte van het overstromingsgebied in Ha. (Zie practicum 4)</li>
+</ul>
+<details class="check"><summary>Code</summary><div class="highlight"><pre><span></span><code><span class="c1">// Calculate flood extent area</span>
+<span class="c1">// Create a raster layer containing the area information of each pixel </span>
+<span class="kd">var</span> <span class="nx">flood_pixelarea</span> <span class="o">=</span> <span class="nx">flooded</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VV&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">multiply</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">.</span><span class="nx">pixelArea</span><span class="p">());</span>
+
+<span class="c1">// Som van de overstroomde pixels</span>
+<span class="c1">// Gebruik de &#39;bestEffort: true&#39; om de berekening te vereenvoudigen, voor een  </span>
+<span class="c1">// accurater resultaat, zet bestEffort naar &quot;false&quot; en zet een hogere waarde voor &#39;maxPixels&#39;. </span>
+<span class="kd">var</span> <span class="nx">flood_stats</span> <span class="o">=</span> <span class="nx">flood_pixelarea</span><span class="p">.</span><span class="nx">reduceRegion</span><span class="p">({</span>
+  <span class="nx">reducer</span><span class="o">:</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Reducer</span><span class="p">.</span><span class="nx">sum</span><span class="p">(),</span>              
+  <span class="nx">geometry</span><span class="o">:</span> <span class="nx">ROI</span><span class="p">,</span>
+  <span class="nx">scale</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span> <span class="c1">// resolutie Sentinel-1 pixel</span>
+  <span class="c1">//maxPixels: 1e9,</span>
+  <span class="nx">bestEffort</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">});</span>
+
+<span class="c1">// Converteer de oppervlakte van het overstromingsgebied naar hectare. rond ag.</span>
+<span class="kd">var</span> <span class="nx">flood_area_ha</span> <span class="o">=</span> <span class="nx">flood_stats</span>
+  <span class="p">.</span><span class="nx">getNumber</span><span class="p">(</span><span class="s1">&#39;VV&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">divide</span><span class="p">(</span><span class="mf">10000</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">round</span><span class="p">();</span> 
+</code></pre></div>
+</details>
+<p>Tot slot visualiseren we ons resultaat:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Difference layer</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">difference</span><span class="p">,{</span><span class="nx">min</span><span class="o">:</span><span class="mf">0</span><span class="p">,</span><span class="nx">max</span><span class="o">:</span><span class="mf">2</span><span class="p">},</span><span class="s2">&quot;Difference Layer&quot;</span><span class="p">,</span><span class="mf">0</span><span class="p">);</span>
+
+<span class="c1">// Flooded areas</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">flooded</span><span class="p">,{</span><span class="nx">palette</span><span class="o">:</span><span class="s2">&quot;0000FF&quot;</span><span class="p">},</span><span class="s1">&#39;Flooded areas&#39;</span><span class="p">);</span>
+
+<span class="nx">print</span><span class="p">(</span><span class="s1">&#39;Oppervlakte overstromingsgebied&#39;</span><span class="p">,</span><span class="nx">flood_area_ha</span><span class="p">)</span>
+</code></pre></div>
+<details class="info"><summary>Bronvermelding</summary><p>Inspiratie voor bovenstaande code via <a href="https://code.earthengine.google.com/f5c2f984c053c8ea574bfcd4040d084e">UN-Spider</a>.</p>
+</details>
+<h3 id="opdracht">Opdracht</h3>
+<ul>
+<li>
+<p>Bekijk bovenstaande code voor het gebied. Lees het even door en ga na welke stappen er in de procedure werden opgenomen.</p>
+</li>
+<li>
+<p>Bereken hoeveel oppervlakte aan Landbouwgebied werd overstroomd. Gebruik hiervoor een 'LandCover'-kaart, zoals: <a href="https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_Landcover_100m_Proba-V-C3_Global">https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_Landcover_100m_Proba-V-C3_Global</a>. Tip: maak een binair raster van het gewenste oppervlakte en maskeer hierbij de 'overstromingslaag' met deze gebieden.</p>
+</li>
+</ul>
+<details class="check"><summary>Oplossing</summary><p>Via dit scriptje: <a href="https://code.earthengine.google.com/70bf32b42c7f233120352fc5fc1134f5">https://code.earthengine.google.com/70bf32b42c7f233120352fc5fc1134f5</a></p>
+</details>
+<h2 id="voorbeeld-2-near-real-time-forest-monitoring-nrtm">Voorbeeld 2 - Near-Real Time Forest Monitoring (NRTM)</h2>
+<h3 id="over-nrtm">Over NRTM</h3>
+<p><strong>Near-Real Time Forest Monitoring</strong> of <strong>NRTM</strong> is het principe waarbij bosbedekking in gebieden met veel illegale houtkap, van nabij wordt gemonitord waarbij steeds meest recente beschikbare satellietdata wordt gebruikt om eventuele wijzigingen in het kronendak op te sporen. Hierdoor kunnen eventuele illegale houtkapactiviteiten worden onderschept en stopgezet, om erger te vermijden.</p>
+<h3 id="visualiseren-van-sentinel-1-data_1">Visualiseren van Sentinel-1 data</h3>
+<ul>
+<li>
+<p>Open een nieuw scriptje in Earth Engine.</p>
+</li>
+<li>
+<p>Zoek naar Sentinel-1 in de zoekbalk en lees kort de achtergrondinformatie door.</p>
+</li>
+</ul>
+<p align="center">
+<img src="images/GEE_sentinel-1.jpg" width="350">  <br>
+</p>
+
+<ul>
+<li>
+<p>Sentinel-1 beelden bevat verschillende polarisaties: HH, HV, VV, VH. Uit de theorieles weten we dat bijvoorbeeld 'VV' staat voor verticaal gepolariseerd signaal uit en verticaal gepolariseerd resultaat ontvangen. </p>
+</li>
+<li>
+<p>We starten met de Sentinel-1 collectie (in earth engine: COPERNICUS/S1_GRD) in te laden en te filteren op basis van een Region of interest. In dit geval focussen we ons op een stuk tropisch regenwoud, ten oosten van het Brokopondo-meer in Suriname.</p>
+</li>
+</ul>
+<p align="center">
+<img src="images/GEE_ROI_brokopondo.jpg" width="350">  <br>
+</p>
+
+<div class="highlight"><pre><span></span><code><span class="c1">// Load Sentinel 1 C band SAR Ground Range collection (log scale, VV, descending)</span>
+
+<span class="nx">Map</span><span class="p">.</span><span class="nx">centerObject</span><span class="p">(</span><span class="nx">ROI</span><span class="p">,</span><span class="mf">13</span><span class="p">);</span>
+<span class="c1">//VV-polarisatie</span>
+<span class="kd">var</span> <span class="nx">VV_coll</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S1_GRD&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">listContains</span><span class="p">(</span><span class="s1">&#39;transmitterReceiverPolarisation&#39;</span><span class="p">,</span> <span class="s1">&#39;VV&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;instrumentMode&#39;</span><span class="p">,</span> <span class="s1">&#39;IW&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;orbitProperties_pass&#39;</span><span class="p">,</span><span class="s1">&#39;DESCENDING&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VV&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">edge</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">30.0</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">maskedImage</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">mask</span><span class="p">().</span><span class="nx">and</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">not</span><span class="p">());</span>
+          <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">maskedImage</span><span class="p">);</span>
+        <span class="p">});</span>
+
+<span class="c1">//VH-polarisatie</span>
+<span class="kd">var</span> <span class="nx">VH_coll</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">ImageCollection</span><span class="p">(</span><span class="s1">&#39;COPERNICUS/S1_GRD&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">listContains</span><span class="p">(</span><span class="s1">&#39;transmitterReceiverPolarisation&#39;</span><span class="p">,</span> <span class="s1">&#39;VH&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;instrumentMode&#39;</span><span class="p">,</span> <span class="s1">&#39;IW&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">ee</span><span class="p">.</span><span class="nx">Filter</span><span class="p">.</span><span class="nx">eq</span><span class="p">(</span><span class="s1">&#39;orbitProperties_pass&#39;</span><span class="p">,</span><span class="s1">&#39;DESCENDING&#39;</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;VH&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">image</span><span class="p">)</span> <span class="p">{</span>
+          <span class="kd">var</span> <span class="nx">edge</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">lt</span><span class="p">(</span><span class="o">-</span><span class="mf">30.0</span><span class="p">);</span>
+          <span class="kd">var</span> <span class="nx">maskedImage</span> <span class="o">=</span> <span class="nx">image</span><span class="p">.</span><span class="nx">mask</span><span class="p">().</span><span class="nx">and</span><span class="p">(</span><span class="nx">edge</span><span class="p">.</span><span class="nx">not</span><span class="p">());</span>
+          <span class="k">return</span> <span class="nx">image</span><span class="p">.</span><span class="nx">updateMask</span><span class="p">(</span><span class="nx">maskedImage</span><span class="p">);</span>
+        <span class="p">});</span>
+</code></pre></div>
+<ul>
+<li>
+<p>In dit voorbeeld bekijke we voor 3 tijdstippen de verandering in bosbedekking van dit gebiedje; 2019, 2020, 2021. Maak 3 VV_beelden aan per jaar. Neem een gemiddelde pixelwaarde (dus een reducer) voor de maand Augustus. Je kunt hierbij dezelfde methodiek gebruiken als bij multispectrale data.
+<div class="highlight"><pre><span></span><code><span class="c1">// Filteren op basis van locatie en tijdstip    </span>
+<span class="kd">var</span> <span class="nx">VV_2019</span><span class="o">=</span> <span class="nx">VV_coll</span><span class="p">.</span><span class="nx">filterBounds</span><span class="p">(</span><span class="nx">ROI</span><span class="p">).</span><span class="nx">filterDate</span><span class="p">(</span><span class="s1">&#39;2019-08-01&#39;</span><span class="p">,</span><span class="s1">&#39;2019-08-31&#39;</span><span class="p">).</span><span class="nx">mean</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Laat ons eens bekijken hoe elk afzonderlijk VV-gepolariseerd er per jaar uitziet. Visualiseer de 3 beelden in je project. Hanteer hierbij steeds dezelfde visualisatieparameters.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">VV_Param</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;opacity&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">,</span><span class="s2">&quot;bands&quot;</span><span class="o">:</span><span class="p">[</span><span class="s2">&quot;VV&quot;</span><span class="p">],</span><span class="s2">&quot;min&quot;</span><span class="o">:-</span><span class="mf">12.695602621422937</span><span class="p">,</span><span class="s2">&quot;max&quot;</span><span class="o">:-</span><span class="mf">2.5938492158251467</span><span class="p">,</span><span class="s2">&quot;gamma&quot;</span><span class="o">:</span><span class="mf">1</span><span class="p">};</span> 
+<span class="c1">// Afzonderlijke beelden mappen: visueel weinig verschil te zien</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_2019</span><span class="p">,</span><span class="nx">VV_Param</span><span class="p">,</span><span class="s1">&#39;VV_2019&#39;</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_2020</span><span class="p">,</span><span class="nx">VV_Param</span><span class="p">,</span><span class="s1">&#39;VV_2020&#39;</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_2021</span><span class="p">,</span><span class="nx">VV_Param</span><span class="p">,</span><span class="s1">&#39;VV_2021&#39;</span><span class="p">,</span><span class="mf">0</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Op zich bieden de beelden afzonderlijk weinig informatie. In een volgende stappen creëren we een beeldcomposiet, met volgende samenstelling: RGB= ['VV_2019', 'VV_2020', 'VV_2021']. Wat valt je op? Tip: om losse beelden samen te voegen tot één image gebruik je de <code>.addBands()</code> functie. Analyseer je resultaat.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Afzonderlijke jaren samenvoegen</span>
+<span class="kd">var</span> <span class="nx">VV_yearly</span> <span class="o">=</span> <span class="nx">ee</span><span class="p">.</span><span class="nx">Image</span><span class="p">(</span><span class="nx">VV_2019</span><span class="p">).</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">VV_2020</span><span class="p">).</span><span class="nx">addBands</span><span class="p">(</span><span class="nx">VV_2021</span><span class="p">);</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_yearly</span><span class="p">,</span> <span class="p">{</span><span class="nx">min</span><span class="o">:</span> <span class="o">-</span><span class="mf">20</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span> <span class="o">-</span><span class="mf">5</span><span class="p">},</span><span class="s1">&#39;VV_2019_2020_2021&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Vervolgens kunnen we het verschil tussen 2 jaren wat verder analyseren. Onderstaande redenering is als volgt: door het verschil te nemen tussen het beeld VV_2021 en VV_2019, worden de pixels waar in 2019 wel nog bos aanwezig was, maar in 2021 niet meer negatief. Uit trial-and-error kun je bij grove benadering stellen de verschilwaarden van (VV_2021-VV_2021) tussen -6 en -15 overeenkomen met ontbossing. Voer dus volgende stappen uit:  <ol>
+<li>Neem het verschil tussen 2021 en 2021.  </li>
+<li>Rond de waarden af naar boven met de <code>.ceil()</code>-functie.</li>
+<li>Reclassificeer de waarden tussen -6 en -15 naar een waarde 1 met de <code>.remap()</code> functie</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">//Tussen 2 jaren: verschil nemen (2021 - 2019)</span>
+<span class="kd">var</span> <span class="nx">VV_20192021</span> <span class="o">=</span> <span class="nx">VV_2021</span><span class="p">.</span><span class="nx">subtract</span><span class="p">(</span><span class="nx">VV_2019</span><span class="p">)</span>
+
+<span class="c1">//Verschilbeeld illustreren</span>
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">VV_20192021</span><span class="p">,{</span><span class="nx">min</span><span class="o">:-</span><span class="mf">13</span><span class="p">,</span> <span class="nx">max</span><span class="o">:</span><span class="mf">10</span><span class="p">},</span><span class="s1">&#39;Diff_2021_2019&#39;</span><span class="p">)</span>
+
+<span class="c1">// REMAP: om verlies te bepalen (-6 tot -15 komt grofweg overeen met ontbossing)</span>
+<span class="kd">var</span> <span class="nx">VV_20192021</span><span class="o">=</span> <span class="nx">VV_20212021</span><span class="p">.</span><span class="nx">ceil</span><span class="p">();</span> <span class="c1">// afronden naar boven</span>
+<span class="kd">var</span> <span class="nx">loss_20192021</span><span class="o">=</span> <span class="nx">VV_20292021</span><span class="p">.</span><span class="nx">remap</span><span class="p">([</span><span class="o">-</span><span class="mf">6</span><span class="p">,</span><span class="o">-</span><span class="mf">7</span><span class="p">,</span><span class="o">-</span><span class="mf">8</span><span class="p">,</span><span class="o">-</span><span class="mf">9</span><span class="p">,</span><span class="o">-</span><span class="mf">10</span><span class="p">,</span><span class="o">-</span><span class="mf">11</span><span class="p">,</span><span class="o">-</span><span class="mf">12</span><span class="p">,</span><span class="o">-</span><span class="mf">13</span><span class="p">,</span><span class="o">-</span><span class="mf">14</span><span class="p">,</span><span class="o">-</span><span class="mf">15</span><span class="p">],[</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">,</span><span class="mf">1</span><span class="p">])</span>
+
+<span class="nx">Map</span><span class="p">.</span><span class="nx">addLayer</span><span class="p">(</span><span class="nx">loss_20192021</span><span class="p">,{</span><span class="nx">palette</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">},</span><span class="s1">&#39;Loss_20219_2021&#39;</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Plot tevens ook 2 Sentinel-2-beelden (van 2019 en 2021) en bekijk ook hier de ontbossing.</li>
+</ul>
+<h3 id="opdracht-1-mangrove-monitoring-met-sar">Opdracht 1: Mangrove monitoring met SAR</h3>
+<ul>
+<li>
+<p>Bekijk aan de hand van bovenstaand voorbeeld ook de wijzigingen in het mangrovegebied langs de volledige kustlijn in Suriname. Tussen 2018-2021. Wat valt je op? Welk type ontbossing is dit?</p>
+</li>
+<li>
+<p>Benader ook de <strong>aanwas</strong> van mangrove tussen deze jaren. De verschilwaarden tussen 7 en 
+13 kun je als grove grenzen nemen als wat 'aanwas' van mangrove is.</p>
+</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="P5-Timeseries.html" class="md-footer__link md-footer__link--prev" aria-label="Vorige: Tijdseries" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              Tijdseries
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Oefeningen/Oef1_Roermond.html" class="md-footer__link md-footer__link--next" aria-label="Volgende: Oefening 1 - Overstromingen Roermond" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Oefening 1 - Overstromingen Roermond
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.tabs"], "translations": {"clipboard.copy": "Kopi\u00ebren naar klembord", "clipboard.copied": "Gekopieerd naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b1047164.min.js"></script>
+      
+        <script src="../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
